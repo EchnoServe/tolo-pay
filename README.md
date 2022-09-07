@@ -28,7 +28,7 @@ Follow these steps to get this set up:
 
 ```sh
 git clone https://github.com/EchnoServe/tolo-pay.git
-cd  tolo-pay
+cd  tolopay
 npm install or yarn install
 npm start or yarn start
 ```
