@@ -8,9 +8,9 @@
 
 ### System Requirements
 
-- [git][git] v2.13 or greater
-- [NodeJS][node] `14 || 16 || 18`
-- [npm][npm] or yarn 
+- [git] v2.13 or greater
+- [NodeJS] `14 || 16 || 18`
+- npm or yarn 
 
 All of these must be available in your system. To verify things are set up
 properly, you can run this:
