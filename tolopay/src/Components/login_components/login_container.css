@@ -1,10 +1,114 @@
 .container {
-    width: 35%;
-    height: 60vh;
-    background-color: antiquewhite;
+    width: 60%;
+    height: 80vh;
+    background-color: beige;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 20px;
+    /* box-shadow: 2px 4px rgba(0, 0, 0, 0.192); */
+}
 
+@media only screen and (max-width: 900px) {
+    [class*="container"] {
+        width: 100%;
+        margin: 54px 9%;
+        padding: 20px;
+    }
+}
+
+.heading {
+    /* border: 2px solid green; */
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title {
+    margin: 5px;
+}
+.subtitle {
+    margin: 2px;
+}
+.social-media-container {
+    
+    /* border: 2px solid aqua; */
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+   
+}
+.social-media-login {
+    /* border: 2px solid firebrick; */
+    margin: 5px 2px;
+    width: 200px;
+    height: 45px;
+    border-radius: 15px;
+}
+.divider {
+    /* border: 1px solid royalblue; */
+    padding: 1px;
+    margin-bottom: 5px;
+    margin-top: 0;
+
+}
+.alternate-para {
+    /* border: 2px solid lawngreen; */
+    padding: 10px;
+}
+.login-form-button {
+    /* border: 2px solid rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-form input {
+    
+    border: 2px solid rgb(187, 187, 187);
+    padding: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 2px;
+    color: rgb(39, 39, 39);
+    
+    /* background-color: rgb(247, 243, 243); */
+    border-radius: 15px;
+    width: 400px;
+    height: 54px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 1px 9px;
+    
+}
+.login-form :focus {
+    outline: rgba(98, 131, 98, 0.911) solid 1px;
+    border: none;
+    
+}
+/* .login-form :focus ::placeholder {
+    color: rgba(25, 173, 25, 0.911);
+} */
+.login-options {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-me {
+    width: 132px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.login-button {
+    width: 390px;
+    margin: 10px 2px;
+    background-color: chocolate;
+    border-radius: 10px;
+    height: 51px;
 }
