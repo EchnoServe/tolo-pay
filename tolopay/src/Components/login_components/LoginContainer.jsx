@@ -1,41 +1,36 @@
 import React from 'react'
+import { gray80, primary } from '../../Utils/colors'
 import './LoginContainer.style'
-import {primary}from '../../Utils/colors'
 import { Heading, Title, AlternatePara, Container, 
-    Divider, LoginButton, LoginFormButton, LoginFormInput, 
-    LoginOptions, RememberMe, SocialMediaContainer, SocialMediaLogin, Subtitle } from './LoginContainer.style'
+    Divider, SocialMediaContainer, SocialMediaLogin, Subtitle, Para } from './LoginContainer.style'
+import LoginForm from './LoginForm'
 
+const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif"
 const LoginContainer = () => {
+    
   return (
     <Container>
         <Heading>
-            <Title style={{fontFamily: 'sans-serif', fontSize: 'xx-large', fontWeight: 'bolder'}}>Login</Title>
-            <Subtitle style={{fontFamily: 'sans-serif', fontSize: 'large'}} >Welcome, Let's Log you in to your Acount</Subtitle>
+            <Title style={{color: primary, fontFamily: font, fontSize: 'x-large', fontWeight: 'bolder'}}>
+            Welcome, 
+            </Title>
+            <Subtitle style={{color: gray80, fontFamily: font, fontSize: 'medium'}} >
+            Let's Log you in to your Acount
+            </Subtitle>
         </Heading>
         
         <SocialMediaContainer>
-            <SocialMediaLogin>Sign in with Google</SocialMediaLogin>
-            <SocialMediaLogin>Login with Facebook</SocialMediaLogin>
+            <SocialMediaLogin><Para style={{fontSize: 15}}>Sign in with Google</Para></SocialMediaLogin>
+            <SocialMediaLogin><Para style={{fontSize: 15}}>Login with Facebook</Para></SocialMediaLogin>
         </SocialMediaContainer>
-        <Divider><AlternatePara style={{fontFamily: 'cursive'}}> -- OR --</AlternatePara></Divider>
-        <LoginFormButton>
-            <form className='login-form'>
-                <LoginFormInput type='email' placeholder='Email' />
-                <LoginFormInput type='password' placeholder='Password'/>
-                
-            </form>
-            <LoginOptions>
-                <RememberMe>
-                    <input type={'checkbox'} />
-                    <p>Remember Me</p>
-                </RememberMe>
-                <div className='forgot-password'><a style={{color: primary}}>Forgot Password?</a></div>
-            </LoginOptions>
-            <LoginButton>Login to Your Account</LoginButton>
-        </LoginFormButton>
+        <Divider>
+            <AlternatePara style={{fontFamily: font}}> -- OR -- </AlternatePara>
+        </Divider>
+        
+        <LoginForm />
         
         <div>
-            <p>Don't have Account yet? <a>Create Account Now</a></p>
+            <Para >Don't have Account yet? <a>Create Account Now</a></Para>
         </div>
         
         
