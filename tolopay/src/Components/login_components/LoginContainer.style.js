@@ -39,6 +39,7 @@ export const Container = styled.div`
         width: 100vw;
         margin: 54px 5%;
         padding: 20px;
+        padding-top: 1px;
 
     @media (min-width: 768px){
         width: 60vw;
@@ -49,12 +50,13 @@ export const Container = styled.div`
 `;
 
  export const Heading = styled.div`
- width: 350px;
+    width: 350px;
+    margin-bottom: 6px;
     display: flex;
     flex-direction: column;
-   
+   /* border: 2px solid green; */
     `;
-    /* border: 2px solid green; */
+    
     
 
 export const Title = styled.p`margin: 3px;`;

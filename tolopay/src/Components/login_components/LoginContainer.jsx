@@ -12,7 +12,7 @@ const LoginContainer = () => {
     <Container>
         <Heading>
             <Title style={{color: primary, fontFamily: font, fontSize: 'x-large', fontWeight: 'bolder'}}>
-            Welcome, 
+            Welcome back, 
             </Title>
             <Subtitle style={{color: gray80, fontFamily: font, fontSize: 'medium'}} >
             Let's Log you in to your Acount
