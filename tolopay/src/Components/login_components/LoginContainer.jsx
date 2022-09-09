@@ -1,42 +1,45 @@
 import React from 'react'
-import './login_container.css'
+import './LoginContainer.style'
+import {primary}from '../../Utils/colors'
+import { Heading, Title, AlternatePara, Container, 
+    Divider, LoginButton, LoginFormButton, LoginFormInput, 
+    LoginOptions, RememberMe, SocialMediaContainer, SocialMediaLogin, Subtitle } from './LoginContainer.style'
 
 const LoginContainer = () => {
   return (
-    <div className='container'>
-        <div className='heading'>
-            <p className='title' style={{fontFamily: 'sans-serif', fontSize: 'x-large', fontWeight: 'bolder'}}>Login to Your Acount</p>
-            <p className='subtitle' style={{fontFamily: 'sans-serif', fontSize: 'smaller'}} >Use your Social Media</p>
-        </div>
+    <Container>
+        <Heading>
+            <Title style={{fontFamily: 'sans-serif', fontSize: 'xx-large', fontWeight: 'bolder'}}>Login</Title>
+            <Subtitle style={{fontFamily: 'sans-serif', fontSize: 'large'}} >Welcome, Let's Log you in to your Acount</Subtitle>
+        </Heading>
         
-        
-        <div className='social-media-container'>
-            <button className='social-media-login'>Continue with Google</button>
-            <button className='social-media-login'>Continue with Facebook</button>
-        </div>
-        <div className='divider'><p className='alternate-para' style={{fontFamily: 'cursive'}}> -- OR --</p></div>
-        <div className='login-form-button'>
+        <SocialMediaContainer>
+            <SocialMediaLogin>Sign in with Google</SocialMediaLogin>
+            <SocialMediaLogin>Login with Facebook</SocialMediaLogin>
+        </SocialMediaContainer>
+        <Divider><AlternatePara style={{fontFamily: 'cursive'}}> -- OR --</AlternatePara></Divider>
+        <LoginFormButton>
             <form className='login-form'>
-                <input className='input-form' type='email' placeholder='someone@example.com' />
-                <input className='input-form' type='password' />
+                <LoginFormInput type='email' placeholder='Email' />
+                <LoginFormInput type='password' placeholder='Password'/>
                 
             </form>
-            <div className='login-options'>
-                <div className='remember-me'>
+            <LoginOptions>
+                <RememberMe>
                     <input type={'checkbox'} />
                     <p>Remember Me</p>
-                </div>
-                <div className='forgot-password'><a>Forgot Password?</a></div>
-            </div>
-            <button className='login-button'>Login</button>
-        </div>
+                </RememberMe>
+                <div className='forgot-password'><a style={{color: primary}}>Forgot Password?</a></div>
+            </LoginOptions>
+            <LoginButton>Login to Your Account</LoginButton>
+        </LoginFormButton>
         
         <div>
             <p>Don't have Account yet? <a>Create Account Now</a></p>
         </div>
         
         
-    </div>
+    </Container>
   )
 }
 
