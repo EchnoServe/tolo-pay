@@ -4,6 +4,7 @@ import React from 'react'
 import { primary } from '../../Utils/colors'
 import { Email, LoginButton, LoginFormButton, LoginOptions, Password, Para, Pwarning, Warning } from './LoginContainer.style'
 
+// accepts login input and submit
 const LoginForm = () => {
 
   return <Formik initialValues={{email: '', password: ''}} 
@@ -23,7 +24,7 @@ const LoginForm = () => {
         })
         } >
         {
-          
+      // destructuring props items
           props => {
       const {
         values,
@@ -37,35 +38,37 @@ const LoginForm = () => {
 
       return (
     <LoginFormButton>
-            <form className='login-form' onSubmit={handleSubmit}>
-                
-                <Email name='email' type='email' placeholder='Email' 
-                onChange={handleChange} onBlur={handleBlur} value={values.email}/>
+        <form className='login-form' onSubmit={handleSubmit}>
+            
+          <Email name='email' type='email' placeholder='Email' 
+          onChange={handleChange} onBlur={handleBlur} value={values.email}/>
 
-                <Warning style={{marginBottom: 6}}>{errors.email && touched.email ?
-                  <Pwarning style={{color: 'red'}}>{errors.email}</Pwarning>: ''}
-                </Warning> 
-                
-                <Password name='password' type='password' 
-                placeholder='Password' onChange={handleChange} 
-                onBlur={handleBlur}
-                value={values.password}/>
+        {/* formik email error displayer */}
+          <Warning style={{marginBottom: 6}}>{errors.email && touched.email ?
+            <Pwarning style={{color: 'red'}}>{errors.email}</Pwarning>: ''}
+          </Warning> 
+          
+          <Password name='password' type='password' 
+          placeholder='Password' onChange={handleChange} 
+          onBlur={handleBlur}
+          value={values.password}/>
 
-                <Warning style={{marginBottom: 9}}>{errors.password && touched.password ?
-                  <Pwarning style={{color: 'red'}}>{errors.password}</Pwarning>  : ''}
-                </Warning>
+          <Warning style={{marginBottom: 9}}>{errors.password && touched.password ?
+            <Pwarning style={{color: 'red'}}>{errors.password}</Pwarning>  : ''}
+          </Warning>
 
-            </form>
+        </form>
 
-            <LoginOptions>
-                <div>
-                  <a href='#' style={{color: primary}}>
-                    <Para>Forgot Password?</Para>
-                  </a>
-                </div>
+        <LoginOptions>
+          <div>
+            <a href='#' style={{color: primary}}>
+              <Para>Forgot Password?</Para>
+            </a>
+          </div>
 
-            </LoginOptions>
-            <LoginButton type='submit' disabled={isSubmitting}>Login to Your Account</LoginButton>
+        </LoginOptions>
+
+        <LoginButton type='submit' disabled={isSubmitting}>Login to Your Account</LoginButton>
 
      </LoginFormButton>
     );
