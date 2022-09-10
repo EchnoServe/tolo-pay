@@ -61,7 +61,7 @@ const LoginForm = () => {
 
         <LoginOptions>
           <div>
-            <a href='#' style={{color: primary}}>
+            <a href='' style={{color: primary}}>
               <Para>Forgot Password?</Para>
             </a>
           </div>
