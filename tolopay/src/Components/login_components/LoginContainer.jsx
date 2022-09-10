@@ -6,31 +6,34 @@ import { Heading, Title, AlternatePara, Container,
 import LoginForm from './LoginForm'
 
 const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif"
+
+// Login Box
 const LoginContainer = () => {
     
   return (
     <Container>
         <Heading>
-            <Title style={{color: primary, fontFamily: font, fontSize: 'x-large', fontWeight: 'bolder'}}>
-            Welcome back, 
+            <Title style={{color: primary, fontFamily: font, fontSize: 'xx-large', fontWeight: 'bolder'}}>
+            Welcome Back. 
             </Title>
             <Subtitle style={{color: gray80, fontFamily: font, fontSize: 'medium'}} >
-            Let's Log you in to your Acount
+            Login to your ToloPay Account
             </Subtitle>
         </Heading>
         
         <SocialMediaContainer>
-            <SocialMediaLogin><Para style={{fontSize: 15}}>Sign in with Google</Para></SocialMediaLogin>
-            <SocialMediaLogin><Para style={{fontSize: 15}}>Login with Facebook</Para></SocialMediaLogin>
+            <SocialMediaLogin><Para style={{fontSize: 15}}>Continue with Google</Para></SocialMediaLogin>
+            {/* <SocialMediaLogin><Para style={{fontSize: 15}}>Login with Facebook</Para></SocialMediaLogin> */}
         </SocialMediaContainer>
         <Divider>
-            <AlternatePara style={{fontFamily: font}}> -- OR -- </AlternatePara>
+            <AlternatePara style={{fontFamily: font}}><span>::before OR ::after</span></AlternatePara>
         </Divider>
         
+        {/* login form with a submit button */}
         <LoginForm />
         
         <div>
-            <Para >Don't have Account yet? <a>Create Account Now</a></Para>
+            <Para >Don't have Account yet? <a href='#'>Create Account Now</a></Para>
         </div>
         
         

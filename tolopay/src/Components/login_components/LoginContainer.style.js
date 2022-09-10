@@ -16,7 +16,7 @@ const form = styled.input`
     border-radius: 9px;
     width: 300px;
     height: 42px;
-    margin-top: 6px;
+    margin-top: 2px;
     /* margin-bottom: 6px; */
     padding: 1px 6px;
 
@@ -26,18 +26,18 @@ const form = styled.input`
 }`; 
 
 export const Container = styled.div`
-     height: 80vh;
+     height: 96vh;
      background-color: white;
      display: flex;
      justify-content: center;
      align-items: center;
      flex-direction: column;
      border-radius: 6px;
-     border: 0.2px solid rgba(241,241,241);
+     border: 0.1px solid rgba(244,244,244);
 
      
         width: 100vw;
-        margin: 54px 5%;
+        margin: 6px 5%;
         padding: 20px;
         padding-top: 1px;
 
@@ -46,14 +46,16 @@ export const Container = styled.div`
     } 
     @media (min-width: 1080px){
         width: 33vw;
+        margin-left: 132px;
     }
 `;
 
  export const Heading = styled.div`
-    width: 350px;
-    margin-bottom: 6px;
+    width: 360px;
+    margin-bottom: 9px;
     display: flex;
     flex-direction: column;
+    align-items: center;
    /* border: 2px solid green; */
     `;
     
@@ -72,9 +74,10 @@ export const SocialMediaContainer = styled.div`
 `;
 
 export const SocialMediaLogin = styled.button`
-border: none;
+border: 1px solid ;
+background-color: white;
 margin: 3px 1px;
-width: 180px;
+width: 300px;
 height: 45px;
 border-radius: 6px;`;
     
@@ -88,6 +91,24 @@ margin-top: 0;`;
 export const AlternatePara = styled.p`
 /* border: 2px solid lawngreen; */
 padding: 6px;
+margin-bottom: 15px;
+margin-top: 9px;
+
+&span {
+    position: fixed;
+	display: inline-block;
+	font-size: 1rem;
+}
+
+&span ::before, &span ::after {
+    content: "";
+	position: absolute;
+	top: 50%;
+	width: 80px;
+	height: 2px;
+	background: #BCBFCC;
+	opacity: 35%;
+} 
 `; 
     
 
@@ -101,7 +122,7 @@ export const LoginFormButton = styled.div`
 export const Email = form;
 export const Password = form;
 export const Warning = styled.div`
-    height: 21px;
+    height: 24px;
     padding-left: 15px;
 `;
 
@@ -118,7 +139,7 @@ export const LoginButton = styled.button`
     background-color: ${primary};
     border-radius: 6px;
     border: none;
-    height: 51px;
+    height: 42px;
     color: white;
     font-size: large;
 `;
