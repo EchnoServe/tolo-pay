@@ -13,7 +13,7 @@ import Planning from "./Pages/Planning";
 import Setting from "./Pages/Setting";
 function App() {
   return (
-
+   
     <Router>
       <SideBar>
         <Routes>
@@ -29,9 +29,8 @@ function App() {
       </SideBar>
     </Router>
 
-    <div
     
-
+    
   );
 }
 
