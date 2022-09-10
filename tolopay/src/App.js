@@ -1,28 +1,37 @@
 import "./App.css";
 
+import SideBar from "./Components/Sidebar/SideBar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+
+import Dashboard from "./Pages/Dashboard";
+import Transfer from "./Pages/Transfer";
+import PayBill from "./Pages/PayBill";
+
+import Planning from "./Pages/Planning";
+
+import Setting from "./Pages/Setting";
 function App() {
   return (
+
+    <Router>
+      <SideBar>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/transfer" element={<Transfer />} />
+          <Route path="/paybill" element={<PayBill />} />
+          <Route path="/planning" element={<Planning />} />
+          
+          <Route path="/settings" element={<Setting />} />
+          
+          
+        </Routes>
+      </SideBar>
+    </Router>
+
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        backgroundColor: "#46833C",
-        color: "#fff",
-        gap: "3rem",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "10rem",
-        }}
-      >
-        Tolo-pay
-      </h1>
-      <p>Pay Anything Anywhere Easily</p>
-    </div>
+    
+
   );
 }
 
