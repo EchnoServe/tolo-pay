@@ -7,12 +7,12 @@ import { LoginPageComponent} from './LoginPage.style'
 export default class LoginPage extends Component {
   render() {
     return (
-      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      // <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <LoginPageComponent>
           <LoginContainer />
-          <LoginHeading />
+          
         </LoginPageComponent>
-      </div>
+      // </div>
       
     )
   }

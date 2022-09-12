@@ -5,7 +5,7 @@ export const LoginPageComponent  = styled.div`
     align-items: center;
     background-color: #fcfff7;
     border: 2px solid orange;
-    width: 90%;
+    // width: 90%;
     margin: 5px;
     
     @media (max-width: 1080px) {
