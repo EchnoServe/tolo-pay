@@ -13,7 +13,7 @@ const form = styled.input`
     color: rgb(39, 39, 39);
 
     /* background-color: rgb(247, 243, 243); */
-    border-radius: 9px;
+    border-radius: 3px;
     width: 300px;
     height: 42px;
     margin-top: 2px;
@@ -45,8 +45,7 @@ export const Container = styled.div`
         width: 60vw;
     } 
     @media (min-width: 1080px){
-        width: 33vw;
-        margin-left: 132px;
+        width: 80%;
     }
 `;
 
@@ -59,9 +58,6 @@ export const Container = styled.div`
    /* border: 2px solid green; */
     `;
     
-    
-
-export const Title = styled.p`margin: 3px;`;
 export const Subtitle = styled.p`margin: 1px;`;
 export const SocialMediaContainer = styled.div`
     /* border: 2px solid aqua; */

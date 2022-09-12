@@ -1,7 +1,7 @@
 import React from 'react'
-import { gray80, primary } from '../../Utils/colors'
+import { gray80 } from '../../Utils/colors'
 import './LoginContainer.style'
-import { Heading, Title, AlternatePara, Container, 
+import { Heading, AlternatePara, Container, 
     Divider, SocialMediaContainer, SocialMediaLogin, Subtitle, Para } from './LoginContainer.style'
 import LoginForm from './LoginForm'
 
@@ -13,11 +13,8 @@ const LoginContainer = () => {
   return (
     <Container>
         <Heading>
-            <Title style={{color: primary, fontFamily: font, fontSize: 'xx-large', fontWeight: 'bolder'}}>
-            Welcome Back. 
-            </Title>
             <Subtitle style={{color: gray80, fontFamily: font, fontSize: 'medium'}} >
-            Login to your ToloPay Account
+            Login
             </Subtitle>
         </Heading>
         
