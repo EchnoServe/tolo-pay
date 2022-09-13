@@ -1,8 +1,8 @@
 import "./App.css";
+import LoginPage from "./Pages/login_page/LoginPage";
 
 function App() {
-  return (
-    <div
+  return (<div
       style={{
         display: "flex",
         flexDirection: "column",
