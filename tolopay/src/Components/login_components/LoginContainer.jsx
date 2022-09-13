@@ -15,35 +15,35 @@ const LoginContainer = () => {
   return (
     <Container>
         <Heading>
-            <Subtitle style={{fontFamily: font, color: gray80, fontSize: 'x-large', fontWeight: 'lighter', marginBottom: 15}} >Login</Subtitle>
-            <div style={{display: 'flex', justifyContent: 'flex-start', width: 300}}>
-                {/* <Subtitle style={{color: gray80, fontFamily: font, fontSize: 'medium'}} >
+            
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', width: 300, marginBottom: 15}}>
+                <Subtitle style={{fontFamily: font, color: '#46833c', fontSize: 'x-large', fontWeight: 'lighter' }} >
                 Login
-                </Subtitle> */}
+                </Subtitle>
+                <Subtitle style={{color: gray80, fontFamily: font, fontSize: 'medium'}} >
+                Enter your email and password
+                </Subtitle>
             </div>
+
         </Heading>
-        
-        <SocialMediaContainer>
-            <SocialMediaLogin>
-            <FcGoogle style={{marginLeft: 9, fontSize: 27, backgroundColor: 'white', borderRadius: 3}}/>
-            <Para style={{fontSize: 15, fontWeight: 'bold', marginLeft: 57}}>Continue with Google</Para>
-            </SocialMediaLogin>
-            <SocialMediaLogin>
-            <FaFacebook style={{marginLeft: 9, fontSize: 27, color: '#3b5998', backgroundColor: 'white', borderRadius: 27}}/>
-            <Para style={{fontSize: 15, fontWeight: 'bold' ,marginLeft: 57}}>Continue with Facebook</Para>
-            </SocialMediaLogin>
-        </SocialMediaContainer>
+
+        {/* login form with a submit button */}
+        <LoginForm />
+
         <Divider>
             <AlternatePara style={{fontFamily: font, color: '#333333'}}> OR </AlternatePara>
         </Divider>
         
-        {/* login form with a submit button */}
-        <LoginForm />
-        
-        <div>
-            <Para >Don't have Account yet? <a href=''>Create Account Now</a></Para>
-        </div>
-        
+        <SocialMediaContainer>
+            <SocialMediaLogin>
+            <FcGoogle style={{marginLeft: 9, fontSize: 27, backgroundColor: 'white', borderRadius: 3}}/>
+            <Para style={{fontSize: 15, fontWeight: 'bold', marginLeft: 57}}>Signin with Google</Para>
+            </SocialMediaLogin>
+            <SocialMediaLogin>
+            <FaFacebook style={{marginLeft: 9, fontSize: 27, color: '#3b5998', backgroundColor: 'white', borderRadius: 27}}/>
+            <Para style={{fontSize: 15, fontWeight: 'bold' ,marginLeft: 57}}>Login with Facebook</Para>
+            </SocialMediaLogin>
+        </SocialMediaContainer>
         
     </Container>
   )

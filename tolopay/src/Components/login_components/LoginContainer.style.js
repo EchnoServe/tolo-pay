@@ -36,7 +36,7 @@ const form = styled.input`
 }`; 
 
 export const Container = styled.div`
-     height: 84vh;
+     height: 72vh;
      background-color: white;
      display: flex;
      justify-content: center;
@@ -47,7 +47,7 @@ export const Container = styled.div`
 
      
         width: 400px;
-        // margin: 6px 5%;
+        margin: 3px;
         padding: 20px;
         padding-top: 1px;
 
@@ -76,9 +76,9 @@ export const SocialMediaContainer = styled.div`
     justify-content: center;
     align-items: center;
     width: 360px;
-    padding: 6px;
+    padding: 1px;
     margin-bottom: 0px;
-    margin-top: 6px;
+    margin-top: 1px;
 `;
 
 export const SocialMediaLogin = styled.div`
@@ -87,7 +87,7 @@ justify-content: first baseline;
 align-items: center;
 border: 0.5px solid #46833ca9;
 background-color: white;
-margin: 6px 1px;
+margin: 4.2px 1px;
 width: 300px;
 height: 45px;
 border-radius: 6px;
@@ -113,9 +113,7 @@ align-items: center;
 height: 45px;
 width: 100%;
 // border: 1px solid royalblue;
-padding: 1px;
-margin-bottom: 3px;
-margin-top: 0;`;
+padding: 1px;`;
     
 export const AlternatePara = styled.span`
 /* border: 2px solid lawngreen; */
@@ -168,7 +166,7 @@ export const LoginOptions = styled.div`
 export const LoginButton = styled.button`
     width: 300px;
     margin: 9px 3px;
-    background-color: #46833C;
+    background-color: #739e6c;
     border-radius: 6px;
     border: none;
     height: 42px;
@@ -178,7 +176,7 @@ export const LoginButton = styled.button`
     cursor: pointer;
 
     &:hover {
-        outline: #46833C solid 1px;
+        outline: #739e6c solid 1px;
         border-radius: 3px;
         font-size: 17px;
     }
