@@ -1,7 +1,17 @@
 import styled from 'styled-components'
-import { primary } from '../../Utils/colors'
 
 const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif";
+
+export const Para = styled.p`
+    font-size: small;
+    font-family: ${font};
+`;
+export const Pwarning = styled.p`
+    font-size: small;
+    font-family: ${font};
+    color: red;
+
+`;
 
 const form = styled.input`
     border: 1px solid rgb(187, 187, 187);
@@ -26,7 +36,7 @@ const form = styled.input`
 }`; 
 
 export const Container = styled.div`
-     height: 96vh;
+     height: 84vh;
      background-color: white;
      display: flex;
      justify-content: center;
@@ -36,22 +46,22 @@ export const Container = styled.div`
      border: 0.1px solid rgba(244,244,244);
 
      
-        width: 100vw;
-        margin: 6px 5%;
+        width: 400px;
+        // margin: 6px 5%;
         padding: 20px;
         padding-top: 1px;
 
-    @media (min-width: 768px){
-        width: 60vw;
-    } 
-    @media (min-width: 1080px){
-        width: 80%;
-    }
+    // @media (min-width: 768px){
+    //     width: 60vw;
+    // } 
+    // @media (min-width: 1080px){
+    //     width: 80%;
+    // }
 `;
 
  export const Heading = styled.div`
     width: 360px;
-    margin-bottom: 9px;
+    margin-bottom: 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,51 +70,77 @@ export const Container = styled.div`
     
 export const Subtitle = styled.p`margin: 1px;`;
 export const SocialMediaContainer = styled.div`
-    /* border: 2px solid aqua; */
+    
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 360px;
     padding: 6px;
     margin-bottom: 0px;
     margin-top: 6px;
 `;
 
-export const SocialMediaLogin = styled.button`
-border: 1px solid ;
+export const SocialMediaLogin = styled.div`
+display: flex;
+justify-content: first baseline;
+align-items: center;
+border: 0.5px solid #46833ca9;
 background-color: white;
-margin: 3px 1px;
+margin: 6px 1px;
 width: 300px;
 height: 45px;
-border-radius: 6px;`;
+border-radius: 6px;
+cursor: pointer;
+
+${Para} {
+    color: #46833c;
+}
+
+&:hover {
+background-color: #739e6c;
+}
+&:hover ${Para} {
+    color: white;
+}
+`;
     
 
 export const Divider = styled.div`
-/* border: 1px solid royalblue; */
+display: flex;
+justify-content: center;
+align-items: center;
+height: 45px;
+width: 100%;
+// border: 1px solid royalblue;
 padding: 1px;
 margin-bottom: 3px;
 margin-top: 0;`;
     
-export const AlternatePara = styled.p`
+export const AlternatePara = styled.span`
 /* border: 2px solid lawngreen; */
 padding: 6px;
 margin-bottom: 15px;
 margin-top: 9px;
+position: fixed;
+display: inline-block;
+font-size: 1rem;
 
-&span {
-    position: fixed;
-	display: inline-block;
-	font-size: 1rem;
-}
-
-&span ::before, &span ::after {
-    content: "";
-	position: absolute;
-	top: 50%;
-	width: 80px;
-	height: 2px;
-	background: #BCBFCC;
-	opacity: 35%;
+&::before, &::after {
+    border-top: 1px solid #ccc;
+         content: '';
+         display: block;
+         position: absolute;
+         top: 0.9em;
+         width: 111px;
+         margin: 3px 9px;
 } 
+&:before {
+    right: 75%;
+ }
+ &:after {
+    left: 75%;
+ }
 `; 
     
 
@@ -118,8 +154,8 @@ export const LoginFormButton = styled.div`
 export const Email = form;
 export const Password = form;
 export const Warning = styled.div`
-    height: 24px;
-    padding-left: 15px;
+    height: 18px;
+    padding-left: 9px;
 `;
 
 
@@ -132,20 +168,19 @@ export const LoginOptions = styled.div`
 export const LoginButton = styled.button`
     width: 300px;
     margin: 9px 3px;
-    background-color: ${primary};
+    background-color: #46833C;
     border-radius: 6px;
     border: none;
     height: 42px;
     color: white;
-    font-size: large;
-`;
-export const Para = styled.p`
-    font-size: small;
+    font-size: medium;
     font-family: ${font};
-`;
-export const Pwarning = styled.p`
-    font-size: small;
-    font-family: ${font};
-    color: red;
+    cursor: pointer;
 
+    &:hover {
+        outline: #46833C solid 1px;
+        border-radius: 3px;
+        font-size: 17px;
+    }
 `;
+

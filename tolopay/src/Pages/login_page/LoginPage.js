@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import LoginContainer from '../../Components/login_components/LoginContainer'
-import LoginHeading from '../../Components/login_heading/LoginHeading'
-import { black } from '../../Utils/colors'
-import { LoginPageComponent} from './LoginPage.style'
+import { LoginPageComponent, Logo} from './LoginPage.style'
+import logo from '../../Assets/tolopayLogo.png'
 
 export default class LoginPage extends Component {
   render() {
     return (
-      // <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <LoginPageComponent>
-          <LoginContainer />
+        <Logo>
+            <img src={logo} alt="tolopay logo" style={{width: 60, height: 60, padding: 2}}/>
+        </Logo>
+        <LoginContainer />
           
         </LoginPageComponent>
-      // </div>
       
     )
   }
