@@ -1,7 +1,5 @@
 # Getting Started with ToloPay
 
-## Available Scripts
-
 In the tolopay directory, you can run:
 
 ### `npm install`
