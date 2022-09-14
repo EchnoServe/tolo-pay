@@ -1,4 +1,4 @@
-export const primary = "#46833C";
+export const primary = "#46833D";
 export const surface = "#a9cfa8";
 export const black = "#1D1F22";
 export const gray = "#f1f2f7";
