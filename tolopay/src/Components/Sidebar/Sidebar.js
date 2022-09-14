@@ -16,7 +16,7 @@ import {
     SToggleThumb,
 } from "./styles";
 
-import { logoSVG } from "../../assets";
+import { logoSVG } from "../../Assets";
 import { BiTransferAlt } from "react-icons/bi";
 import {SiSamsungpay} from "react-icons/si"
 import {
