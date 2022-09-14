@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { v } from "../../styles/variables";
+import { v } from "../../Utils/variables";
 
 export const SLayout = styled.div`
     display: flex;

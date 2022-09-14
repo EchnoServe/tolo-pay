@@ -18,7 +18,8 @@ import {
 
 import { logoSVG } from "../../Assets";
 import { BiTransferAlt } from "react-icons/bi";
-import {SiSamsungpay} from "react-icons/si"
+import { SiSamsungpay } from "react-icons/si";
+import {MdShoppingCart} from "react-icons/md"
 import {
     
     
@@ -96,6 +97,12 @@ const linksArray = [
     {
         label: "PayBill",
         icon: <SiSamsungpay />,
+        to: "/paybill",
+        notification: 0,
+    },
+    {
+        label: "Planning",
+        icon: <MdShoppingCart />,
         to: "/paybill",
         notification: 0,
     },

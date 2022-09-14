@@ -1,14 +1,15 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+// import { Route, Switch } from "react-router-dom";
+import { Route,  BrowserRouter as Routes } from 'react-router-dom'  
 
 import Dashboaard from "./Pages/Dashboaard";
 import Transfer from "./Pages/Transfer";
 import Setting from "./Pages/Setting";
 import PayBill from "./Pages/PayBill";
 
-const Routes = () => {
+const RoutesPath = () => {
     return (
-        <Switch>
+        <Routes>
             <Route exact path="/">
                 <Dashboaard />
             </Route>
@@ -21,8 +22,8 @@ const Routes = () => {
             <Route exact path="/setting">
                 <Setting />
             </Route>
-        </Switch>
+        </Routes>
     );
 };
 
-export default Routes;
+export default RoutesPath;

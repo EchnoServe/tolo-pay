@@ -1,40 +1,25 @@
-import "./App.css";
-// import LoginPage from "./Pages/login_page/LoginPage";
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { ThemeProvider } from "styled-components";
 import Layout from "./Components/Layout/Layout";
-import Routes from "./Routes";
-import { GlobalStyle } from "./styles/globalStyles";
-import { darkTheme, lightTheme } from "./styles/theme";
+import Dashboaard from "./Pages/Dashboaard";
+import Transfer from "./Pages/Transfer";
+import Setting from "./Pages/Setting";
+import PayBill from "./Pages/PayBill";
+// // import RoutesPath from "./RoutesPath";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { GlobalStyle } from "./Utils/globalStyles";
+import { darkTheme, lightTheme } from "./Utils/theme";
+
 
 export const ThemeContext = React.createContext(null);
-function App() {
-  const [theme, setTheme] = useState("light");
+
+const App = () => {
+    const [theme, setTheme] = useState("light");
     const themeStyle = theme === "light" ? lightTheme : darkTheme;
-  return (
-    // <div
-    //   style={{
-    //     display: "flex",
-    //     flexDirection: "column",
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    //     height: "100vh",
-    //     backgroundColor: "#46833C",
-    //     color: "#fff",
-    //     gap: "3rem",
-    //   }}
-    // >
-    //   <h1
-    //     style={{
-    //       fontSize: "10rem",
-    //     }}
-    //   >
-    //     Tolo-pay
-    //   </h1>
-    //   <p>Pay Anything Anywhere Easily</p>
-    // </div>
-     <ThemeContext.Provider value={{ setTheme, theme }}>
+
+    return (
+        <ThemeContext.Provider value={{ setTheme, theme }}>
             <ThemeProvider theme={themeStyle}>
                 <GlobalStyle />
                 <Helmet>
@@ -47,13 +32,35 @@ function App() {
                     />
                 </Helmet>
                 <>
-                    <Layout>
-                        <Routes />
-                    </Layout>
+                    {/* <Layout>
+                        <RoutesPath />
+                    </Layout> */}
+            
+                              <Router>
+                                      <Layout>
+                                        <Routes>
+                                          <Route path="/" element={<Dashboaard />} />
+                                          <Route path="/transfer" element={<Transfer />} />
+                                          <Route path="/paybill" element={<PayBill />} />
+                                          
+                                          
+                                          <Route path="/settings" element={<Setting />} />
+                                          
+                                          
+                                        </Routes>
+                                      </Layout>  
+                            </Router>
+
                 </>
             </ThemeProvider>
         </ThemeContext.Provider>
-  );
-}
+
+      
+      
+      
+      
+     
+    );
+};
 
 export default App;
