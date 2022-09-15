@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "email-validator": "^2.0.4",
     "formik": "^2.2.9",
+    
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",

@@ -67,7 +67,7 @@ const Sidebar = () => {
                     </SLink>
                 </SLinkContainer>
             ))}
-            
+            <SDivider />
             <STheme>
                 {sidebarOpen && <SThemeLabel>Dark Mode</SThemeLabel>}
                 <SThemeToggler
@@ -103,7 +103,7 @@ const linksArray = [
     {
         label: "Planning",
         icon: <MdShoppingCart />,
-        to: "/paybill",
+        to: "/planning",
         notification: 0,
     },
     {

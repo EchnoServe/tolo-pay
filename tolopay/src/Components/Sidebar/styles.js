@@ -4,30 +4,48 @@ import styled from "styled-components";
 import { btnReset, v } from "../../Utils/variables";
 
 export const SSidebar = styled.div`
-    width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
+     width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
+   
     background: ${({ theme }) => theme.bg};
     height: 100vh;
     padding: ${v.lgSpacing};
 
     position: relative;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   
+    @media(max-width: 440px){
+        
+        left: ${({ isOpen }) => (!isOpen ? `-110px` : 'auto')};
+    }
+   
+
+    
 `;
 
 export const SSidebarButton = styled.button`
     ${btnReset};
     position: absolute;
     top: ${v.xxlSpacing};
-    right: ${({ isOpen }) => (isOpen ? `-16px` : `-40px`)};
-    width: 32px;
-    height: 32px;
+    right: ${({ isOpen }) => (isOpen ? `-16px` : `-25px`)};
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: ${({ theme }) => theme.bg};
     box-shadow: 0 0 4px ${({ theme }) => theme.bg3}, 0 0 7px ${({ theme }) => theme.bg};
     display: flex;
+    font-size: 28px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 
     transform: ${({ isOpen }) => (!isOpen ? `rotate(180deg)` : `initial`)};
+    @media(max-width: 440px){
+        width: 60px;
+        height: 60px;
+        top: ${v.xlSpacing};
+        right: ${({ isOpen }) => (isOpen ? `-16px` : `-65px`)};
+        font-size: 40px;
+    }
 `;
 
 export const SLogo = styled.div`
@@ -38,7 +56,7 @@ export const SLogo = styled.div`
         height: auto;
     }
     cursor: pointer;
-
+    
     margin-bottom: ${v.lgSpacing};
 `;
 
@@ -61,6 +79,7 @@ export const SLinkContainer = styled.div`
     :hover {
         box-shadow: inset 0 0 0 1px ${({ theme }) => theme.bg3};
     }
+   
 `;
 
 export const SLink = styled(Link)`
@@ -70,6 +89,7 @@ export const SLink = styled(Link)`
     color: inherit;
     font-size: 16px;
     padding: calc(${v.smSpacing} - 2px) 0;
+    margin-top: ${v.xxlSpacing};
 `;
 
 export const SLinkIcon = styled.div`
@@ -112,10 +132,11 @@ export const SThemeToggler = styled.button`
 `;
 
 export const SToggleThumb = styled.div`
-    height: 18px;
-    width: 18px;
+    height: 20px;
+    width: 20px;
     position: absolute;
     top: 1px;
+    
     bottom: 1px;
     transition: 0.2s ease right;
     right: calc(100% - 18px - 1px);

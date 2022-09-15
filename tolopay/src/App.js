@@ -6,7 +6,9 @@ import Dashboaard from "./Pages/Dashboaard";
 import Transfer from "./Pages/Transfer";
 import Setting from "./Pages/Setting";
 import PayBill from "./Pages/PayBill";
-// // import RoutesPath from "./RoutesPath";
+import Planning from "./Pages/Planning";
+import Navbar from "./Components/Navbar/Navbar";
+// import RoutesPath from "./RoutesPath";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { GlobalStyle } from "./Utils/globalStyles";
 import { darkTheme, lightTheme } from "./Utils/theme";
@@ -23,7 +25,7 @@ const App = () => {
             <ThemeProvider theme={themeStyle}>
                 <GlobalStyle />
                 <Helmet>
-                    <title>Sidebar - Code Focus</title>
+                    <title>tolopay</title>
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
                     <link
@@ -36,14 +38,17 @@ const App = () => {
                         <RoutesPath />
                     </Layout> */}
             
-                              <Router>
-                                      <Layout>
+                    <Router>
+                        
+                        <Layout>
+                            <Navbar />
+                            
                                         <Routes>
                                           <Route path="/" element={<Dashboaard />} />
                                           <Route path="/transfer" element={<Transfer />} />
                                           <Route path="/paybill" element={<PayBill />} />
                                           
-                                          
+                                          <Route path="/planning"element={<Planning />} />
                                           <Route path="/settings" element={<Setting />} />
                                           
                                           
