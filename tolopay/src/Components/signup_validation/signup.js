@@ -1,4 +1,5 @@
 import "./App.css";
+import Modal from "./Components/Modal";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import styled from "styled-components";
@@ -50,7 +51,9 @@ width: 250px;
     padding-left: 10px;
     margin-top: 10px;
 `
-function signup() {
+function App() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -99,7 +102,7 @@ function signup() {
                 className={`form-control ${errors.phone && "invalid"}`}
                 {...register("phone", { required: "Phone  number is Required",
                 pattern: {
-                  value: /^\s*(?:\+?(\d[2519]))[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
+                  value: /^\s*(?:\+?(\d[09]))[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{2})(?: *x(\d+))?\s*$/,
                   message: "Invalid phone no",
                 },
                })}
@@ -145,7 +148,16 @@ function signup() {
       
 
           </form>
+          <Button
+        className="openModalBtn"
+        onClick={() => {
+          setModalOpen(true);
+        }}
+      >
+        pop up dialog
+      </Button>
 
+      {modalOpen && <Modal setOpenModal={setModalOpen} />}
 
         </Inputs>
       </Form>
@@ -153,4 +165,4 @@ function signup() {
   );
 }
 
-export default signup;
+export default App;
