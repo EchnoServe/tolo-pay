@@ -1,5 +1,3 @@
-import "./App.css";
-import Modal from "./Components/Modal";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import styled from "styled-components";
@@ -148,16 +146,6 @@ function App() {
       
 
           </form>
-          <Button
-        className="openModalBtn"
-        onClick={() => {
-          setModalOpen(true);
-        }}
-      >
-        pop up dialog
-      </Button>
-
-      {modalOpen && <Modal setOpenModal={setModalOpen} />}
 
         </Inputs>
       </Form>
