@@ -4,8 +4,8 @@
   position: sticky;
   position: -webkit-sticky;
   top: 0;
+  z-index: -10px;
   
-  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
   
 }
 /* Style the navigation bar links */
@@ -30,10 +30,10 @@
 /* Right-aligned link */
 .navbar a.right {
   float: right;
-  padding: 10px;
-  color:#02ba4b
+  padding: 20px;
+  color:#02ba4b;
 }
-/* .user{
+.user{
  width: 50px;
   height: 50px;
   border-radius: 50px;
@@ -41,4 +41,22 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-} */
+  overflow: visible;
+}
+.logos img{
+  width: 70px;
+  height: 50px;
+}
+.navbar a.logos{
+  margin-left: 300px;
+}
+@media (max-width: 450px){
+  .navbar a.logos{
+  margin-left: 10px;
+}
+}
+@media (max-width: 1000px){
+  .navbar a.logos{
+  margin-left: 20px;
+}
+}

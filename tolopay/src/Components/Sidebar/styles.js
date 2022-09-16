@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { btnReset, v } from "../../Utils/variables";
 
 export const SSidebar = styled.div`
-    margin-top: -70px;
+    margin-top: -85px;
     z-index: 1000;
      width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
    
@@ -18,6 +18,7 @@ export const SSidebar = styled.div`
     @media(max-width: 776px){
         display: none;
         left: ${({ isOpen }) => (!isOpen ? `-110px` : 'auto')};
+        
     }
    
 

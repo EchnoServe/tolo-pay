@@ -1,6 +1,8 @@
 import React from 'react'
-import { FaUserAlt } from "react-icons/fa"
+// import { FaUserAlt } from "react-icons/fa"
 import { BsBellFill } from "react-icons/bs"
+import { tologoSVG } from "../../Assets";
+import Profile from "../ProfileComponent/Profile"
 // import Profile from "../ProfileComponent/Profile"
 // <BsBellFill />
 // <FaUserAlt />
@@ -12,14 +14,15 @@ function Navbar() {
          <div class="navbar">
             
          <a href="#logo" class="logos">
-               here
+              <img src={tologoSVG} alt="logo" />
                
             </a>
    
-         <a href="#profile" class="right user">
+         <a href="#profile" class="right">
             
             <icon>
-               <FaUserAlt />
+                  
+                  
                </icon>
                
             
@@ -30,6 +33,7 @@ function Navbar() {
             
          
          </div>
+         <Profile />
          
       </>
       
