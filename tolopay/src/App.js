@@ -12,6 +12,8 @@ import Navbar from "./Components/Navbar/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { GlobalStyle } from "./Utils/globalStyles";
 import { darkTheme, lightTheme } from "./Utils/theme";
+import BottomNavbar from "./Components/BottomNav/BottomNavbar";
+
 
 
 export const ThemeContext = React.createContext(null);
@@ -39,9 +41,9 @@ const App = () => {
                     </Layout> */}
             
                     <Router>
-                        
+                        <Navbar />
                         <Layout>
-                            <Navbar />
+                            
                             
                                         <Routes>
                                           <Route path="/" element={<Dashboaard />} />
@@ -53,7 +55,9 @@ const App = () => {
                                           
                                           
                                         </Routes>
-                                      </Layout>  
+                        </Layout>  
+                        
+                        <BottomNavbar />
                             </Router>
 
                 </>
