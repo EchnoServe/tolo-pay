@@ -4,8 +4,9 @@ import UserStatus from '../../Components/userStatus/UserStatus'
 
 const UserProfile = () => {
   return (
-    <div>
+    <div style={{display: "flex", flexDirection: "column", justifyContent: 'center', alignItems: 'center'}}>
         <UserInfo />
+        <div style={{borderTop: '1px solid #90909060' , width: 999}}></div>
         <UserStatus />
     </div>
   )
