@@ -118,7 +118,7 @@ text-align:center;
 function Budget() {
   return (
    <MainContainer>
-    <AddButton><Button><big><b>+ </b></big>Add new budget</Button></AddButton>
+    <AddButton><Button><big><b>+ </b></big>Add a New Budget</Button></AddButton>
 <Container>
 
   <Card>
