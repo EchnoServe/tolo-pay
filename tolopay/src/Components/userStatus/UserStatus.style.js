@@ -7,19 +7,6 @@ export const UserStatusContainer = styled.div`
     margin-top: 42px;
 `;
 
-export const KeyAndValue = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%; 
-    height: 60px;
-    /* border: 1px solid orange; */
-    padding: 5px;
-
-    @media (min-width: 762px){
-        height: 99px;
-    }
-`;
 
 export const Key = styled.p`
     border-bottom: 1px solid #3f3e3e30;
@@ -44,4 +31,24 @@ export const Value = styled.p`
     padding-left: 9px;
     width: 111px;
     height: 100%;
+`;
+
+export const KeyAndValue = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; 
+    height: 60px;
+    /* border: 1px solid orange; */
+    padding: 5px;
+
+    &:hover ${Key},&:hover ${Value} {
+        border-color: #3f3e3e60;
+        font-size: 24px;
+        font-weight: 493;
+    }
+
+    @media (min-width: 762px){
+        height: 99px;
+    }
 `;
