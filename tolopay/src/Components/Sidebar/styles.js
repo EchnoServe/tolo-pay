@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { btnReset, v } from "../../Utils/variables";
 
 export const SSidebar = styled.div`
-    margin-top: -85px;
+    margin-top: -90px;
     z-index: 1000;
      width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
    
@@ -78,7 +78,7 @@ export const SDivider = styled.div`
 export const SLinkContainer = styled.div`
     background: ${({ theme, isActive }) => (!isActive ? `transparent` : theme.bg3)};
     border-radius: ${v.borderRadius};
-    margin: 8px 0;
+    margin: 4px 0;
 
     :hover {
         box-shadow: inset 0 0 0 1px ${({ theme }) => theme.bg3};
@@ -103,6 +103,10 @@ export const SLinkIcon = styled.div`
 
     svg {
         font-size: 30px;
+        
+    }
+    Icon{
+        stroke-width: 3px;
     }
 `;
 
