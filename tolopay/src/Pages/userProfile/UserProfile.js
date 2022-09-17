@@ -10,13 +10,23 @@ const UserProfile = () => {
         changeEditState(value);
     }
 
-  return (
-    <div style={{display: "flex", flexDirection: "column", justifyContent: 'center', alignItems: 'center'}}>
-        { editState === false ? 
-        <UserInfo  onChange={handleChange} /> 
-        : <EditUserInfo  onChange={handleChange}/>}
-        <div style={{borderTop: '1px solid #90909060' , width: 900}}></div>
-        <UserStatus />
+  return (<div>
+    {
+      editState === false ?
+      <div style={{display: "flex", flexDirection: "column", justifyContent: 'center', alignItems: 'center'}}>
+          
+          <UserInfo editState={editState} onChange={handleChange} /> 
+          
+          <div style={{borderTop: '1px solid #90909060' , width: 900}}></div>
+          
+          <UserStatus />
+
+      </div>   
+      :
+      <div style={{display: "flex", justifyContent: 'center', alignItems: 'center'}}>
+        <EditUserInfo editState={editState} onChange={handleChange}/> 
+      </div>
+    }
     </div>
   )
 }

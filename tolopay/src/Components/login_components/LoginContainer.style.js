@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { FormStyle } from '../commonStyles';
 
 const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif";
 
@@ -11,29 +12,7 @@ export const Pwarning = styled.p`
     font-family: ${font};
     color: red;
 
-`;
-
-const form = styled.input`
-    border: 1px solid rgb(187, 187, 187);
-    padding: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1px 6px;
-    color: rgb(39, 39, 39);
-
-    /* background-color: rgb(247, 243, 243); */
-    border-radius: 3px;
-    width: 300px;
-    height: 42px;
-    margin-top: 2px;
-    /* margin-bottom: 6px; */
-    padding: 1px 6px;
-
-    &:focus {
-    outline: rgba(98, 131, 98, 0.911) solid 1px;
-    border: none;
-}`; 
+`; 
 
 export const Container = styled.div`
      height: 84vh;
@@ -151,8 +130,8 @@ export const LoginFormButton = styled.div`
     align-items: center;
     `;
 
-export const Email = form;
-export const Password = form;
+export const Email = FormStyle;
+export const Password = FormStyle;
 export const Warning = styled.div`
     height: 18px;
     padding-left: 9px;
