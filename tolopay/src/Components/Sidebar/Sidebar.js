@@ -54,7 +54,7 @@ const Sidebar = () => {
             </SLogo>
             
             <SDivider />
-            {linksArray.map(({ icon, label, notification, to }) => (
+            {linksArray.map(({ icon, label, to }) => (
                 <SLinkContainer key={label} isActive={pathname === to}>
                     <SLink to={to} style={!sidebarOpen ? { width: `fit-content` } : {}}>
                         <SLinkIcon>{icon}</SLinkIcon>
@@ -86,31 +86,31 @@ const linksArray = [
         label: "Dashboard",
         icon: <AiFillHome />,
         to: "/",
-        notification: 0,
+        
     },
     {
         label: "Transfer",
         icon: <BiTransferAlt />,
         to: "/transfer",
-        notification: 0,
+        
     },
     {
         label: "PayBill",
         icon: <SiSamsungpay />,
         to: "/paybill",
-        notification: 0,
+        
     },
     {
         label: "Planning",
         icon: <MdShoppingCart />,
         to: "/planning",
-        notification: 0,
+        
     },
     {
         label: "Setting",
         icon: <AiFillSetting />,
         to: "/setting",
-        notification: 0,
+        
     },
 ];
 
