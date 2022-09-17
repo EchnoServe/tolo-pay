@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { EditProfilePic } from './EditUserInfo.style';
 
 export const UserInfoContainer = styled.div`
     display: flex;
@@ -16,17 +17,28 @@ export const UserInfoContainer = styled.div`
     }
     @media (min-width: 500px){
         width: 90%;
-        ;
     }
 `;
 
 export const ProfilePic = styled.div`
     border: 1px solid gray;
-    background-color: green;
+    background-color: lightgreen;
     border-radius: 50%;
     width: 99px;
     height: 99px;
     margin: 5;
+
+    &:hover {
+        cursor: pointer;
+        ${EditProfilePic}{
+            background-color: #f4fdf4;
+            border: none;
+            outline: #3F3E3E80 solid 1px;
+        }
+        ${EditProfilePic} p {
+            font-weight: bold;
+        }
+    }
 
     @media (min-width: 762px){
         width: 150px;
@@ -34,6 +46,7 @@ export const ProfilePic = styled.div`
     }
 `;
 export const UserInfoItems = styled.div`
+    border: 1px solid red;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -43,6 +56,7 @@ export const UserInfoItems = styled.div`
 `;
 
 export const UserInfoContents = styled.div`
+border: 1px solid blue;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,10 +141,18 @@ export const EditProfileButton = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid gray;
+    border: 1px solid ${ (props) => (props.borderColor ? props.borderColor  : "transparent" )};
     border-radius: 6px;
     width: 99px;
     height: 30px;
     padding: 6px;
+    margin: 3px;
+    cursor: pointer;
+
+    &:hover {
+        border: none;
+        outline: ${(props) => (props.outlineColor ? props.outlineColor : "#3F3E3E80")} solid 1px;
+        background-color: ${(props) => (props.outlineColor ? props.outlineColor : "#90909010")};
+    }
 `;
 
