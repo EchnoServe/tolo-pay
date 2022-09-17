@@ -1,5 +1,40 @@
 import styled from "styled-components";
-import { UserInfoItems } from "./UserInfo.style";
+
+export const EditInfoContainer
+ = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96%;
+    height: 50%;
+    // border: 1px solid olive;
+    margin: 5px;
+    padding: 15px;
+
+    @media (min-width: 700px) {
+        width: 81%;
+        
+    }
+    @media (min-width: 500px){
+        width: 90%;
+    }
+`;
+
+export const KeyandValueInEdit = styled.div`
+    display: flex;
+    align-items: center; 
+    width: 350px; 
+    height: 30px; 
+`;
+export const KeyInEdit = styled.p`
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 121px;
+    height: 30px;
+    font-size: 12px;
+    padding-bottom: 2px;
+`;
 
 export const EditProfilePic = styled.div`
     display: flex;
@@ -13,32 +48,14 @@ export const EditProfilePic = styled.div`
     margin-bottom: 12px;
     margin-right: 6px;
     padding: 2px;
+    cursor: pointer;
 
-    @media (max-width: 900px){
-        ${UserInfoItems}{
-            flex-direction: column;
+    &:hover {
+        border: none;
+        outline: #3F3E3E80 solid 1px;
+        & p {
+            font-weight: 600;
         }
         
-    }
-`;
-
-export const EditFullName = styled.input`
-    /* display: flex;
-    align-items: center; */
-    /* justify-content: ; */
-    height: 42px;
-    width: 300px;
-    &::placeholder {
-        font-size: 27px;
-    }
-`;
-
-export const EditValue = styled.input`
-    height: 30px;
-    width: 150px;
-    margin-left: 9px;
-
-    &::placeholder {
-        font-size: 15px;
     }
 `;

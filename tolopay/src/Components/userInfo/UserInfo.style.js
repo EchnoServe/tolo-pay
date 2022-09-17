@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { EditProfilePic } from './EditUserInfo.style';
 
 export const UserInfoContainer = styled.div`
     display: flex;
@@ -28,25 +27,13 @@ export const ProfilePic = styled.div`
     height: 99px;
     margin: 5;
 
-    &:hover {
-        cursor: pointer;
-        ${EditProfilePic}{
-            background-color: #f4fdf4;
-            border: none;
-            outline: #3F3E3E80 solid 1px;
-        }
-        ${EditProfilePic} p {
-            font-weight: bold;
-        }
-    }
-
     @media (min-width: 762px){
         width: 150px;
         height: 150px;
     }
 `;
 export const UserInfoItems = styled.div`
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -56,7 +43,7 @@ export const UserInfoItems = styled.div`
 `;
 
 export const UserInfoContents = styled.div`
-border: 1px solid blue;
+/* border: 1px solid blue; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,7 +87,7 @@ export const KeyAndValue = styled.div`
 
     
     @media (max-width: 762px){
-        ${(props) => (props.email === true ? "display: none;" : "visibility: visible;") }
+        ${(props) => (props.email === true ? "display: none;" : "") }
     }
     @media (min-width: 762px){
         width: 330px; 
