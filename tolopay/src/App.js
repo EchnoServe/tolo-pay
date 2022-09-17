@@ -1,76 +1,29 @@
-import React, { useState } from "react";
-import { Helmet } from "react-helmet";
-import { ThemeProvider } from "styled-components";
-import Layout from "./Components/Layout/Layout";
-import Dashboaard from "./Pages/Dashboaard";
-import Transfer from "./Pages/Transfer";
-import Setting from "./Pages/Setting";
-import PayBill from "./Pages/PayBill";
-import Planning from "./Pages/Planning";
-import Navbar from "./Components/Navbar/Navbar";
-// import RoutesPath from "./RoutesPath";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { GlobalStyle } from "./Utils/globalStyles";
-import { darkTheme, lightTheme } from "./Utils/theme";
-import BottomNavbar from "./Components/BottomNav/BottomNavbar";
+import "./App.css";
+import LoginPage from "./Pages/login_page/LoginPage";
 
-
-
-export const ThemeContext = React.createContext(null);
-
-const App = () => {
-    const [theme, setTheme] = useState("light");
-    const themeStyle = theme === "light" ? lightTheme : darkTheme;
-
-    return (
-        <ThemeContext.Provider value={{ setTheme, theme }}>
-            <ThemeProvider theme={themeStyle}>
-                <GlobalStyle />
-                <Helmet>
-                    <title>tolopay</title>
-                    <link rel="preconnect" href="https://fonts.googleapis.com" />
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-                        rel="stylesheet"
-                    />
-                    
-                </Helmet>
-                <>
-                    {/* <Layout>
-                        <RoutesPath />
-                    </Layout> */}
-            
-                    <Router>
-                        <Navbar />
-                        <Layout>
-                            
-                            
-                                        <Routes>
-                                          <Route path="/" element={<Dashboaard />} />
-                                          <Route path="/transfer" element={<Transfer />} />
-                                          <Route path="/paybill" element={<PayBill />} />
-                                          
-                                          <Route path="/planning"element={<Planning />} />
-                                          <Route path="/settings" element={<Setting />} />
-                                          
-                                          
-                                        </Routes>
-                        </Layout>  
-                        
-                        <BottomNavbar />
-                            </Router>
-
-                </>
-            </ThemeProvider>
-        </ThemeContext.Provider>
-
-      
-      
-      
-      
-     
-    );
-};
+function App() {
+  return (<div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        backgroundColor: "#46833C",
+        color: "#fff",
+        gap: "3rem",
+      }}
+    >
+      <h1
+        style={{
+          fontSize: "10rem",
+        }}
+      >
+        Tolo-pay
+      </h1>
+      <p>Pay Anything Anywhere Easily</p>
+    </div>
+  );
+}
 
 export default App;
