@@ -15,17 +15,18 @@ import {
     SThemeToggler,
     SToggleThumb,
 } from "./styles";
-
-import { logoSVG } from "../../Assets";
+import { MdQrCodeScanner } from "react-icons/md";
+import { tologoSVG } from "../../Assets";
 import { BiTransferAlt } from "react-icons/bi";
-import { SiSamsungpay } from "react-icons/si";
-import {MdShoppingCart} from "react-icons/md"
+// import { SiSamsungpay } from "react-icons/si";
+// import { MdShoppingCart } from "react-icons/md"
+import { Icon } from '@iconify/react';
 import {
     
     
     AiOutlineLeft,
     AiFillHome,
-    AiFillSetting
+    // AiFillSetting
     
 } from "react-icons/ai";
 
@@ -50,7 +51,7 @@ const Sidebar = () => {
                 </SSidebarButton>
             </>
             <SLogo>
-                <img src={logoSVG} alt="logo" />
+                <img src={tologoSVG} alt="logo" />
             </SLogo>
             
             <SDivider />
@@ -85,7 +86,7 @@ const linksArray = [
     {
         label: "Dashboard",
         icon: <AiFillHome />,
-        to: "/",
+        to: "/dashboard",
         
     },
     {
@@ -94,21 +95,16 @@ const linksArray = [
         to: "/transfer",
         
     },
-    {
-        label: "PayBill",
-        icon: <SiSamsungpay />,
-        to: "/paybill",
-        
-    },
+    
     {
         label: "Planning",
-        icon: <MdShoppingCart />,
+        icon: <Icon icon="arcticons:budgetmylife" />,
         to: "/planning",
         
     },
     {
-        label: "Setting",
-        icon: <AiFillSetting />,
+        label: "Qrcode",
+        icon: <MdQrCodeScanner />,
         to: "/setting",
         
     },
