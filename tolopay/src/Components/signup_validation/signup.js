@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import styled from "styled-components";
+import "./signup.css";
+
 
 
 const Button = styled.button`
@@ -50,8 +52,7 @@ width: 250px;
     margin-top: 10px;
 `
 function App() {
-  const [modalOpen, setModalOpen] = useState(false);
-
+  
   const {
     register,
     handleSubmit,
@@ -71,11 +72,50 @@ function App() {
       <Inputs>
           <form onSubmit={handleSubmit(onSubmit)}>
 
+          <div className="form-group">
+              
+              <Input
+              placeholder="First Name"
+                type="name"
+                className={`form-control ${errors.email && "invalid"}`}
+                {...register("firstName", { required: "FirstName is Required" ,
+                pattern: {
+                value: /^[A-Za-z]/,
+                message: "Invalid input name must only contain letters",
+                }})}
+                onKeyUp={() => {
+                  trigger("firstName");
+                }}
+              />
+              {errors.firstName && (
+                <small className="text-danger">{errors.firstName.message}</small>
+              )}
+            </div>
 
             <div className="form-group">
               
               <Input
-              placeholder="Email"
+              placeholder="Last Name"
+                type="name"
+                className={`form-control ${errors.email && "invalid"}`}
+                {...register("lastName", { required: "LastName is Required" ,
+                pattern: {
+                value: /^[A-Za-z]/,
+                message: "Invalid input name must only contain letters",
+                }})}
+                onKeyUp={() => {
+                  trigger("lastName");
+                }}
+              />
+              {errors.lastName && (
+                <small className="text-danger">{errors.lastName.message}</small>
+              )}
+            </div>
+
+            <div className="form-group">
+              
+              <Input
+                placeholder="Email"
                 type="email"
                 className={`form-control ${errors.email && "invalid"}`}
                 {...register("email", { required: "Email address is Required" ,
@@ -101,7 +141,7 @@ function App() {
                 {...register("phone", { required: "Phone  number is Required",
                 pattern: {
                   value: /^\s*(?:\+?(\d[09]))[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{2})(?: *x(\d+))?\s*$/,
-                  message: "Invalid phone no",
+                  message: "Invalid phone number",
                 },
                })}
                onKeyUp={() => {
