@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormStyle } from '../commonStyles';
 import { EditInfoContainer, EditProfilePic, KeyandValueInEdit, KeyInEdit } from './EditUserInfo.style'
-import { EditProfileButton, Key, KeyAndValue, ProfilePic, UserInfoContainer, UserInfoContents } from './UserInfo.style'
+import { EditProfileButton, ProfilePic } from './UserInfo.style'
 
 const fontRoboto = "Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI'";
 const grayFontColor = '#3F3E3E';
@@ -25,7 +25,7 @@ const EditUserInfo = (props) => {
                     <KeyandValueInEdit>
                             <KeyInEdit style={{fontFamily: fontRoboto, fontWeight: 'lighter', color: grayFontColor}}>FullName:</KeyInEdit>
                             <FormStyle type={'text'} value='Molla Maru' style={{fontFamily: fontRoboto, color: grayFontColor}} />
-                        </KeyandValueInEdit>
+                    </KeyandValueInEdit>
 
                     <KeyandValueInEdit>
                             <KeyInEdit style={{fontFamily: fontRoboto, fontWeight: 'lighter', color: grayFontColor}}>Account Id:</KeyInEdit>
