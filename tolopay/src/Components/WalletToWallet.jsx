@@ -180,10 +180,6 @@ const Section = styled.section`
       cursor: default;
     }
   }
-  
-  
-  
-
 `;
 
 export default WalletToWallet
