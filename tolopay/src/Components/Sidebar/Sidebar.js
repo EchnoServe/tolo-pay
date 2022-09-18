@@ -86,7 +86,7 @@ const linksArray = [
     {
         label: "Dashboard",
         icon: <AiFillHome />,
-        to: "/dashboard",
+        to: "/dashboaard",
         
     },
     {
