@@ -163,7 +163,7 @@ const Chart = () => {
       <div className="top">
         <div className="info">
           <h5>This month spending report</h5>
-          <h1>$682.5</h1>
+          <h1>65,000 Birr</h1>
           <div className="growth">
             <span>+2.45%</span>
           </div>
@@ -213,9 +213,9 @@ const Section = styled.section`
         font-size: 1.55rem;
       }
       .growth {
-        background-color: #b5cfb4;;
+        background-color: #d7e41e1d;;
         padding: 0.5rem;
-        border-radius: 1rem;
+        // border-radius: 1rem;
         transition: 0.3s ease-in-out;
         &:hover {
           background-color: #46833c;

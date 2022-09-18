@@ -6,7 +6,7 @@ import Spiral from './Spiral';
 import Chart from './Chart';
 import scrollreveal from "scrollreveal";
 import Table from './Table';
-
+import Transfers from './Transfers';
 
 function Dashboard() {
 
@@ -40,8 +40,8 @@ function Dashboard() {
             <div className='row_two'>
                 <Spiral />
                 <Table />
-            </div>
-            
+                <Transfers />
+            </div> 
         </div>
     </Section>
   )
@@ -62,18 +62,18 @@ const Section = styled.section`
     }
         .row_one{
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(2,1fr);
             height: 50%;
             gap: 1rem;
         }
 
         .row_two{
-   
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(3,1fr);
             height: 50%;
-            gap: 0rem;
+            gap: 1rem;
         }
+       
       @media screen and (min-width: 280px) and (max-width: 1080px) {
     // margin-left: 0;
     .grid {

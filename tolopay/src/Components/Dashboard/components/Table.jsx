@@ -7,6 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import styled from 'styled-components';
+import { HiArrowNarrowRight } from 'react-icons/hi';
+
 
 const List = () => {
 const rows = [
@@ -44,6 +46,7 @@ const rows = [
         </TableHead>
         <TableBody>
           {rows.map((row) => (
+            <>
             <TableRow
               key={row.dateTime}
             >
@@ -52,15 +55,21 @@ const rows = [
               <TableCell className='tableCell'>{row.amount}</TableCell>
               <TableCell className='tableCell'>{row.dateTime}</TableCell>
             </TableRow>
+           </>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
+    <a className="view" href="#">
+            View all <HiArrowNarrowRight />
+           </a>
     </Section>
   )
 }
 
 const Section = styled.section`
+display: flex;
+flex-direction: column;
 margin-top: 6rem;
 // box-shadow: 0 20px 50px #46833c; 
 
@@ -80,7 +89,26 @@ margin-top: 6rem;
     color:
 }
 }
-
+.view {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-decoration: none;
+  color: #073604;
+  font-weight: bold;
+  margin-top: 1rem;
+  gap: 0.5rem;
+  svg {
+    transition: 0.3s ease-in-out;
+    font-size: 1.4rem;
+  }
+  &:hover {
+    svg {
+      transform: translateX(0.5rem);
+    }
+  }
+}
 
 `;
 
