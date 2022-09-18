@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 import { ThemeProvider } from "styled-components";
 import Layout from "./Components/Layout/Layout";
 import Dashboaard from "./Components/Dashboard/components/Dashboard";
-// import Transfer from "./Pages/Transfer";
 import Setting from "./Pages/Setting";
 import PayBill from "./Pages/PayBill";
 import Planning from "./Pages/Planning";
