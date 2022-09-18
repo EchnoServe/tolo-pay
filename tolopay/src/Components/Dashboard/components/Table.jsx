@@ -35,7 +35,7 @@ const rows = [
   return (
     <Section>
     <TableContainer component={Paper} className='table'>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ minWidth: 20 }} aria-label="simple table">
         <TableHead className='tableCellh'>
           <TableRow>
             <TableCell className='tableCell1'><h4>List of transaction</h4></TableCell>
@@ -68,9 +68,30 @@ const rows = [
 }
 
 const Section = styled.section`
-display: flex;
-flex-direction: column;
-margin-top: 6rem;
+  overflow-x: auto;
+  margin-right: 0rem;
+  margin-left: 0rem;
+  margin-top: 6rem;
+  padding: 10px;
+  // margin: 10px;
+
+  tr {
+    height: 40px !important;
+  }
+  
+  th {
+    max-width: 125px;
+    min-width: 60px;
+    padding: 2 !important;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: center !important;
+  }
+  td {
+    height: 85px !important;
+    padding: 5px !important;
+    text-align: center !important;
+  }
 // box-shadow: 0 20px 50px #46833c; 
 
 .tableCell{
