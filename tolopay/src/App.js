@@ -13,6 +13,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { GlobalStyle } from "./Utils/globalStyles";
 import { darkTheme, lightTheme } from "./Utils/theme";
 import BottomNavbar from "./Components/BottomNav/BottomNavbar";
+import UserProfile from "./Pages/UserProfile";
 
 
 
@@ -53,6 +54,7 @@ const App = () => {
                                           
                                           <Route path="/planning"element={<Planning />} />
                                           <Route path="/settings" element={<Setting />} />
+                                          <Route path="/profile" element={<UserProfile />} />
                                           
                                           
                                         </Routes>

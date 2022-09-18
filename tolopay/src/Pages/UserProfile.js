@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import EditUserInfo from '../../Components/userInfo/EditUserInfo'
-import UserInfo from '../../Components/userInfo/UserInfo'
-import UserStatus from '../../Components/userStatus/UserStatus'
+import EditUserInfo from './../Components/userInfo/EditUserInfo'
+import UserInfo from './../Components/userInfo/UserInfo'
+import UserStatus from './../Components/userStatus/UserStatus'
 
 const UserProfile = () => {
 
