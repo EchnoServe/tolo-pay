@@ -95,7 +95,7 @@
 }
 .form input {
   width: inherit;
-
+  height: 30px;
   border: 1px solid #46833c;
 }
 
