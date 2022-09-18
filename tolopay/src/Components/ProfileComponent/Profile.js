@@ -11,6 +11,7 @@ import { envelopeSVG } from "../../Assets";
 import './Profile.css';
 
 import React, {useState, useEffect, useRef} from 'react';
+import { Link } from "react-router-dom";
 
 function ProfileComponent() {
 
@@ -45,8 +46,13 @@ function ProfileComponent() {
         <div className={`dropdown-menu ${open? 'active' : 'inactive'}`} >
           <h3>Daniel</h3>
           <ul>
-            <DropdownItem img = {userSVG} text = {"My Profile"}/>
-            <DropdownItem img = {editsSVG} text = {"Edit Profile"}/>
+            <Link to={"/profile"} >
+              <DropdownItem img = {userSVG} text = {"My Profile"}/>
+            </Link>
+           
+            <DropdownItem img = {editsSVG} text = {"Edit Profile"} />
+            
+            
             <DropdownItem img = {questionSVG} text = {"Inbox"}/>
             <DropdownItem img = {settingsSVG} text = {"Settings"}/>
             <DropdownItem img = {envelopeSVG} text = {"Helps"}/>
