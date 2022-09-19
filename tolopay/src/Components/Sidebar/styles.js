@@ -12,7 +12,7 @@ export const SSidebar = styled.div`
     height: 100vh;
     padding: ${v.lgSpacing};
 
-    position: relative;
+    position: fixed;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   
     @media(max-width: 776px){
@@ -29,7 +29,7 @@ export const SSidebarButton = styled.button`
     ${btnReset};
     position: absolute;
     // top: ${v.xxlSpacing};
-    margin-top: 710px;
+    margin-top: 600px;
     right: ${({ isOpen }) => (isOpen ? `-16px` : `-25px`)};
     width: 50px;
     height: 50px;
