@@ -3,6 +3,8 @@ import "./createAccount.css";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import "../../Components/signup_validation/signup.css";
+import { Formik } from 'formik';
+ 
 
 const CreateAccount = () => {
   const {
@@ -66,11 +68,14 @@ const CreateAccount = () => {
               }}
             ></div>
           </div>
+          
+       
+
           <form className="flex-c-c  form_container" onSubmit={handleSubmit(onSubmit)}>
-              <input
+             <input
                 type="text"
-                placeholder="First name"
-                className={`form-control ${errors.email && "invalid"}`}
+                placeholder="first name"
+                className={`form-control ${errors.firstName && "invalid"}`}
                 {...register("firstName", { required: "FirstName is Required" ,
                 pattern: {
                 value: /^[A-Za-z]/,
@@ -85,8 +90,8 @@ const CreateAccount = () => {
               )}
               <input
                 type="text"
-                placeholder="Last name"
-                className={`form-control ${errors.email && "invalid"}`}
+                placeholder="last name"
+                className={`form-control ${errors.lastName && "invalid"}`}
                 {...register("lastName", { required: "LastName is Required" ,
                 pattern: {
                 value: /^[A-Za-z]/,
@@ -99,10 +104,11 @@ const CreateAccount = () => {
               {errors.lastName && (
                 <small className="text-danger">{errors.lastName.message}</small>
               )}
-            <input
+          
+          <input
               type="email"
-              placeholder="name@gmail.com"
-              className={`form-control ${errors.email && "invalid"}`}
+              placeholder="email"
+                className={`form-control ${errors.email && "invalid"}`}
                 {...register("email", { required: "Email address is Required" ,
                 pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -111,26 +117,9 @@ const CreateAccount = () => {
                 onKeyUp={() => {
                   trigger("email");
                 }}
-            ></input>
-            {errors.email && (
+              />
+              {errors.email && (
                 <small className="text-danger">{errors.email.message}</small>
-              )}
-            <input
-              type="number"
-              placeholder="phone Number "
-              className={`form-control ${errors.phone && "invalid"}`}
-                {...register("phone", { required: "Phone  number is Required",
-                pattern: {
-                  value: /^\s*(?:\+?(\d[09]))[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{2})(?: *x(\d+))?\s*$/,
-                  message: "Invalid phone number",
-                },
-               })}
-               onKeyUp={() => {
-                trigger("phone");
-              }}
-            ></input>
-              {errors.phone && (
-                <small className="text-danger">{errors.phone.message}</small>
               )}
             <input
               type="password"
@@ -153,31 +142,27 @@ const CreateAccount = () => {
              {errors.message && (
                 <small className="text-danger">{errors.message.message}</small>
               )}
-            {/* <input
+                <input
               type="password"
-              placeholder="password confirm"
-              className={`form-control ${errors.message && "invalid"}`}
-                {...register("message", { required: "Password is Required",
-                minLength: {
-                  value: 8,
-                  message: "Minimum Required length is 8",
-                },
-                maxLength: {
-                  value: 16,
-                  message: "Maximum allowed length is 16 ",
-                }
+              placeholder="confirm password"
+              className={`form-control ${errors.confirmPassword && "invalid"}`}
+                {...register("confirmPassword", { required: "Password is Required",
                })}
                onKeyUp={() => {
-                trigger("message");
-              }} ></input>
-              {errors.message && (
-                <small className="text-danger">{errors.message.message}</small>
-              )} */}
+                trigger("confirmPassword");
+              }}
+            ></input>
+             {errors.confirmPassword && (
+                <small className="text-danger">{errors.confirmPassword.message}</small>
+              )}
             <button className="p-12-10 " type="submit" id="signup">
               Sign up
             </button>
           </form>
+           
+           
         </div>
+        
         <div className="flex-c-c img_container">
           <section>
             <h1>Welcome to Tolopay</h1>
