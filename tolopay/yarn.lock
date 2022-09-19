@@ -8237,6 +8237,7 @@ prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   "version" "2.0.4"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 react-fast-compare@^3.1.1:
   version "3.2.0"
   resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
@@ -8267,6 +8268,13 @@ react-is@^16.10.2, react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 =======
+=======
+"react-hook-form@^7.35.0":
+  "integrity" "sha512-9CYdOed+Itbiu5VMVxW0PK9mBR3f0gDGJcZEyUSm0eJbDymQ913TRs2gHcQZZmfTC+rtxyDFRuelMxx/+xwMcw=="
+  "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.35.0.tgz"
+  "version" "7.35.0"
+
+>>>>>>> 0009bf4 (Confirmation component added)
 "react-icons@^4.4.0":
   "integrity" "sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg=="
   "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.4.0.tgz"
