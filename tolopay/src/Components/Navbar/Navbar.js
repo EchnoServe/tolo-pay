@@ -12,7 +12,7 @@ function Navbar() {
    return (
 <>
          <div class="navbar">
-   
+           
          <a href="#profile" class="right">
             
             <icon>

@@ -5,6 +5,7 @@ import Layout from "./Components/Layout/Layout";
 import Dashboaard from "./Pages/Dashboaard";
 import Transfer from "./Pages/Transfer";
 import Setting from "./Pages/Setting";
+// import Qr from "./Pages/qr/Qr.js"
 import PayBill from "./Pages/PayBill";
 import Planning from "./Pages/Planning";
 import Navbar from "./Components/Navbar/Navbar";
@@ -13,7 +14,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { GlobalStyle } from "./Utils/globalStyles";
 import { darkTheme, lightTheme } from "./Utils/theme";
 import BottomNavbar from "./Components/BottomNav/BottomNavbar";
-
 
 
 export const ThemeContext = React.createContext(null);
@@ -52,7 +52,7 @@ const App = () => {
                                           <Route path="/paybill" element={<PayBill />} />
                                           
                                           <Route path="/planning"element={<Planning />} />
-                                          <Route path="/settings" element={<Setting />} />
+                                          <Route path="/setting" element={<Setting />} />
                                           
                                           
                                         </Routes>

@@ -41,6 +41,8 @@ export const SSidebarButton = styled.button`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background-color: #00CE52;
+    color: #fff;
 
     transform: ${({ isOpen }) => (!isOpen ? `rotate(180deg)` : `initial`)};
     @media(max-width: 440px){
