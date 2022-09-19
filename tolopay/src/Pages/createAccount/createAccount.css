@@ -95,7 +95,8 @@
 }
 .form input {
   width: inherit;
-  height: 30px;
+  padding-left: 8px;
+  height: 50px;
   border: 1px solid #46833c;
 }
 
@@ -122,4 +123,7 @@
   text-align: left;
   width: 70%;
   color: rgba(66, 66, 66, 0.6);
+}
+.text-danger{
+  color:red;
 }

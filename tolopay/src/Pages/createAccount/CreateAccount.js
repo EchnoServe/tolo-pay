@@ -68,7 +68,7 @@ const CreateAccount = () => {
           </div>
           <form className="flex-c-c  form_container" onSubmit={handleSubmit(onSubmit)}>
               <input
-                type="name"
+                type="text"
                 placeholder="First name"
                 className={`form-control ${errors.email && "invalid"}`}
                 {...register("firstName", { required: "FirstName is Required" ,
@@ -84,7 +84,7 @@ const CreateAccount = () => {
                 <small className="text-danger">{errors.firstName.message}</small>
               )}
               <input
-                type="name"
+                type="text"
                 placeholder="Last name"
                 className={`form-control ${errors.email && "invalid"}`}
                 {...register("lastName", { required: "LastName is Required" ,
@@ -153,7 +153,7 @@ const CreateAccount = () => {
              {errors.message && (
                 <small className="text-danger">{errors.message.message}</small>
               )}
-            <input
+            {/* <input
               type="password"
               placeholder="password confirm"
               className={`form-control ${errors.message && "invalid"}`}
@@ -172,7 +172,7 @@ const CreateAccount = () => {
               }} ></input>
               {errors.message && (
                 <small className="text-danger">{errors.message.message}</small>
-              )}
+              )} */}
             <button className="p-12-10 " type="submit" id="signup">
               Sign up
             </button>
