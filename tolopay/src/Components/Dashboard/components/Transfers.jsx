@@ -52,7 +52,7 @@ export default function Transfers() {
 
 const Section = styled.section`
 // min-height: 19rem;  
-margin-top: 6rem;
+margin-top: 6.5rem;
   ${cardStyles};
   flex-direction: column;
   gap: 1rem;
