@@ -1,0 +1,125 @@
+.header_ul {
+  list-style: none;
+  gap: 1rem;
+  color: #fff;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  justify-content: space-between;
+  padding: 1rem 5%;
+}
+#login_btn {
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.container {
+  width: 100vw;
+}
+
+.form {
+  flex-basis: 50%;
+  gap: 0.5rem;
+  width: 70%;
+}
+
+.form h1 {
+  color: #46833c;
+  font-weight: 100;
+}
+
+.signup_btns {
+  gap: 0.5rem;
+  width: inherit;
+}
+.btn {
+  background-color: transparent;
+  justify-content: space-around;
+  border: 2px solid #46833c;
+  color: #46833c;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-size: 1rem;
+  width: inherit;
+}
+.btn:hover {
+  color: #fff;
+  background-color: #46833c;
+  transition: all 0.5s;
+}
+.or_line {
+  gap: 0.5rem;
+  width: 50%;
+}
+.form_container {
+  width: inherit;
+  gap: 0.5rem;
+}
+.form_input_box {
+  width: inherit;
+
+  gap: 0.5rem;
+}
+
+.img_container {
+  background-image: url("./../../Assets/Group\ 13.png");
+  background-position: center;
+  background-size: contain;
+  flex-basis: 50%;
+  height: 100vh;
+}
+.btn_img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.btn_img--google {
+  background-image: url("./../../Assets/Google\ -\ Original.png");
+}
+.btn_img--facebook {
+  background-image: url("./../../Assets/Facebook\ -\ Original.png");
+}
+
+#logo {
+  width: 3rem;
+  height: 3rem;
+  background-image: url("./../../Assets/logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form input {
+  width: inherit;
+
+  border: 1px solid #46833c;
+}
+
+#signup {
+  border: none;
+  background: linear-gradient(to right bottom, #46833c, #92b98c);
+  font-weight: bold;
+  font-size: 1rem;
+  width: inherit;
+  color: #fff;
+}
+#signup:hover {
+  background: #46833c;
+}
+.img_container section {
+  width: 50%;
+}
+
+.img_container h1 {
+  color: #fff;
+  font-size: 1.7rem;
+}
+.img_container p {
+  text-align: left;
+  width: 70%;
+  color: rgba(66, 66, 66, 0.6);
+}
