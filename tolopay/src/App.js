@@ -6,7 +6,7 @@ import Dashboaard from "./Components/Dashboard/components/Dashboard";
 import Setting from "./Pages/Setting";
 import PayBill from "./Pages/PayBill";
 import Planning from "./Pages/Planning";
-// import Navbar from "./Components/Navbar/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
 import WalletToWallet from "./Components/walletToWallet/WalletToWallet"
 // import RoutesPath from "./RoutesPath";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -43,8 +43,9 @@ const App = () => {
                     </Layout> */}
             
                     <Router>
-                        {/* <Navbar /> */}
+                        
                         <Layout>
+                            <Navbar />
                             
                             
                                         <Routes>

@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 
 import Sidebar from "../Sidebar/Sidebar"
-import Navbar from "../Navbar/Navbar"
+// import Navbar from "../Navbar/Navbar"
 
 const Grid = styled.div`
   display: grid;
@@ -23,7 +23,9 @@ const GridNav = styled.div`
 
 const GridHeader = styled.header`
   grid-area: header;
-  position: sticky;
+  position: fixed;
+  top: 0;
+  margin-left: 300px;
 `;
 
 const GridMain = styled.main`
@@ -43,7 +45,7 @@ function Layout({ children, ...rest }) {
         
           </GridNav>
           <GridHeader>
-            <Navbar />
+            {/* <Navbar /> */}
           </GridHeader>
        
     

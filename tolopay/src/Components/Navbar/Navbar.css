@@ -43,13 +43,8 @@
   color: #fff;
   overflow: visible;
 }
-.logos img{
-  width: 70px;
-  height: 50px;
-}
-.navbar a.logos{
-  margin-left: 300px;
-}
+
+
 @media (max-width: 450px){
   .navbar a.logos{
   margin-left: 10px;
