@@ -4,8 +4,8 @@ import { ThemeProvider } from "styled-components";
 import Layout from "./Components/Layout/Layout";
 import Dashboaard from "./Components/Dashboard/components/Dashboard";
 import Setting from "./Pages/Setting";
-import PayBill from "./Pages/PayBill";
-import Planning from "./Pages/Planning";
+import Budget from "./Pages/budget_page/Budget";
+import QR from "./Pages/qr/Qr";
 import Navbar from "./Components/Navbar/Navbar";
 import WalletToWallet from "./Components/walletToWallet/WalletToWallet"
 // import RoutesPath from "./RoutesPath";
@@ -48,14 +48,13 @@ const App = () => {
                             
                             
                                         <Routes>
+
                                           <Route path="/dashboard" element={<Dashboaard />} />
                                           <Route path="/transfer" element={<WalletToWallet />} />
-                                          <Route path="/paybill" element={<PayBill />} />
                                           
-                                          <Route path="/planning"element={<Planning />} />
-                                          <Route path="/settings" element={<Setting />} />
+                                          <Route path="/planning" element={<Budget />} />
+                                          <Route path="/qr" element={<QR />} />
                                           <Route path="/profile" element={<UserProfile />} />
-                                          
                                           
                                         </Routes>
                         </Layout>  
@@ -67,11 +66,6 @@ const App = () => {
             </ThemeProvider>
         </ThemeContext.Provider>
 
-      
-      
-      
-      
-     
     );
 };
 
