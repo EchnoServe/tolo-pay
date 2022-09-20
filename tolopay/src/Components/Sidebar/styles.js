@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { btnReset, v } from "../../Utils/variables";
 
 export const SSidebar = styled.div`
-    margin-top: -90px;
+    margin-top: 0;
     z-index: 1000;
      width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
    
@@ -12,7 +12,10 @@ export const SSidebar = styled.div`
     height: 100vh;
     padding: ${v.lgSpacing};
 
-    position: relative;
+    
+    position: sticky;
+    
+    
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   
     @media(max-width: 776px){
@@ -29,7 +32,7 @@ export const SSidebarButton = styled.button`
     ${btnReset};
     position: absolute;
     // top: ${v.xxlSpacing};
-    margin-top: 710px;
+    margin-top: 600px;
     right: ${({ isOpen }) => (isOpen ? `-16px` : `-25px`)};
     width: 50px;
     height: 50px;

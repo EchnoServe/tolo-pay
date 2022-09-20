@@ -45,10 +45,10 @@ const handlePassword = (event) =>{
                 name="amount" />
             
             <select className="option" id="remark">
-                 <option value="" selected hidden>Remark</option>
-                 <option value="option 1">option1</option>
-                 <option value="option 2">option2</option>
-                 <option value="option 3">option3</option>
+                 <option value="" selected hidden>Remark</option>
+                 <option value="option 1">option1</option>
+                 <option value="option 2">option2</option>
+                 <option value="option 3">option3</option>
 
             </select> 
                
@@ -73,9 +73,10 @@ const handlePassword = (event) =>{
 const Section = styled.section`
 .walletToWallet{
     display: flex;
-    min-height: 100vh;
+    max-height: 100vh;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
   
     .moneyTransfer {
       display: flex;
@@ -183,7 +184,6 @@ const Section = styled.section`
   
   
   
-
 `;
 
 export default WalletToWallet
