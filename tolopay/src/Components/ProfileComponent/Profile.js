@@ -50,10 +50,7 @@ function ProfileComponent() {
               <DropdownItem img = {userSVG} text = {"My Profile"}/>
             </Link>
            
-            <DropdownItem img = {editsSVG} text = {"Edit Profile"} />
             
-            
-            <DropdownItem img = {questionSVG} text = {"Inbox"}/>
             <DropdownItem img = {settingsSVG} text = {"Settings"}/>
             <DropdownItem img = {envelopeSVG} text = {"Helps"}/>
             <DropdownItem img = {logoutSVG} text = {"Logout"}/>

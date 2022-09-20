@@ -14,6 +14,8 @@ const Grid = styled.div`
     "nav header" min-content
     "nav main" 1fr / min-content 1fr;
   min-height: 100vh;
+  
+
 `;
 
 const GridNav = styled.div`
@@ -25,7 +27,7 @@ const GridHeader = styled.header`
   grid-area: header;
   position: fixed;
   top: 0;
-  margin-left: 300px;
+  
 `;
 
 const GridMain = styled.main`

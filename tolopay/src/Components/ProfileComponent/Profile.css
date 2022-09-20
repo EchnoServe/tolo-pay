@@ -54,6 +54,7 @@ a {
   visibility: visible;
   transform: translateY(0);
   transition: var(--speed) ease;
+  z-index: 10000;
 }
 
 .dropdown-menu.inactive{
