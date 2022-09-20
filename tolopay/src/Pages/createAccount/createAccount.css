@@ -71,6 +71,7 @@
   background-size: contain;
   flex-basis: 50%;
   height: 100vh;
+ 
 }
 .btn_img {
   background-repeat: no-repeat;
@@ -113,6 +114,9 @@
 }
 .img_container section {
   width: 50%;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .img_container h1 {
