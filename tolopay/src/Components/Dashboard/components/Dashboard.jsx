@@ -48,7 +48,7 @@ function Dashboard() {
 }
 
 const Section = styled.section`
-    margin-left: 2vw;
+    margin-left: 10vw;
     padding: 2rem;
     padding-left: 0rem;
     height: 100%

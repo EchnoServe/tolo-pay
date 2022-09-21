@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 
 import Sidebar from "../Sidebar/Sidebar"
-// import Navbar from "../Navbar/Navbar"
+import Navbar from "../Navbar/Navbar"
 
 const Grid = styled.div`
   display: grid;
@@ -20,18 +20,33 @@ const Grid = styled.div`
 
 const GridNav = styled.div`
   grid-area: nav;
-  z-index: 2000;
+  z-index: 100;
+
 `;
 
 const GridHeader = styled.header`
   grid-area: header;
-  position: fixed;
+  position: relative;
   top: 0;
+  
+  
   
 `;
 
 const GridMain = styled.main`
   grid-area: main;
+  // position: relative;
+  
+  position: fixed;
+  
+  top: 80px;
+  height: calc(100vh - 80px);
+  overflow: auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  
+  
 `;
 
 function Layout({ children, ...rest }) {
@@ -47,7 +62,7 @@ function Layout({ children, ...rest }) {
         
           </GridNav>
           <GridHeader>
-            {/* <Navbar /> */}
+            <Navbar />
           </GridHeader>
        
     

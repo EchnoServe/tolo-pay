@@ -73,10 +73,10 @@ const handlePassword = (event) =>{
 const Section = styled.section`
 .walletToWallet{
     display: flex;
-    max-height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 10px;
   
     .moneyTransfer {
       display: flex;

@@ -3,8 +3,8 @@
 // import logo from './logo.svg';
 
 import { logoutSVG } from "../../Assets";
-import { editsSVG } from "../../Assets";
-import { questionSVG } from "../../Assets";
+// import { editsSVG } from "../../Assets";
+// import { questionSVG } from "../../Assets";
 import { settingsSVG } from "../../Assets";
 import { userSVG } from "../../Assets";
 import { envelopeSVG } from "../../Assets";

@@ -12,7 +12,7 @@ import {
     SSidebarButton,
     STheme,
     SThemeLabel,
-    SThemeToggler,
+    // SThemeToggler,
     SToggleThumb,
 } from "./styles";
 import { MdQrCodeScanner } from "react-icons/md";
@@ -46,9 +46,9 @@ const Sidebar = () => {
     return (
         <SSidebar isOpen={sidebarOpen}>
             <>
-                <SSidebarButton isOpen={sidebarOpen} onClick={() => setSidebarOpen((p) => !p)}>
+                {/* <SSidebarButton isOpen={sidebarOpen} onClick={() => setSidebarOpen((p) => !p)}>
                     <AiOutlineLeft />
-                </SSidebarButton>
+                </SSidebarButton> */}
             </>
             <SLogo>
                 <img src={tologoSVG} alt="logo" />
@@ -57,26 +57,26 @@ const Sidebar = () => {
             <SDivider />
             {linksArray.map(({ icon, label, to }) => (
                 <SLinkContainer key={label} isActive={pathname === to}>
-                    <SLink to={to} style={!sidebarOpen ? { width: `fit-content` } : {}}>
+                    <SLink to={to} >
                         <SLinkIcon>{icon}</SLinkIcon>
-                        {sidebarOpen && (
+                    
                             <>
                                 <SLinkLabel>{label}</SLinkLabel>
                                 
                             </>
-                        )}
+                        
                     </SLink>
                 </SLinkContainer>
             ))}
             <SDivider />
             <STheme>
                 {sidebarOpen && <SThemeLabel>Dark Mode</SThemeLabel>}
-                <SThemeToggler
+                {/* <SThemeToggler
                     isActive={theme === "dark"}
                     onClick={() => setTheme((p) => (p === "light" ? "dark" : "light"))}
                 >
                     <SToggleThumb style={theme === "dark" ? { right: "1px" } : {}} />
-                </SThemeToggler>
+                </SThemeToggler> */}
             </STheme>
         </SSidebar>
     );
