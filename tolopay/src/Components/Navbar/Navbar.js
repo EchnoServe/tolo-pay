@@ -15,14 +15,11 @@ function Navbar() {
    
          <a href="#profile" class="right">
             
-            <icon>
-                  
-                  
-               </icon>
+            
                
             
          </a>
-         <a href="#notification" class="right ">
+         <a href="#notification" class="right alert">
              <BsBellFill />
             </a>
             
