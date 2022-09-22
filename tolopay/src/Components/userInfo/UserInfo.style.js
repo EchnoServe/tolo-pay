@@ -1,30 +1,13 @@
 import styled from 'styled-components'
 
-export const UserInfoContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 96%;
-    height: 50%;
-    // border: 1px solid olive;
-    margin: 5px;
-    padding: 15px;
 
-    @media (min-width: 700px) {
-        width: 81%;
-        
-    }
-    @media (min-width: 500px){
-        width: 90%;
-    }
-`;
 
 export const ProfilePic = styled.div`
     border: 1px solid gray;
     background-color: lightgreen;
     border-radius: 50%;
-    width: 99px;
-    height: 99px;
+    width: 120px;
+    height: 120px;
     margin: 5;
 
     @media (min-width: 762px){
@@ -43,7 +26,7 @@ export const UserInfoItems = styled.div`
 `;
 
 export const UserInfoContents = styled.div`
-/* border: 1px solid blue; */
+ border: 1px solid blue; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,11 +36,11 @@ export const UserInfoContents = styled.div`
     margin-left: 18px;
     
 
-    @media (min-width: 550px){
+    @media (min-width: 400px){
         margin-right: 42px;
     }
     
-    @media (min-width: 762px){
+    @media (min-width: 768px){
         justify-content: space-around;
         margin-right: 90px;
     }
@@ -67,23 +50,22 @@ export const UserInfoContents = styled.div`
 `;
 
 export const FullName = styled.p`
-    font-size: 30px;
+    font-size: 36px;
     
     margin-left: 1px;
 
-    @media (min-width: 762px){
+    @media (min-width: 768px){
         margin-left: 21px;
         margin-bottom: 18px;
         font-size: 50px;
     }
 `;
 
-export const KeyAndValue = styled.div`
-    
+export const KeyAndValue = styled.div`  
     display: flex;
-    align-items: center; 
-    width: 150px; 
-    height: 30px; 
+    align-items: center;
+    width: 210px;
+    height: 30px;
 
     
     @media (max-width: 762px){
@@ -143,3 +125,24 @@ export const EditProfileButton = styled.div`
     }
 `;
 
+export const UserInfoContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: 50%;
+    border: 1px solid olive;
+    margin: 5px;
+    padding: 15px;
+
+    @media screen and (max-width: 768px) {
+
+        & ${UserInfoContents},${UserInfoItems} {
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        flex-direction: column;
+    }
+`;
