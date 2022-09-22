@@ -3,29 +3,48 @@ import styled from "styled-components";
 export const EditInfoContainer
  = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 96%;
-    height: 50%;
-    // border: 1px solid olive;
+    width: inherit;
+    height: 450px;
     margin: 5px;
-    padding: 15px;
+    padding: 3px;
+    padding-bottom: 27px;
+    display: flex;
+    
+    border: 1px solid #90909040; 
+    border-radius: 3px;
 
-    @media (min-width: 700px) {
-        width: 81%;
-        
+    @media screen and (min-height: 1000px){
+        height: 690px;
     }
-    @media (min-width: 500px){
-        width: 90%;
-    }
+
+`;
+
+export const ItemsToEdit = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+`;
+
+export const Form = styled.div`
+    height: 150px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `;
 
 export const KeyandValueInEdit = styled.div`
     display: flex;
-    align-items: center; 
-    width: 350px; 
-    height: 30px; 
+    align-items: center;
+    width: 350px;
+    height: 30px;
 `;
+
 export const KeyInEdit = styled.p`
     display: flex;
     justify-content: flex-end;
@@ -34,6 +53,14 @@ export const KeyInEdit = styled.p`
     height: 30px;
     font-size: 12px;
     padding-bottom: 2px;
+`;
+
+export const SaveOrCancel = styled.div`
+display: flex; 
+align-items: flex-end; 
+height: 180px;
+padding: 5px; 
+margin-top: -100px;
 `;
 
 export const EditProfilePic = styled.div`
