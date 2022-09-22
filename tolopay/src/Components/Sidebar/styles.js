@@ -93,7 +93,7 @@ export const SLinkIcon = styled.div`
     padding: ${v.smSpacing} ${v.mdSpacing};
     display: flex;
     // color: #00CE52;
-    color: blueviolet;
+    color: #0049ff;
     
    
 
