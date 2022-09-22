@@ -1,11 +1,11 @@
 import React from 'react'
 import { FormStyle } from '../commonStyles';
-import { EditInfoContainer, EditProfilePic, KeyandValueInEdit, KeyInEdit } from './EditUserInfo.style'
+import { EditInfoContainer, EditProfilePic, KeyandValueInEdit,
+     KeyInEdit, ItemsToEdit, Form, SaveOrCancel } from './EditUserInfo.style'
 import { EditProfileButton, ProfilePic } from './UserInfo.style'
 
-const fontRoboto = "Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI'";
-const grayFontColor = '#3F3E3E';
 
+// A component that let's an already registered user change his/her credential.
 const EditUserInfo = (props) => {
 
     const handleChange = () => {
@@ -13,44 +13,47 @@ const EditUserInfo = (props) => {
     }
 
   return (
-    <EditInfoContainer style={{width: 480, padding: 3, paddingBottom: 27, display: 'flex', flexDirection: 'column', border: '1px solid #90909040', borderRadius: 3}}>   
+    <EditInfoContainer>
 
-            <div style={{display: 'flex', flexDirection: "column", alignItems: 'center', justifyContent: 'space-around', marginRight: -18, height: 400}}>
+            <ItemsToEdit>
                 
-                <ProfilePic style={{width: 150, height: 150, display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end'}}>
+                <ProfilePic style={{width: 150, height: 150, 
+                                    display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end'}}>
+                    
                     <EditProfilePic><p>Change</p></EditProfilePic>
+                    
                 </ProfilePic>
 
-                <div style={{height: 150, width: 400 ,display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+                <Form>
                     <KeyandValueInEdit>
-                            <KeyInEdit style={{fontFamily: fontRoboto, fontWeight: 'lighter', color: grayFontColor}}>FullName:</KeyInEdit>
-                            <FormStyle type={'text'} value='Molla Maru' style={{fontFamily: fontRoboto, color: grayFontColor}} />
+                            <KeyInEdit>FullName:</KeyInEdit>
+                            <FormStyle type={'text'} value='Molla Maru' />
                     </KeyandValueInEdit>
 
                     <KeyandValueInEdit>
-                            <KeyInEdit style={{fontFamily: fontRoboto, fontWeight: 'lighter', color: grayFontColor}}>Account Id:</KeyInEdit>
-                            <FormStyle type={'text'} value='maroon5' style={{fontFamily: fontRoboto, color: grayFontColor}} />
+                            <KeyInEdit>Account Id:</KeyInEdit>
+                            <FormStyle type={'text'} value='maroon5' />
                     </KeyandValueInEdit>
 
                     <KeyandValueInEdit>
-                            <KeyInEdit style={{fontFamily: fontRoboto, fontWeight: 'lighter', color: grayFontColor}}>Email:</KeyInEdit>
-                            <FormStyle type={'text'} value='maru.molla@gmail.com' placeholder='someone@example.com' style={{fontFamily: fontRoboto, color: grayFontColor}} />
+                            <KeyInEdit>Email:</KeyInEdit>
+                            <FormStyle type={'text'} value='maru.molla@gmail.com' placeholder='name@example.com' />
                     </KeyandValueInEdit>
-                </div>
+                </Form>
 
-            </div>  
+            </ItemsToEdit>
 
-        <div style={{display: 'flex', alignItems: 'flex-end', height: 180, padding: 5, marginTop: -100}}>
+        <SaveOrCancel>
 
                 <EditProfileButton outlineColor={"lightgreen"} style={{backgroundColor: 'lightgreen'}}>
-                    <p style={{fontFamily: fontRoboto, color: 'white'}}>Save</p>
+                    <p>Save</p>
                 </EditProfileButton>
 
                 <EditProfileButton borderColor={"#3F3E3E80"} onClick={handleChange}>
-                    <p style={{fontFamily: fontRoboto, color: grayFontColor}}>Cancel</p>
+                    <p>Cancel</p>
                 </EditProfileButton>
             
-        </div>
+        </SaveOrCancel>
 
     </EditInfoContainer>
   )

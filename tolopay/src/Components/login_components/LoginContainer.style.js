@@ -25,17 +25,14 @@ export const Container = styled.div`
      border: 0.1px solid rgba(244,244,244);
 
      
-        width: 400px;
+        width: 350px;
         // margin: 6px 5%;
         padding: 20px;
         padding-top: 1px;
 
-    // @media (min-width: 768px){
-    //     width: 60vw;
-    // } 
-    // @media (min-width: 1080px){
-    //     width: 80%;
-    // }
+     @media (min-width: 600px){
+         width: 60vw;
+     } 
 `;
 
  export const Heading = styled.div`

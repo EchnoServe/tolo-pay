@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
-export const UserStatusContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 81%;
-    margin-top: 42px;
-`;
-
+const medium = '776px';
 
 export const Key = styled.p`
     border-bottom: 1px solid #3f3e3e30;
@@ -25,7 +19,7 @@ export const Value = styled.p`
     border-bottom: 1px solid;
     border-color: #3f3e3e30;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     font-size: 21px;
     padding-left: 9px;
@@ -37,8 +31,8 @@ export const KeyAndValue = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%; 
-    height: 60px;
+    width: 90%; 
+    height: 72px;
     /* border: 1px solid orange; */
     padding: 5px;
 
@@ -47,8 +41,21 @@ export const KeyAndValue = styled.div`
         font-size: 24px;
         font-weight: 493;
     }
+    
+`;
 
-    @media (min-width: 762px){
-        height: 99px;
+export const UserStatusContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    padding-left: 30px;
+    padding-right: 15px;
+    margin-top: 42px;
+
+    @media screen and  (min-width: ${medium}){
+        ${KeyAndValue} {
+            height: 99px;
+        }
+        padding-left: 72px;
     }
 `;
