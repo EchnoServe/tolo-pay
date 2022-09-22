@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-
+const medium = '776px';
 
 export const ProfilePic = styled.div`
     border: 1px solid gray;
@@ -10,23 +10,23 @@ export const ProfilePic = styled.div`
     height: 120px;
     margin: 5;
 
-    @media (min-width: 762px){
+    @media (min-width: ${medium}){
         width: 150px;
         height: 150px;
     }
 `;
 export const UserInfoItems = styled.div`
-    /* border: 1px solid red; */
+    /* border: 1px solid red;  */
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 72%;
+    width: 50vw;
     height: 210px;
     padding: 6px;
 `;
 
 export const UserInfoContents = styled.div`
- border: 1px solid blue; 
+ /* border: 1px solid blue;  */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,16 +37,10 @@ export const UserInfoContents = styled.div`
     
 
     @media (min-width: 400px){
-        margin-right: 42px;
+        width: 300px;
+        margin-right: 30px;
     }
     
-    @media (min-width: 768px){
-        justify-content: space-around;
-        margin-right: 90px;
-    }
-    @media (min-width: 1000px){
-        margin-right: 180px;
-    }
 `;
 
 export const FullName = styled.p`
@@ -54,7 +48,7 @@ export const FullName = styled.p`
     
     margin-left: 1px;
 
-    @media (min-width: 768px){
+    @media (min-width: ${medium}){
         margin-left: 21px;
         margin-bottom: 18px;
         font-size: 50px;
@@ -68,10 +62,10 @@ export const KeyAndValue = styled.div`
     height: 30px;
 
     
-    @media (max-width: 762px){
+    @media (max-width: ${medium}){
         ${(props) => (props.email === true ? "display: none;" : "") }
     }
-    @media (min-width: 762px){
+    @media (min-width: ${medium}){
         width: 330px; 
     }
 `;
@@ -86,7 +80,7 @@ export const Key = styled.p`
     font-size: 12px;
     padding-bottom: 2px;
 
-    @media (min-width: 762px){
+    @media (min-width: ${medium}){
         font-size: 15px;
         width: 120px;
     }
@@ -100,7 +94,7 @@ export const Value = styled.p`
     width: 150px;
     height: 30px;
 
-    @media (min-width: 762px){
+    @media (min-width: ${medium}){
         font-size: 21px;
         width: 300px;
     }
@@ -131,18 +125,23 @@ export const UserInfoContainer = styled.div`
     justify-content: center;
     width: inherit;
     height: 50%;
-    border: 1px solid olive;
+    // border: 1px solid olive;
     margin: 5px;
     padding: 15px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: ${medium}) {
+        flex-direction: column;
 
-        & ${UserInfoContents},${UserInfoItems} {
+        ${UserInfoContents},${UserInfoItems} {
 
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-        flex-direction: column;
+        ${UserInfoItems} {
+            margin-top: 15px;
+            height: 100px;
+        }
+        
     }
 `;

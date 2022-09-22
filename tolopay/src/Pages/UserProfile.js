@@ -8,24 +8,35 @@ const UserStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  // border: 2px dotted green;
+  width: 100vw;
+
+  @media screen and (min-width: 776px) {
+    margin-left: 110px;
+    width: calc(100vw - 110px);
+  }
 `;
 
 const Profile = styled.div`
-  width: 100vw;
-  border: 2px solid orange;
+  width: inherit;
+  // border: 2px solid orange;
 
-  @media screen and (min-width: 400px){
-    width: 99vw;
+  @media screen and (min-width: 776px) {
+    width: calc(100vw - 110px);
   }
+
+  // @media screen and (min-width: 400px){
+  //   width: 99vw;
+  // }
 `;
 
 const EditProfile = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
-  border: 2px solid blue;
+  width: inherit;
+  height: calc(100vh - 80px);
+  // border: 2px solid blue;
 
   @media screen and (min-width: 400px){
     width: 99%;

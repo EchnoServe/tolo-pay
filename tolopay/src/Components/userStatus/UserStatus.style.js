@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
-export const UserStatusContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 96%;
-    margin-top: 42px;
-`;
-
+const medium = '776px';
 
 export const Key = styled.p`
     border-bottom: 1px solid #3f3e3e30;
@@ -47,8 +41,21 @@ export const KeyAndValue = styled.div`
         font-size: 24px;
         font-weight: 493;
     }
+    
+`;
 
-    @media (min-width: 762px){
-        height: 99px;
+export const UserStatusContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    padding-left: 30px;
+    padding-right: 15px;
+    margin-top: 42px;
+
+    @media screen and  (min-width: ${medium}){
+        ${KeyAndValue} {
+            height: 99px;
+        }
+        padding-left: 72px;
     }
 `;
