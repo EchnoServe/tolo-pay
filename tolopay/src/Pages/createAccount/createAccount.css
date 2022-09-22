@@ -2,6 +2,7 @@
   list-style: none;
   gap: 1rem;
   color: #fff;
+
 }
 
 .header {
@@ -27,7 +28,15 @@
   gap: 0.5rem;
   width: 70%;
 }
-
+@media (max-width: 768px) {
+ 
+ .form{
+  margin-top: 40%;
+  flex-basis: 100%;
+  width:90%;
+ }
+  
+}
 .form h1 {
   color: #404550;
   font-weight: 100;

@@ -12,9 +12,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 768px) {
-    display: none;
-  }
+  
 }
 .flex-c-r {
   display: flex;
@@ -25,3 +23,12 @@ body {
   padding: 12px 10px;
 }
 
+@media (max-width: 768px) {
+ .img_container{
+  display: none;
+ }
+ .form{
+  flex-basis: 100%;
+ }
+  
+}

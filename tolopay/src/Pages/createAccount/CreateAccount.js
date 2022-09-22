@@ -10,40 +10,30 @@ import LoginPage from "../login_page/LoginPage";
  
 
 const CreateAccount = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirm, setPasswordConfirm] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [error, setError] = useState(false);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const {name,email,phoneNumber,password,passwordConfirm} = e.target.elements;
-    console.log({name,email,phoneNumber,password,passwordConfirm})
-    setError(false);
-    try {
-      const res = await axios.post("http://localhost:8000/api/v1/users/signup", {
-        name:name.value,
-        email: email.value,
-        phoneNumber: phoneNumber.value,
-        password:password.value,
-        passwordConfirm:passwordConfirm.value,
-       
-      });console.log(res.data);
-    // res.data&&window.location.replace("/login");
-    } catch (err) {
-      setError(true);
-    }
-  };
   const {
     register,
-    handleSubmits,
+    handleSubmit,
     formState: { errors },
     reset,
     trigger,
   } = useForm();
 
+
+  const onSubmit =  async(data) => {
+    console.log(data);
+    const res = await axios.post("http://localhost:8000/api/v1/users/signup", {
+      name:data.firstName + data.lastName,
+      email: data.email,
+      phoneNumber: data.phone,
+      password:data.password,
+      passwordConfirm:data.passwordConfirm,
+     
+    });
+    
+    console.log(res.data);
+
+    reset();
+  };
   return (
     <>
       <header className="flex-c-r header">
@@ -81,14 +71,14 @@ const CreateAccount = () => {
           <div className="flex-c-r or_line ">
             <div
               style={{
-                borderBottom: `1px solid ${primary}`,
+                borderBottom: `1px solid #6977fe`,
                 width: "100%",
               }}
             ></div>
             <span>or</span>
             <div
               style={{
-                borderBottom: `1px solid ${primary}`,
+                borderBottom: `1px solid #6977fe`,
                 width: "100%",
               }}
             ></div>
@@ -96,32 +86,45 @@ const CreateAccount = () => {
           
        
 
-          <form className="flex-c-c  form_container" onSubmit={handleSubmit}>
+          <form className="flex-c-c  form_container" onSubmit={handleSubmit(onSubmit)}>
+            
              <input
-                id="name"
-                type="text"
-                placeholder="user name"
-                onChange={(e) => setName(e.target.value)}
-                className={`form-control ${errors.userName && "invalid"}`}
-                {...register("userName", { required: "UserName is Required" ,
+                placeholder="First Name"
+                type="name"
+                className={`form-control ${errors.email && "invalid"}`}
+                {...register("firstName", { required: "FirstName is Required" ,
                 pattern: {
                 value: /^[A-Za-z]/,
                 message: "Invalid input name must only contain letters",
                 }})}
                 onKeyUp={() => {
-                  trigger("userName");
+                  trigger("firstName");
                 }}
               ></input>
-              {errors.userName && (
-                <small className="text-danger">{errors.userName.message}</small>
+                  {errors.firstName && (
+                <small className="text-danger">{errors.firstName.message}</small>
               )}
-      
+              
+              <input
+              placeholder="Last Name"
+                type="name"
+                className={`form-control ${errors.email && "invalid"}`}
+                {...register("lastName", { required: "LastName is Required" ,
+                pattern: {
+                value: /^[A-Za-z]/,
+                message: "Invalid input name must only contain letters",
+                }})}
+                onKeyUp={() => {
+                  trigger("lastName");
+                }}
+              ></input>
+              {errors.lastName && (
+                <small className="text-danger">{errors.lastName.message}</small>
+              )}
           
           <input
-              id="email"
               type="email"
               placeholder="email"
-              onChange={(e) => setEmail(e.target.value)}
                 className={`form-control ${errors.email && "invalid"}`}
                 {...register("email", { required: "Email address is Required" ,
                 pattern: {
@@ -137,10 +140,8 @@ const CreateAccount = () => {
               )}
               
            <input
-              id="phoneNumber"
               type="number"
               placeholder="phone Number "
-              onChange={(e) => setPhoneNumber(e.target.value)}
               className={`form-control ${errors.phone && "invalid"}`}
                 {...register("phone", { required: "Phone  number is Required",
                 pattern: {
@@ -156,13 +157,11 @@ const CreateAccount = () => {
                 <small className="text-danger">{errors.phone.message}</small>
               )}
 
-            <input
-              id="password"
-              type="password"
-              placeholder="password"
-              onChange={(e) => setPassword(e.target.value)} 
-              className={`form-control ${errors.message && "invalid"}`}
-                {...register("message", { required: "Password is Required",
+              <input 
+              placeholder="Password"
+              type='password'
+                className={`form-control ${errors.password && "invalid"}`}
+                {...register("password", { required: "Password is Required",
                 minLength: {
                   value: 8,
                   message: "Minimum Required length is 8",
@@ -173,28 +172,26 @@ const CreateAccount = () => {
                 }
                })}
                onKeyUp={() => {
-                trigger("message");
+                trigger("password");
               }}
-            ></input>
-             {errors.message && (
-                <small className="text-danger">{errors.message.message}</small>
+              ></input>
+              {errors.password && (
+                <small className="text-danger">{errors.password.message}</small>
               )}
                 <input
-              id="passwordConfirm"
               type="password"
               placeholder="confirm password"
-              onChange={(e) => setPasswordConfirm(e.target.value)} 
-              className={`form-control ${errors.confirmPassword && "invalid"}`}
-                {...register("confirmPassword", { required: "Password is Required",
+              className={`form-control ${errors.passwordConfirm && "invalid"}`}
+                {...register("passwordConfirm", { required: "Password is Required",
                })}
                onKeyUp={() => {
-                trigger("confirmPassword");
+                trigger("passwordConfirm");
               }}
             ></input>
-             {errors.confirmPassword && (
-                <small className="text-danger">{errors.confirmPassword.message}</small>
+             {errors.passwordConfirm && (
+                <small className="text-danger">{errors.passwordConfirm.message}</small>
               )}
-            <button className="p-12-10 " type="submit" id="signup">
+            <button className="p-12-10 " type="submit" id="signup" value="Sign Up">
               Sign up
             </button>
           </form>

@@ -1,7 +1,10 @@
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
+
+
 import styled from "styled-components";
 import "./signup.css";
+import axios from "axios";
 
 
 
@@ -61,8 +64,19 @@ function App() {
     trigger,
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit =  async(data) => {
     console.log(data);
+    const res = await axios.post("http://localhost:8000/api/v1/users/signup", {
+      name:data.firstName + data.lastName,
+      email: data.email,
+      phoneNumber: data.phone,
+      password:data.password,
+      passwordConfirm:data.password,
+     
+    });
+    
+    console.log(res.data);
+
     reset();
   };
 
@@ -159,8 +173,8 @@ function App() {
               <Input 
               placeholder="Password"
               type='password'
-                className={`form-control ${errors.message && "invalid"}`}
-                {...register("message", { required: "Password is Required",
+                className={`form-control ${errors.password && "invalid"}`}
+                {...register("password", { required: "Password is Required",
                 minLength: {
                   value: 8,
                   message: "Minimum Required length is 8",
@@ -171,11 +185,11 @@ function App() {
                 }
                })}
                onKeyUp={() => {
-                trigger("message");
+                trigger("password");
               }}
               />
-              {errors.message && (
-                <small className="text-danger">{errors.message.message}</small>
+              {errors.password && (
+                <small className="text-danger">{errors.password.message}</small>
               )}
             </div>
             <Input
