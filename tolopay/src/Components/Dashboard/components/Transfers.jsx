@@ -1,126 +1,119 @@
-import React from "react";
-import styled from "styled-components";
-import { HiArrowNarrowRight } from "react-icons/hi";
+import React from 'react'
+import styled from 'styled-components'
 import { cardStyles } from "./ReusableStyles";
+import Expenses from './Expense'
 
-export default function Transfers() {
-  const transactions = [
-    {
-      name: "From Troye Sivan",
-      time: "Today, 16:36",
-      amount: "+50,000 Birr",
-    },
-    {
-      name: "To Harry Styles",
-      time: "Today, 08:49",
-      amount: "-250,000 Birr",
-    },
-    {
-      name: "From Selome Teshome",
-      time: "Yesterday, 14:36",
-      amount: "+15,000 Birr",
-    },
-  ];
+function data(food, transfer, entertainment, tution) {
+  return { food, transfer, entertainment, tution};
+}
+
+const amount = [
+  data("400 Birr", '700 Birr', '300 Birr', "300 Birr"),
+]
+
+
+const Transfers = () => {
   return (
     <Section>
-      <div className="title">
-        <h2>Your Transfers</h2>
+          
+    <Expenses />
+    <div className='cards'>
+    <div className='analytic'>
+    <div className='content' >
+        <h5>Food</h5>
+        <h3>value.food</h3>
+    </div>
+    </div>
+
+    <div className="analytic">
+      <div className="content">
+        <h5>Transfers</h5>
+        <h3>value.transfer</h3>
       </div>
-      <div className="transactions">
-        {transactions.map((transaction) => {
-          return (
-            <div className="transaction">
-              <div className="transaction__title">
-                <div className="transaction__title__details">
-                  <h3>{transaction.name}</h3>
-                  <h5>{transaction.time}</h5>
-                </div>
-              </div>
-              <div className="transaction__amount">
-                <span>{transaction.amount}</span>
-              </div>
-            </div>
-          );
-        })}
+    </div>
+
+    <div className='analytic'>
+      <div className='content'>
+        <h5>Entertainment</h5>
+        <h3><value className="entertainment"></value></h3>
       </div>
-      <a className="view" href="#">
-        View all <HiArrowNarrowRight />
-      </a>
-    </Section>
-  );
+    </div>
+    
+</div>
+      
+  </Section>
+  )
 }
 
 const Section = styled.section`
-// min-height: 19rem;  
-margin-top: 6.5rem;
+margin-bottom: 5rem;
+display: grid;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+// border-radius: 1rem;
+grid-row-start: 1;
+grid-row-end: 3;
+// padding-left: 10rem;
+// padding-right: 10rem;
+
+.cards{
+  padding-left: 5rem;
+padding-right: 5rem;
+  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  // margin-top: 0.1rem;
+}
+
+
+.analytic {
   ${cardStyles};
-  flex-direction: column;
-  gap: 1rem;
-  .title {
-    h2 {
-      color: #073604;
-    }
-  }
-  .transactions {
-    display: flex;
-    flex-direction: column;
-    .transaction {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      &__title {
-        display: flex;
-        gap: 1rem;
-        &__details {
-        }
-      }
-      &__amount {
-        background-color: #d7e41e1d;
-        color: #073604;
-        padding: 2rem 0.5rem;
-        width: 4rem;
-        border-radius: 1rem;
-        text-align: center;
-        transition: 0.3s ease-in-out;
-        &:hover {
-          background-color: #073604;
-          span {
-            color: white;
-          }
-        }
-        span {
-          color: #073604;
-        }
-      }
-    }
-  }
-  .view {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    text-decoration: none;
-    color: #073604;
-    font-weight: bold;
-    margin-top: 1rem;
-    gap: 0.5rem;
+  margin-top: 1rem;
+  padding-left: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+  background-color: rgba(105, 119, 254, 0.1);
+  &:hover {
+    background-color: rgb(105, 119, 254);
+    color: white;
     svg {
-      transition: 0.3s ease-in-out;
-      font-size: 1.4rem;
-    }
-    &:hover {
-      svg {
-        transform: translateX(0.5rem);
-      }
+      color: #6977fe;
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 375px) {
-    .transactions {
-      .transaction {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-    }
+
+  h2{
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+
   }
+  h5{
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+
+  }
+
+
+  
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 720px) {
+ 
+
+  display: flex;
+  flex-direction: column;
+  
+  .analytic.content{
+    padding: 2rem;
+  }
+
+  }
+}
 `;
+
+export default Transfers
