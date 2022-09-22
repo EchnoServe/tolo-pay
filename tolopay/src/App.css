@@ -1,3 +1,10 @@
-boyd {
-    color: #739e6c;
+body {
+    color: #404550;
+
+}
+*{
+font-family: 'Inter', sans-serif;
+font-family: 'Urbanist', sans-serif;
+margin: 0;
+padding: 0;
 }

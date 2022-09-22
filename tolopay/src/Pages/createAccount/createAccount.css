@@ -29,7 +29,7 @@
 }
 
 .form h1 {
-  color: #46833c;
+  color: #404550;
   font-weight: 100;
 }
 
@@ -40,15 +40,15 @@
 .btn {
   background-color: transparent;
   justify-content: space-around;
-  border: 2px solid #46833c;
-  color: #46833c;
+  border: 2px solid #41d3fe;
+  color: #404550;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   font-size: 1rem;
   width: inherit;
 }
 .btn:hover {
   color: #fff;
-  background-color: #46833c;
+  background-color: #6977fe;
   transition: all 0.5s;
 }
 .or_line {
@@ -98,19 +98,19 @@
   width: inherit;
   padding-left: 8px;
   height: 50px;
-  border: 1px solid #46833c;
+  border: 1px solid #41d3fe;
 }
 
 #signup {
   border: none;
-  background: linear-gradient(to right bottom, #46833c, #92b98c);
+  background: linear-gradient(to right bottom, #41d3fe, #6977fe);
   font-weight: bold;
   font-size: 1rem;
   width: inherit;
   color: #fff;
 }
 #signup:hover {
-  background: #46833c;
+  background: #6977fe;
 }
 .img_container section {
   width: 50%;
