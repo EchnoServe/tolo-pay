@@ -2,11 +2,11 @@ import React from 'react'
 import { useEffect } from "react";
 import Analytics from './Analytics'
 import styled from 'styled-components'
-import Spiral from './Spiral';
-import Chart from './Chart';
 import scrollreveal from "scrollreveal";
-import Table from './Table';
-import Transfers from './Transfers';
+import BasicTable from './Table';
+// import Transfers from './Expense';
+import Expenses from './Transfers';
+// import TriangleBar from './TriangleBar'
 
 function Dashboard() {
 
@@ -35,49 +35,42 @@ function Dashboard() {
         <div className='grid'>
             <div className='row_one'>
                 <Analytics />
-                <Chart />
+                <BasicTable />
+                <Expenses />
+                
             </div>
-            <div className='row_two'>
-                <Spiral />
-                <Table />
-                <Transfers />
-            </div> 
-        </div>
+            </div>           
+        
     </Section>
   )
 }
 
 const Section = styled.section`
-    margin-left: 10vw;
-    padding: 2rem;
-    padding-left: 0rem;
+    display: grid;
+    padding-top: 3rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
     height: 100%
-
     .grid{
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        gap: 3rem;
+        display: grid;
+        grid-templete-columns: 1fr 2fr;
+        grid-row-gap: 5rem;
         margin-top: 2rem;
     }
         .row_one{
             display: grid;
-            grid-template-columns: repeat(2,1fr);
-            height: 50%;
+            grid-template-columns: 1fr 2fr;
             gap: 1rem;
         }
-
-        .row_two{
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            height: 50%;
-            gap: 1rem;
-        }
+         }
        
-      @media screen and (min-width: 280px) and (max-width: 1080px) {
+       
+      @media screen and (min-width:250px) and (max-width: 768px) {
     // margin-left: 0;
     .grid {
-      .row_one,
+      .row_one{
+        grid-template-columns: 1fr;
+      }
       .row_two {
         grid-template-columns: 1fr;
       }
