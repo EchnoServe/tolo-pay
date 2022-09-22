@@ -1,11 +1,12 @@
 import "./App.css";
 import LoginPage from "./Pages/login_page/LoginPage";
 import SignupValidation from "./Components/signup_validation/signup";
-import Budget from "./Pages/budget_page/Budget";
+import Budget from "./Pages/budget_page/Budget"
+import Budget_form from "./Pages/budget_page/budget_form_page"
 import CreateAccount from "./Pages/createAccount/CreateAccount";
 function App() {
   return (<div>
-<CreateAccount/>
+<Budget_form/>
   </div>
     //   style={{
     //     display: "flex",
