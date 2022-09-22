@@ -24,7 +24,7 @@ import { Icon } from '@iconify/react';
 import {
     
     
-    AiOutlineLeft,
+    // AiOutlineLeft,
     AiFillHome,
     // AiFillSetting
     
@@ -86,7 +86,7 @@ const linksArray = [
     {
         label: "Dashboard",
         icon: <AiFillHome />,
-        to: "/dashboard",
+        to: "/",
         
     },
     {
@@ -105,7 +105,7 @@ const linksArray = [
     {
         label: "Qrcode",
         icon: <MdQrCodeScanner />,
-        to: "/setting",
+        to: "/qr",
         
     },
 ];

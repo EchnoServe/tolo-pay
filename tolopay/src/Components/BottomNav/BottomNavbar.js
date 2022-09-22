@@ -14,7 +14,7 @@ export default function BottomNavbar() {
   
    const navLinkStyles = ({ isActive }) => {
       return {
-         color: isActive ? 'blueviolet' : '#007e32',
+         color: isActive ? '#41d3fe' : '#0049ff',
       }
    }
       return (
@@ -23,7 +23,7 @@ export default function BottomNavbar() {
     
             
             
-            <NavLink style={navLinkStyles} exact to="/home" >
+            <NavLink style={navLinkStyles} exact to="/" >
                <AiFillHome />
             </NavLink>
          
@@ -34,7 +34,7 @@ export default function BottomNavbar() {
             <NavLink style={navLinkStyles} exact to="/planning" className='budgetIcon'>
                <Icon icon="arcticons:budgetmylife" />
             </NavLink>
-            <NavLink style={navLinkStyles} exact to="/settings" >
+            <NavLink style={navLinkStyles} exact to="/qr" >
                <MdQrCodeScanner />
             </NavLink>
         
