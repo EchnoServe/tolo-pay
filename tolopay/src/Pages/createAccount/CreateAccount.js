@@ -3,9 +3,7 @@ import "./createAccount.css";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import "../../Components/signup_validation/signup.css";
-import { Formik } from 'formik';
 import axios from 'axios';
-import api from "../../api";
 import LoginPage from "../login_page/LoginPage";
  
 
