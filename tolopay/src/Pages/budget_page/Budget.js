@@ -128,27 +128,6 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 `
 
-
-// eslint-disable-next-line no-unused-vars
-const Box= styled.div`
-position:absolute;
-top:20px;
-left: 20px;
-right:20px;
-bottom:20px;
-background:yellow;
-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-display: block;
-justify-content: center;
-align-items: center;
-  &:hover ${H3} {
-    color:white;
-  }
-  &:hover ${Icons} {
-    color:white;
-  }
-`
-
 const H4= styled.h4`
 font-size:20px;
 color:white;

@@ -129,7 +129,7 @@ const Section = styled.section`
       margin: 10px 0 10px 0;
       padding: 15px;
       font-size: 16px;
-      border: 2px solid #9dc297;
+      border: 2px solid #41d3fe;
     }
 
     .option:hover {
@@ -137,7 +137,7 @@ const Section = styled.section`
       margin: 10px 0 10px 0;
       padding: 15px;
       font-size: 16px;
-      border: 2px solid #46833c;
+      border: 2px solid #6977fe;
     }
 
     .form-field {
@@ -153,7 +153,7 @@ const Section = styled.section`
       padding: 15px;
       font-size: 16px;
       border-style: solid;
-      border-color: #46833c;
+      border-color: #6977fe;
     }
 
     .btn {
@@ -190,11 +190,11 @@ const Section = styled.section`
       background: #46833c;
       color: white;
       cursor: pointer;
-      background-image: linear-gradient(to bottom right, #46833c, #9fcb98);
+      background: linear-gradient(to right bottom, #41d3fe, #6977fe);
     }
 
     button:hover {
-      background-image: linear-gradient(to bottom right, #285f1f, #7ab671);
+      background: #6977fe;
     }
 
     button:disabled {
