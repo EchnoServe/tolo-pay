@@ -1,25 +1,22 @@
 import { useState } from "react"
 import styled from 'styled-components'
-
+import Modal from "../../Components/confirmation_component/Transfer"
 
 const Budget_form = () => {
 
-    const [passwordShown, setPasswordShown] = useState(false);
+//     const [values, setValues] = useState({
+//         budgetName:"",
+//         amount:""
+//     });
 
+// const handleBudgetName = (event) =>{
+//     setValues({...values, budgetName: event.target.value})
+// }
 
-    const [values, setValues] = useState({
-        budgetName:"",
-        amount:""
-    });
-
-const handleBudgetName = (event) =>{
-    setValues({...values, budgetName: event.target.value})
-}
-
-const handleAmount = (event) =>{
-    setValues({...values, amount: event.target.value})
-}
-
+// const handleAmount = (event) =>{
+//     setValues({...values, amount: event.target.value})
+// }
+const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <Section>
@@ -27,21 +24,20 @@ const handleAmount = (event) =>{
         <form className="moneyTransfer">
             <h3 >Add Budget</h3>
             <input
-                onChange={handleBudgetName}
-                value={values.budgetName} 
                 className="form-field" 
                 placeholder="Budget Name" 
                 name="customerWalletNumber" />
             <input 
-                onChange={handleAmount}
-                value={values.amount}
                 className="form-field" 
                 placeholder="Amount" 
                 name="amount" />
             
             <button
                 className="btn"
-                type="submit">Add Budget</button>
+                type="submit"  onClick={() => {
+                    setModalOpen(true);
+                  }}>Add Budget</button>
+                  {modalOpen && <Modal setOpenModal={setModalOpen} />}
         </form>
     </div>
     </Section>
