@@ -1,43 +1,40 @@
 import { useState } from "react"
 import styled from 'styled-components'
-import Modal from "../../Components/confirmation_component/Transfer"
 
 const Budget_form = () => {
 
-//     const [values, setValues] = useState({
-//         budgetName:"",
-//         amount:""
-//     });
+    const [values, setValues] = useState({
+        budgetName:"",
+        amount:""
+    });
 
-// const handleBudgetName = (event) =>{
-//     setValues({...values, budgetName: event.target.value})
-// }
+const handleBudgetName = (event) =>{
+    setValues({...values, budgetName: event.target.value})
+}
 
-// const handleAmount = (event) =>{
-//     setValues({...values, amount: event.target.value})
-// }
-const [modalOpen, setModalOpen] = useState(false);
-
+const handleAmount = (event) =>{
+    setValues({...values, amount: event.target.value})
+}
   return (
     <Section>
-    <div className="walletToWallet">
-        <form className="moneyTransfer">
+    <div className="budgetpage">
+        <form className="addbudget">
             <h3 >Add Budget</h3>
             <input
+                onChange={handleBudgetName}
                 className="form-field" 
                 placeholder="Budget Name" 
-                name="customerWalletNumber" />
+                name="budgetName" />
             <input 
+                onChange={handleAmount}
                 className="form-field" 
                 placeholder="Amount" 
                 name="amount" />
             
             <button
                 className="btn"
-                type="submit"  onClick={() => {
-                    setModalOpen(true);
-                  }}>Add Budget</button>
-                  {modalOpen && <Modal setOpenModal={setModalOpen} />}
+                type="submit" >Add Budget</button>
+              
         </form>
     </div>
     </Section>
@@ -45,18 +42,22 @@ const [modalOpen, setModalOpen] = useState(false);
 }
 
 const Section = styled.section`
-.walletToWallet{
+.budgetpage{
     display: flex;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-  
-    .moneyTransfer {
+    @media (max-width: 768px) {
+     
+      }
+    .addbudget {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       padding: 10px;
-  
+      @media (max-width: 768px) {
+      align-items:center;
+      }
       h3{
           text-align: center;
           text-decoration: 2.5px underline #46833c;
@@ -111,6 +112,9 @@ const Section = styled.section`
       padding: 15px;
       font-size: 16px;
       border: none;
+      @media (max-width: 768px) {
+      margin: 10px 0 10px 0;
+      padding: 15px;}
     }
     
   
