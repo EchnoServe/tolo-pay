@@ -3,8 +3,11 @@
 import { css } from "styled-components";
 
 export const cardStyles = css`
-  padding: 1rem 2rem 0rem 2rem;
-  color: rgb(105, 119, 254);
-  background-color: white;
-  height: 80px;
-  `;
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    height: max-content;
+  }
+`;

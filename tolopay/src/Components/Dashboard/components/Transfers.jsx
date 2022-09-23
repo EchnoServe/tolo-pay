@@ -15,8 +15,6 @@ const amount = [
 const Transfers = () => {
   return (
     <Section>
-          
-    <Expenses />
     <div className='cards'>
     <div className='analytic'>
     <div className='content' >
@@ -46,34 +44,33 @@ const Transfers = () => {
 }
 
 const Section = styled.section`
-margin-bottom: 5rem;
+margin: 1rem 0rem 2rem 20rem;
 display: grid;
-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+// box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
 // border-radius: 1rem;
 grid-row-start: 1;
 grid-row-end: 3;
-// padding-left: 10rem;
-// padding-right: 10rem;
+
 
 .cards{
-  padding-left: 5rem;
-padding-right: 5rem;
+  margin-right: 20rem;
+  display: grid;
+  grid-gap: 2rem;
+  // flex-direction: column;
+  grid-template-columns: 1fr 1fr;
   // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
-  border-radius: 1rem;
-  margin-bottom: 3rem;
-  // margin-top: 0.1rem;
+  // border-radius: 1rem;
+  // margin-bottom: 3rem;
 }
 
 
 .analytic {
   ${cardStyles};
-  margin-top: 1rem;
-  padding-left: 4rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  margin: 0.5rem 0rem 0.5rem 0rem;
+  padding: 0.5rem;
   border-radius: 1rem;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   transition: 0.5s ease-in-out;
   // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
