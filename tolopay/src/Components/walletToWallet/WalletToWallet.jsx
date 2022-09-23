@@ -32,7 +32,7 @@ const WalletToWallet = () => {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmMwYmU0YWY1MzdhZDRjZmJmZGY1MCIsImlhdCI6MTY2MzgzMTM4NSwiZXhwIjoxNjcxNjA3Mzg1fQ.3UMcrl26NP8YVnUvt2_ZVaU2GCAn6YPUHsjYlIUD5LQ",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmQ1ZDQyNjU1YThmNmZiYzk4NmQxZSIsImlhdCI6MTY2MzkxNzM3OCwiZXhwIjoxNjcxNjkzMzc4fQ.Xhf-UM6lx8n5eP_7x4u9aV7ad1czdlO5L7LwQfJg1Qw",
           },
         }
       );
@@ -71,9 +71,9 @@ const WalletToWallet = () => {
 
           <select className="option" id="remark">
             <option value="">Remark</option>
-            <option value="option 1">option1</option>
-            <option value="option 2">option2</option>
-            <option value="option 3">option3</option>
+            <option value="for movies">for movies</option>
+            <option value="for food">for food</option>
+            <option value="for travel">for travel</option>
           </select>
 
           <input
@@ -145,7 +145,7 @@ const Section = styled.section`
       padding: 15px;
       font-size: 16px;
       border-style: solid;
-      border-color: #9dc297;
+      border-color: #41d3fe;
     }
 
     .form-field:hover {

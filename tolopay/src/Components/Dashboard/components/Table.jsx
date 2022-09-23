@@ -52,7 +52,7 @@ export default function BasicTable() {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmMwYmU0YWY1MzdhZDRjZmJmZGY1MCIsImlhdCI6MTY2MzgzMTM4NSwiZXhwIjoxNjcxNjA3Mzg1fQ.3UMcrl26NP8YVnUvt2_ZVaU2GCAn6YPUHsjYlIUD5LQ",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmQ1ZDQyNjU1YThmNmZiYzk4NmQxZSIsImlhdCI6MTY2MzkxNzM3OCwiZXhwIjoxNjcxNjkzMzc4fQ.Xhf-UM6lx8n5eP_7x4u9aV7ad1czdlO5L7LwQfJg1Qw",
           },
         }
       );
