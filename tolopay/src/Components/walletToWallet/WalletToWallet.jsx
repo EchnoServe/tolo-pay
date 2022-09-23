@@ -1,11 +1,10 @@
 import { useState } from "react"
 import styled from 'styled-components'
+import Transfer from './Confirmation'
+ 
 
 
 const WalletToWallet = () => {
-
-    const [passwordShown, setPasswordShown] = useState(false);
-
 
     const [values, setValues] = useState({
         customerWalletNumber:"",
@@ -26,11 +25,14 @@ const handlePassword = (event) =>{
     setValues({...values, password: event.target.value})
 }
 
+const [components, setComponents] = useState([Transfer]); 
+  
+
   return (
     <Section>
     <div className="walletToWallet">
         <form className="moneyTransfer">
-            <h3 >wallet to wallet</h3>
+            <h2>wallet to wallet</h2>
             <input
                 onChange={handleCustomerWalletNumber}
                 value={values.customerWalletNumber} 
@@ -46,9 +48,12 @@ const handlePassword = (event) =>{
             
             <select className="option" id="remark">
                  <option value="" selected hidden>Remark</option>
-                 <option value="option 1">option1</option>
-                 <option value="option 2">option2</option>
-                 <option value="option 3">option3</option>
+                 <option value="option 1">Food</option>
+                 <option value="option 2">Tution Fee</option>
+                 <option value="option 3">Entertainment</option>
+                 <option value="option 3">Gym</option>
+                 <option value="option 3">House hold</option>
+
 
             </select> 
                
@@ -57,8 +62,7 @@ const handlePassword = (event) =>{
                 value={values.password}
                 className="form-field" 
                 placeholder="Password"
-                // type="password" 
-                type={passwordShown ? "text" : "password"}
+                type="password" 
                 name="password" 
                 required/>
             <button
@@ -83,9 +87,9 @@ const Section = styled.section`
       justify-content: space-evenly;
       padding: 10px;
   
-      h3{
+      h2{
           text-align: center;
-          text-decoration: 2.5px underline #46833c;
+          text-decoration: 2.5px underline #1f77b4;
           text-underline-offset: 8px;
           
       }
@@ -95,7 +99,7 @@ const Section = styled.section`
       }
       option {
           border: 2px;
-          color: #000000;
+          color: #000;
       }
       
     }
@@ -105,7 +109,7 @@ const Section = styled.section`
       margin: 10px 0 10px 0;
       padding: 15px;
       font-size: 16px;
-      border: 2px solid #9dc297;
+      border: 2px solid #1f77b4;
     }
   
     .option:hover{
@@ -113,7 +117,7 @@ const Section = styled.section`
       margin: 10px 0 10px 0;
       padding: 15px;
       font-size: 16px;
-      border: 2px solid #46833c;
+      border: 2px solid #1f77b4;
     }
     
     .form-field{
@@ -121,7 +125,7 @@ const Section = styled.section`
       padding: 15px;
       font-size: 16px;
       border-style: solid;
-      border-color: #9dc297;
+      border-color: #1f77b4;
     }
   
     .form-field:hover{
@@ -129,7 +133,7 @@ const Section = styled.section`
       padding: 15px;
       font-size: 16px;
       border-style: solid;
-      border-color: #46833c;
+      border-color: #1f77b4;
     }
   
     .btn{
@@ -165,14 +169,14 @@ const Section = styled.section`
     }
     
     button {
-      background: #46833c;
+      background: #1f77b4;
       color: white;
       cursor: pointer;
-      background-image: linear-gradient(to bottom right, #46833c, #9fcb98);
+      background-image: linear-gradient(to bottom right, #1f77b4, #1f77b4);
     }
     
     button:hover{
-      background-image: linear-gradient(to bottom right, #285f1f, #7ab671);
+      background-image: linear-gradient(to bottom right, #003cb3, #1f77b4);
     }
    
     
