@@ -4,7 +4,7 @@ import FoodIcon from "@material-ui/icons/Restaurant";
 import GroceryIcon from "@material-ui/icons/ShoppingCart";
 import HealthIcon from "@material-ui/icons/AddBoxRounded";
 import TravelIcon from "@material-ui/icons/CardTravel";
-
+import { Link } from "react-router-dom";
 
 const MainContainer = styled.div`
 @media (max-width: 768px) {
@@ -161,7 +161,8 @@ margin:100px 0px 0px 0px;
 function Budget() {
   return (
    <MainContainer>
-    <AddButton><Button><big><b>+ </b></big>Add a New Budget</Button></AddButton>
+    <AddButton>
+    <Link to='/budgetform'><Button ><big><b>+ </b></big>Add a New Budget</Button></Link></AddButton>
 <Container>
 
   <Card>

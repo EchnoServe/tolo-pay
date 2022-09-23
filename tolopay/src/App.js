@@ -20,6 +20,7 @@ import { GlobalStyle } from "./Utils/globalStyles";
 import { darkTheme, lightTheme } from "./Utils/theme";
 import BottomNavbar from "./Components/BottomNav/BottomNavbar";
 import UserProfile from "./Pages/UserProfile";
+import Budget_form from "./Pages/budget_page/BudgetForm";
 
 export const ThemeContext = React.createContext(null);
 
@@ -53,7 +54,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/transfer" element={<WalletToWallet />} />
-
+                <Route path="/budgetform" element={<Budget_form/>} />
                 <Route path="/planning" element={<Budget />} />
                 <Route path="/qr" element={<QR />} />
                 <Route path="/profile" element={<UserProfile />} />
