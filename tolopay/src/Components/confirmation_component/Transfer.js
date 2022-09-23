@@ -4,16 +4,17 @@ import styled from "styled-components";
 const ModalContainer = styled.div`
 background-color: white;
 height:170px;
-width: 460px;
+width: 440px;
 align-content: center;
 padding-left: 20px;
 padding-top: 20px;
 padding-bottom:15px;
-box-shadow: 10px 20px 20px rgba(0,0,0,0.1);
 `
-const ModalBg = styled.div``
+const ModalBg = styled.div`
+width:100%;
+height:100vh;
+`
 const TitleCloseBtn = styled.div`
-margin-right:5px;
 display: flex;
 justify-content: flex-end;
 `
