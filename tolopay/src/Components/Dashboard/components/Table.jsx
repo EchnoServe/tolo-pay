@@ -79,7 +79,7 @@ export default function BasicTable() {
 }
 
 const Div = styled.div`
-margin-right: 10rem;
+margin-right: 3rem;
 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
 margin-top: 2rem;
 margin-bottom: 7rem;

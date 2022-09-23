@@ -19,14 +19,14 @@
   font-size: 30px;
   margin-right: 15px;
   padding: 10px;
-  transition: all 0.9s ease-in-out 0s;
+  transition: all 1.5s ease-in-out 0s;
   
 
 }
 .navbar a:hover{
   cursor: pointer;
     transform: rotate(360deg);
-    transition: all 0.3s ease-in-out 0s;
+    transition: all 1.5s ease-in-out 0s;
 }
 
 .navbar icon{
