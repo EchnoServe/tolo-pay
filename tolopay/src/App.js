@@ -14,7 +14,7 @@ import QR from "./Pages/qr/Qr";
 import Planning from "./Pages/Planning";
 // import Navbar from "./Components/Navbar/Navbar";
 
-import WalletToWallet from "./Components/walletToWallet/WalletToWallet"
+import WalletToWallet from "./Components/walletToWallet/WalletToWallet";
 // import RoutesPath from "./RoutesPath";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { GlobalStyle } from "./Utils/globalStyles";
@@ -29,8 +29,8 @@ import Login from "./Components/login_components/LoginForm";
 export const ThemeContext = React.createContext(null);
 
 const App = () => {
-    const [theme, setTheme] = useState("light");
-    const themeStyle = theme === "light" ? lightTheme : darkTheme;
+  const [theme, setTheme] = useState("light");
+  const themeStyle = theme === "light" ? lightTheme : darkTheme;
 
     return (
         <ThemeContext.Provider value={{ setTheme, theme }}>
@@ -77,12 +77,10 @@ const App = () => {
                         
                         
                             </Router>
-
-                </>
-            </ThemeProvider>
-        </ThemeContext.Provider>
-
-    );
+        </>
+      </ThemeProvider>
+    </ThemeContext.Provider>
+  );
 };
 
 export default App;
