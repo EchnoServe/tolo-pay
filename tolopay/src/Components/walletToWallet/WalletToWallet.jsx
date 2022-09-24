@@ -1,8 +1,25 @@
 import axios from "axios";
 import { useState } from "react";
 import styled from "styled-components";
+import React from "react";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import Button from "@material-ui/core/Button";
+
 
 const WalletToWallet = () => {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickToOpen = () => {
+    setOpen(true);
+  };
+  
+  const handleToClose = () => {
+    setOpen(false);
+  };
   const [passwordShown, setPasswordShown] = useState(false);
 
   const [values, setValues] = useState({
@@ -86,15 +103,55 @@ const WalletToWallet = () => {
             name="password"
             required
           />
-          <button className="btn" type="submit">
+          <button className="btn" type="submit" 	onClick={handleClickToOpen}>
             Transfer
           </button>
         </form>
       </div>
+      <div stlye={{}}>
+	<Dialog open={open} onClose={handleToClose}>
+		<DialogContent>
+		<DialogContentText>
+		Are you sure you want to transfer this money?
+		</DialogContentText>
+		</DialogContent>
+		<DialogActions>
+    <TransferBtn>Transfer</TransferBtn>
+		<CancelBtn onClick={handleToClose}
+				color="primary" autoFocus>
+			close
+		</CancelBtn>
+
+
+         
+		</DialogActions>
+	</Dialog>
+	</div>
     </Section>
+    
   );
 };
+const TransferBtn = styled.button`
+width: 120px;
+height: 40px;
+margin: 10px;
+border: none;
+background-color: #41d3fe;
+color: white;
+border-radius: 0px;
+font-size: 18px;
+cursor: pointer;
+`
 
+const CancelBtn= styled.button`
+width: 120px;
+height: 40px;
+background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 18px;
+cursor: pointer;
+`
 const Section = styled.section`
   .walletToWallet {
     display: flex;
@@ -201,6 +258,7 @@ const Section = styled.section`
       cursor: default;
     }
   }
+  
 `;
 
 export default WalletToWallet;
