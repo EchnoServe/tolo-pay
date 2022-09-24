@@ -1,8 +1,55 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import EditUserInfo from './../Components/userInfo/EditUserInfo'
 import UserInfo from './../Components/userInfo/UserInfo'
 import UserStatus from './../Components/userStatus/UserStatus'
 
+const UserStyle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border: 2px dotted green;
+  width: 100vw;
+
+  @media screen and (min-width: 776px) {
+    margin-left: 110px;
+    width: calc(100vw - 110px);
+  }
+`;
+
+const Profile = styled.div`
+  width: inherit;
+  // border: 2px solid orange;
+
+  @media screen and (min-width: 776px) {
+    width: calc(100vw - 110px);
+  }
+
+  // @media screen and (min-width: 400px){
+  //   width: 99vw;
+  // }
+`;
+
+const EditProfile = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: calc(100vh - 80px);
+  // border: 2px solid blue;
+
+  @media screen and (min-width: 400px){
+    width: 99%;
+  }
+  @media screen and (min-width: 768px){
+    width: 75%;
+  }
+  @media screen and (min-width: 1280px){
+    width: 70%;
+  }
+`;
+
+// responsible for profile section of the app
 const UserProfile = () => {
 
     const [editState, changeEditState] = useState(false)
@@ -10,10 +57,10 @@ const UserProfile = () => {
         changeEditState(value);
     }
 
-  return (<div>
+  return (<UserStyle>
     {
       editState === false ?
-      <div style={{display: "flex", flexDirection: "column", justifyContent: 'center', alignItems: 'center'}}>
+      <Profile>
           
           <UserInfo editState={editState} onChange={handleChange} /> 
           
@@ -21,14 +68,15 @@ const UserProfile = () => {
           
           <UserStatus />
 
-      </div>   
+      </Profile> 
       :
-      <div style={{display: "flex", justifyContent: 'center', alignItems: 'center'}}>
-        <EditUserInfo editState={editState} onChange={handleChange}/> 
-      </div>
+      <EditProfile>
+        <EditUserInfo editState={editState} onChange={handleChange}/>
+      </EditProfile>
     }
-    </div>
+    </UserStyle>
   )
 }
+
 
 export default UserProfile

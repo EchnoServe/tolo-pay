@@ -83,7 +83,6 @@ export default function App() {
 
 const Section = styled.section`
 margin: 3rem 0rem 0rem 3rem;
-
 @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;

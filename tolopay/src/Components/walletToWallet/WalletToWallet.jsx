@@ -1,6 +1,6 @@
 import { useState } from "react"
 import styled from 'styled-components'
-import Transfer from './Confirmation'
+import Transfer from '../confirmation_component/Transfer'
  
 
 
@@ -80,6 +80,7 @@ const Section = styled.section`
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
   
     .moneyTransfer {
       display: flex;
@@ -187,7 +188,6 @@ const Section = styled.section`
   
   
   
-
 `;
 
 export default WalletToWallet

@@ -50,8 +50,6 @@ display: grid;
 // border-radius: 1rem;
 grid-row-start: 1;
 grid-row-end: 3;
-
-
 .cards{
   margin-right: 20rem;
   display: grid;
@@ -62,8 +60,6 @@ grid-row-end: 3;
   // border-radius: 1rem;
   // margin-bottom: 3rem;
 }
-
-
 .analytic {
   ${cardStyles};
   margin: 0.5rem 0rem 0.5rem 0rem;
@@ -82,33 +78,24 @@ grid-row-end: 3;
       color: #6977fe;
     }
   }
-
   h2{
     padding-top: 0rem;
     padding-bottom: 0rem;
-
   }
   h5{
     padding-top: 0rem;
     padding-bottom: 0rem;
-
   }
-
-
   
 }
-
-
 @media screen and (min-width: 280px) and (max-width: 720px) {
  
-
   display: flex;
   flex-direction: column;
   
   .analytic.content{
     padding: 2rem;
   }
-
   }
 }
 `;

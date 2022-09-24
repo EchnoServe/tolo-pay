@@ -86,7 +86,6 @@ gap: 1rem;
   transition: 0.5s ease-in-out;
   // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
   background-color: #1f77b4;
-
   // &:hover {
   //   background-color: #1f77b4;
   //   color: white;
@@ -97,17 +96,13 @@ gap: 1rem;
   //     color: white;
   //   }
   // }
-
   h2{
     margin-top: 0.5rem;
-
   }
   h4{
     margin-top: 0.5rem;
     color: white;
   }
-
-
   .logo {
     background-color:white;
     color: #1f77b4;
@@ -129,11 +124,9 @@ gap: 1rem;
       display: flex;
       flex-direction: colun;
     }
-
   
   }
 }
-
 `;
 
 export default Analytics

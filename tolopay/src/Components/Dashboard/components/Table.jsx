@@ -84,37 +84,28 @@ padding-left: 3rem;
 .MuiTableRow-root > * {
   padding: 20px;
 }
-
 .MuiTableRow-root.MuiTableRow-head > * {
   font-weight: bold !important;
   color: #1f77b4 !important;
-
 }
-
 .Table td,
 th {
   // border: none !important;
 }
-
 .Table:first-child {
   border-radius: 0.7rem !important;
 }
-
-
 h2{
   color: #1f77b4;
   padding-left: 2rem;
   padding-top: 1rem;
 }
-
 @media screen and (max-width: 1200px) {
   .Table {
     width: 100%;
     margin-top: 2rem;
   }
 }
-
-
 @media screen and (max-width: 768px) {
   .Table{
     position: relative;
@@ -124,5 +115,4 @@ h2{
     width: 30rem;
   }
 }
-
 `;
