@@ -24,7 +24,7 @@ const Analytics = () => {
         <GiReceiveMoney />
       </div>
     <div className='content' >
-        <h5>Money in [Received]</h5>
+        <h4>Money in [Received]</h4>
         <h3>value.money_in</h3>
       </div>
     </div>
@@ -34,7 +34,7 @@ const Analytics = () => {
         <GiPayMoney />
       </div>
       <div className="content">
-        <h5>Money out [Sent or Spent]</h5>
+        <h4>Money out [Sent or Spent]</h4>
       <h3>value.money_out</h3>
       </div>
     </div>
@@ -44,7 +44,7 @@ const Analytics = () => {
         <IoStatsChart />
       </div>
       <div className='content'>
-        <h5>Current balance [Available]</h5>
+        <h4>Current balance [Available]</h4>
         <h3>value.current_ballance</h3>
       </div>
     </div>
@@ -55,7 +55,7 @@ const Analytics = () => {
         <GiTrophyCup />
       </div>
     <div className="content">
-        <h5>Points earned</h5>
+        <h4>Points earned</h4>
         <h3>value.points_earned</h3>
       </div>
     </div>
@@ -67,10 +67,11 @@ const Analytics = () => {
 }
 
 const Section = styled.section`
+margin: 2rem 20rem 0rem 20rem;
 display: flex;
 flex-direction: row;
-padding-right: 3rem;
-gap: 2rem;
+padding-right: 1rem;
+gap: 1rem;
 .analytic {
   ${cardStyles};
   padding: 1rem;
@@ -78,27 +79,33 @@ gap: 2rem;
   padding: right: 1rem;
   border-radius: 1rem;
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
   transition: 0.5s ease-in-out;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
-  &:hover {
-    background-color: rgb(105, 119, 254);
-    color: white;
-    svg {
-      color: #6977fe;
-    }
-  }
+  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+  background-color: #1f77b4;
+  // &:hover {
+  //   background-color: #1f77b4;
+  //   color: white;
+  //   svg {
+  //     color: #1f77b4;
+  //   }
+  //   h4{
+  //     color: white;
+  //   }
+  // }
   h2{
     margin-top: 0.5rem;
   }
-  h5{
+  h4{
     margin-top: 0.5rem;
+    color: white;
   }
   .logo {
     background-color:white;
-    color: #6977fe;
+    color: #1f77b4;
     border-radius: 3rem;
     display: flex;
     justify-content: center;
@@ -110,19 +117,14 @@ gap: 2rem;
   }
 }
 @media screen and (min-width: 280px) and (max-width: 720px) {
-  // grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  // .analytic {
-  //   &:nth-of-type(3),
-  //   &:nth-of-type(4) {
-  //     display: flex;
-  //     flex-direction: column;
-  //   }
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  .analytic {
+    &:nth-of-type(3),
+    &:nth-of-type(4) {
+      display: flex;
+      flex-direction: colun;
+    }
   
-  .analytic.content{
-    padding: 2rem;
-  }
   }
 }
 `;
