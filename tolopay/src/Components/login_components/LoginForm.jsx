@@ -1,8 +1,10 @@
-import { Formik } from 'formik'
+import { Formik } from 'formik';
 import * as Yup from "yup";
-import React from 'react'
-import { primary } from '../../Utils/colors'
-import { Email, LoginButton, LoginFormButton, LoginOptions, Password, Para, Pwarning, Warning } from './LoginContainer.style'
+import React from 'react';
+import { primary } from '../../Utils/colors';
+import { Email, LoginButton, LoginFormButton, 
+  LoginOptions, Password, Para, Pwarning, Warning } from './LoginContainer.style';
+import { Link } from 'react-router-dom';
 
 // accepts login input and submit
 const LoginForm = () => {
@@ -10,15 +12,38 @@ const LoginForm = () => {
   return <Formik initialValues={{email: '', password: ''}} 
     onSubmit={ (values, {setSubmitting}) => {
         setTimeout(() => {
-          console.log("Logging in", values);
           setSubmitting(false);
-        }, 500); } } 
+          fetch('http://localhost:8000/api/v1/users/login', {
+            method: "POST",
+            mode: "cors",
+            body: JSON.stringify({
+              email : values.email,
+              password : values.password
+            }),
+            headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+          }).then(response => response.json()).then(result => {
+            setSubmitting(true);
+            if (result.status === "OK"){
+              return <Link to={"/"} data={result}/>
+            } else {
+              
+              console.log('error');
+            }
+            
+            
+            }).catch( e => {
+              console.log(e)
+              });
+          
+        }, 600); } } 
         
         validationSchema = {
         Yup.object().shape({
           email: Yup.string()
-        .email()
-        .required("Please provide a valid email."),
+        .email("Please provide a valid email.")
+        .required("email required"),
       password: Yup.string()
         .required("Password must not be empty.")
         })
@@ -35,6 +60,7 @@ const LoginForm = () => {
         handleBlur,
         handleSubmit
       } = props;
+
 
       return (
     <LoginFormButton>
@@ -57,9 +83,7 @@ const LoginForm = () => {
             <Pwarning style={{color: 'red'}}>{errors.password}</Pwarning>  : ''}
           </Warning>
 
-        </form>
-
-        <LoginOptions>
+          <LoginOptions>
           <div>
             <a href='d' style={{color: primary}}>
               <Para>Forgot Password?</Para>
@@ -68,7 +92,9 @@ const LoginForm = () => {
 
         </LoginOptions>
 
-        <LoginButton type='submit' disabled={isSubmitting}>Login to Your Account</LoginButton>
+        <LoginButton type='submit' disabled={isSubmitting}><span>Login to Your Account</span></LoginButton>
+
+        </form>
 
      </LoginFormButton>
     );

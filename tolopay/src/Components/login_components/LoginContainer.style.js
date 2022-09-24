@@ -148,10 +148,14 @@ export const LoginButton = styled.button`
     border-radius: 6px;
     border: none;
     height: 42px;
-    color: white;
-    font-size: medium;
-    font-family: ${font};
+    
     cursor: pointer;
+
+    &span {
+        color: white;
+        font-size: medium;
+        font-family: ${font};
+    }
 
     &:hover {
         outline: #46833C solid 1px;
@@ -159,4 +163,5 @@ export const LoginButton = styled.button`
         font-size: 17px;
     }
 `;
+
 
