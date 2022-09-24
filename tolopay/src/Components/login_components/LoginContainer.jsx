@@ -11,27 +11,35 @@ const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-s
 
 // Login Box
 const LoginContainer = () => {
+
+    const handleClick = social => {
+
+            const response = fetch(`http://localhost:8000/api/v1/users/${social}`)
+            .then(response => response.json()).then(result => {
+                console.log(result);
+            });
+  
+            console.log(response);
+    }
     
   return (
     <Container>
         <Heading>
             <Subtitle style={{fontFamily: font, color: gray80, fontSize: 'x-large', fontWeight: 'lighter', marginBottom: 15}} >Login</Subtitle>
-            <div style={{display: 'flex', justifyContent: 'flex-start', width: 300}}>
-                {/* <Subtitle style={{color: gray80, fontFamily: font, fontSize: 'medium'}} >
-                Login
-                </Subtitle> */}
-            </div>
         </Heading>
         
         <SocialMediaContainer>
-            <SocialMediaLogin>
+            {/*login with googl implementation Google */}
+            <SocialMediaLogin onClick={handleClick('google')}>
             <FcGoogle style={{marginLeft: 9, fontSize: 27, backgroundColor: 'white', borderRadius: 3}}/>
             <Para style={{fontSize: 15, fontWeight: 'bold', marginLeft: 57}}>Continue with Google</Para>
             </SocialMediaLogin>
-            <SocialMediaLogin>
+            
+            {/* <SocialMediaLogin>
             <FaFacebook style={{marginLeft: 9, fontSize: 27, color: '#3b5998', backgroundColor: 'white', borderRadius: 27}}/>
             <Para style={{fontSize: 15, fontWeight: 'bold' ,marginLeft: 57}}>Continue with Facebook</Para>
-            </SocialMediaLogin>
+            </SocialMediaLogin> */}
+
         </SocialMediaContainer>
         <Divider>
             <AlternatePara style={{fontFamily: font, color: '#333333'}}> OR </AlternatePara>
