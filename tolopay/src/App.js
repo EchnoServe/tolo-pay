@@ -60,6 +60,7 @@ const App = () => {
               <BottomNavbar />
 
               <Routes>
+
                 <Route path="/" element={user ? <Dashboard />: <Login/>} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
