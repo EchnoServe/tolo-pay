@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { FormStyle } from '../commonStyles';
+import { primary, accent } from "../../Utils/colors";
 
 const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif";
 
@@ -15,14 +16,14 @@ export const Pwarning = styled.p`
 `; 
 
 export const Container = styled.div`
-     height: 84vh;
+     height: 72vh;
      background-color: white;
      display: flex;
      justify-content: center;
      align-items: center;
      flex-direction: column;
      border-radius: 6px;
-     border: 0.1px solid rgba(244,244,244);
+     border: 0.1px solid rgba(235,235,235);
 
      
         width: 350px;
@@ -31,7 +32,7 @@ export const Container = styled.div`
         padding-top: 1px;
 
      @media (min-width: 600px){
-         width: 60vw;
+         width: 50vw;
      } 
 `;
 
@@ -61,7 +62,7 @@ export const SocialMediaLogin = styled.div`
 display: flex;
 justify-content: first baseline;
 align-items: center;
-border: 0.5px solid #46833ca9;
+border: 0.5px solid ${accent};
 background-color: white;
 margin: 6px 1px;
 width: 300px;
@@ -70,11 +71,11 @@ border-radius: 6px;
 cursor: pointer;
 
 ${Para} {
-    color: #46833c;
+    color: ${primary};
 }
 
 &:hover {
-background-color: #739e6c;
+background-color: ${accent};
 }
 &:hover ${Para} {
     color: white;
@@ -98,7 +99,6 @@ export const AlternatePara = styled.span`
 padding: 6px;
 margin-bottom: 15px;
 margin-top: 9px;
-position: fixed;
 display: inline-block;
 font-size: 1rem;
 
@@ -144,21 +144,18 @@ export const LoginOptions = styled.div`
 export const LoginButton = styled.button`
     width: 300px;
     margin: 9px 3px;
-    background-color: #46833C;
+    background-color: ${primary};
     border-radius: 6px;
     border: none;
     height: 42px;
+    color: white;
+        font-size: medium;
+        font-family: ${font};
     
     cursor: pointer;
 
-    &span {
-        color: white;
-        font-size: medium;
-        font-family: ${font};
-    }
-
     &:hover {
-        outline: #46833C solid 1px;
+        outline: ${primary} solid 1px;
         border-radius: 3px;
         font-size: 17px;
     }
