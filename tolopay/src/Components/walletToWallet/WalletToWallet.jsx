@@ -77,7 +77,7 @@ const [components, setComponents] = useState([Transfer]);
 const Section = styled.section`
 .walletToWallet{
     display: flex;
-    min-height: 100vh;
+    min-height: 90vh;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
