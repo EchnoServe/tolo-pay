@@ -2,6 +2,13 @@ import styled from "styled-components";
 
 const medium = '776px';
 
+export const Status = styled.div`
+    display: flex;
+     justify-content: flex-start; 
+     width: inherit;
+     padding-left: 9px;
+`;
+
 export const Key = styled.p`
     border-bottom: 1px solid #3f3e3e30;
     border-right: 1px solid #3f3e3e30;
@@ -47,15 +54,19 @@ export const KeyAndValue = styled.div`
 export const UserStatusContainer = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: inherit;
-    padding-left: 30px;
-    padding-right: 15px;
     margin-top: 42px;
+    margin: 12px;
 
     @media screen and  (min-width: ${medium}){
         ${KeyAndValue} {
             height: 99px;
+            width: ${medium};
         }
-        padding-left: 72px;
+        ${Status} {
+            width: ${medium};
+        }
+        margin: 21px;
     }
 `;

@@ -18,6 +18,9 @@ const UserStyle = styled.div`
 `;
 
 const Profile = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: inherit;
   // border: 2px solid orange;
 
@@ -64,7 +67,7 @@ const UserProfile = () => {
           
           <UserInfo editState={editState} onChange={handleChange} /> 
           
-          <div style={{borderTop: '1px solid #90909060' , width: 900}}></div>
+          <div style={{borderTop: '1px solid #90909060' , width: 700}}></div>
           
           <UserStatus />
 

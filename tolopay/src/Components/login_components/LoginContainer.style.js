@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { FormStyle } from '../commonStyles';
-import { primary, accent } from "../../Utils/colors";
+import { primary, button1, grayB } from "../../Utils/colors";
 
 const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif";
 
@@ -62,7 +62,7 @@ export const SocialMediaLogin = styled.div`
 display: flex;
 justify-content: first baseline;
 align-items: center;
-border: 0.5px solid ${accent};
+border: 0.5px solid ${grayB};
 background-color: white;
 margin: 6px 1px;
 width: 300px;
@@ -75,7 +75,7 @@ ${Para} {
 }
 
 &:hover {
-background-color: ${accent};
+background-color: ${button1};
 }
 &:hover ${Para} {
     color: white;
@@ -105,8 +105,7 @@ font-size: 1rem;
 &::before, &::after {
     border-top: 1px solid #ccc;
          content: '';
-         display: block;
-         position: absolute;
+         display: inline-block;
          top: 0.9em;
          width: 111px;
          margin: 3px 9px;
@@ -144,7 +143,7 @@ export const LoginOptions = styled.div`
 export const LoginButton = styled.button`
     width: 300px;
     margin: 9px 3px;
-    background-color: ${primary};
+    background-color: ${button1};
     border-radius: 6px;
     border: none;
     height: 42px;
@@ -155,7 +154,7 @@ export const LoginButton = styled.button`
     cursor: pointer;
 
     &:hover {
-        outline: ${primary} solid 1px;
+        outline: ${button1} solid 1px;
         border-radius: 3px;
         font-size: 17px;
     }

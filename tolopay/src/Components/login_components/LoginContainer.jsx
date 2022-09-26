@@ -1,25 +1,28 @@
-import React from 'react'
-import { FcGoogle } from 'react-icons/fc'
-import { FaFacebook } from 'react-icons/fa'
-import { gray80 } from '../../Utils/colors'
-import './LoginContainer.style'
+import React from 'react';
+import { FcGoogle } from 'react-icons/fc';
+import { gray80 } from '../../Utils/colors';
+import './LoginContainer.style';
 import { Heading, AlternatePara, Container, 
-    Divider, SocialMediaContainer, SocialMediaLogin, Subtitle, Para } from './LoginContainer.style'
-import LoginForm from './LoginForm'
+    Divider, SocialMediaContainer, SocialMediaLogin, Subtitle, Para } from './LoginContainer.style';
+import LoginForm from './LoginForm';
 
 const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif"
 
 // Login Box
 const LoginContainer = () => {
 
+    // Fetches user data from server using OAuth
     const handleClick = social => {
 
-            const response = fetch(`http://localhost:8000/api/v1/users/${social}`)
+            fetch(`http://localhost:8000/api/v1/users/${social}`,
+            {   
+                method: 'GET',
+                mode: 'cors',
+        }
+            )
             .then(response => response.json()).then(result => {
                 console.log(result);
             });
-  
-            console.log(response);
     }
     
   return (
@@ -30,7 +33,7 @@ const LoginContainer = () => {
         
         <SocialMediaContainer>
             {/*login with googl implementation Google */}
-            <SocialMediaLogin onClick={handleClick('google')}>
+            <SocialMediaLogin onClick={() => handleClick('google')}>
             <FcGoogle style={{marginLeft: 9, fontSize: 27, backgroundColor: 'white', borderRadius: 3}}/>
             <Para style={{fontSize: 15, fontWeight: 'bold', marginLeft: 57}}>Continue with Google</Para>
             </SocialMediaLogin>

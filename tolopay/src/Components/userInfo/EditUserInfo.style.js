@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const EditInfoContainer
  = styled.div`
     display: flex;
@@ -9,15 +10,14 @@ export const EditInfoContainer
     width: inherit;
     height: 450px;
     margin: 5px;
-    padding: 3px;
-    padding-bottom: 27px;
-    display: flex;
+    padding: 1px;
     
     border: 1px solid #90909040; 
     border-radius: 3px;
 
     @media screen and (min-height: 1000px){
-        height: 690px;
+        height: 540px;
+        width: 400px;
     }
 
 `;
@@ -31,11 +31,15 @@ export const ItemsToEdit = styled.div`
 `;
 
 export const Form = styled.div`
-    height: 150px;
+// flex-grow: 1;
+// border: 1px solid gainsboro;
+    height: 250px;
     width: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3px;
 `;
 
 export const KeyandValueInEdit = styled.div`
@@ -55,12 +59,11 @@ export const KeyInEdit = styled.p`
     padding-bottom: 2px;
 `;
 
-export const SaveOrCancel = styled.div`
+export const Cancel = styled.div`
 display: flex; 
-align-items: flex-end; 
-height: 180px;
-padding: 5px; 
-margin-top: -100px;
+justify-content: flex-end;
+width: 100%;
+margin-top: 1px;
 `;
 
 export const EditProfilePic = styled.div`

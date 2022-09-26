@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+// import { button1 } from "../../Utils/colors";
 
 const medium = '776px';
 
