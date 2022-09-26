@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import {MdOutlineCancel} from "react-icons/md";
 import { FormStyle } from '../commonStyles';
+import { button1, gray80 } from "../../Utils/colors";
 import { EditInfoContainer, EditProfilePic, KeyandValueInEdit,
-     KeyInEdit, ItemsToEdit, Form, SaveOrCancel } from './EditUserInfo.style'
-import { EditProfileButton, ProfilePic } from './UserInfo.style'
+     KeyInEdit, Form, Cancel } from './EditUserInfo.style';
+import { EditProfileButton, ProfilePic } from './UserInfo.style';
+
 
 
 // A component that let's an already registered user change his/her credential.
@@ -14,8 +17,13 @@ const EditUserInfo = (props) => {
 
   return (
     <EditInfoContainer>
-
-            <ItemsToEdit>
+                
+                <Cancel>
+                    <div onClick={handleChange} style={{cursor: 'pointer'}}>
+                        <MdOutlineCancel style={{fontSize: 33, color: gray80}}/>
+                    </div>
+                        
+                </Cancel>
                 
                 <ProfilePic style={{width: 150, height: 150, 
                                     display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end'}}>
@@ -39,21 +47,11 @@ const EditUserInfo = (props) => {
                             <KeyInEdit>Email:</KeyInEdit>
                             <FormStyle type={'text'} value='maru.molla@gmail.com' placeholder='name@example.com' />
                     </KeyandValueInEdit>
+
+                    <EditProfileButton outlineColor={button1} style={{backgroundColor: button1}}>
+                            <p style={{color: 'white'}}>Save</p>
+                    </EditProfileButton>
                 </Form>
-
-            </ItemsToEdit>
-
-        <SaveOrCancel>
-
-                <EditProfileButton outlineColor={"lightgreen"} style={{backgroundColor: 'lightgreen'}}>
-                    <p>Save</p>
-                </EditProfileButton>
-
-                <EditProfileButton borderColor={"#3F3E3E80"} onClick={handleChange}>
-                    <p>Cancel</p>
-                </EditProfileButton>
-            
-        </SaveOrCancel>
 
     </EditInfoContainer>
   )

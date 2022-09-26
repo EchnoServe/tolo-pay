@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+// import { button1 } from "../../Utils/colors";
 import { EditProfileButton, FullName, Key, KeyAndValue, ProfilePic, 
-    UserInfoContainer, UserInfoContents, UserInfoItems, Value } from './UserInfo.style'
+    UserInfoContainer, UserInfoContents, UserInfoItems, Value } from './UserInfo.style';
 
 
 // displays profile pic and user information

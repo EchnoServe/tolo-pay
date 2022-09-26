@@ -1,5 +1,5 @@
 import React from 'react'
-import { Key, KeyAndValue, UserStatusContainer, Value } from './UserStatus.style'
+import { Key, KeyAndValue, UserStatusContainer, Value, Status } from './UserStatus.style'
 
 
 // displays selected user status - current balance and total transaction (UI only not functional)
@@ -7,12 +7,16 @@ const UserStatus = () => {
   return (
     <UserStatusContainer>
 
-      <div style={{display: 'flex', flexDirection: 'column', margin: 5}}>
+        <Status>
+          <div style={{display: 'flex', flexDirection: 'column', margin: 5}}>
 
-        <p style={{fontSize: 30, marginBottom: 10}}>Status</p>
-        <div style={{borderTop: '1px solid #90909050', width: 72}}></div>
+            <p style={{fontSize: 30, marginBottom: 10}}>Status</p>
+            
+          <div style={{borderTop: '1px solid #90909050', width: 72}}></div>
 
-      </div>
+          </div>
+        </Status>
+          
 
       <KeyAndValue>
         <Key>Balance</Key>
