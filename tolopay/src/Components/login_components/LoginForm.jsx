@@ -7,10 +7,17 @@ import { Email, LoginButton, LoginFormButton,
 import { Link } from 'react-router-dom';
 
 // accepts login input and submit
-const LoginForm = () => {
+const LoginForm = (props) => {
+
+  const handleLoading = () => {
+    props.onChange(true);
+  }
 
   return <Formik initialValues={{email: '', password: ''}} 
-    onSubmit={ (values, {setSubmitting}) => {
+    onSubmit={ 
+      (values, {setSubmitting}) => {
+        props.onChange(true);
+        handleLoading();
         setTimeout(() => {
           setSubmitting(false);
           fetch('/api/v1/users/login', {
@@ -24,17 +31,14 @@ const LoginForm = () => {
         "Content-type": "application/json; charset=UTF-8"
     }
           }).then(response => response.json()).then(result => {
-            setSubmitting(true);
+            
             if (result.status === "OK"){
               return <Link to={"/"} data={result}/>
-            } else {
-              
+            } else { 
               console.log('error');
             }
-            
-            
             }).catch( e => {
-              console.log(e)
+              setSubmitting(true);
               });
           
         }, 600); } } 
@@ -85,7 +89,7 @@ const LoginForm = () => {
 
           <LoginOptions>
           <div>
-            <a href='d' style={{color: primary}}>
+            <a href='#' style={{color: primary}}>
               <Para>Forgot Password?</Para>
             </a>
           </div>
