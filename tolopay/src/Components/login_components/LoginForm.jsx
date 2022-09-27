@@ -13,7 +13,7 @@ const LoginForm = () => {
     onSubmit={ (values, {setSubmitting}) => {
         setTimeout(() => {
           setSubmitting(false);
-          fetch('http://localhost:8000/api/v1/users/login', {
+          fetch('/api/v1/users/login', {
             method: "POST",
             mode: "cors",
             body: JSON.stringify({

@@ -11,18 +11,11 @@ const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-s
 // Login Box
 const LoginContainer = () => {
 
-    // Fetches user data from server using OAuth
+    // api call to server redirect to dashboard on success.
     const handleClick = social => {
-
-            fetch(`http://localhost:8000/api/v1/users/${social}`,
-            {   
-                method: 'GET',
-                mode: 'cors',
-        }
-            )
-            .then(response => response.json()).then(result => {
-                console.log(result);
-            });
+        const currentUrl = window.location.href;
+        const encodeParam = encodeURI(`?encodeUrl=${currentUrl}`);
+        window.location.href = `http://localhost:8000/api/v1/users/google${encodeParam}`;
     }
     
   return (
@@ -33,7 +26,9 @@ const LoginContainer = () => {
         
         <SocialMediaContainer>
             {/*login with googl implementation Google */}
-            <SocialMediaLogin onClick={() => handleClick('google')}>
+            <SocialMediaLogin 
+                        onClick={() => handleClick('google')}
+            >
             <FcGoogle style={{marginLeft: 9, fontSize: 27, backgroundColor: 'white', borderRadius: 3}}/>
             <Para style={{fontSize: 15, fontWeight: 'bold', marginLeft: 57}}>Continue with Google</Para>
             </SocialMediaLogin>
