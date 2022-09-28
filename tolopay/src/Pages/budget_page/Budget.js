@@ -1,4 +1,5 @@
-import React from 'react'
+import { useContext, useRef } from "react";
+import { Context } from "../../context/Context";//
 import styled from 'styled-components'
 import FoodIcon from "@material-ui/icons/Restaurant";
 import GroceryIcon from "@material-ui/icons/ShoppingCart";
@@ -16,7 +17,6 @@ const Container = styled.div`
 box-sizing: boredr-box;
 display:flex;
 font-size: 17px;
-background-color:white;
 justify-content: center;
 align-items: center;
 min-height: 100vh;
@@ -32,7 +32,6 @@ padding: 40px 0;
 `
 const AddButton= styled.div`
 position: relative;
-    margin-top: 5%;
     margin-right: 25%;
     margin-left:70%;
     @media (max-width: 768px) {
@@ -79,7 +78,7 @@ font-size: 20% !important;
 
 const Content= styled.div`
 text-align:center;
-padding-left: 23%;
+padding-left: 31%;
 height: 140px;
 border-radius:15px 15px  0px 0px ;
 display: flex;
@@ -138,64 +137,36 @@ margin:100px 0px 0px 0px;
 `
 
 function Budget() {
+  const { user } = useContext(Context);
+  console.log()
   return (
    <MainContainer>
-    <AddButton>
-    <Link to='/budgetform'><Button ><big><b>+ </b></big>Add a New Budget</Button></Link></AddButton>
+   
 <Container>
-
-  <Card>
+<AddButton>
+    <Link to='/budgetform'><Button ><big><b>+ </b></big>Add a New Budget</Button></Link></AddButton>
+ 
+ {
+  user.data.user.budget.map(remark=>{
+    return <Card>
     
-      <Content>
-    <Icons><FoodIcon/></Icons>  
-        <H3>Food</H3>
-        </Content>
-     
-      <Content2>
-      <H4>200 birr</H4>
-        </Content2>
-    
-  </Card>
-
-
-  <Card>
+    <Content>  
+      <H3>{remark.remark}</H3>
+      </Content>
    
-      <Content>
-    <Icons><GroceryIcon/></Icons>  
-        <H3>Grocery</H3>
+    <Content2>
+    <H4>{remark.amount}</H4>
+      </Content2>
+  
+</Card>
+  })
+ }
+ 
 
-      </Content>
-      <Content2>
-      <H4>900 birr</H4>
-        </Content2>
-    
-  </Card>
-
-
-  <Card>
-    
-      <Content>
-    <Icons><TravelIcon/></Icons>  
-        <H3>Travel</H3>
-
-      </Content>
-      <Content2>
-      <H4>400 birr</H4>
-        </Content2>
-    
-  </Card>
-  <Card>
-    
-      <Content>
-    <Icons><HealthIcon /></Icons>  
-        <H3>Health</H3>
-
-      </Content>
-      <Content2>
-      <H4>600 birr</H4>
-        </Content2>
+ 
    
-  </Card>
+
+ 
 
 </Container>
 

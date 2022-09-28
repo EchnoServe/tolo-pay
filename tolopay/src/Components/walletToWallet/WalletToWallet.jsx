@@ -40,7 +40,9 @@ const WalletToWallet = () => {
   const handlePassword = (event) => {
     setValues({ ...values, password: event.target.value });
   };
-
+  const handleRemark= (event) => {
+    setValues({ ...values, remark: event.target.value });
+  };
   async function makePostRequest(values) {
     try {
       const { data } = await axios.post(
@@ -86,7 +88,7 @@ const WalletToWallet = () => {
             name="amount"
           />
 
-          <select className="option" id="remark">
+          <select className="option" id="remark" onChange={handleRemark}>
             <option value="">Remark</option>
             <option value="for movies">for movies</option>
             <option value="for food">for food</option>

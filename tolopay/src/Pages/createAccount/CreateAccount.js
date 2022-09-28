@@ -2,7 +2,10 @@ import { primary } from "../../Utils/colors";
 import "./createAccount.css";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
-import "../../Components/signup_validation/signup.css";
+import { useContext, useRef } from "react";
+import { Context } from "../../context/Context";//
+import { Link, useNavigate } from "react-router-dom";
+import api from '../../api/api'
 import axios from 'axios';
 import LoginPage from "../login_page/LoginPage";
  
@@ -16,21 +19,34 @@ const CreateAccount = () => {
     trigger,
   } = useForm();
 
+  const navigate=useNavigate();
+  const { dispatch, isFetching, error } = useContext(Context);
 
   const onSubmit =  async(data) => {
-    console.log(data);
-    const res = await axios.post("http://localhost:8000/api/v1/users/signup", {
-      name:data.firstName + data.lastName,
-      email: data.email,
-      phoneNumber: data.phone,
-      password:data.password,
-      passwordConfirm:data.passwordConfirm,
-     
-    });
-    
-    console.log(res.data);
+    // e.preventDefault()
+    dispatch({ type: "LOGIN_START" });
 
-    reset();
+    try {
+      
+      const res = await api.post("/users/signup", {
+        name:data.firstName,
+        username:data.lastName,
+        email: data.email,
+        phoneNumber: data.phone,
+        password:data.password,
+        passwordConfirm:data.passwordConfirm,
+       
+      });
+      dispatch({ type: "SUCCESS", payload: res.data });
+      navigate('/dashboard');
+      reset();
+    } catch (error) {
+      console.log(error)
+      dispatch({ type: "FAILED" });
+    }
+    
+    
+
   };
   return (
     <>
@@ -50,6 +66,7 @@ const CreateAccount = () => {
       <div className="flex-c-r container">
         <div className="flex-c-c form">
           <h1>Create Account</h1>
+          {error && <small style={{color:"red"}}>Something went wrong...</small>}
           <p>
             Already have an account? <u style={{ color: '#404550' }}>Login</u>
           </p>
@@ -87,7 +104,7 @@ const CreateAccount = () => {
           <form className="flex-c-c  form_container" onSubmit={handleSubmit(onSubmit)}>
             
              <input
-                placeholder="First Name"
+                placeholder="FullName"
                 type="name"
                 className={`form-control ${errors.email && "invalid"}`}
                 {...register("firstName", { required: "FirstName is Required" ,
@@ -104,7 +121,7 @@ const CreateAccount = () => {
               )}
               
               <input
-              placeholder="Last Name"
+              placeholder="user name"
                 type="name"
                 className={`form-control ${errors.email && "invalid"}`}
                 {...register("lastName", { required: "LastName is Required" ,

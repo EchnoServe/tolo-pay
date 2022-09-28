@@ -2,17 +2,43 @@ import { Formik } from 'formik'
 import * as Yup from "yup";
 import React from 'react'
 import { primary } from '../../Utils/colors'
+
+import { useContext, useRef } from "react";
+import { Context } from "../../context/Context";//
+import { Link, useNavigate } from "react-router-dom";
+import api from '../../api/api'
+
+
 import { Email, LoginButton, LoginFormButton, LoginOptions, Password, Para, Pwarning, Warning } from './LoginContainer.style'
 
 // accepts login input and submit
-const LoginForm = () => {
+const LoginForm =  () => {
+
+  const navigate=useNavigate();
+  const { dispatch, isFetching, error } = useContext(Context);
 
   return <Formik initialValues={{email: '', password: ''}} 
-    onSubmit={ (values, {setSubmitting}) => {
-        setTimeout(() => {
-          console.log("Logging in", values);
+    onSubmit={async (data, {setSubmitting}) => {
+       
+          try {
+      
+            const res = await api.post("/users/login", {
+              email: data.email,
+              password:data.password
+            });
+            dispatch({ type: "SUCCESS", payload: res.data });
+            navigate('/');
+         
+          } catch (error) {
+            console.log(error)
+            dispatch({ type: "FAILED" });
+          }
+          
+
+
+
           setSubmitting(false);
-        }, 500); } } 
+        } } 
         
         validationSchema = {
         Yup.object().shape({
@@ -39,7 +65,7 @@ const LoginForm = () => {
       return (
     <LoginFormButton>
         <form className='login-form' onSubmit={handleSubmit}>
-            
+            {isFetching && <small style={{color:"green"}}>Loading..</small>}
           <Email name='email' type='email' placeholder='Email' 
           onChange={handleChange} onBlur={handleBlur} value={values.email}/>
 
@@ -57,7 +83,7 @@ const LoginForm = () => {
             <Pwarning style={{color: 'red'}}>{errors.password}</Pwarning>  : ''}
           </Warning>
 
-        </form>
+      
 
         <LoginOptions>
           <div>
@@ -69,7 +95,7 @@ const LoginForm = () => {
         </LoginOptions>
 
         <LoginButton type='submit' disabled={isSubmitting}>Login to Your Account</LoginButton>
-
+        </form>
      </LoginFormButton>
     );
     } 
