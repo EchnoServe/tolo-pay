@@ -25,10 +25,9 @@ a {
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
-  color: #8cb8d6;
-  color: #1f77b4;
+  
   /* background-color: #02ba4b; */
-  background-color: #41d3fe;
+  background-color: #1f77b4;
   transition: all 1.5s ease-in-out 0s;
   
 }

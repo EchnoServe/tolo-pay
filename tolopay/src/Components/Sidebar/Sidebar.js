@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import {
     SDivider,
     SLink,
@@ -9,17 +9,16 @@ import {
     SLogo,
     
     SSidebar,
-    SSidebarButton,
+    
     STheme,
     SThemeLabel,
-    // SThemeToggler,
-    SToggleThumb,
+    
+    
 } from "./styles";
 import { MdQrCodeScanner } from "react-icons/md";
-import { tologoSVG } from "../../Assets";
+import { logofSVG } from "../../Assets";
 import { BiTransferAlt } from "react-icons/bi";
-// import { SiSamsungpay } from "react-icons/si";
-// import { MdShoppingCart } from "react-icons/md"
+
 import { Icon } from '@iconify/react';
 import {
     
@@ -32,13 +31,13 @@ import {
 
 
 
-import { ThemeContext } from "./../../App";
+
 import { useLocation } from "react-router-dom";
 
 const Sidebar = () => {
     
-    const { setTheme, theme } = useContext(ThemeContext);
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+    
+    const [sidebarOpen] = useState(false);
     const { pathname } = useLocation();
 
     
@@ -51,7 +50,7 @@ const Sidebar = () => {
                 </SSidebarButton> */}
             </>
             <SLogo>
-                <img src={tologoSVG} alt="logo" />
+                <img src={logofSVG} alt="logo" />
             </SLogo>
             
             <SDivider />

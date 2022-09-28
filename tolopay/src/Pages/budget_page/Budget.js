@@ -18,10 +18,10 @@ const Container = styled.div`
 box-sizing: boredr-box;
 display:flex;
 font-size: 17px;
-background-color:white;
+background-color: #f0f0f0;
 justify-content: center;
 align-items: center;
-min-height: 100vh;
+min-height: 90vh;
 width: 100%;
 word-spacing: 1.8px;
 line-height: 22px;
@@ -163,8 +163,9 @@ margin:100px 0px 0px 0px;
 function Budget() {
   return (
    <MainContainer>
-    <AddButton><Button><big><b>+ </b></big>Add a New Budget</Button></AddButton>
-<Container>
+    
+      <Container>
+        <AddButton><Button><big><b>+ </b></big>Add a New Budget</Button></AddButton>
 
   <Card>
     

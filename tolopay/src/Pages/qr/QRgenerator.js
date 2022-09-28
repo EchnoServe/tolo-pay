@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import {Fab, TextField, TextareaAutosize, Grid} from '@material-ui/core'
-import {ArrowBack, GetApp} from '@material-ui/icons'
+import {Fab, TextField,} from '@material-ui/core'
+import {ArrowBack,} from '@material-ui/icons'
 import { Link } from "react-router-dom";
 import QRcode from 'qrcode.react'
 import "./generator.css"
@@ -9,18 +9,7 @@ function QRgenerator() {
     const handleChange = (event) => {
         setQr(event.target.value);
     };
-    const downloadQR = () => {
-        const canvas = document.getElementById("myqr");
-        const pngUrl = canvas
-          .toDataURL("image/png")
-          .replace("image/png", "image/octet-stream");
-        let downloadLink = document.createElement("a");
-        downloadLink.href = pngUrl;
-        downloadLink.download = "myqr.png";
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
-    };
+   
 
     return (
       <div className="generator-container">
@@ -36,6 +25,7 @@ function QRgenerator() {
                 value={qr} label="Amount in number" size="large" variant="outlined" color="primary" 
                 />
             </div>
+
 
             <div>
                 {

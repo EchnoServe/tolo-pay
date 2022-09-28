@@ -43,8 +43,9 @@ export const SSidebar = styled.div`
 
 //logo style
 export const SLogo = styled.div`
-//   margin-top: 100px;
-    width: 60px;
+   margin-top: -20px;
+    width: 252px;
+    margin-left: -40px;
 
     img {
         max-width: 100%;
