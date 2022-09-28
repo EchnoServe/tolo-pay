@@ -68,7 +68,7 @@ const App = () => {
                 <Route path="/budgetform" element={user ? <Budget_form/>: <Login/>} />
                 
                 <Route path="/planning" element={user ? <Budget />: <Login/>} />
-                <Route path="/qr" element={<QR />} />
+                <Route path="/qr" element={user ? <QR />: <Login/>} />
                 <Route path="/profile" element={<UserProfile />} />
               </Routes>
             </Layout>
