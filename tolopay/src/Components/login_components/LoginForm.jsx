@@ -1,47 +1,44 @@
 import { Formik } from 'formik';
 import * as Yup from "yup";
-import React from 'react';
-import { primary } from '../../Utils/colors';
-import { Email, LoginButton, LoginFormButton, 
-  LoginOptions, Password, Para, Pwarning, Warning } from './LoginContainer.style';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { primary } from '../../Utils/colors'
+
+import { useContext, useRef } from "react";
+import { Context } from "../../context/Context";//
+import { Link, useNavigate } from "react-router-dom";
+import api from '../../api/api'
+
+
+import { Email, LoginButton, LoginFormButton, LoginOptions, Password, Para, Pwarning, Warning } from './LoginContainer.style'
 
 // accepts login input and submit
-const LoginForm = (props) => {
+const LoginForm =  () => {
 
-  const handleLoading = () => {
-    props.onChange(true);
-  }
+  const navigate=useNavigate();
+  const { dispatch, isFetching, error } = useContext(Context);
 
   return <Formik initialValues={{email: '', password: ''}} 
-    onSubmit={ 
-      (values, {setSubmitting}) => {
-        props.onChange(true);
-        handleLoading();
-        setTimeout(() => {
-          setSubmitting(false);
-          fetch('/api/v1/users/login', {
-            method: "POST",
-            mode: "cors",
-            body: JSON.stringify({
-              email : values.email,
-              password : values.password
-            }),
-            headers: {
-        "Content-type": "application/json; charset=UTF-8"
-    }
-          }).then(response => response.json()).then(result => {
-            
-            if (result.status === "OK"){
-              return <Link to={"/"} data={result}/>
-            } else { 
-              console.log('error');
-            }
-            }).catch( e => {
-              setSubmitting(true);
-              });
+    onSubmit={async (data, {setSubmitting}) => {
+       
+          try {
+      
+            const res = await api.post("/users/login", {
+              email: data.email,
+              password:data.password
+            });
+            dispatch({ type: "SUCCESS", payload: res.data });
+            navigate('/');
+         
+          } catch (error) {
+            console.log(error)
+            dispatch({ type: "FAILED" });
+          }
           
-        }, 600); } } 
+
+
+
+          setSubmitting(false);
+        } } 
         
         validationSchema = {
         Yup.object().shape({
@@ -69,7 +66,7 @@ const LoginForm = (props) => {
       return (
     <LoginFormButton>
         <form className='login-form' onSubmit={handleSubmit}>
-            
+            {isFetching && <small style={{color:"green"}}>Loading..</small>}
           <Email name='email' type='email' placeholder='Email' 
           onChange={handleChange} onBlur={handleBlur} value={values.email}/>
 
@@ -87,7 +84,9 @@ const LoginForm = (props) => {
             <Pwarning style={{color: 'red'}}>{errors.password}</Pwarning>  : ''}
           </Warning>
 
-          <LoginOptions>
+      
+
+        <LoginOptions>
           <div>
             <a href='#' style={{color: primary}}>
               <Para>Forgot Password?</Para>
@@ -96,10 +95,8 @@ const LoginForm = (props) => {
 
         </LoginOptions>
 
-        <LoginButton type='submit' disabled={isSubmitting}><span>Login to Your Account</span></LoginButton>
-
+        <LoginButton type='submit' disabled={isSubmitting}>Login to Your Account</LoginButton>
         </form>
-
      </LoginFormButton>
     );
     } 
