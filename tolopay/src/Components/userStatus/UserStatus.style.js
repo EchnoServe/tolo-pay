@@ -10,21 +10,19 @@ export const Status = styled.div`
 `;
 
 export const Key = styled.p`
-    border-bottom: 1px solid #3f3e3e30;
-    border-right: 1px solid #3f3e3e30;
+    border-bottom: 1px solid #3f3e3e20;
+    border-right: 1px solid #3f3e3e20;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-grow: 1;
-    /* width: 300px; */
     height: 100%;
     font-size: 21px;
     padding-left: 10px;
-    /* padding-bottom: 2px; */
 `;
 export const Value = styled.p`
     border-bottom: 1px solid;
-    border-color: #3f3e3e30;
+    border-color: #3f3e3e20;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -40,7 +38,6 @@ export const KeyAndValue = styled.div`
     justify-content: space-between;
     width: 90%; 
     height: 72px;
-    /* border: 1px solid orange; */
     padding: 5px;
 
     &:hover ${Key},&:hover ${Value} {
