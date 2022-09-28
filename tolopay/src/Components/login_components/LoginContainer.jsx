@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { gray80 } from '../../Utils/colors';
 import './LoginContainer.style';
-import { Heading, AlternatePara, Container, Loading,
+import { Heading, AlternatePara, Container,
     Divider, SocialMediaContainer, SocialMediaLogin, Subtitle, Para } from './LoginContainer.style';
+import { Loading } from "../commonStyles";
 import LoginForm from './LoginForm';
 
 const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif"
@@ -17,12 +18,34 @@ const LoginContainer = () => {
         setLoading(value);
     }
 
-    // api call to server redirect to dashboard on success.
-    const handleClick = social => {
+    //fetching user logged with google
+    const fetchAuthUser = () => {
+        fetch("http://localhost:8000/api/v1/users/loginsocial")
+        .then(response => response.json())
+        .then(result => console.log(result))
+        .catch(err => console.log(`errors: ${err}`))
+    }
+
+    // api call to server redirect to login with google
+    const handleClick = async social => {
         setLoading(true);
-        const currentUrl = window.location.href;
-        const encodeParam = encodeURI(`?encodeUrl=${currentUrl}`);
-        window.location.href = `http://localhost:8000/api/v1/users/google${encodeParam}`;
+        const googleLoginUrl = "http://localhost:8000/api/v1/users/google";
+        const newWindow = window.open(googleLoginUrl, "_blank", "width: 400, height: 600");
+        const timer = setInterval(checkWindow, 500)
+
+        function checkWindow() {
+            if (newWindow.closed) {
+
+                console.log('success message timeout');
+                clearInterval(timer);
+                fetchAuthUser();
+                setLoading(false);
+            }
+            
+             
+        }
+        
+        
     }
     
   return (
@@ -36,7 +59,8 @@ const LoginContainer = () => {
     }
         
         <Heading>
-            <Subtitle style={{fontFamily: font, color: gray80, fontSize: 'x-large', fontWeight: 'lighter', marginBottom: 15}} >Login</Subtitle>
+            <Subtitle style={{fontFamily: font, color: gray80, 
+            fontSize: 'x-large', fontWeight: 'lighter', marginBottom: 15}} >Login</Subtitle>
         </Heading>
         
         <SocialMediaContainer>
