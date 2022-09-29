@@ -1,41 +1,105 @@
 import { useState } from "react"
 import styled from 'styled-components'
+import Snackbar from "@material-ui/core/Snackbar";
+import Button from "@material-ui/core/Button";
+import { Alert } from "@material-ui/lab";
+import React,{useContext} from "react";
+import axios from 'axios';
+import { useForm } from "react-hook-form";
 
-const Budget_form = () => {
+import { Context } from "./../../context/Context";//
 
-    const [values, setValues] = useState({
-        budgetName:"",
-        amount:""
+
+const Budget_form = (props) => {
+  const { user ,dispatch} = useContext(Context);
+  const [open, setOpen] = React.useState(false);
+  const handleToClose = (event, reason) => {
+    if ("clickaway" == reason) return;
+    setOpen(false);
+  };
+  const handleClickEvent = () => {
+    setOpen(true);
+  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    trigger,
+  } = useForm();
+
+  const onSubmit =  async(data) => {
+    console.log( user);
+    const res = await axios.put("http://localhost:8000/api/v1/users/addbudget", {
+      remark: data.remark,
+      amount: data.amount,
+     
+    }, {
+      headers: {
+        Authorization:
+          `Bearer ${user?.data.token}`,
+      },
     });
+    console.log("------------",res.data.data.user)
+    console.log("------()-()",user)
 
-const handleBudgetName = (event) =>{
-    setValues({...values, budgetName: event.target.value})
-}
+    dispatch({ type: "SUCCESS", payload: res.data.data.user});
 
-const handleAmount = (event) =>{
-    setValues({...values, amount: event.target.value})
-}
+    reset();
+  };
   return (
     <Section>
     <div className="budgetpage">
-        <form className="addbudget">
+        <form className="addbudget" onSubmit={handleSubmit(onSubmit)}>
             <h3 >Add Budget</h3>
             <input
-                onChange={handleBudgetName}
-                className="form-field" 
-                placeholder="Budget Name" 
-                name="budgetName" />
-            <input 
-                onChange={handleAmount}
-                className="form-field" 
-                placeholder="Amount" 
-                name="amount" />
+                placeholder="Remark"
+                type="name"
+                className={`form-control ${errors.remark && "invalid"}`}
+                {...register("remark", { required: "Remark is Required" ,
+                pattern: {
+                value: /^[A-Za-z]/,
+                message: "Invalid input field must only contain letters",
+                }})}
+                onKeyUp={() => {
+                  trigger("remarke");
+                }}
+              ></input>
+                  {errors.firstName && (
+                <small className="text-danger">{errors.firstName.message}</small>
+              )}
+             <input
+              type="number"
+              placeholder="Amount"
+              className={`form-control ${errors.amount && "invalid"}`}
+                {...register("amount", { required: "Amount is Required",
+               })}
+               onKeyUp={() => {
+                trigger("amount");
+              }}
+            ></input>
+              {errors.phone && (
+                <small className="text-danger">{errors.phone.message}</small>
+              )}
             
-            <button
-                className="btn"
-                type="submit" >Add Budget</button>
+            <Button
+                className="btn" type="submit" onClick={handleClickEvent} >Add Budget</Button>
               
         </form>
+        <Snackbar
+        
+		anchorOrigin={{
+		horizontal: "right",
+		vertical: "top",
+		}}
+		open={open}
+    onClose={handleToClose}
+		autoHideDuration={3000}
+      >
+       <Alert severity= {'success'}>
+       Budget Created!
+    </Alert>
+      </Snackbar>
     </div>
     </Section>
   )
@@ -44,7 +108,7 @@ const handleAmount = (event) =>{
 const Section = styled.section`
 .budgetpage{
     display: flex;
-    min-height: 90vh;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
     @media (max-width: 768px) {

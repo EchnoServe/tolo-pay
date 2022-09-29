@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import EditUserInfo from './../Components/userInfo/EditUserInfo'
-import UserInfo from './../Components/userInfo/UserInfo'
-import UserStatus from './../Components/userStatus/UserStatus'
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import EditUserInfo from './../Components/userInfo/EditUserInfo';
+import UserInfo from './../Components/userInfo/UserInfo';
+import UserStatus from './../Components/userStatus/UserStatus';
 
 const UserStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  // border: 2px dotted green;
   width: 100vw;
 
   @media screen and (min-width: 776px) {
@@ -18,16 +17,14 @@ const UserStyle = styled.div`
 `;
 
 const Profile = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: inherit;
-  // border: 2px solid orange;
 
   @media screen and (min-width: 776px) {
     width: calc(100vw - 110px);
   }
-
-  // @media screen and (min-width: 400px){
-  //   width: 99vw;
-  // }
 `;
 
 const EditProfile = styled.div`
@@ -36,7 +33,6 @@ const EditProfile = styled.div`
   align-items: center;
   width: inherit;
   height: calc(100vh - 80px);
-  // border: 2px solid blue;
 
   @media screen and (min-width: 400px){
     width: 99%;
@@ -51,8 +47,7 @@ const EditProfile = styled.div`
 
 // responsible for profile section of the app
 const UserProfile = () => {
-
-    const [editState, changeEditState] = useState(false)
+    const [editState, changeEditState] = useState(false);
     const handleChange = value => {
         changeEditState(value);
     }
@@ -64,7 +59,7 @@ const UserProfile = () => {
           
           <UserInfo editState={editState} onChange={handleChange} /> 
           
-          <div style={{borderTop: '1px solid #90909060' , width: 900}}></div>
+          <div style={{borderTop: '1px solid #90909060' , width: 700}}></div>
           
           <UserStatus />
 

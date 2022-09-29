@@ -40,7 +40,9 @@ const WalletToWallet = () => {
   const handlePassword = (event) => {
     setValues({ ...values, password: event.target.value });
   };
-
+  const handleRemark= (event) => {
+    setValues({ ...values, remark: event.target.value });
+  };
   async function makePostRequest(values) {
     try {
       const { data } = await axios.post(
@@ -86,7 +88,7 @@ const WalletToWallet = () => {
             name="amount"
           />
 
-          <select className="option" id="remark">
+          <select className="option" id="remark" onChange={handleRemark}>
             <option value="">Remark</option>
             <option value="for movies">for movies</option>
             <option value="for food">for food</option>
@@ -103,30 +105,30 @@ const WalletToWallet = () => {
             name="password"
             required
           />
-          <button className="btn" type="submit"   onClick={handleClickToOpen}>
+          <button className="btn" type="submit" 	onClick={handleClickToOpen}>
             Transfer
           </button>
         </form>
       </div>
       <div stlye={{}}>
-  <Dialog open={open} onClose={handleToClose}>
-    <DialogContent>
-    <DialogContentText>
-    Are you sure you want to transfer this money?
-    </DialogContentText>
-    </DialogContent>
-    <DialogActions>
+	<Dialog open={open} onClose={handleToClose}>
+		<DialogContent>
+		<DialogContentText>
+		Are you sure you want to transfer this money?
+		</DialogContentText>
+		</DialogContent>
+		<DialogActions>
     <TransferBtn>Transfer</TransferBtn>
-    <CancelBtn onClick={handleToClose}
-        color="primary" autoFocus>
-      close
-    </CancelBtn>
+		<CancelBtn onClick={handleToClose}
+				color="primary" autoFocus>
+			close
+		</CancelBtn>
 
 
          
-    </DialogActions>
-  </Dialog>
-  </div>
+		</DialogActions>
+	</Dialog>
+	</div>
     </Section>
     
   );

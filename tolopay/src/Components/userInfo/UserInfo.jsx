@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react';
+import { Context } from "../../context/Context";
+// import { button1 } from "../../Utils/colors";
 import { EditProfileButton, FullName, Key, KeyAndValue, ProfilePic, 
-    UserInfoContainer, UserInfoContents, UserInfoItems, Value } from './UserInfo.style'
+    UserInfoContainer, UserInfoContents, UserInfoItems, Value } from './UserInfo.style';
 
 
 // displays profile pic and user information
 const UserInfo = (props) => {
+
+    const { user } = useContext(Context);
 
     const handleChange = () => {
         props.onChange(true)
@@ -13,12 +17,12 @@ const UserInfo = (props) => {
   return (
     <UserInfoContainer>
 
-        <ProfilePic />
+        <ProfilePic pic={user.data.user.profilePic ? user.data.user.profilePic : user.data.user.name[0]}/>
 
         <UserInfoItems>
             
             <UserInfoContents>
-                <FullName>Molla Maru</FullName>
+                <FullName>{user.data.user.name}</FullName>
                 <div>
                 
                     <KeyAndValue email={false}>
@@ -28,7 +32,7 @@ const UserInfo = (props) => {
 
                     <KeyAndValue email={true}>
                         <Key>email:</Key>
-                        <Value>maru.molla@gmail.com</Value>
+                        <Value>{user.data.user.email}</Value>
                     </KeyAndValue>
                     
                 </div>

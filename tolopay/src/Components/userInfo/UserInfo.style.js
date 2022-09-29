@@ -1,10 +1,12 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+// import { button1 } from "../../Utils/colors";
 
 const medium = '776px';
 
 export const ProfilePic = styled.div`
     border: 1px solid gray;
-    background-color: lightgreen;
+    background-image: url(${props => props.pic});
+    background-color: lightblue;
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -100,7 +102,7 @@ export const Value = styled.p`
     }
 `;
 
-export const EditProfileButton = styled.div`
+export const EditProfileButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
