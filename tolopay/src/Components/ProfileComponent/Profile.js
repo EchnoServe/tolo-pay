@@ -46,7 +46,7 @@ function ProfileComponent() {
         <div className={`dropdown-menu ${open? 'active' : 'inactive'}`} >
           <h3>Daniel</h3>
           <ul>
-            <Link to={"/profile"} >
+            <Link to={"/profile"} >                                                                                             
               <DropdownItem img = {userSVG} text = {"My Profile"}/>
             </Link>
            

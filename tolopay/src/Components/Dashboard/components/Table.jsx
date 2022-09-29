@@ -6,18 +6,14 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-// import styled from "@emotion/styled/types/base";
 import styled from "styled-components";
 
 
-function createData(to, from, previous_ballance, transfer_amount, current_ballance, dateAndTime, Remark) {
-  return { to, from, previous_ballance, transfer_amount, current_ballance, dateAndTime, Remark};
+function createData(from, to, previous_ballance, transfer_amount, current_ballance, dateAndTime, Remark) {
+  return { from, to, previous_ballance, transfer_amount, current_ballance, dateAndTime, Remark};
 }
 
 const rows = [
-  createData("Troye Sivan", 'Harry Styles', "10,000",'20,000','20,000', "19 july 4:30", 'Approved'),
-  createData("Troye Sivan", 'Harry Styles', "10,000",'20,000','20,000', "19 july 4:30", 'Approved'),
-  createData("Troye Sivan", 'Harry Styles', "10,000",'20,000','20,000', "19 july 4:30", 'Approved'),
   createData("Troye Sivan", 'Harry Styles', "10,000",'20,000','20,000', "19 july 4:30", 'Approved'),
   createData("Troye Sivan", 'Harry Styles', "10,000",'20,000','20,000', "19 july 4:30", 'Approved'),
   createData("Troye Sivan", 'Harry Styles', "10,000",'20,000','20,000', "19 july 4:30", 'Approved'),
@@ -28,16 +24,16 @@ const rows = [
 export default function BasicTable() {
   return (
       <Div className="Table">
-      <h3>Your transaction history</h3>
+      <h2>Your transaction history</h2>
         <TableContainer
           component={Paper}
-          style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
+          // style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
         >
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <Table sx={{ minWidth: 12 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>To</TableCell>
                 <TableCell align="left">From</TableCell>
+                <TableCell align="left">To</TableCell>
                 <TableCell align="left">Previous Ballance</TableCell>
                 <TableCell align="left">Transfer amount</TableCell>
                 <TableCell align="left">Current Ballance</TableCell>
@@ -46,7 +42,7 @@ export default function BasicTable() {
                 <TableCell align="left"></TableCell>
               </TableRow>
             </TableHead>
-            <TableBody style={{ color: "white" }}>
+            <TableBody style={{ color: "rgba(105, 119, 254, 0.1)" }}>
               {rows.map((row) => (
                 <TableRow
                   key={row.name}
@@ -79,38 +75,30 @@ export default function BasicTable() {
 }
 
 const Div = styled.div`
-margin-right: 10rem;
-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
-margin-top: 2rem;
-margin-bottom: 7rem;
+margin: 1.5rem 3rem 15rem 20rem;
+box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;
+border-radius: 1rem;
 overflow: auto;
 white-space: nowrap;
-// padding-left: 1rem;
+padding-left: 3rem;
 .MuiTableRow-root > * {
-  padding: 30px;
+  padding: 20px;
 }
 .MuiTableRow-root.MuiTableRow-head > * {
   font-weight: bold !important;
-  color: #6977fe !important;
+  color: #1f77b4 !important;
 }
 .Table td,
 th {
-  border: none !important;
+  // border: none !important;
 }
 .Table:first-child {
   border-radius: 0.7rem !important;
 }
-.status {
-  padding: 8px;
-  border-radius: 9px;
-}
-.Details {
-  color: #00b5ff !important;
-}
-h3{
-  color: rgb(105, 119, 254);
+h2{
+  color: #1f77b4;
   padding-left: 2rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 @media screen and (max-width: 1200px) {
   .Table {
@@ -121,10 +109,10 @@ h3{
 @media screen and (max-width: 768px) {
   .Table{
     position: relative;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     align-items: center;
-    width: 23rem;
+    width: 30rem;
   }
 }
 `;

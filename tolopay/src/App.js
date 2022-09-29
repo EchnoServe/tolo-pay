@@ -3,11 +3,12 @@ import { Helmet } from "react-helmet";
 import { ThemeProvider } from "styled-components";
 import Layout from "./Components/Layout/Layout";
 import Dashboard from "./Components/Dashboard/components/Dashboard";
-import Setting from "./Pages/Setting";
+// import Setting from "./Pages/Setting";
 
 import Budget from "./Pages/budget_page/Budget";
 import QR from "./Pages/qr/Qr";
-import Navbar from "./Components/Navbar/Navbar";
+
+// import Navbar from "./Components/Navbar/Navbar";
 
 // import PayBill from "./Pages/PayBill";
 import Planning from "./Pages/Planning";
@@ -21,6 +22,8 @@ import { darkTheme, lightTheme } from "./Utils/theme";
 import BottomNavbar from "./Components/BottomNav/BottomNavbar";
 import UserProfile from "./Pages/UserProfile";
 
+import QRgen from './Pages/qr/QRgenerator'
+import QRscan from './Pages//qr/QRscanner'
 
 
 export const ThemeContext = React.createContext(null);
@@ -61,7 +64,10 @@ const App = () => {
                                           
                                           <Route path="/planning" element={<Budget />} />
                                           <Route path="/qr" element={<QR />} />
-                                          <Route path="/profile" element={<UserProfile />} />
+                                          
+                                            <Route path="/profile" element={<UserProfile />} />
+                                            <Route path="/qr_scanner"element={<QRscan />} />
+                                            <Route path="/qr_generator" element={<QRgen />} />
                                           
                                         </Routes>
                         </Layout>  

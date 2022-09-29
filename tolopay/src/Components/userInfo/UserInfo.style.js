@@ -1,49 +1,32 @@
 import styled from 'styled-components'
 
-export const UserInfoContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 96%;
-    height: 50%;
-    // border: 1px solid olive;
-    margin: 5px;
-    padding: 15px;
-
-    @media (min-width: 700px) {
-        width: 81%;
-        
-    }
-    @media (min-width: 500px){
-        width: 90%;
-    }
-`;
+const medium = '776px';
 
 export const ProfilePic = styled.div`
     border: 1px solid gray;
     background-color: lightgreen;
     border-radius: 50%;
-    width: 99px;
-    height: 99px;
+    width: 120px;
+    height: 120px;
     margin: 5;
 
-    @media (min-width: 762px){
+    @media (min-width: ${medium}){
         width: 150px;
         height: 150px;
     }
 `;
 export const UserInfoItems = styled.div`
-    /* border: 1px solid red; */
+    /* border: 1px solid red;  */
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 72%;
+    width: 50vw;
     height: 210px;
     padding: 6px;
 `;
 
 export const UserInfoContents = styled.div`
-/* border: 1px solid blue; */
+ /* border: 1px solid blue;  */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,43 +36,36 @@ export const UserInfoContents = styled.div`
     margin-left: 18px;
     
 
-    @media (min-width: 550px){
-        margin-right: 42px;
+    @media (min-width: 400px){
+        width: 300px;
+        margin-right: 30px;
     }
     
-    @media (min-width: 762px){
-        justify-content: space-around;
-        margin-right: 90px;
-    }
-    @media (min-width: 1000px){
-        margin-right: 180px;
-    }
 `;
 
 export const FullName = styled.p`
-    font-size: 30px;
+    font-size: 36px;
     
     margin-left: 1px;
 
-    @media (min-width: 762px){
+    @media (min-width: ${medium}){
         margin-left: 21px;
         margin-bottom: 18px;
         font-size: 50px;
     }
 `;
 
-export const KeyAndValue = styled.div`
-    
+export const KeyAndValue = styled.div`  
     display: flex;
-    align-items: center; 
-    width: 150px; 
-    height: 30px; 
+    align-items: center;
+    width: 210px;
+    height: 30px;
 
     
-    @media (max-width: 762px){
+    @media (max-width: ${medium}){
         ${(props) => (props.email === true ? "display: none;" : "") }
     }
-    @media (min-width: 762px){
+    @media (min-width: ${medium}){
         width: 330px; 
     }
 `;
@@ -104,7 +80,7 @@ export const Key = styled.p`
     font-size: 12px;
     padding-bottom: 2px;
 
-    @media (min-width: 762px){
+    @media (min-width: ${medium}){
         font-size: 15px;
         width: 120px;
     }
@@ -118,7 +94,7 @@ export const Value = styled.p`
     width: 150px;
     height: 30px;
 
-    @media (min-width: 762px){
+    @media (min-width: ${medium}){
         font-size: 21px;
         width: 300px;
     }
@@ -143,3 +119,29 @@ export const EditProfileButton = styled.div`
     }
 `;
 
+export const UserInfoContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: 50%;
+    // border: 1px solid olive;
+    margin: 5px;
+    padding: 15px;
+
+    @media screen and (max-width: ${medium}) {
+        flex-direction: column;
+
+        ${UserInfoContents},${UserInfoItems} {
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        ${UserInfoItems} {
+            margin-top: 15px;
+            height: 100px;
+        }
+        
+    }
+`;
