@@ -157,7 +157,7 @@ cursor: pointer;
 
 &.active{
      
-    border-bottom: 3px solid #01bf71;
+    border-bottom: 3px solid #93ADCE;
 }
 `;
 
