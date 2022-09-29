@@ -50,11 +50,11 @@ const renderActiveShape = (props) => {
       />
       <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
       <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#000">{`${value} Birr`}</text>
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#333">
+      <text x={ex + (cos >= 0 ? 1 : -1) * 2} y={ey} textAnchor={textAnchor} fill="#000">{`${value} Birr`}</text>
+      <text x={ex + (cos >= 0 ? 1 : -1) * 2} y={ey} dy={18} textAnchor={textAnchor} fill="#333">
         {`[${(percent * 100).toFixed(2)}% `}
       </text>
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={35} textAnchor={textAnchor} fill="#333">
+      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={38} dx={-25} textAnchor={textAnchor} fill="#333">
         {`of total expenses]`}
       </text>
     </g>
@@ -77,14 +77,14 @@ export default class Expenses extends PureComponent {
     return (
       <Section lassName='chart'>
       <ResponsiveContainer width="100%" height="100%">
-         <PieChart width={400} height={400}>
+         <PieChart >
           <Pie
             activeIndex={this.state.activeIndex}
             activeShape={renderActiveShape}
             data={data}
-            cx="50%"
-            cy="50%"
-            innerRadius={50}
+            cx="51%"
+            cy="40%"
+            innerRadius={60}
             outerRadius={70}
             fill='rgb(50, 130, 200)'
             dataKey="value"
@@ -104,6 +104,7 @@ border-radius: 1rem;
 // background-color: #ebc4d2;
 box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;
 margin: 2rem 0rem 1rem 20rem;
+
 
 
 @media screen and (max-width: 768px) {

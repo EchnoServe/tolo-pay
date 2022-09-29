@@ -4,17 +4,15 @@ import FoodIcon from "@material-ui/icons/Restaurant";
 import GroceryIcon from "@material-ui/icons/ShoppingCart";
 import HealthIcon from "@material-ui/icons/AddBoxRounded";
 import TravelIcon from "@material-ui/icons/CardTravel";
-
+import { Link } from "react-router-dom";
 
 const MainContainer = styled.div`
-
 @media (max-width: 768px) {
   flex-direction: column;
   
   }
 `
 const Container = styled.div`
-
 box-sizing: boredr-box;
 display:flex;
 font-size: 17px;
@@ -130,27 +128,6 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 `
 
-
-// eslint-disable-next-line no-unused-vars
-const Box= styled.div`
-position:absolute;
-top:20px;
-left: 20px;
-right:20px;
-bottom:20px;
-background:yellow;
-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-display: block;
-justify-content: center;
-align-items: center;
-  &:hover ${H3} {
-    color:white;
-  }
-  &:hover ${Icons} {
-    color:white;
-  }
-`
-
 const H4= styled.h4`
 font-size:20px;
 color:white;
@@ -164,9 +141,9 @@ function Budget() {
   return (
    <MainContainer>
     
-      <Container>
-        <AddButton><Button><big><b>+ </b></big>Add a New Budget</Button></AddButton>
-
+<Container>
+<AddButton>
+    <Link to='/budgetform'><Button ><big><b>+ </b></big>Add a New Budget</Button></Link></AddButton>
   <Card>
     
       <Content>
