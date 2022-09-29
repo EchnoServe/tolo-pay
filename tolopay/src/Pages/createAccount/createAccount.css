@@ -1,5 +1,5 @@
 .mcontainer{
-  margin-top: 3%;
+  margin-top: 5%;
 }
 
 .header_ul {
@@ -44,6 +44,7 @@
 .form h1 {
   color: #404550;
   font-weight: 100;
+  margin-bottom: 2px;
 }
 
 .signup_btns {
@@ -80,7 +81,7 @@
 }
 
 .img_container {
-  background-image: url("./../../Assets/Group\ 13.png");
+  background-image: url("./../../Assets/bglogo.png");
   background-position: center;
   background-size: contain;
   flex-basis: 50%;
@@ -96,9 +97,13 @@
 }
 .btn_img--google {
   background-image: url("./../../Assets/Google\ -\ Original.png");
+  background-color: #fff;
+  border-radius: 2px;
 }
 .btn_img--facebook {
   background-image: url("./../../Assets/Facebook\ -\ Original.png");
+  background-color: white;
+  border-radius: 2px;
 }
 
 #logo {

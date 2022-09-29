@@ -203,15 +203,7 @@ const CreateAccount = () => {
            
            
         </div>
-        
-        <div className="flex-c-c img_container">
-          <section>
-            <h1>Welcome to Tolopay</h1>
-            <p>
-              create account to experience the faster money transfer platform
-            </p>
-          </section>
-        </div>
+      
       </div>
       </div>
     </>
