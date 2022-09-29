@@ -98,7 +98,7 @@ const Analytics = () => {
               <IoStatsChart />
             </div>
             <p style={{letterSpacing: '1px'}}>YOUR CURRENT BALLANCE IS {value.current_balance}.</p>
-            <p style={{color:'#fff', letterSpacing:'1PX'}}>WITH THIS BALLANCE YOUR BUDGETS ARE:</p>
+            <p style={{color:'#fff', letterSpacing:'1PX'}}>YOUR BUDGETS ARE:</p>
             {rData.map((val) =>(
             <p>- {val.name}: {val.value} Birr</p>
             ))}
