@@ -3,6 +3,7 @@ import Reducer from "./Reducer";
 
 const INITIAL_STATE = {
   user: null,
+  token:null,
   isFetching: false,
   error: false,
 };
@@ -22,6 +23,7 @@ export const ContextProvider = ({ children }) => {
         user: state.user,
         isFetching: state.isFetching,
         error: state.error,
+        token:state.token,
         dispatch,
       }}
     >

@@ -6,6 +6,10 @@ import {GiTrophyCup} from 'react-icons/gi';
 import {GiReceiveMoney} from 'react-icons/gi'
 import { GiPayMoney } from 'react-icons/gi';
 
+import { Context } from "./../../../context/Context";
+import { useState ,useContext} from "react";
+
+
 function data(money_in, money_out, current_balance, points_earned) {
   return { money_in, money_out, current_balance, points_earned };
 }
@@ -16,6 +20,8 @@ const amount = [
 
 
 const Analytics = () => {
+  const { token ,user } = useContext(Context);
+  console.log(user)
   return (
     <Section>
  
@@ -44,8 +50,8 @@ const Analytics = () => {
         <IoStatsChart />
       </div>
       <div className='content'>
-        <h5>Current balance [Available]</h5>
-        <h3>value.current_ballance</h3>
+        <h5>Current balance </h5>
+        <h3>{user?.data.user.balance}</h3>
       </div>
     </div>
 

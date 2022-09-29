@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useContext } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -9,6 +10,8 @@ import Paper from "@mui/material/Paper";
 // import styled from "@emotion/styled/types/base";
 import styled from "styled-components";
 import axios from "axios";
+
+import { Context } from "./../../../context/Context";//
 
 function createData(
   createdAt,
@@ -44,6 +47,7 @@ function createData(
 
 export default function BasicTable() {
   const [data, setData] = React.useState([]);
+  const { user ,token,dispatch} = useContext(Context);
 
   React.useEffect(() => {
     async function getTrasaction() {
@@ -52,7 +56,7 @@ export default function BasicTable() {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmQ1ZDQyNjU1YThmNmZiYzk4NmQxZSIsImlhdCI6MTY2MzkxNzM3OCwiZXhwIjoxNjcxNjkzMzc4fQ.Xhf-UM6lx8n5eP_7x4u9aV7ad1czdlO5L7LwQfJg1Qw",
+              `Bearer ${token}`,
           },
         }
       );
