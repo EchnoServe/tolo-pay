@@ -104,6 +104,7 @@ box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;
 border-radius: 1rem;
 margin: 2rem 0rem 0rem 1rem;
 transition: all 0.8s ease;
+background-color: #fff;
 
 &:hover{
   margin-top: 1rem;

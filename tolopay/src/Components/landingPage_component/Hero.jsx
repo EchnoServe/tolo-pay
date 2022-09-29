@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import{Link as LinkR} from 'react-router-dom';
 import img from '../../Assets/Image/heroImage.png';
+import Fade from 'react-reveal/Fade'
  
 
 export default function Hero() {
@@ -15,36 +16,36 @@ export default function Hero() {
         <HeroRow>
 {/* headline column */}
           <Column1>
+<Fade left>
           <TextWrapper> 
-            <Heading>The new way of money transfer <Span> ToloPay </Span>  </Heading>
+            <Heading>The new way of money transfer <Span> ToloPay </Span> </Heading>
             <P>pay anything anywhere easly.</P>
             <BtnWrapper>
-           <Button to = '/signup'>Create Account</Button>
+            <Button to = '/signup'>Create Account</Button>
            </BtnWrapper>
           </TextWrapper>
-           
+          </Fade>
 
           </Column1>
 
 {/* Image column */}
 
           <Column2>
-
+<Fade right>
           <ImgWrap>
           <Img src={img}></Img>
           </ImgWrap>
-
+          </Fade>
           </Column2>
 
         </HeroRow>
       </HeroWrapper>
      
      {/* features  */}
-
+<Fade top>
       <Feature>
       <FeatureInfo>
-
-{/* icon svg */}
+ 
 
         <FeatureIcon className='one'>
         <svg width="34" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +67,7 @@ export default function Hero() {
       <FeatureInfo>
       <FeatureIcon className='two'>
 
-{/* icon svg */}
+ 
 
       <svg width="26" height="31" viewBox="0 0 26 31" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="privacy">
@@ -88,8 +89,7 @@ export default function Hero() {
 
       <FeatureInfo>
       <FeatureIcon className='three'>
-
-{/* icon svg */}
+ 
 
       <svg width="39" height="29" viewBox="0 0 39 29" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="fast">
@@ -111,7 +111,7 @@ export default function Hero() {
 
       <FeatureInfo>
       <FeatureIcon className='four'>
-{/* icon svg */}
+ 
       <svg width="37" height="35" viewBox="0 0 37 35" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="Lifetime-update">
       <g id="phone">
@@ -134,6 +134,7 @@ export default function Hero() {
 
 
       </Feature>
+      </Fade>
     </HeroContainer>
   
           
@@ -167,7 +168,7 @@ justify-content: center;
 }
 
 @media screen and (max-width: 768px){
-  
+  padding: 0;
   
 }
 
@@ -183,6 +184,7 @@ grid-template-areas: 'col1 col2';
 @media screen and (max-width: 768px){
   grid-template-areas: 'col1 col1' 'col2 col2';
   margin-bottom: 0;
+  margin-top: 55px;
 }
 
 `;
@@ -192,6 +194,12 @@ const Column1 = styled.div`
 z-index: 1;
 padding: 0 15px;
 grid-area: col1;
+
+@media screen and (max-width: 768px){
+  
+  padding: 0;
+  
+}
  
 `;
 
@@ -207,8 +215,12 @@ margin-top: 0;
 max-width: 450px;
 padding-top: 0;
 padding-bottom: 60px;
-background-color: transparent;
+
+@media screen and (max-width: 768px){
+  
+}
 `;
+
 
  
 
@@ -220,7 +232,7 @@ font-weight: 600;
 color: #262a37;
 
 @media screen and (max-width: 480px){
-  font-size: 32px;
+  font-size: 28px;
 }
 `;
 
@@ -234,7 +246,7 @@ color:#999;
 
 
 @media screen and (max-width: 480px){
-  font-size: 20px;
+ display: none;
 }
 `;
 const Span = styled.h1`
@@ -245,7 +257,7 @@ color: #395A9B 60%;
 cursor: pointer;
 
 @media screen and (max-width: 480px){
-  font-size: 32px;
+  font-size: 28px;
 }
 `;
 
@@ -258,7 +270,7 @@ height: 555px;
  
 
 @media screen and (max-width: 768px){
- height : 300px;
+ height : 250px;
  margin-bottom: 100px;
 
 }
@@ -318,7 +330,7 @@ padding-right: 0;
 
 const Feature = styled.div`
 
-margin-top: 50px;
+margin-top: 100px;
 margin-bottom: 50px;
 display: flex;
 gap: 20px;
