@@ -10,12 +10,10 @@ align-items: center;
 margin: 1px 6px;
 color: rgb(39, 39, 39);
 
-/* background-color: rgb(247, 243, 243); */
 border-radius: 3px;
 width: 300px;
 height: 42px;
 margin-top: 2px;
-/* margin-bottom: 6px; */
 padding: 1px 6px;
 
 &:focus {
@@ -25,20 +23,16 @@ border: none;
 
 export const Loading = styled.div`
 
-  width: inherit; 
-  margin-top: 0;
-  margin:0 auto;
-  border-radius:6px;
-  border:4px solid transparent;
+  width: 100%; 
+  margin:0;
+  border-radius:1px;
+  border:1px solid transparent;
   position:relative;
-  padding:1px;
   padding-bottom: 3px;
-  left:-21px; 
-  top: -21px;
 
 &:before {
   content:'';
-  border:1px solid ${button1}; 
+  border:1px solid ${button1};
   border-radius:6px;
   position:absolute;
   

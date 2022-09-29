@@ -3,6 +3,7 @@ import { FormStyle } from '../commonStyles';
 import { primary, button1, grayB } from "../../Utils/colors";
 
 const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif";
+const medium = "776px";
 
 export const Para = styled.p`
     font-size: small;
@@ -16,22 +17,18 @@ export const Pwarning = styled.p`
 `; 
 
 export const Container = styled.div`
-     height: 72vh;
+     height: 432px;
      background-color: white;
      display: flex;
-     justify-content: center;
+     justify-content: start;
      align-items: center;
      flex-direction: column;
      border-radius: 6px;
      border: 0.1px solid rgba(235,235,235);
-
-     
-        width: 350px;
-        // margin: 6px 5%;
-        padding: 20px;
-        padding-top: 1px;
-
-     @media (min-width: 600px){
+     width: 372px;
+     padding-top: 0px;
+    
+     @media (min-width: ${medium}){
          width: 50vw;
      } 
 `;
@@ -39,10 +36,10 @@ export const Container = styled.div`
  export const Heading = styled.div`
     width: 360px;
     margin-bottom: 1px;
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-   /* border: 2px solid green; */
     `;
     
 export const Subtitle = styled.p`margin: 1px;`;

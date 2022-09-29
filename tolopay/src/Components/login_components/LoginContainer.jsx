@@ -7,7 +7,7 @@ import { Heading, AlternatePara, Container,
 import { Loading } from "../commonStyles";
 import LoginForm from './LoginForm';
 import { Context } from "../../context/Context";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif"
@@ -16,7 +16,7 @@ const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-s
 const LoginContainer = () => {
 
     const navigate = useNavigate();
-    const { dispatch, error } = useContext(Context);
+    const { dispatch } = useContext(Context);
 
     // Loading Bar States
     const [loading, setLoading] = useState(false);
@@ -99,7 +99,7 @@ const LoginContainer = () => {
         <LoginForm onChange={handleLoading}/>
         
         <div>
-            <Para >Don't have Account yet? <a href='#d'>Create Account Now</a></Para>
+            <Para >Don't have Account yet? <a href="/signup">Create Account Now</a></Para>
         </div>
         
         

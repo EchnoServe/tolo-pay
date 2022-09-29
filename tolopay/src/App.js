@@ -1,46 +1,39 @@
 import React, { useState ,useContext} from "react";
-import { Helmet } from "react-helmet";
+import { BrowserRouter as Router, Route, Routes, Outlet } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import Layout from "./Components/Layout/Layout";
-import Dashboard from "./Components/Dashboard/components/Dashboard";
-import Setting from "./Pages/Setting";
-
-import Budget from "./Pages/budget_page/Budget";
-import QR from "./Pages/qr/Qr";
-import Navbar from "./Components/Navbar/Navbar";
-
-// import PayBill from "./Pages/PayBill";
-import Planning from "./Pages/Planning";
-// import Navbar from "./Components/Navbar/Navbar";
 
 import WalletToWallet from "./Components/walletToWallet/WalletToWallet";
 import Signup from "./Pages/createAccount/CreateAccount"
-// import RoutesPath from "./RoutesPath";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { GlobalStyle } from "./Utils/globalStyles";
-import { darkTheme, lightTheme } from "./Utils/theme";
-import BottomNavbar from "./Components/BottomNav/BottomNavbar";
-import UserProfile from "./Pages/UserProfile";
-import Budget_form from "./Pages/budget_page/BudgetForm";
-import Transfer from "./Components/confirmation_component/Transfer";
 import Login from "./Pages/login_page/LoginPage";
 import LoginSuccess from "./Components/login_components/LoginSuccess";
+import Layout from "./Components/Layout/Layout";
+import Dashboard from "./Components/Dashboard/components/Dashboard";
+import BottomNavbar from "./Components/BottomNav/BottomNavbar";
+import Budget_form from "./Pages/budget_page/BudgetForm";
+import Budget from "./Pages/budget_page/Budget";
+import QR from "./Pages/qr/Qr";
+import UserProfile from "./Pages/UserProfile";
+
 import { Context } from "./context/Context";
+import { darkTheme, lightTheme } from "./Utils/theme";
+
+
+
+
 
 export const ThemeContext = React.createContext(null);
 
 const App = () => {
-  const { user, dispatch } = useContext(Context);
+  const { user } = useContext(Context);
 
 
   const [theme, setTheme] = useState("light");
   const themeStyle = theme === "light" ? lightTheme : darkTheme;
-  console.log(user)
   return (
  
 <ThemeContext.Provider value={{ setTheme, theme }}>
       <ThemeProvider theme={themeStyle}>
-        <GlobalStyle />
+        {/* <GlobalStyle />
         <Helmet>
           <title>tolopay</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,35 +42,35 @@ const App = () => {
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
             rel="stylesheet"
           />
-        </Helmet>
+        </Helmet> */}
         <>
-          {/* <Layout>
-                        <RoutesPath />
-                    </Layout> */}
+        <Router>
 
-          <Router>
-            <Layout>
-              {/* <Navbar /> */}
-              <BottomNavbar />
+          <Routes>
 
-              <Routes>
+            
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/login/success" element={<LoginSuccess />} />
+            <Route path="/" 
+                element = { user ? 
+                    <Layout>
+                        <BottomNavbar />
+                        <Outlet />
+                    </Layout> : 
+                    <Login/>} >
+                    
+                    <Route index element={ <Dashboard /> } />
+                    <Route path="transfer" element={ <WalletToWallet /> } />
+                    <Route path="budgetform" element={ <Budget_form /> } />
+                    <Route path="planning" element={ <Budget /> } />
+                    <Route path="qr" element={ <QR /> } />
+                    <Route path="profile" element={ <UserProfile /> } />
 
-                <Route path="/" element={user ? <Dashboard />: <Login/>} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/login/success" element={<LoginSuccess />} />
-
-                <Route path="/transfer" element={user ? <WalletToWallet />: <Login/>} />
-                <Route path="/budgetform" element={user ? <Budget_form/>: <Login/>} />
-                
-                <Route path="/planning" element={user ? <Budget />: <Login/>} />
-                <Route path="/qr" element={user ? <QR />: <Login/>} />
-                <Route path="/qr" element={<QR />} />
-                <Route path="/profile" element={user ? <UserProfile /> : <Login />} />
-              </Routes>
-            </Layout>
-          </Router>
-        </>
+            </Route>
+          </Routes>
+        </Router>
+      </>
       </ThemeProvider>
     </ThemeContext.Provider>
   );
