@@ -23,7 +23,8 @@ import BottomNavbar from "./Components/BottomNav/BottomNavbar";
 import UserProfile from "./Pages/UserProfile";
 import Budget_form from "./Pages/budget_page/BudgetForm";
 import Transfer from "./Components/confirmation_component/Transfer";
-import Login from "./Components/login_components/LoginForm";
+import Login from "./Pages/login_page/LoginPage";
+import LoginSuccess from "./Components/login_components/LoginSuccess";
 import { Context } from "./context/Context";
 
 export const ThemeContext = React.createContext(null);
@@ -64,13 +65,15 @@ const App = () => {
                 <Route path="/" element={user ? <Dashboard />: <Login/>} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/login/success" element={<LoginSuccess />} />
 
                 <Route path="/transfer" element={user ? <WalletToWallet />: <Login/>} />
                 <Route path="/budgetform" element={user ? <Budget_form/>: <Login/>} />
                 
                 <Route path="/planning" element={user ? <Budget />: <Login/>} />
                 <Route path="/qr" element={user ? <QR />: <Login/>} />
-                <Route path="/profile" element={<UserProfile />} />
+                <Route path="/qr" element={<QR />} />
+                <Route path="/profile" element={user ? <UserProfile /> : <Login />} />
               </Routes>
             </Layout>
           </Router>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { gray80 } from '../../Utils/colors';
 import './LoginContainer.style';
@@ -6,11 +6,16 @@ import { Heading, AlternatePara, Container,
     Divider, SocialMediaContainer, SocialMediaLogin, Subtitle, Para } from './LoginContainer.style';
 import { Loading } from "../commonStyles";
 import LoginForm from './LoginForm';
+import { Context } from "../../context/Context";
+import { Link, useNavigate } from "react-router-dom";
 
 const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif"
 
 // Login Box
 const LoginContainer = () => {
+
+    const navigate = useNavigate();
+    const { dispatch, error } = useContext(Context);
 
     // Loading Bar States
     const [loading, setLoading] = useState(false);
@@ -22,8 +27,15 @@ const LoginContainer = () => {
     const fetchAuthUser = () => {
         fetch("http://localhost:8000/api/v1/users/loginsocial")
         .then(response => response.json())
-        .then(result => console.log(result))
-        .catch(err => console.log(`errors: ${err}`))
+        .then(result => {
+            console.log(result)
+            dispatch({ type: "SUCCESS", payload: result.data });
+            navigate('/');
+        })
+        .catch(err => {
+            console.log(`errors: ${err}`);
+            dispatch({ type: "FAILED" });
+        })
     }
 
     // api call to server redirect to login with google

@@ -1,26 +1,32 @@
-import { Formik } from 'formik';
+import { Formik } from "formik";
 import * as Yup from "yup";
-import React from 'react'
-import { primary } from '../../Utils/colors'
+import React from 'react';
+import { primary } from "../../Utils/colors";
 
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { Context } from "../../context/Context";//
-import { Link, useNavigate } from "react-router-dom";
-import api from '../../api/api'
+import { useNavigate } from "react-router-dom";
+import api from '../../api/api';
 
 
 import { Email, LoginButton, LoginFormButton, LoginOptions, Password, Para, Pwarning, Warning } from './LoginContainer.style'
 
 // accepts login input and submit
-const LoginForm =  () => {
+const LoginForm =  (props) => {
 
   const navigate=useNavigate();
   const { dispatch, isFetching, error } = useContext(Context);
+
+  const handleLoading = (value) => {
+    props.onChange(value);
+  }
 
   return <Formik initialValues={{email: '', password: ''}} 
     onSubmit={async (data, {setSubmitting}) => {
        
           try {
+            props.onChange(true);
+            handleLoading(true);
       
             const res = await api.post("/users/login", {
               email: data.email,
@@ -32,11 +38,9 @@ const LoginForm =  () => {
           } catch (error) {
             console.log(error)
             dispatch({ type: "FAILED" });
+            handleLoading(false);
           }
           
-
-
-
           setSubmitting(false);
         } } 
         
