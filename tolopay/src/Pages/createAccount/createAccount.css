@@ -71,7 +71,6 @@
 }
 .form_container {
   width: inherit;
-  height: 400px;
   gap: 0.5rem;
 }
 .form_input_box {
@@ -167,4 +166,16 @@
    width: inherit;
 
   gap: 0.5rem;
+}
+.invalid {
+    border:1px solid red !important;
+   }
+   input, textarea {
+    outline: none !important;
+    box-shadow: none !important; 
+    
+  }
+
+.required{
+    color: red;
 }

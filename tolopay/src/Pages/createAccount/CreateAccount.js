@@ -96,7 +96,7 @@ const CreateAccount = () => {
              <input
                 placeholder="FullName"
                 type="name"
-                className={`form-control ${errors.email && "invalid"}`}
+                className={`form-control ${errors.firstName && "invalid"}`}
                 {...register("firstName", { required: "FirstName is Required" ,
                 pattern: {
                 value: /^[A-Za-z]/,
@@ -113,7 +113,7 @@ const CreateAccount = () => {
               <input
               placeholder="user name"
                 type="name"
-                className={`form-control ${errors.email && "invalid"}`}
+                className={`form-control ${errors.lastName && "invalid"}`}
                 {...register("lastName", { required: "LastName is Required" ,
                 pattern: {
                 value: /^[A-Za-z]/,
