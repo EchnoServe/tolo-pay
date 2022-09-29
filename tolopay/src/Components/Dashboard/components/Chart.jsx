@@ -1,243 +1,134 @@
 import React from "react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer
+} from "recharts";
 import styled from "styled-components";
-import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
-import { cardStyles } from "./ReusableStyles";
+
 const data = [
-  { data: 4500 },
   {
-    data: 5000,
+    alias: 'Su',
+    name: "Sunday",
+    money_in: 4000,
+    money_out: 2400,
+    
   },
   {
-    data: 4700,
+    alias: 'Mo',
+    name: "Monday",
+    money_in: 3000,
+    money_out: 1398,
+    
   },
   {
-    data: 4400,
+    alias: 'Tu',
+    name: "Tuesday",
+    money_in: 2000,
+    money_out: 9800,
+    
   },
   {
-    data: 4800,
+    alias: 'We',
+    name: "Wednsday",
+    money_in: 2780,
+    money_out: 3908,
+    
   },
   {
-    data: 5300,
+    alias: 'Th',
+    name: "Thursday",
+    money_in: 1890,
+    money_out: 4800,
+    
   },
   {
-    data: 5800,
+    alias: 'Fr',
+    name: "Friday",
+    money_in: 2390,
+    money_out: 3800,
+    
   },
   {
-    data: 6000,
-  },
-  {
-    data: 6300,
-  },
-  {
-    data: 6580,
-  },
-  {
-    data: 6780,
-  },
-  {
-    data: 6680,
-  },
-  {
-    data: 6500,
-  },
-  {
-    data: 6300,
-  },
-  {
-    data: 5900,
-  },
-  {
-    data: 5700,
-  },
-  {
-    data: 5500,
-  },
-  {
-    data: 5300,
-  },
-  {
-    data: 5100,
-  },
-  {
-    data: 5090,
-  },
-  {
-    data: 5300,
-  },
-  {
-    data: 5800,
-  },
-  {
-    data: 6000,
-  },
-  {
-    data: 6300,
-  },
-  {
-    data: 6780,
-  },
-  {
-    data: 6500,
-  },
-  {
-    data: 6300,
-  },
-  {
-    data: 6500,
-  },
-  {
-    data: 6700,
-  },
-  {
-    data: 7000,
-  },
-  {
-    data: 7300,
-  },
-  {
-    data: 7500,
-  },
-  {
-    data: 7700,
-  },
-  {
-    data: 8090,
-  },
-  {
-    data: 8190,
-  },
-  {
-    data: 7990,
-  },
-
-  {
-    data: 7700,
-  },
-  {
-    data: 7500,
-  },
-  {
-    data: 7300,
-  },
-  {
-    data: 7000,
-  },
-  {
-    data: 6700,
-  },
-  {
-    data: 6500,
-  },
-  {
-    data: 6300,
-  },
-  {
-    data: 6500,
-  },
-  {
-    data: 6780,
-  },
-  {
-    data: 6300,
-  },
-  {
-    data: 6000,
-  },
-  {
-    data: 5800,
-  },
-
-  {
-    data: 5490,
-  },
-  {
-    data: 6000,
-  },
-  {
-    data: 8000,
-  },
+    alias: 'Sa',
+    name: "Saturday",
+    money_in: 3490,
+    money_out: 4300,
+    
+  }
 ];
-const Chart = () => {
+
+export default function App() {
   return (
     <Section>
-      <div className="top">
-        <div className="info">
-          <h5>This month spending report</h5>
-          <h1>65,000 Birr</h1>
-          <div className="growth">
-            <span>+2.45%</span>
-          </div>
-        </div>
+      <div className="container">
+        <div className="inner-container">
+       <div className="title">
+        <h4>YOUR WEEKLY TRANSACTION</h4>
       </div>
-      <div className="chart">
-        <ResponsiveContainer width="100%" height="100%">
-          <AreaChart
-            width={500}
-            height={400}
-            data={data}
-            margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
-          >
-            <Tooltip cursor={false} />
-            <Area
-              animationBegin={800}
-              animationDuration={2000}
-              type="monotone"
-              dataKey="data"
-              stroke="#073604"
-              fill="#b5cfb4"
-              strokeWidth={4}
-            />
-          </AreaChart>
-        </ResponsiveContainer>
-      </div>
+    <BarChart className="bar-chart"
+      width={500}
+      height={300}
+      data={data}
+      margin={{
+        top: 50,
+        right: 0,
+        left: 50,
+        bottom: 5
+      }}
+    >
+     
+      <CartesianGrid strokeDasharray="0 9000" />
+      <XAxis dataKey="alias" margin-top='1rem'/>
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Bar dataKey="money_in" fill="#1f77b4" />
+      <Bar dataKey="money_out" fill="#8cb8d6" />
+    </BarChart>
+    </div>
+    </div>
     </Section>
   );
 }
+
 const Section = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 19rem;
-  box-shadow: 0 20px 50px #46833c; 
+.inner-container{
+  // border: 1px solid #1f77b4;
+box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
+border-radius: 1rem;
+padding: 1rem 0rem 1rem 0rem;
+margin: 2rem 1rem 0rem 0rem;
+transition: all 0.8s ease;
+background-color: #fff; 
+}
 
-  // flex: auto;
-  ${cardStyles}
-  padding: 0rem 0 0 0;
+.inner-container:hover{
+  margin-top: 1rem;
+  margin-right: 0rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.8s ease;
+  box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
+  border: 1px solid #1f77b4;
+  // border: none;
+}
 
-  .top {
-    .info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      h1 {
-        font-size: 1.55rem;
-      }
-      .growth {
-        background-color: #d7e41e1d;;
-        padding: 0.5rem;
-        // border-radius: 1rem;
-        transition: 0.3s ease-in-out;
-        &:hover {
-          background-color: #46833c;
-          span {
-            color: white;
-          }
-        }
-        span {
-          color: #105e0d;
-        }
-      }
-    }
-  }
-  .chart {
-    height: 70%;
-    .recharts-default-tooltip {
-      background-color: white !important;
-      border-color: #073604 !important;
-      color: #073604;
-    }
-  }
-  
-  `;
+.title{
+  text-gap: 1px;
+  margin-left: 6.8rem;
+  color: #1f77b4;
+  letter-spacing: 2px;
+}
 
-  export default Chart;
+@media screen and (min-width: 280px) and (max-width: 720px) {
+margin-left: 1rem;
+margin-top: 2rem;
+margin-right: 1rem;
+}
+`;

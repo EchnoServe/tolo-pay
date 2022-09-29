@@ -1,94 +1,91 @@
 import React from "react";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 
-const ModalContainer = styled.div`
-background-color: white;
-height:170px;
-width: 460px;
-align-content: center;
-padding-left: 20px;
-padding-top: 20px;
-padding-bottom:15px;
-box-shadow: 10px 20px 20px rgba(0,0,0,0.1);
-`
-const ModalBg = styled.div``
-const TitleCloseBtn = styled.div`
-margin-right:5px;
-display: flex;
-justify-content: flex-end;
-`
-
-const Button= styled.button`
-background-color: transparent;
-border: none;
-font-size: 16px;
-cursor: pointer;
-`
-
-const Title = styled.div`
-display: inline-block;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom:10px
-`
-const Footer = styled.div`
-flex: 20%;
-display: flex;
-justify-content: center;
-align-items: center;
-`
-
 const TransferBtn = styled.button`
-width: 150px;
-height: 45px;
+width: 120px;
+height: 40px;
 margin: 10px;
 border: none;
 background-color: rgb(7, 89, 7);
 color: white;
 border-radius: 0px;
-font-size: 20px;
+font-size: 18px;
 cursor: pointer;
 `
 
 const CancelBtn= styled.button`
-width: 150px;
-height: 45px;
+width: 120px;
+height: 40px;
 background-color: white;
 color: black;
 border: 2px solid black;
-font-size: 20px;
+font-size: 18px;
 cursor: pointer;
 `
-function Transfer({ setOpenModal }) {
-  return (
-    <ModalBg>
-      <ModalContainer>
-        <TitleCloseBtn>
-          <Button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-          >
-            X
-          </Button>
-        </TitleCloseBtn>
-        <Title>
-          <h4>Are You Sure You Want to Transfer this Money?</h4>
-        </Title>
-        <Footer>
-        <TransferBtn>Transfer</TransferBtn>
-          <CancelBtn
-            onClick={() => {
-              setOpenModal(false);
-            }}
-            id="cancelBtn"
-          >
-            Cancel
-          </CancelBtn>
-          
-        </Footer>
-      </ModalContainer>
-      </ModalBg>
+
+function Transfer() {
+  const [open, setOpen] = React.useState(false);
+
+const handleClickToOpen = () => {
+	setOpen(true);
+};
+
+const handleToClose = () => {
+	setOpen(false);
+};
+
+return (
+	<div stlye={{}}>
+	<h4>click to transfer money</h4>
+	<Button variant="outlined" color="primary"
+			onClick={handleClickToOpen}>
+	Transfer
+	</Button>
+	<Dialog open={open} onClose={handleToClose}>
+		<DialogContent>
+		<DialogContentText>
+		Are you sure you want to transfer this money?
+		</DialogContentText>
+		</DialogContent>
+		<DialogActions>
+    <TransferBtn>Transfer</TransferBtn>
+		<CancelBtn onClick={handleToClose}
+				color="primary" autoFocus>
+			close
+		</CancelBtn>
+
+
+         
+		</DialogActions>
+	</Dialog>
+	</div>
+  // return (<div
+  //     style={{
+  //       display: "flex",
+  //       flexDirection: "column",
+  //       justifyContent: "center",
+  //       alignItems: "center",
+  //       height: "100vh",
+  //       backgroundColor: "#46833C",
+  //       color: "#fff",
+  //       gap: "3rem",
+  //     }}
+  //   >
+  //     <h1
+  //       style={{
+  //         fontSize: "10rem",
+  //       }}
+  //     >
+  //       Tolo-pay
+  //     </h1>
+  //     <p>Pay Anything Anywhere Easily</p>
+  //   </div>
   );
 }
 

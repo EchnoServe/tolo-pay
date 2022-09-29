@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-
+import { Outlet } from 'react-router-dom';
 
 
 
@@ -59,7 +59,7 @@ function Layout({ children, ...rest }) {
        
           <GridNav>
         <Sidebar />
-        
+        <Outlet />
           </GridNav>
           <GridHeader>
             <Navbar />

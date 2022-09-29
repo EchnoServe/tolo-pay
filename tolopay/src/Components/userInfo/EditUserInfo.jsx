@@ -1,58 +1,135 @@
-import React from 'react'
-import { FormStyle } from '../commonStyles';
-import { EditInfoContainer, EditProfilePic, KeyandValueInEdit, KeyInEdit } from './EditUserInfo.style'
-import { EditProfileButton, ProfilePic } from './UserInfo.style'
+import React, { useState, useContext } from "react";
+import { Formik } from "formik";
+import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
+import {MdOutlineCancel} from "react-icons/md";
+import { Context } from "../../context/Context";
+import { FormStyle } from "../commonStyles";
+import { button1, gray80 } from "../../Utils/colors";
+import { Loading } from "../commonStyles";
+import { EditInfoContainer, EditProfilePic, KeyandValueInEdit,
+     KeyInEdit, Form, Cancel } from './EditUserInfo.style';
+import { EditProfileButton, ProfilePic } from './UserInfo.style';
+import api from '../../api/api';
 
-const fontRoboto = "Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI'";
-const grayFontColor = '#3F3E3E';
 
+
+
+// A component that let's an already registered user change his/her credential.
 const EditUserInfo = (props) => {
+
+  const [ user, dispatch ] = useContext(Context);
+  const navigate = useNavigate();
+
+    // Loading Bar States
+    const [loading, setLoading] = useState(false);
+
+    const [pic, changePic] = useState(user.data.user.profilePic);
+
+    const readyPic = event => {
+      changePic(event.target.files[0].name);
+    }
+
+    const handleSubmit = value => {
+        setLoading(value);
+    }
 
     const handleChange = () => {
         props.onChange(false)
     }
 
   return (
-    <EditInfoContainer style={{width: 480, padding: 3, paddingBottom: 27, display: 'flex', flexDirection: 'column', border: '1px solid #90909040', borderRadius: 3}}>   
-
-            <div style={{display: 'flex', flexDirection: "column", alignItems: 'center', justifyContent: 'space-around', marginRight: -18, height: 400}}>
+    <EditInfoContainer>
+            {
+                loading ? 
+                <Loading >
+                    <div className='loaderBar'></div>
+                </Loading>
+                : ''
+            }
                 
-                <ProfilePic style={{width: 150, height: 150, display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end'}}>
-                    <EditProfilePic><p>Change</p></EditProfilePic>
+                <Cancel>
+                    <div onClick={handleChange} style={{cursor: 'pointer'}}>
+                        <MdOutlineCancel style={{fontSize: 33, color: gray80}}/>
+                    </div>
+                        
+                </Cancel>
+                
+                
+    <Formik initialValues={{email: "", file: ""}} 
+    onSubmit={async (data, {setSubmitting}) => {
+       
+          try {
+            // const formData = new FormData();
+            // formData.append()
+            handleSubmit(true);
+      
+            const res = await api.post("/profileImage", data.file);
+            dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+            navigate('/profile');
+         
+          } catch (error) {
+            console.log(error)
+            dispatch({ type: "FAILED" });
+            handleSubmit(false);
+          }
+          
+          setSubmitting(false);
+        } } 
+        
+        validationSchema = {
+        Yup.object().shape({
+          email: Yup.string()
+        .email("Please provide a valid email.")
+        .required("email required"),
+        })
+        } >
+        {
+            props => {
+      const {
+        //vals,
+       // touched,
+       // errors,
+       // isSubmitting,
+       // handleChange,
+       // handleBlur,
+        handleSubmit
+      } = props;
+
+      return <Form>
+                <ProfilePic pic={pic}  style={{width: 150, height: 150, 
+                                    display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end'}}>
+                    
+                    <EditProfilePic name="file" type={'file'} accept={"image/png, image/jpeg"} placeholder='Change' onChange={readyPic}/>
+                    
                 </ProfilePic>
-
-                <div style={{height: 150, width: 400 ,display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
                     <KeyandValueInEdit>
-                            <KeyInEdit style={{fontFamily: fontRoboto, fontWeight: 'lighter', color: grayFontColor}}>FullName:</KeyInEdit>
-                            <FormStyle type={'text'} value='Molla Maru' style={{fontFamily: fontRoboto, color: grayFontColor}} />
+                            <KeyInEdit>FullName:</KeyInEdit>
+                            <FormStyle name="text" type={'text'} value={user.data.user.name} />
                     </KeyandValueInEdit>
 
-                    <KeyandValueInEdit>
-                            <KeyInEdit style={{fontFamily: fontRoboto, fontWeight: 'lighter', color: grayFontColor}}>Account Id:</KeyInEdit>
-                            <FormStyle type={'text'} value='maroon5' style={{fontFamily: fontRoboto, color: grayFontColor}} />
-                    </KeyandValueInEdit>
+                    {/* <KeyandValueInEdit>
+                            <KeyInEdit>Account Id:</KeyInEdit>
+                            <FormStyle type={'text'} value='maroon5' />
+                    </KeyandValueInEdit> */}
 
                     <KeyandValueInEdit>
-                            <KeyInEdit style={{fontFamily: fontRoboto, fontWeight: 'lighter', color: grayFontColor}}>Email:</KeyInEdit>
-                            <FormStyle type={'text'} value='maru.molla@gmail.com' placeholder='someone@example.com' style={{fontFamily: fontRoboto, color: grayFontColor}} />
+                            <KeyInEdit>Email:</KeyInEdit>
+                            <FormStyle name="email" type={'email'} value={user.data.user.email} placeholder='name@example.com' />
                     </KeyandValueInEdit>
-                </div>
 
-            </div>  
-
-        <div style={{display: 'flex', alignItems: 'flex-end', height: 180, padding: 5, marginTop: -100}}>
-
-                <EditProfileButton outlineColor={"lightgreen"} style={{backgroundColor: 'lightgreen'}}>
-                    <p style={{fontFamily: fontRoboto, color: 'white'}}>Save</p>
-                </EditProfileButton>
-
-                <EditProfileButton borderColor={"#3F3E3E80"} onClick={handleChange}>
-                    <p style={{fontFamily: fontRoboto, color: grayFontColor}}>Cancel</p>
-                </EditProfileButton>
-            
-        </div>
-
+                    <EditProfileButton type="submit" outlineColor={button1} style={{backgroundColor: button1}} onClick={() => handleSubmit(true)}>
+                            <p style={{color: 'white'}}>Save</p>
+                    </EditProfileButton>
+                </Form>
+        }
+    }
+    </Formik>
     </EditInfoContainer>
+
+                
+
+    
   )
 }
 

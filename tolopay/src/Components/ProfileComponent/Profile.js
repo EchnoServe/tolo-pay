@@ -10,12 +10,16 @@ import { userSVG } from "../../Assets";
 import { envelopeSVG } from "../../Assets";
 import './Profile.css';
 
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef,useContext} from 'react';
 import { Link } from "react-router-dom";
+
+import { Context } from "./../../context/Context";
 
 function ProfileComponent() {
 
   const [open, setOpen] = useState(false);
+  const { user } = useContext(Context);
+
 
   let menuRef = useRef();
 
@@ -35,7 +39,7 @@ function ProfileComponent() {
     }
 
   });
-
+ 
   return (
     <div className="dropdown-menus">
       <div className='menu-container' ref={menuRef}>
@@ -44,16 +48,18 @@ function ProfileComponent() {
         </div>
 
         <div className={`dropdown-menu ${open? 'active' : 'inactive'}`} >
-          <h3>Daniel</h3>
+          <h3>{user?.data.user.name}</h3>
           <ul>
-            <Link to={"/profile"} >
+            <Link to={"/profile"} >                                                                                             
               <DropdownItem img = {userSVG} text = {"My Profile"}/>
             </Link>
            
             
             <DropdownItem img = {settingsSVG} text = {"Settings"}/>
             <DropdownItem img = {envelopeSVG} text = {"Helps"}/>
-            <DropdownItem img = {logoutSVG} text = {"Logout"}/>
+            <div onClick = {()=>{window.location.replace("/login")}}>
+            <DropdownItem  img = {logoutSVG} text = {"Logout"} />
+            </div>
           </ul>
         </div>
       </div>
