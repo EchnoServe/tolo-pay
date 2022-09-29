@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { ThemeProvider } from "styled-components";
 import Layout from "./Components/Layout/Layout";
-import Dashboaard from "./Components/Dashboard/components/Dashboard";
+import Dashboard from "./Components/Dashboard/components/Dashboard";
 import Setting from "./Pages/Setting";
+
 import Budget from "./Pages/budget_page/Budget";
 import QR from "./Pages/qr/Qr";
 import Navbar from "./Components/Navbar/Navbar";
+
+// import PayBill from "./Pages/PayBill";
+import Planning from "./Pages/Planning";
+// import Navbar from "./Components/Navbar/Navbar";
+
 import WalletToWallet from "./Components/walletToWallet/WalletToWallet"
 // import RoutesPath from "./RoutesPath";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -43,13 +49,14 @@ const App = () => {
                     </Layout> */}
             
                     <Router>
-                        <Navbar />
+                        
                         <Layout>
-                            
+                            {/* <Navbar /> */}
+                            <BottomNavbar />
                             
                                         <Routes>
 
-                                          <Route path="/dashboard" element={<Dashboaard />} />
+                                          <Route path="/" element={<Dashboard />} />
                                           <Route path="/transfer" element={<WalletToWallet />} />
                                           
                                           <Route path="/planning" element={<Budget />} />
@@ -59,7 +66,7 @@ const App = () => {
                                         </Routes>
                         </Layout>  
                         
-                        <BottomNavbar />
+                        
                             </Router>
 
                 </>

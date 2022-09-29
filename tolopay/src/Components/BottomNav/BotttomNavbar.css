@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: center;
  box-shadow: rgba(149, 157, 165, 0.2) 10px 8px 24px;
+ z-index: 2000;
 
 
 }
@@ -26,7 +27,7 @@
   padding: 5px 36px;
   text-decoration: none;
   font-size: 37px;
-  color:#02ba4b;
+  color:#0049ff;
   
   
 }

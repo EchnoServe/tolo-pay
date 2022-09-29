@@ -1,20 +1,35 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { btnReset, v } from "../../Utils/variables";
+import { v } from "../../Utils/variables";
 
+
+//sidebar container style
 export const SSidebar = styled.div`
-    margin-top: -90px;
+    margin-top: 0;
     z-index: 1000;
-     width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
+    //  width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
+    width: 110px;
    
-    background: ${({ theme }) => theme.bg};
+     background: ${({ theme }) => theme.bg};
+    
     height: 100vh;
     padding: ${v.lgSpacing};
-
-    position: relative;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  
+    overflow: hidden;
+    
+    position: fixed;
+    
+    
+    
+  &:hover{
+//   width: ${({ isOpen }) => (!isOpen ? `300px` : `-150px`)};
+     width: 250px;
+     opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: .9s ease;
+    z-index: 10000;
+  }
     @media(max-width: 776px){
         display: none;
         left: ${({ isOpen }) => (!isOpen ? `-110px` : 'auto')};
@@ -25,34 +40,10 @@ export const SSidebar = styled.div`
     
 `;
 
-export const SSidebarButton = styled.button`
-    ${btnReset};
-    position: absolute;
-    // top: ${v.xxlSpacing};
-    margin-top: 710px;
-    right: ${({ isOpen }) => (isOpen ? `-16px` : `-25px`)};
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: ${({ theme }) => theme.bg};
-    box-shadow: 0 0 4px ${({ theme }) => theme.bg3}, 0 0 7px ${({ theme }) => theme.bg};
-    display: flex;
-    font-size: 28px;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
 
-    transform: ${({ isOpen }) => (!isOpen ? `rotate(180deg)` : `initial`)};
-    @media(max-width: 440px){
-        width: 60px;
-        height: 60px;
-        top: ${v.xlSpacing};
-        right: ${({ isOpen }) => (isOpen ? `-16px` : `-65px`)};
-        font-size: 40px;
-    }
-`;
-
+//logo style
 export const SLogo = styled.div`
+//   margin-top: 100px;
     width: 60px;
 
     img {
@@ -67,25 +58,27 @@ export const SLogo = styled.div`
 
 
 
-
+//sidebar div divider style
 export const SDivider = styled.div`
     height: 1px;
     width: 100%;
     background: ${({ theme }) => theme.bg3};
     margin: ${v.lgSpacing} 0;
 `;
-
+// sidebar link container
 export const SLinkContainer = styled.div`
-    background: ${({ theme, isActive }) => (!isActive ? `transparent` : theme.bg3)};
+    background: ${({ theme, isActive }) => (!isActive ? `transparent` : `#41d3fe`)};
+    color: ${({ theme, isActive }) => (!isActive ? `#000` : `#fff`)};
     border-radius: ${v.borderRadius};
     margin: 4px 0;
+    
 
     :hover {
         box-shadow: inset 0 0 0 1px ${({ theme }) => theme.bg3};
     }
    
 `;
-
+//sidebar link style
 export const SLink = styled(Link)`
     display: flex;
     align-items: center;
@@ -95,11 +88,14 @@ export const SLink = styled(Link)`
     padding: calc(${v.smSpacing} - 2px) 0;
     margin-top: ${v.xxlSpacing};
 `;
-
+// sidebar link icon styling
 export const SLinkIcon = styled.div`
     padding: ${v.smSpacing} ${v.mdSpacing};
     display: flex;
-    color: #00CE52;
+    // color: #00CE52;
+    color: #0049ff;
+    
+   
 
     svg {
         font-size: 30px;
@@ -108,12 +104,19 @@ export const SLinkIcon = styled.div`
     Icon{
         stroke-width: 3px;
     }
+    &:hover{
+    animation: pulse 1.5s infinite;
+   transition: .2s;
+    }
 `;
-
+//name of link
 export const SLinkLabel = styled.span`
     display: block;
     flex: 1;
-    margin-left: ${v.smSpacing};
+    // margin-left: ${v.smSpacing};
+    padding-left: 25px;
+    font-size: 1.1em;
+    brightness(200%);
 `;
 
 
@@ -127,17 +130,17 @@ export const SThemeLabel = styled.span`
     display: block;
     flex: 1;
 `;
-export const SThemeToggler = styled.button`
-    ${btnReset};
-    margin: 0 auto;
-    cursor: pointer;
-    width: 36px;
-    height: 20px;
-    border-radius: 10px;
-    background: ${({ theme, isActive }) => (!isActive ? theme.bg3 : theme.primary)};
+// export const SThemeToggler = styled.button`
+//     ${btnReset};
+//     margin: 0 auto;
+//     cursor: pointer;
+//     width: 36px;
+//     height: 20px;
+//     border-radius: 10px;
+//     background: ${({ theme, isActive }) => (!isActive ? theme.bg3 : theme.primary)};
 
-    position: relative;
-`;
+//     position: relative;
+// `;
 
 export const SToggleThumb = styled.div`
     height: 20px;

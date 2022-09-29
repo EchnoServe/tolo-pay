@@ -3,8 +3,8 @@
 // import logo from './logo.svg';
 
 import { logoutSVG } from "../../Assets";
-import { editsSVG } from "../../Assets";
-import { questionSVG } from "../../Assets";
+// import { editsSVG } from "../../Assets";
+// import { questionSVG } from "../../Assets";
 import { settingsSVG } from "../../Assets";
 import { userSVG } from "../../Assets";
 import { envelopeSVG } from "../../Assets";
@@ -50,10 +50,7 @@ function ProfileComponent() {
               <DropdownItem img = {userSVG} text = {"My Profile"}/>
             </Link>
            
-            <DropdownItem img = {editsSVG} text = {"Edit Profile"} />
             
-            
-            <DropdownItem img = {questionSVG} text = {"Inbox"}/>
             <DropdownItem img = {settingsSVG} text = {"Settings"}/>
             <DropdownItem img = {envelopeSVG} text = {"Helps"}/>
             <DropdownItem img = {logoutSVG} text = {"Logout"}/>
