@@ -106,8 +106,8 @@ align-items: center;
 
 .logo{
     padding: 10px;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 90%;
+    max-width: 90%;
 }
 
 `;
@@ -155,8 +155,7 @@ padding: 0 1rem;
 height: 100%;
 cursor: pointer;
 
-&.active{
-     
+&.active{  
     border-bottom: 3px solid #93ADCE;
 }
 `;

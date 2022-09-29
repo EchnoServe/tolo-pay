@@ -257,7 +257,7 @@ color: #395A9B 60%;
 cursor: pointer;
 
 @media screen and (max-width: 480px){
-  font-size: 32px;
+  font-size: 28px;
 }
 `;
 
