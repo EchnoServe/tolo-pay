@@ -55,7 +55,7 @@ const WalletToWallet = () => {
   };
   async function makePostRequest(values) {
     try {
-      const { data } = await axios.post(
+      const res = await axios.post(
         "http://localhost:8000/api/v1/transaction/transfer",
         values,
         {
@@ -66,7 +66,8 @@ const WalletToWallet = () => {
         }
       );
       navigate("/")
-    dispatch({ type: "UPDATE_SUCCESS", payload: data});
+      // console.log("////>>>>",data)
+    dispatch({ type: "UPDATE_SUCCESS", payload: res.data});
 
     } catch (err) {
       console.log("[Login.js] makePostRequest", err);

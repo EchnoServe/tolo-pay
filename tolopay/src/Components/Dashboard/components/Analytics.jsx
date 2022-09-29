@@ -1,14 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useContext } from "react";
+
 import { cardStyles } from "./ReusableStyles";
 import { IoStatsChart } from "react-icons/io5";
 import {GiTrophyCup} from 'react-icons/gi';
 import {GiReceiveMoney} from 'react-icons/gi'
 import { GiPayMoney } from 'react-icons/gi';
 
-import { Context } from "./../../../context/Context";
-import { useState ,useContext} from "react";
 
+
+
+import { Context } from "../../../context/Context";//
+import axios from 'axios';
 
 function data(money_in, money_out, current_balance, points_earned) {
   return { money_in, money_out, current_balance, points_earned };
@@ -21,6 +25,24 @@ const amount = [
 
 const Analytics = () => {
   const { token ,user } = useContext(Context);
+  const [data,setData] = React.useState({money_in:null,money_out:null})
+
+  React.useEffect(() => {
+    async function getTrasaction() {
+      const { data } = await axios.get(
+        "http://localhost:8000/api/v1/users/moneyin",
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`,
+          },
+        }
+      );
+      console.log("********", data);
+      // setData(pre=> {..pre,..});
+    }
+    getTrasaction();
+  }, []);
   console.log(user)
   return (
     <Section>
