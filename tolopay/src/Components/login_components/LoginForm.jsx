@@ -87,20 +87,16 @@ const LoginForm =  (props) => {
           <Warning style={{marginBottom: 9}}>{errors.password && touched.password ?
             <Pwarning style={{color: 'red'}}>{errors.password}</Pwarning>  : ''}
           </Warning>
-
-      
-
-        <LoginOptions>
           <div>
             <a href='#' style={{color: primary}}>
               <Para>Forgot Password?</Para>
             </a>
           </div>
 
-        </LoginOptions>
+        <LoginButton type='submit' disabled={isSubmitting}><span>Login to Your Account</span></LoginButton>
 
-        <LoginButton type='submit' disabled={isSubmitting}>Login to Your Account</LoginButton>
         </form>
+
      </LoginFormButton>
     );
     } 

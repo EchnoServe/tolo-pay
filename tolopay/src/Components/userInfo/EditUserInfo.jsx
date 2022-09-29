@@ -14,6 +14,7 @@ import api from '../../api/api';
 
 
 
+
 // A component that let's an already registered user change his/her credential.
 const EditUserInfo = (props) => {
 

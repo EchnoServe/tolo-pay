@@ -47,8 +47,6 @@ const EditProfile = styled.div`
 
 // responsible for profile section of the app
 const UserProfile = () => {
-
-    
     const [editState, changeEditState] = useState(false);
     const handleChange = value => {
         changeEditState(value);
