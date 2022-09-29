@@ -48,7 +48,21 @@ const Section = styled.section`
   }
  
 }
-
+@media (max-width: 1700px){
+  .grid{
+    margin: 4rem 5rem 5rem 15rem;
+  }
+}
+@media (max-width: 1550px){
+  .grid{
+    margin: 4rem 5rem 5rem 10rem;
+  }
+}
+@media (max-width: 1450px){
+  .row{
+    grid-template-columns: 30rem 29rem;
+  }
+}
 @media screen and (min-width: 280px) and (max-width: 720px) {
   .grid{
     display: flex;
