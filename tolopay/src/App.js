@@ -1,5 +1,5 @@
 import React, { useState ,useContext} from "react";
-import { BrowserRouter as Router, Route, Routes, Outlet } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
 import Home from "./Pages/home_page/Home";
