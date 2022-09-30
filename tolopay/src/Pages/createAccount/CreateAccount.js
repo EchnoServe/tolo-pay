@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import api from '../../api/api'
 import axios from 'axios';
 import LoginPage from "../login_page/LoginPage";
+import Navbar from "../../Components/landingPage_component/Navbar";
  
 
 const CreateAccount = () => {
@@ -50,19 +51,8 @@ const CreateAccount = () => {
   };
   return (
     <>
-      <header className="flex-c-r header">
-        <div id="logo"></div>
-        <nav>
-          <ul className="flex-c-r header_ul">
-            <li>Why ToloPay</li>
-            <li>How it work</li>
-            <li>Pricing</li>
-            <li id="login_btn" className="p-12-10">
-              Login
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Navbar/>
+      <div className="mcontainer">
       <div className="flex-c-r container">
         <div className="flex-c-c form">
           <h1>Create Account</h1>
@@ -106,7 +96,7 @@ const CreateAccount = () => {
              <input
                 placeholder="FullName"
                 type="name"
-                className={`form-control ${errors.email && "invalid"}`}
+                className={`form-control ${errors.firstName && "invalid"}`}
                 {...register("firstName", { required: "FirstName is Required" ,
                 pattern: {
                 value: /^[A-Za-z]/,
@@ -123,7 +113,7 @@ const CreateAccount = () => {
               <input
               placeholder="user name"
                 type="name"
-                className={`form-control ${errors.email && "invalid"}`}
+                className={`form-control ${errors.lastName && "invalid"}`}
                 {...register("lastName", { required: "LastName is Required" ,
                 pattern: {
                 value: /^[A-Za-z]/,
@@ -213,15 +203,8 @@ const CreateAccount = () => {
            
            
         </div>
-        
-        <div className="flex-c-c img_container">
-          <section>
-            <h1>Welcome to Tolopay</h1>
-            <p>
-              create account to experience the faster money transfer platform
-            </p>
-          </section>
-        </div>
+      
+      </div>
       </div>
     </>
   );
