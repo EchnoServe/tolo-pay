@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { v } from "../../Utils/variables";
+import { v,Colors } from "../../Utils/variables";
 
 
 //sidebar container style
@@ -43,8 +43,9 @@ export const SSidebar = styled.div`
 
 //logo style
 export const SLogo = styled.div`
-//   margin-top: 100px;
-    width: 60px;
+   margin-top: -20px;
+    width: 252px;
+    margin-left: -40px;
 
     img {
         max-width: 100%;
@@ -67,7 +68,7 @@ export const SDivider = styled.div`
 `;
 // sidebar link container
 export const SLinkContainer = styled.div`
-    background: ${({ theme, isActive }) => (!isActive ? `transparent` : `#41d3fe`)};
+    background: ${({ theme, isActive }) => (!isActive ? `transparent` :Colors.accentColor)};
     color: ${({ theme, isActive }) => (!isActive ? `#000` : `#fff`)};
     border-radius: ${v.borderRadius};
     margin: 4px 0;
@@ -84,7 +85,7 @@ export const SLink = styled(Link)`
     align-items: center;
     text-decoration: none;
     color: inherit;
-    font-size: 16px;
+    font-size: 16px;8cb8d6
     padding: calc(${v.smSpacing} - 2px) 0;
     margin-top: ${v.xxlSpacing};
 `;
@@ -93,7 +94,7 @@ export const SLinkIcon = styled.div`
     padding: ${v.smSpacing} ${v.mdSpacing};
     display: flex;
     // color: #00CE52;
-    color: #0049ff;
+    color: ${Colors.primaryColor};
     
    
 

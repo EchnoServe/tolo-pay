@@ -50,7 +50,7 @@ function ProfileComponent() {
         <div className={`dropdown-menu ${open? 'active' : 'inactive'}`} >
           <h3>{user?.data.user.name}</h3>
           <ul>
-            <Link to={"/profile"} >
+            <Link to={"/profile"} >                                                                                             
               <DropdownItem img = {userSVG} text = {"My Profile"}/>
             </Link>
            

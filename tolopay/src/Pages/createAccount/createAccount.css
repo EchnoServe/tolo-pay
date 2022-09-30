@@ -1,3 +1,7 @@
+.mcontainer{
+  margin-top: 5%;
+}
+
 .header_ul {
   list-style: none;
   gap: 1rem;
@@ -40,6 +44,7 @@
 .form h1 {
   color: #404550;
   font-weight: 100;
+  margin-bottom: 2px;
 }
 
 .signup_btns {
@@ -49,7 +54,7 @@
 .btn {
   background-color: transparent;
   justify-content: space-around;
-  border: 2px solid #41d3fe;
+  border: 2px solid #3a87be;
   color: #404550;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   font-size: 1rem;
@@ -57,7 +62,7 @@
 }
 .btn:hover {
   color: #fff;
-  background-color: #6977fe;
+  background-color: #3a87be;
   transition: all 0.5s;
 }
 .or_line {
@@ -75,7 +80,7 @@
 }
 
 .img_container {
-  background-image: url("./../../Assets/Group\ 13.png");
+  background-image: url("./../../Assets/bglogo.png");
   background-position: center;
   background-size: contain;
   flex-basis: 50%;
@@ -91,9 +96,13 @@
 }
 .btn_img--google {
   background-image: url("./../../Assets/Google\ -\ Original.png");
+  background-color: #fff;
+  border-radius: 2px;
 }
 .btn_img--facebook {
   background-image: url("./../../Assets/Facebook\ -\ Original.png");
+  background-color: white;
+  border-radius: 2px;
 }
 
 #logo {
@@ -107,19 +116,20 @@
   width: inherit;
   padding-left: 8px;
   height: 50px;
-  border: 1px solid #41d3fe;
+  border: 1px solid #3a87be;
 }
 
 #signup {
   border: none;
-  background: linear-gradient(to right bottom, #41d3fe, #6977fe);
+  background-color: #3a87be;
   font-weight: bold;
   font-size: 1rem;
-  width: inherit;
+  width: 405px;
+  height: 50px;
   color: #fff;
 }
 #signup:hover {
-  background: #6977fe;
+  background: #3a87be;
 }
 .img_container section {
   width: 50%;
@@ -139,4 +149,33 @@
 }
 .text-danger{
   color:red;
+}
+.flex-c-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-c-r {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.p-12-10 {
+  padding: 12px 10px;
+   width: inherit;
+
+  gap: 0.5rem;
+}
+.invalid {
+    border:1px solid red !important;
+   }
+   input, textarea {
+    outline: none !important;
+    box-shadow: none !important; 
+    
+  }
+
+.required{
+    color: red;
 }

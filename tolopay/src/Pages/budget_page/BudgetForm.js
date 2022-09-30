@@ -1,5 +1,5 @@
-import { useState } from "react"
-import styled from 'styled-components'
+// import { useState } from "react"
+import styled from 'styled-components';
 import Snackbar from "@material-ui/core/Snackbar";
 import Button from "@material-ui/core/Button";
 import { Alert } from "@material-ui/lab";
@@ -14,7 +14,7 @@ const Budget_form = (props) => {
   const { user ,dispatch} = useContext(Context);
   const [open, setOpen] = React.useState(false);
   const handleToClose = (event, reason) => {
-    if ("clickaway" == reason) return;
+    if ("clickaway" === reason) return;
     setOpen(false);
   };
   const handleClickEvent = () => {
@@ -223,9 +223,6 @@ const Section = styled.section`
     }
   }
   
-  
-  
-
 `;
 
 export default Budget_form
