@@ -105,6 +105,7 @@ border-radius: 1rem;
 padding: 1rem 0rem 1rem 0rem;
 margin: 2rem 1rem 0rem 0rem;
 transition: all 0.8s ease;
+background-color: #fff; 
 }
 
 .inner-container:hover{

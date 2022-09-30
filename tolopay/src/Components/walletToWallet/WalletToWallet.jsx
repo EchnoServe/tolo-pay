@@ -80,6 +80,7 @@ const handlePassword = (event) =>{
                 type="submit">Transfer</button>
         </form>
     </div>
+
     </Section>
   )
 }

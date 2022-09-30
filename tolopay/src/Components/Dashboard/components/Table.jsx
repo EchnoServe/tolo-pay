@@ -87,44 +87,32 @@ export default function BasicTable() {
 }
 
 const Div = styled.div`
-
 margin-top: 1rem;
 overflow: auto;
 white-space: nowrap;
 box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
 border-radius: 1rem;
-
-
 .MuiTableRow-root > * {
   padding: 20px;
 }
-
 .MuiTableRow-root.MuiTableRow-head > * {
   font-weight: bold !important;
   color: #1f77b4 !important;
   letter-spacing: 1.5px;
-
 }
-
-
 .Table:last-child {
   border-bottom: 0.2rem solid #1f77b4;
 }
-
 .remark{
   padding: 12px;
   border-radius: 9px;
 }
-
 h4{
   letter-spacing: 2px;
   color: #1f77b4;
   padding-left: 3.7rem;
   padding-top: 1rem;
-
 }
-
-
 @media screen and (max-width: 768px) {
   overflow: auto;
   white-space: nowrap;
@@ -136,5 +124,4 @@ h4{
     border-width: 30rem;
   }
 }
-
 `;

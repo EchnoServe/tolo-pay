@@ -144,14 +144,14 @@ const Section = styled.section`
 .cards{
 display: flex;
 position: relative;
-gap: 1rem;
+gap: 2.4rem;
 
 
 .container{
   transition: 0.8s ease;
   position: relative;
-  width: 285px;
-  height:20px;
+  width: 291px;
+  height:100px;
   border-radius: 10px;
   // border-bottom: 0.1rem solid #1f77b4;
   // border-right: 0.1rem solid #1f77b4;
@@ -175,8 +175,9 @@ gap: 1rem;
   position: relative;
   width: 100%;
   height: 100%; 
-  transform: translateY(-57px);
+  transform: translateY(-30px);
   z-index: 99;
+
 }
 
 .card-data{
@@ -228,7 +229,7 @@ gap: 1rem;
 
 .container:hover > .card-data{
   opacity: 1;
-  transform: translateY(-300px);
+  transform: translateY(-240px);
   transition: 0.8s ease-in-out;
   box-sizing: border-box;
   background: linear-gradient(44.44deg, #408EF4 7.79%, #D1DEEC 94.18%);
@@ -238,7 +239,8 @@ gap: 1rem;
 .inner-card {
   position: relative;
   bottom: 0;
-  width: 275px;
+  width: 280px;
+  height: 100px;
   border-radius: 1rem;
   padding: 0.3rem;
   display: grid;
@@ -246,6 +248,7 @@ gap: 1rem;
   justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
+
   transition: 0.5s ease-in-out;
   border-bottom: 0.1rem solid #1f77b4;
   box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;  

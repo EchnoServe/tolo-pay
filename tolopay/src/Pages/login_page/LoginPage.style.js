@@ -5,8 +5,7 @@ export const LoginPageComponent  = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #fcfff7;
-    border: 2px solid orange;
+    background-color: white;
     height: 100vh;
     width: 100vw;
     // width: 90%;

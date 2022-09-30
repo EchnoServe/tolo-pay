@@ -1,7 +1,12 @@
+.mcontainer{
+  margin-top: 5%;
+}
+
 .header_ul {
   list-style: none;
   gap: 1rem;
   color: #fff;
+
 }
 
 .header {
@@ -27,10 +32,19 @@
   gap: 0.5rem;
   width: 70%;
 }
-
+@media (max-width: 768px) {
+ 
+ .form{
+  margin-top: 40%;
+  flex-basis: 100%;
+  width:90%;
+ }
+  
+}
 .form h1 {
-  color: #46833c;
+  color: #404550;
   font-weight: 100;
+  margin-bottom: 2px;
 }
 
 .signup_btns {
@@ -40,15 +54,15 @@
 .btn {
   background-color: transparent;
   justify-content: space-around;
-  border: 2px solid #46833c;
-  color: #46833c;
+  border: 2px solid #3a87be;
+  color: #404550;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   font-size: 1rem;
   width: inherit;
 }
 .btn:hover {
   color: #fff;
-  background-color: #46833c;
+  background-color: #3a87be;
   transition: all 0.5s;
 }
 .or_line {
@@ -66,11 +80,12 @@
 }
 
 .img_container {
-  background-image: url("./../../Assets/Group\ 13.png");
+  background-image: url("./../../Assets/bglogo.png");
   background-position: center;
   background-size: contain;
   flex-basis: 50%;
   height: 100vh;
+ 
 }
 .btn_img {
   background-repeat: no-repeat;
@@ -81,9 +96,13 @@
 }
 .btn_img--google {
   background-image: url("./../../Assets/Google\ -\ Original.png");
+  background-color: #fff;
+  border-radius: 2px;
 }
 .btn_img--facebook {
   background-image: url("./../../Assets/Facebook\ -\ Original.png");
+  background-color: white;
+  border-radius: 2px;
 }
 
 #logo {
@@ -95,23 +114,28 @@
 }
 .form input {
   width: inherit;
-
-  border: 1px solid #46833c;
+  padding-left: 8px;
+  height: 50px;
+  border: 1px solid #3a87be;
 }
 
 #signup {
   border: none;
-  background: linear-gradient(to right bottom, #46833c, #92b98c);
+  background-color: #3a87be;
   font-weight: bold;
   font-size: 1rem;
-  width: inherit;
+  width: 405px;
+  height: 50px;
   color: #fff;
 }
 #signup:hover {
-  background: #46833c;
+  background: #3a87be;
 }
 .img_container section {
   width: 50%;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .img_container h1 {
@@ -122,4 +146,36 @@
   text-align: left;
   width: 70%;
   color: rgba(66, 66, 66, 0.6);
+}
+.text-danger{
+  color:red;
+}
+.flex-c-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-c-r {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.p-12-10 {
+  padding: 12px 10px;
+   width: inherit;
+
+  gap: 0.5rem;
+}
+.invalid {
+    border:1px solid red !important;
+   }
+   input, textarea {
+    outline: none !important;
+    box-shadow: none !important; 
+    
+  }
+
+.required{
+    color: red;
 }
