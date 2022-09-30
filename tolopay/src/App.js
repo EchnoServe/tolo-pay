@@ -23,11 +23,17 @@ export const ThemeContext = React.createContext(null);
 
 const App = () => {
 
-  const { user } = useContext(Context);
+  const { user,
+    //  dispatch ,
+     token } = useContext(Context);
+
 
 
   const [theme, setTheme] = useState("light");
   const themeStyle = theme === "light" ? lightTheme : darkTheme;
+
+  console.log(user ,"tt",token)
+
   return (
  
 <ThemeContext.Provider value={{ setTheme, theme }}>

@@ -1,20 +1,24 @@
 const Reducer = (state, action) => {
+  // console.log("paayload .. ...>>",action.payload.data.token)
   switch (action.type) {
     case "LOGIN_START":
       return {
         user: null,
         isFetching: true,
         error: false,
+        token:null
       };
     case "SUCCESS":
       return {
-        user: { ...state,user:action.payload},
+        user: action.payload,
+        token:action.payload.data.token,
         isFetching: false,
         error: false,
       };
     case "FAILED":
       return {
         user: null,
+        token:null,
         isFetching: false,
         error: true,
       };
@@ -25,7 +29,8 @@ const Reducer = (state, action) => {
         };
       case "UPDATE_SUCCESS":
         return {
-          user: action.payload,
+          user: {...state.user ,...action.payload},
+          token:state.token,
           isFetching: false,
           error: false,
         };

@@ -32,6 +32,7 @@ const LoginForm =  (props) => {
               password:data.password
             });
             dispatch({ type: "SUCCESS", payload: res.data });
+            console.log("login ...",res.data)
             navigate('/');
          
           } catch (error) {
