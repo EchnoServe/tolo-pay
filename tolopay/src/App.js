@@ -57,7 +57,6 @@ const App = () => {
                 element = { user ? 
                     <Layout>
                         <BottomNavbar />
-                        <Outlet />
                     </Layout> : 
                     <Home />} >
                     
