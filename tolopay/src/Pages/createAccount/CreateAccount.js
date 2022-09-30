@@ -6,8 +6,6 @@ import { useContext, useRef } from "react";
 import { Context } from "../../context/Context";//
 import { Link, useNavigate } from "react-router-dom";
 import api from '../../api/api'
-import axios from 'axios';
-import LoginPage from "../login_page/LoginPage";
 import Navbar from "../../Components/landingPage_component/Navbar";
  
 
@@ -77,14 +75,14 @@ const CreateAccount = () => {
             <div
               style={{
                 borderBottom: `1px solid #6977fe`,
-                width: "100%",
+                width: "40%",
               }}
             ></div>
             <span>or</span>
             <div
               style={{
                 borderBottom: `1px solid #6977fe`,
-                width: "100%",
+                width: "40%",
               }}
             ></div>
           </div>
@@ -94,13 +92,13 @@ const CreateAccount = () => {
           <form className="flex-c-c  form_container" onSubmit={handleSubmit(onSubmit)}>
             
              <input
-                placeholder="FullName"
+                placeholder="Fullname"
                 type="name"
                 className={`form-control ${errors.firstName && "invalid"}`}
-                {...register("firstName", { required: "FirstName is Required" ,
+                {...register("firstName", { required: "fullname is required" ,
                 pattern: {
                 value: /^[A-Za-z]/,
-                message: "Invalid input name must only contain letters",
+                message: "invalid input name must only contain letters",
                 }})}
                 onKeyUp={() => {
                   trigger("firstName");
@@ -111,13 +109,13 @@ const CreateAccount = () => {
               )}
               
               <input
-              placeholder="user name"
+              placeholder="Username"
                 type="name"
                 className={`form-control ${errors.lastName && "invalid"}`}
-                {...register("lastName", { required: "LastName is Required" ,
+                {...register("lastName", { required: "username is required" ,
                 pattern: {
                 value: /^[A-Za-z]/,
-                message: "Invalid input name must only contain letters",
+                message: "invalid input name must only contain letters",
                 }})}
                 onKeyUp={() => {
                   trigger("lastName");
@@ -129,12 +127,12 @@ const CreateAccount = () => {
           
           <input
               type="email"
-              placeholder="email"
+              placeholder="Email"
                 className={`form-control ${errors.email && "invalid"}`}
-                {...register("email", { required: "Email address is Required" ,
+                {...register("email", { required: "email address is Required" ,
                 pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Invalid email address",
+                message: "invalid email address",
                 }})}
                 onKeyUp={() => {
                   trigger("email");
@@ -146,12 +144,12 @@ const CreateAccount = () => {
               
            <input
               type="number"
-              placeholder="phone Number "
+              placeholder="Phone number "
               className={`form-control ${errors.phone && "invalid"}`}
-                {...register("phone", { required: "Phone  number is Required",
+                {...register("phone", { required: "phonenumber is Required",
                 pattern: {
                   value: /^\s*(?:\+?(\d[09]))[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{2})(?: *x(\d+))?\s*$/,
-                  message: "Invalid phone number",
+                  message: "invalid phone number",
                 },
                })}
                onKeyUp={() => {
@@ -166,14 +164,14 @@ const CreateAccount = () => {
               placeholder="Password"
               type='password'
                 className={`form-control ${errors.password && "invalid"}`}
-                {...register("password", { required: "Password is Required",
+                {...register("password", { required: "password is required",
                 minLength: {
                   value: 8,
-                  message: "Minimum Required length is 8",
+                  message: "minimum required length is 8",
                 },
                 maxLength: {
                   value: 16,
-                  message: "Maximum allowed length is 16 ",
+                  message: "maximum allowed length is 16 ",
                 }
                })}
                onKeyUp={() => {
@@ -185,9 +183,9 @@ const CreateAccount = () => {
               )}
                 <input
               type="password"
-              placeholder="confirm password"
+              placeholder="Confirm password"
               className={`form-control ${errors.passwordConfirm && "invalid"}`}
-                {...register("passwordConfirm", { required: "Password is Required",
+                {...register("passwordConfirm", { required: "password is required",
                })}
                onKeyUp={() => {
                 trigger("passwordConfirm");
