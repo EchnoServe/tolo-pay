@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import Fade from 'react-reveal/Fade'
 export default function Features() {
   return (
     <>
@@ -8,14 +8,16 @@ export default function Features() {
     <InfoContainer id='features' >
     <InfoWrapper>
       <div className='d'></div>
+      <Fade top>
       <TextWrap>
       <HeadingSmall>key features</HeadingSmall>
       <Heading>Most Probably Included Best Features Ever</Heading> 
-      </TextWrap>  
+      </TextWrap>
+      </Fade>  
       <FeaturesRow  >
       <FeaturesColumn>
 
-        
+        <Fade right >
         <FeatureWrapper>
         <svg className='dashboard' width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="Dashboard">
@@ -41,7 +43,7 @@ export default function Features() {
         </svg>
         <p>Dashboard</p>
         </FeatureWrapper>
-         
+        </Fade>
         
 
    
@@ -49,7 +51,7 @@ export default function Features() {
       </FeaturesColumn >
 
       <FeaturesColumn>
-      
+      <Fade right delay={250}>
         <FeatureWrapper  >  
         <svg width="53" height="55" viewBox="0 0 53 55" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="Qr">
@@ -78,8 +80,8 @@ export default function Features() {
         </svg>
         <p>QR Payment</p>
         </FeatureWrapper>
- 
-
+        </Fade>
+        <Fade right delay={500}>
         <FeatureWrapper  >
         <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="BudgetPlanning">
@@ -109,12 +111,12 @@ export default function Features() {
         <p>Planning</p>
 
         </FeatureWrapper>
-
+</Fade>
       </FeaturesColumn>
 
 
       <FeaturesColumn>
-
+      <Fade right delay={750}>
       <FeatureWrapper  >
       <svg width="39" height="28" viewBox="0 0 46 36" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="card">
@@ -124,7 +126,8 @@ export default function Features() {
       <p>Virtual cards</p>
 
       </FeatureWrapper>
-
+</Fade>
+<Fade right delay={1000}>
       <FeatureWrapper>
 
       <svg width="64" height="43" viewBox="0 0 64 43" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -146,7 +149,8 @@ export default function Features() {
       <p>Transfer</p>
 
       </FeatureWrapper>
-
+</Fade>
+<Fade right delay={1250}>
       <FeatureWrapper  >
       <svg width="33" height="39" viewBox="0 0 33 39" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="trophy">
@@ -160,11 +164,11 @@ export default function Features() {
       <p>Points</p>
       
       </FeatureWrapper>
-        
+       </Fade>
       </FeaturesColumn>
 
       <FeaturesColumn>
-        
+      <Fade right delay={1500}>
         <FeatureWrapper  >
         <svg width="49" height="51" viewBox="0 0 49 51" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="history">
@@ -179,7 +183,9 @@ export default function Features() {
         <p>History</p>
 
         </FeatureWrapper>
-  
+  </Fade>
+
+  <Fade right delay={1750}>
         <FeatureWrapper  >
         <svg width="46" height="44" viewBox="0 0 46 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="chat">
@@ -201,11 +207,11 @@ export default function Features() {
         <p>Chat</p>
          
         </FeatureWrapper>
-          
+          </Fade>
      </FeaturesColumn>
 
      <FeaturesColumn>
-        
+     <Fade right delay={2000}>
         <FeatureWrapper  >
 
         <svg width="44.2" height="46" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -227,6 +233,7 @@ export default function Features() {
         <p>Split Bill</p>
     
         </FeatureWrapper>
+        </Fade>
       </FeaturesColumn>
       
       </FeaturesRow>

@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import Zoom from 'react-reveal/Zoom'
  
 export default function How() {
   return (
     <Container id = 'how'>
     <StepsContainer>
+      <Zoom>
     <Section>  
       <div className="container">
         <div className="title">
@@ -43,6 +45,7 @@ export default function How() {
         </div>
       </div>
     </Section>
+    </Zoom>
     </StepsContainer>
     </Container> 
   );
