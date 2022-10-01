@@ -126,6 +126,7 @@ export const LoginFormButton = styled.div`
 export const Email = FormStyle;
 export const Password = FormStyle;
 export const Warning = styled.div`
+    width: 300px;
     height: 18px;
     padding-left: 9px;
 `;
