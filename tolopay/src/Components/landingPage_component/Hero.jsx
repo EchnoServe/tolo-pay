@@ -146,6 +146,7 @@ export default function Hero() {
 const HeroContainer = styled.div`
  
  margin: 80px;
+
 @media screen and (max-width: 768px){
   padding: 0;
   margin: 90px;

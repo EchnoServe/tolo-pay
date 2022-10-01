@@ -26,12 +26,12 @@ const LoginContainer = () => {
 
     //fetching user logged with google
     const fetchAuthUser = () => {
-        fetch("http://localhost:8000/api/v1/users/loginsocial")
+        fetch("http://localhost:8000/api/v1/users/loginsocial", { credentials: 'include' } )
         .then(response => response.json())
         .then(result => {
             console.log(result)
             dispatch({ type: "SUCCESS", payload: result.data });
-            navigate('/');
+            navigate('/dashboard');
         })
         .catch(err => {
             console.log(`errors: ${err}`);

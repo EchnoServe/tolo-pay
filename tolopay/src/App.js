@@ -1,5 +1,5 @@
 import React, { useState ,useContext} from "react";
-import { BrowserRouter as Router, Route, Routes, Outlet } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
 import Home from "./Pages/home_page/Home";
@@ -19,17 +19,21 @@ import { Context } from "./context/Context";
 import { darkTheme, lightTheme } from "./Utils/theme";
 
 
-
-
-
 export const ThemeContext = React.createContext(null);
 
 const App = () => {
-  const { user } = useContext(Context);
+
+  const { user,
+    //  dispatch ,
+     token } = useContext(Context);
+
 
 
   const [theme, setTheme] = useState("light");
   const themeStyle = theme === "light" ? lightTheme : darkTheme;
+
+  console.log(user ,"tt",token)
+
   return (
  
 <ThemeContext.Provider value={{ setTheme, theme }}>
@@ -57,11 +61,11 @@ const App = () => {
                 element = { user ? 
                     <Layout>
                         <BottomNavbar />
-                        <Outlet />
                     </Layout> : 
                     <Home />} >
                     
                     <Route index element={ <Dashboard /> } />
+                    <Route path="dashboard" element={ <Dashboard /> } />
                     <Route path="transfer" element={ <WalletToWallet /> } />
                     <Route path="budgetform" element={ <Budget_form /> } />
                     <Route path="planning" element={ <Budget /> } />

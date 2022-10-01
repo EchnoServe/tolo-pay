@@ -1,10 +1,16 @@
-import { primary } from "../../Utils/colors";
+// import { primary } from "../../Utils/colors";
 import "./createAccount.css";
 import { useForm } from "react-hook-form";
-import React, { useState } from "react";
-import { useContext, useRef } from "react";
+import React, { 
+  // useState
+ } from "react";
+import { useContext, 
+  // useRef
+ } from "react";
 import { Context } from "../../context/Context";//
-import { Link, useNavigate } from "react-router-dom";
+import { 
+  // Link, 
+  useNavigate } from "react-router-dom";
 import api from '../../api/api'
 import Navbar from "../../Components/landingPage_component/Navbar";
  
@@ -19,7 +25,9 @@ const CreateAccount = () => {
   } = useForm();
 
   const navigate=useNavigate();
-  const { dispatch, isFetching, error } = useContext(Context);
+  const { dispatch, 
+    // isFetching, 
+    error } = useContext(Context);
 
   const onSubmit =  async(data) => {
     // e.preventDefault()

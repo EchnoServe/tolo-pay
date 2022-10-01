@@ -26,7 +26,8 @@ export const Loading = styled.div`
   width: 100%; 
   margin:0;
   border-radius:1px;
-  border:1px solid transparent;
+  // border:1px solid transparent;
+  background-color: #90909070;
   position:relative;
   padding-bottom: 3px;
 
