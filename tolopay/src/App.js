@@ -1,10 +1,8 @@
-import "./App.css";
-import LoginPage from "./Pages/login_page/LoginPage";
-import Budget  from "./Pages/budget_page/Budget";
 
+import WalletToWallet from "./Components/walletToWallet/WalletToWallet";
 function App() {
   return (<div>
-<Budget/>
+<WalletToWallet/>
   </div>
     //   style={{
     //     display: "flex",

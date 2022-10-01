@@ -1,50 +1,61 @@
-import { useState } from "react"
-import styled from 'styled-components'
 
+import styled from 'styled-components'
+import { useForm } from "react-hook-form";
+import React, { useState } from "react";
+import "./styles.css";
 
 const WalletToWallet = () => {
 
-    const [passwordShown, setPasswordShown] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    trigger,
+  } = useForm();
 
-
-    const [values, setValues] = useState({
-        customerWalletNumber:"",
-        amount:"",
-        remark:"",
-        password:""
-    });
-
-const handleCustomerWalletNumber = (event) =>{
-    setValues({...values, customerWalletNumber: event.target.value})
-}
-
-const handleAmount = (event) =>{
-    setValues({...values, amount: event.target.value})
-}
-
-const handlePassword = (event) =>{
-    setValues({...values, password: event.target.value})
-}
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  }; 
 
   return (
     <Section>
     <div className="walletToWallet">
-        <form className="moneyTransfer">
+        <form className="moneyTransfer" onSubmit={handleSubmit(onSubmit)}>
             <h3 >wallet to wallet</h3>
             <input
-                onChange={handleCustomerWalletNumber}
-                value={values.customerWalletNumber} 
-                className="form-field" 
-                placeholder="Customer wallet number" 
-                name="customerWalletNumber" />
-            <input 
-                onChange={handleAmount}
-                value={values.amount}
-                className="form-field" 
-                placeholder="Amount" 
-                name="amount" />
+                placeholder="Customer Phone Nmber"  
+                className={`form-control ${errors.phone && "invalid"}`}
+                 {...register("phone", { required: "Phone  number is Required",
+                 pattern: {
+                   value: /^\s*(?:\+?(\d[09]))[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{2})(?: *x(\d+))?\s*$/,
+                   message: "Invalid phone number",
+                 },
+                })}
+                onKeyUp={() => {
+                 trigger("phone");
+               }}/>
+                     {errors.phone && (
+                <small className="text-danger">{errors.phone.message}</small>
+              )}
+            <input
+                placeholder="Amount"
+                className={`form-control ${errors.amount && "invalid"}`}
+                {...register("amount", { required: "Amount is Required",
+                pattern: {
+                  value: /^([1-9][0-9]*)$/,
+                  message: "Invalid Amount",
+                },
+               })}
+               onKeyUp={() => {
+                trigger("amount");
+              }}/>
+                    {errors.amount && (
+               <small className="text-danger">{errors.amount.message}</small>
+             )}
             
-            <select className="option" id="remark">
+            <select className="option" id="remark" required>
                  <option value="" selected hidden>Remark</option>
                  <option value="option 1">option1</option>
                  <option value="option 2">option2</option>
@@ -53,14 +64,18 @@ const handlePassword = (event) =>{
             </select> 
                
             <input 
-                onChange={handlePassword}
-                value={values.password}
-                className="form-field" 
-                placeholder="Password"
-                // type="password" 
-                type={passwordShown ? "text" : "password"}
-                name="password" 
-                required/>
+               placeholder="Password"
+               type='password'
+                 className={`form-control ${errors.message && "invalid"}`}
+                 {...register("message", { required: "Password is Required",
+                })}
+                onKeyUp={() => {
+                 trigger("message");
+               }}
+               />
+               {errors.message && (
+                 <small className="text-danger">{errors.message.message}</small>
+               )}
             <button
                 className="btn"
                 type="submit">Transfer</button>
