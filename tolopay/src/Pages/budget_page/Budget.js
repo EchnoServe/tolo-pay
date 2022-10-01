@@ -139,6 +139,8 @@ margin:100px 0px 0px 0px;
 function Budget() {
   const { user } = useContext(Context);
   console.log()
+  console.log("?????",user)
+
   return (
    <MainContainer>
    
@@ -147,10 +149,10 @@ function Budget() {
     <Link to='/budgetform'><Button ><big><b>+ </b></big>Add a New Budget</Button></Link></AddButton>
  
  {
-  user.data.user.budget.map(remark=>{
+   user?.data.user?.budget.map(remark=>{
     return <Card>
     
-    <Content>  
+    <Content style={{backgroundColor:!remark.budgeted && "red"}}>  
       <H3>{remark.remark}</H3>
       </Content>
    

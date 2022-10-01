@@ -1,20 +1,24 @@
-import { useState } from "react"
-import styled from 'styled-components'
+// import { useState } from "react"
+import styled from 'styled-components';
 import Snackbar from "@material-ui/core/Snackbar";
 import Button from "@material-ui/core/Button";
 import { Alert } from "@material-ui/lab";
 import React,{useContext} from "react";
 import axios from 'axios';
+import { Link, useNavigate } from "react-router-dom";
+
 import { useForm } from "react-hook-form";
 
 import { Context } from "./../../context/Context";//
 
 
 const Budget_form = (props) => {
-  const { user ,dispatch} = useContext(Context);
+  const { user ,token,dispatch} = useContext(Context);
   const [open, setOpen] = React.useState(false);
+  const navigate=useNavigate();
+
   const handleToClose = (event, reason) => {
-    if ("clickaway" == reason) return;
+    if ("clickaway" === reason) return;
     setOpen(false);
   };
   const handleClickEvent = () => {
@@ -37,13 +41,14 @@ const Budget_form = (props) => {
     }, {
       headers: {
         Authorization:
-          `Bearer ${user?.data.token}`,
+          `Bearer ${token}`,
       },
     });
     console.log("------------",res.data.data.user)
     console.log("------()-()",user)
 
-    dispatch({ type: "SUCCESS", payload: res.data.data.user});
+    dispatch({ type: "UPDATE_SUCCESS", payload: res.data});
+    navigate('/planning');
 
     reset();
   };
@@ -222,8 +227,6 @@ const Section = styled.section`
       cursor: default;
     }
   }
-  
-  
   
 `;
 

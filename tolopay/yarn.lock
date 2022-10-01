@@ -10487,8 +10487,16 @@
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@types/lodash" "^4.14.175"
+<<<<<<< HEAD
     "lodash" "^4.17.21"
     "lodash-es" "^4.17.21"
     "nanoclone" "^0.2.1"
     "property-expr" "^2.0.4"
     "toposort" "^2.0.2"
+=======
+    lodash "^4.17.21"
+    lodash-es "^4.17.21"
+    nanoclone "^0.2.1"
+    property-expr "^2.0.4"
+    toposort "^2.0.2"
+>>>>>>> c51359ae035f808f40c3f234853fd372555669f0

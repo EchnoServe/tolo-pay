@@ -1,26 +1,42 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState ,useContext} from "react";
 import styled from "styled-components";
 import React from "react";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
+// import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
+import { 
+  // Link, 
+  useNavigate } from "react-router-dom";
+
+
+
+
+import { Context } from "./../../context/Context";//
 
 
 const WalletToWallet = () => {
   const [open, setOpen] = React.useState(false);
+  const navigate=useNavigate();
+  const { token ,user ,dispatch} = useContext(Context);
 
-  const handleClickToOpen = () => {
+  
+
+  const handleClickToOpen = (event) => {
+    event.preventDefault();
+
     setOpen(true);
   };
   
   const handleToClose = () => {
     setOpen(false);
   };
-  const [passwordShown, setPasswordShown] = useState(false);
+  const [passwordShown, 
+    // setPasswordShown
+  ] = useState(false);
 
   const [values, setValues] = useState({
     phoneNumber: "",
@@ -45,16 +61,20 @@ const WalletToWallet = () => {
   };
   async function makePostRequest(values) {
     try {
-      const { data } = await axios.post(
+      const res = await axios.post(
         "http://localhost:8000/api/v1/transaction/transfer",
         values,
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmQ1ZDQyNjU1YThmNmZiYzk4NmQxZSIsImlhdCI6MTY2MzkxNzM3OCwiZXhwIjoxNjcxNjkzMzc4fQ.Xhf-UM6lx8n5eP_7x4u9aV7ad1czdlO5L7LwQfJg1Qw",
+              `Bearer ${token}`,
           },
         }
       );
+      navigate("/")
+      // console.log("////>>>>",data)
+    dispatch({ type: "UPDATE_SUCCESS", payload: res.data});
+
     } catch (err) {
       console.log("[Login.js] makePostRequest", err);
 
@@ -71,7 +91,7 @@ const WalletToWallet = () => {
   return (
     <Section>
       <div className="walletToWallet">
-        <form className="moneyTransfer" onSubmit={handleSubmit}>
+        <form className="moneyTransfer" >
           <h3>wallet to wallet</h3>
           <input
             onChange={handlePhoneNumber}
@@ -89,10 +109,11 @@ const WalletToWallet = () => {
           />
 
           <select className="option" id="remark" onChange={handleRemark}>
-            <option value="">Remark</option>
-            <option value="for movies">for movies</option>
-            <option value="for food">for food</option>
-            <option value="for travel">for travel</option>
+     
+          { user?.data.user?.budget.map(option =>{
+           return <option value={`${option.remark}`}>{option.remark}</option>
+            
+          })}
           </select>
 
           <input
@@ -105,7 +126,7 @@ const WalletToWallet = () => {
             name="password"
             required
           />
-          <button className="btn" type="submit" 	onClick={handleClickToOpen}>
+          <button className="btn"  onClick={handleClickToOpen}>
             Transfer
           </button>
         </form>
@@ -118,7 +139,7 @@ const WalletToWallet = () => {
 		</DialogContentText>
 		</DialogContent>
 		<DialogActions>
-    <TransferBtn>Transfer</TransferBtn>
+    <TransferBtn onClick={handleSubmit}>Transfer</TransferBtn>
 		<CancelBtn onClick={handleToClose}
 				color="primary" autoFocus>
 			close
@@ -161,16 +182,19 @@ const Section = styled.section`
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+
     .moneyTransfer {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       padding: 10px;
+
       h3 {
         text-align: center;
         text-decoration: 2.5px underline #46833c;
         text-underline-offset: 8px;
       }
+
       .option {
         color: gray;
       }
@@ -179,6 +203,7 @@ const Section = styled.section`
         color: #000000;
       }
     }
+
     .option {
       background-color: #fff;
       margin: 10px 0 10px 0;
@@ -186,6 +211,7 @@ const Section = styled.section`
       font-size: 16px;
       border: 2px solid #41d3fe;
     }
+
     .option:hover {
       background-color: #fff;
       margin: 10px 0 10px 0;
@@ -193,6 +219,7 @@ const Section = styled.section`
       font-size: 16px;
       border: 2px solid #6977fe;
     }
+
     .form-field {
       margin: 10px 0 10px 0;
       padding: 15px;
@@ -200,6 +227,7 @@ const Section = styled.section`
       border-style: solid;
       border-color: #41d3fe;
     }
+
     .form-field:hover {
       margin: 10px 0 10px 0;
       padding: 15px;
@@ -207,23 +235,27 @@ const Section = styled.section`
       border-style: solid;
       border-color: #6977fe;
     }
+
     .btn {
       margin: 10px 0 10px 0;
       padding: 15px;
       font-size: 16px;
       border: none;
     }
+
     input {
       background: white;
       padding: 15px;
       margin: 10px 0px;
       width: 400px;
     }
+
     .pass-wrapper {
       position: relative;
       display: flex;
       margin-bottom: 14px;
     }
+
     i {
       position: absolute;
       top: 38%;
@@ -233,15 +265,18 @@ const Section = styled.section`
       color: #00fcb6;
       cursor: pointer;
     }
+
     button {
       background: #46833c;
       color: white;
       cursor: pointer;
       background: linear-gradient(to right bottom, #41d3fe, #6977fe);
     }
+
     button:hover {
       background: #6977fe;
     }
+
     button:disabled {
       cursor: default;
     }

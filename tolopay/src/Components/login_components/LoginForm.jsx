@@ -6,7 +6,9 @@ import * as Yup from "yup";
 import { Context } from "../../context/Context";
 import api from '../../api/api';
 
-import { Email, LoginButton, LoginFormButton, LoginOptions, Password, Para, Pwarning, Warning } from './LoginContainer.style';
+import { Email, LoginButton, LoginFormButton, Password, Pwarning, Warning, 
+  // LoginOptions, Para
+} from './LoginContainer.style';
 
 // accepts login input and submit
 const LoginForm =  (props) => {
@@ -30,6 +32,7 @@ const LoginForm =  (props) => {
               password:data.password
             });
             dispatch({ type: "SUCCESS", payload: res.data });
+            console.log("login ...",res.data)
             navigate('/');
          
           } catch (error) {
