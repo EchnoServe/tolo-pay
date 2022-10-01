@@ -1,0 +1,58 @@
+.navbar {
+  overflow: hidden;
+  background-color: #fff;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  
+  
+  
+}
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  
+  text-align: center;
+  margin: 5px;
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 15px;
+  padding: 10px;
+  transition: all 1.5s ease-in-out 0s;
+  
+
+}
+.navbar a:hover{
+  cursor: pointer;
+    transform: rotate(360deg);
+    transition: all 1.5s ease-in-out 0s;
+}
+
+.navbar icon{
+  margin-bottom: -15px;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+  padding: 20px;
+  /* color:#02ba4b; */
+  color: #1f77b4;
+  
+}
+/* .user{
+ width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #505050;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: visible;
+} */
+.alert{
+  margin-right: 100px;
+}
+
+
