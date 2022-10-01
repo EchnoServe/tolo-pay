@@ -79,14 +79,7 @@
   gap: 0.5rem;
 }
 
-.img_container {
-  background-image: url("./../../Assets/bglogo.png");
-  background-position: center;
-  background-size: contain;
-  flex-basis: 50%;
-  height: 100vh;
- 
-}
+
 .btn_img {
   background-repeat: no-repeat;
   background-size: cover;
