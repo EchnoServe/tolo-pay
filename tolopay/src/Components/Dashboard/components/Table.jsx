@@ -34,7 +34,7 @@ const makeStyle=(remark)=>{
 export default function BasicTable() {
   return (
       <Div className="Table">
-      <h4>YOUR TRANSACTION HISTORY</h4>
+      <h4>Your Transaction History</h4>
         <TableContainer
           component={Paper}
           // style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
@@ -43,13 +43,13 @@ export default function BasicTable() {
             <TableHead>
               <TableRow>
                 <TableCell align="left"></TableCell>
-                <TableCell align="left">FROM</TableCell>
-                <TableCell align="left">TO</TableCell>
-                <TableCell align="left">PREVIOUS BALLANCE</TableCell>
-                <TableCell align="left">TRANSFER AMOUNT</TableCell>
-                <TableCell align="left">CURRENT BALLANCE</TableCell>
-                <TableCell align="left">DATE & TIME</TableCell>
-                <TableCell align="left">REMARK</TableCell>
+                <TableCell align="left">From</TableCell>
+                <TableCell align="left">To</TableCell>
+                <TableCell align="left">Previous Ballance</TableCell>
+                <TableCell align="left">Transfer Amount</TableCell>
+                <TableCell align="left">Current Ballance</TableCell>
+                <TableCell align="left">Date & Time</TableCell>
+                <TableCell align="left">Remark</TableCell>
                 <TableCell align="left"></TableCell>
               </TableRow>
             </TableHead>
