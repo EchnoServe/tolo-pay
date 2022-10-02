@@ -87,8 +87,8 @@ export default function App() {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="money_in" fill="#1f77b4" />
-      <Bar dataKey="money_out" fill="#8cb8d6" />
+      <Bar dataKey="money_in" fill="#58508d" />
+      <Bar dataKey="money_out" fill="#bc5090" />
     </BarChart>
     </div>
     </Section>
@@ -99,15 +99,15 @@ const Section = styled.section`
 padding: 0rem;
 .inner-container{
   padding: 50px 60px 60px 5px;
-  border-radius: 5px;
-  box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
+  box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;
+  border-radius: 1rem; 
 }
 
 
 .title{
   text-gap: 1px;
   margin-left: 6.8rem;
-  color: #1f77b4;
+  color: #003f5c ;
   letter-spacing: 2px;
 }
 

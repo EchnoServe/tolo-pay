@@ -105,7 +105,8 @@ export default class Doughnut extends PureComponent {
 
 const Section = styled.section`
   grid-template-rows: 2fr;
-  box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
+  box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;
+  border-radius: 1rem;
   height: 24rem;
   width: 37rem;
 

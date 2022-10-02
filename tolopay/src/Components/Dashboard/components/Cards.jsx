@@ -165,14 +165,15 @@ const Section = styled.section`
 .card_inner{
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 
   .card{
     height: 8rem;
+    width: 160px;
   }
 
 `;
