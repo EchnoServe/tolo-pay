@@ -1,11 +1,7 @@
 import React from 'react'
-// import { FaUserAlt } from "react-icons/fa"
 import { BsBellFill } from "react-icons/bs"
-// import { tologoSVG } from "../../Assets";
 import Profile from "../ProfileComponent/Profile"
-// import Profile from "../ProfileComponent/Profile"
-// <BsBellFill />
-// <FaUserAlt />
+
 
 import './Navbar.css';
 function Navbar() {

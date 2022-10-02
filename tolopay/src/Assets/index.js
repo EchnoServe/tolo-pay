@@ -7,7 +7,9 @@ import user from "./user.png";
 import envelope from "./envelope.png";
 import tologo from "./newlogo.svg";
 import logof from "./logo-f.svg";
+import messageIcon from "./m2.png";
 
+export const messageIconSVG =messageIcon;
 export const logoutSVG = logout;
 export const editsSVG = edits;
 export const questionSVG = question;

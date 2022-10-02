@@ -2,6 +2,8 @@ import { Button} from '@material-ui/core';
 import Icon from '@mdi/react'
 import { mdiQrcode, mdiQrcodeScan } from '@mdi/js';
 import { Link } from "react-router-dom";
+
+import "./QRgenerator";
 import "./qr.css"
 function Home() {
 
@@ -10,7 +12,7 @@ function Home() {
            <h3>Transfer using Qr Code </h3>
            <ul>
            <li>
-            <Link to="/qr_generator">
+            <Link to="/generate">                                                      
                <Button variant="contained" size="large" color="primary">
                         <Icon 
                         style={{padding:10}}
@@ -24,7 +26,7 @@ function Home() {
             <h4>generate Qrcode</h4>
             </li>
             <li>
-            <Link to="/qr_scanner">
+            <Link to="/scan">
                   <Button variant="contained" size="large" color="primary">
                         <Icon 
                         style={{padding:10}}

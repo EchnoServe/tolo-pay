@@ -8,12 +8,15 @@ import TravelIcon from "@material-ui/icons/CardTravel";
 import { Link } from "react-router-dom";
 
 const MainContainer = styled.div`
+
+background-color: #f0f0f0;
 @media (max-width: 768px) {
   flex-direction: column;
   
   }
 `
 const Container = styled.div`
+
 box-sizing: boredr-box;
 display:flex;
 font-size: 17px;
@@ -24,7 +27,7 @@ width: 100%;
 word-spacing: 1.8px;
 line-height: 22px;
 flex-wrap: wrap;
-padding: 40px 0;
+padding: 60px 0;
 @media (max-width: 768px) {
   flex-direction: column;
   min-height: 100%;

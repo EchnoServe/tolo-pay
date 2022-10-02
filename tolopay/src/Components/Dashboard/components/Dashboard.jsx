@@ -28,12 +28,14 @@ const Dashboard = () => {
 }
 
 const Section = styled.section`
+
 .container {
   margin: 5rem 15rem;
   display: grid;
   height: 5vh;
   grid-template-rows: 0.2fr 0.5fr 0.5fr;
 }
+
 
 .row1{
 }
