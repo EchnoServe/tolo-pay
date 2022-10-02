@@ -28,10 +28,13 @@ const Dashboard = () => {
 
 const Section = styled.section`
 .grid{
+  
   margin: 4rem 5rem 5rem 20rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 100vw;
+  overflow: hidden;
    
     .row{
       margin-top: 6rem;

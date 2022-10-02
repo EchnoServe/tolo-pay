@@ -17,14 +17,17 @@ a {
 }
 
 .menu-trigger img{
+  z-index: 2000;
   position: absolute;
-  top: 20px;
+  top: 17px;
   right: 20px;
   height: 45px;
   width: 45px;
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
+  position: fixed;
+  position: -webkit-sticky;
   
   /* background-color: #02ba4b; */
   background-color: #1f77b4;

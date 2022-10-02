@@ -177,12 +177,14 @@ cursor: pointer;
 `
 const Section = styled.section`
   .walletToWallet {
+    overflow: hidden;
+    background-color: #f0f0f0;
     display: flex;
-    min-height: 100vh;
+    min-height: 90vh;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
-
+    margin-top: 80px;
+    max-width: 100vw;
     .moneyTransfer {
       display: flex;
       flex-direction: column;

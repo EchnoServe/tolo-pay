@@ -26,8 +26,11 @@ const GridNav = styled.div`
 
 const GridHeader = styled.header`
   grid-area: header;
-  position: relative;
+  // position: absolute;
   top: 0;
+  left: 50px;
+  overflow = none;
+  position = fixed;
   
   
   
@@ -35,12 +38,12 @@ const GridHeader = styled.header`
 
 const GridMain = styled.main`
   grid-area: main;
-  // position: relative;
+  position: absolute;
   
-  position: fixed;
-  
-  top: 80px;
-  height: calc(100vh - 80px);
+  // position: fixed;
+ 
+  // top: 100px;
+  // height: calc(100vh - 100px);
   overflow: auto;
   align-items: center;
   justify-content: center;
@@ -56,10 +59,10 @@ function Layout({ children, ...rest }) {
   return (
     <Grid {...rest}>
       
-       
+       <Outlet />
           <GridNav>
         <Sidebar />
-        <Outlet />
+        
           </GridNav>
           <GridHeader>
             <Navbar />

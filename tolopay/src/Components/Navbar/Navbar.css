@@ -1,11 +1,12 @@
 .navbar {
   overflow: hidden;
   background-color: #fff;
-  position: sticky;
+  position: fixed;
   position: -webkit-sticky;
   top: 0;
-  
-  
+  right: 0;
+  left: 0;
+ 
   
 }
 /* Style the navigation bar links */
