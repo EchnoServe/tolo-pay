@@ -24,11 +24,11 @@
   
 
 }
-.navbar a:hover{
+/* .navbar a:hover{
   cursor: pointer;
     transform: rotate(360deg);
     transition: all 1.5s ease-in-out 0s;
-}
+} */
 
 .navbar icon{
   margin-bottom: -15px;
@@ -56,4 +56,6 @@
   margin-right: 100px;
 }
 
-
+.notification{
+  overflow-y: auto;
+}

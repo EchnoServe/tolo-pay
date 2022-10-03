@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
-// import logo from './logo.svg';
+
 import image from "./img/bot_image.jpg";
 import {messageIconSVG} from "../../Assets";
 import { userSVG } from "../../Assets";

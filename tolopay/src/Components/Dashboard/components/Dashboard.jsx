@@ -30,6 +30,7 @@ const Dashboard = () => {
 const Section = styled.section`
 
 .container {
+  background-color: #f0f0f0;
   margin: 5rem 15rem;
   display: grid;
   height: 5vh;

@@ -44,6 +44,7 @@ a {
     width: 380px;
     color:  #000;
     border: 2px solid #0049ff;
+    z-index: 1000;
 }
 
 
@@ -56,6 +57,7 @@ a {
   width: 80px;
   background: #0049ff;
   transform: rotate(45deg);
+   
 }
 
 .dropdown-menu2.active{
