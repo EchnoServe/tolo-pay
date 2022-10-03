@@ -43,13 +43,13 @@ export default function BasicTable() {
             <TableHead>
               <TableRow>
                 <TableCell align="left"></TableCell>
-                <TableCell align="left">FROM</TableCell>
-                <TableCell align="left">TO</TableCell>
-                <TableCell align="left">PREVIOUS BALLANCE</TableCell>
-                <TableCell align="left">TRANSFER AMOUNT</TableCell>
-                <TableCell align="left">CURRENT BALLANCE</TableCell>
-                <TableCell align="left">DATE & TIME</TableCell>
-                <TableCell align="left">REMARK</TableCell>
+                <TableCell align="left">From</TableCell>
+                <TableCell align="left">To</TableCell>
+                <TableCell align="left">Previous Ballance</TableCell>
+                <TableCell align="left">Transfer Amount</TableCell>
+                <TableCell align="left">Current Ballance</TableCell>
+                <TableCell align="left">Date & Time</TableCell>
+                <TableCell align="left">Remark</TableCell>
                 <TableCell align="left"></TableCell>
               </TableRow>
             </TableHead>
@@ -87,41 +87,47 @@ export default function BasicTable() {
 }
 
 const Div = styled.div`
-margin-top: 1rem;
-overflow: auto;
-white-space: nowrap;
 box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
-border-radius: 1rem;
+border-radius: 0.5rem;
+border: 1px solid #1f77b4;
+
 .MuiTableRow-root > * {
   padding: 20px;
+  white-space: nowrap;
 }
+
 .MuiTableRow-root.MuiTableRow-head > * {
-  font-weight: bold !important;
-  color: #1f77b4 !important;
-  letter-spacing: 1.5px;
+  // font-weight: bold !important;
+  color: #003f5c !important;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  white-space: nowrap;
 }
+
+
 .Table:last-child {
   border-bottom: 0.2rem solid #1f77b4;
 }
+
 .remark{
   padding: 12px;
   border-radius: 9px;
 }
+
 h4{
   letter-spacing: 2px;
-  color: #1f77b4;
-  padding-left: 3.7rem;
+  color: #003f5c;
+  padding-left: 3.2rem;
   padding-top: 1rem;
+
 }
+
+
 @media screen and (max-width: 768px) {
+  border: none;
   overflow: auto;
-  white-space: nowrap;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  border-width: 30rem;
-  .Table{
-    display: grid;
-    border-width: 30rem;
-  }
+  white-space: wrap;
+  width: 28rem;  
 }
+
 `;

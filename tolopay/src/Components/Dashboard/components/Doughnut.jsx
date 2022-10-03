@@ -1,14 +1,15 @@
 import { rgb } from 'd3';
 import React, { PureComponent } from 'react';
-import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Sector,Cell, ResponsiveContainer } from 'recharts';
 import styled from 'styled-components';
 
+const COLORS = ['#003f5c', '#58508d', '#bc5090', '#ff6361', '#ffa600', '#1f77b4'];
 const data = [
-  { name: 'Food', value: 400 },
+  { name: 'Food', value: 400},
   { name: 'Transfers', value: 300 },
-  { name: 'Entertainment', value: 300 },
-  { name: 'House hold', value: 200 },
-  { name: 'tution fee', value: 600 },
+  { name: 'Entertainment', value: 300},
+  { name: 'House hold', value: 200},
+  { name: 'tution fee', value: 600},
 
 ];
 
@@ -61,7 +62,7 @@ const renderActiveShape = (props) => {
   );
 };
 
-export default class Expense extends PureComponent {
+export default class Doughnut extends PureComponent {
 
   state = {
     activeIndex: 0,
@@ -76,7 +77,8 @@ export default class Expense extends PureComponent {
   render() {
     return (
       <Section>
-      <ResponsiveContainer width="100%" height="100%">
+      <h4>YOUR BUDGETS</h4>
+      <ResponsiveContainer >
          <PieChart>
           <Pie
             activeIndex={this.state.activeIndex}
@@ -84,12 +86,17 @@ export default class Expense extends PureComponent {
             data={data}
             cx="50%"
             cy="50%"
-            innerRadius={65}
-            outerRadius={90}
-            fill='#1f77b4'
+            innerRadius={50}
+            outerRadius={80}
+            fill="#8884d8"
             dataKey="value"
             onMouseEnter={this.onPieEnter}
-          />
+          >
+            	{
+          	data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+          }
+            </Pie>
+         
         </PieChart>
       </ResponsiveContainer>
       </Section>
@@ -98,34 +105,33 @@ export default class Expense extends PureComponent {
 }
 
 const Section = styled.section`
-// background: #f4f8fc;
-// border: 1px solid #1f77b4;
-box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
-border-radius: 1rem;
-margin: 2rem 0rem 0rem 1rem;
-transition: all 0.8s ease;
-background-color: #fff;
-
-&:hover{
-  margin-top: 1rem;
-  margin-right: -1rem;
-  margin-left: 2rem;
-  margin-bottom: 1rem;
-  transition: all 0.8s ease;
-  box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
-  // border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-template-rows: 2fr;
+  box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;
+  border-radius: 0.5rem;
   border: 1px solid #1f77b4;
-}
+  height: 23rem;
+  width: 35rem;
 
-.recharts-pie{
-  display: grid;
-  place-items: center;
-}
+  h4{
+    letter-spacing: 2px;
+    color: #003f5c;
+    padding-top: 0.5rem;
+
+  }
+
 
 @media screen and (min-width: 280px) and (max-width: 720px) {
-margin-left: 1rem;
-margin-top: 2rem;
-margin-right: 1rem;
+    margin-top: 2rem;
+    grid-template-rows: 3fr;
+    box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
+    height: 25rem;
+    width: 27.7rem;
+    border-radius: 0rem;
+    white-space: wrap;
+  
 }
-
 `;
