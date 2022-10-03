@@ -34,7 +34,7 @@ const makeStyle=(remark)=>{
 export default function BasicTable() {
   return (
       <Div className="Table">
-      <h4>Your Transaction History</h4>
+      <h4>YOUR TRANSACTION HISTORY</h4>
         <TableContainer
           component={Paper}
           // style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
@@ -88,16 +88,19 @@ export default function BasicTable() {
 
 const Div = styled.div`
 box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
+border-radius: 1rem;
 
 .MuiTableRow-root > * {
   padding: 20px;
+  white-space: nowrap;
 }
 
 .MuiTableRow-root.MuiTableRow-head > * {
-  font-weight: bold !important;
-  color: #1f77b4 !important;
-  letter-spacing: 1.5px;
-
+  // font-weight: bold !important;
+  color: #003f5c !important;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
 
@@ -112,7 +115,7 @@ box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;
 
 h4{
   letter-spacing: 2px;
-  color: #1f77b4;
+  color: #003f5c;
   padding-left: 3.2rem;
   padding-top: 1rem;
 
@@ -120,6 +123,7 @@ h4{
 
 
 @media screen and (max-width: 768px) {
+  border-radius: 0rem;
   overflow: auto;
   white-space: nowrap;
   border-width: 30rem;
