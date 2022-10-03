@@ -1,7 +1,6 @@
 import React, { useState ,useContext} from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
-
+import "./App.css";
 import Home from "./Pages/home_page/Home";
 import Signup from "./Pages/createAccount/CreateAccount";
 import Login from "./Pages/login_page/LoginPage";
@@ -17,7 +16,6 @@ import UserProfile from "./Pages/UserProfile";
 import QRgenerator from "./Pages/qr/QRgenerator";
 import QRscanner from "./Pages/qr/QRscanner";
 import { Context } from "./context/Context";
-import { darkTheme, lightTheme } from "./Utils/theme";
 import Chatbot from "./Components/chatbot/Chatbot";
 import Message from "./Components/chatbot/Message";
 export const ThemeContext = React.createContext(null);
@@ -30,25 +28,9 @@ const App = () => {
 
 
 
-  const [theme, setTheme] = useState("light");
-  const themeStyle = theme === "light" ? lightTheme : darkTheme;
-
-  console.log(user ,"tt",token)
-
   return (
  
-<ThemeContext.Provider value={{ setTheme, theme }}>
-      <ThemeProvider theme={themeStyle}>
-        {/* <GlobalStyle />
-        <Helmet>
-          <title>tolopay</title>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-            rel="stylesheet"
-          />
-        </Helmet> */}
+
         <>
         <Router>
 
@@ -84,8 +66,7 @@ const App = () => {
           </Routes>
         </Router>
       </>
-      </ThemeProvider>
-    </ThemeContext.Provider>
+  
   );
 };
 
