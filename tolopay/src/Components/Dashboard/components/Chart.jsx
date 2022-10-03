@@ -66,7 +66,6 @@ const data = [
 export default function App() {
   return (
     <Section>
-      <div className="container">
         <div className="inner-container">
        <div className="title">
         <h4>YOUR WEEKLY TRANSACTION</h4>
@@ -88,47 +87,34 @@ export default function App() {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="money_in" fill="#1f77b4" />
-      <Bar dataKey="money_out" fill="#8cb8d6" />
+      <Bar dataKey="money_in" fill="#58508d" />
+      <Bar dataKey="money_out" fill="#bc5090" />
     </BarChart>
-    </div>
     </div>
     </Section>
   );
 }
 
 const Section = styled.section`
+padding: 0rem;
 .inner-container{
-  // border: 1px solid #1f77b4;
-box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
-border-radius: 1rem;
-padding: 1rem 0rem 1rem 0rem;
-margin: 2rem 1rem 0rem 0rem;
-transition: all 0.8s ease;
-background-color: #fff; 
+  padding: 50px 60px 60px 5px;
+  box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;
+  border-radius: 1rem; 
 }
 
-.inner-container:hover{
-  margin-top: 1rem;
-  margin-right: 0rem;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-  transition: all 0.8s ease;
-  box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
-  border: 1px solid #1f77b4;
-  // border: none;
-}
 
 .title{
   text-gap: 1px;
   margin-left: 6.8rem;
-  color: #1f77b4;
+  color: #003f5c ;
   letter-spacing: 2px;
 }
 
 @media screen and (min-width: 280px) and (max-width: 720px) {
-margin-left: 1rem;
-margin-top: 2rem;
-margin-right: 1rem;
+  .inner-container{
+    border-radius: 0rem;
+  }
+
 }
 `;
