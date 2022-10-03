@@ -5,7 +5,7 @@
 import { logoutSVG } from "../../Assets";
 // import { editsSVG } from "../../Assets";
 // import { questionSVG } from "../../Assets";
-import { settingsSVG } from "../../Assets";
+
 import { userSVG } from "../../Assets";
 import { envelopeSVG } from "../../Assets";
 import './Profile.css';
@@ -53,10 +53,7 @@ function ProfileComponent() {
             <Link to={"/profile"} >                                                                                             
               <DropdownItem img = {userSVG} text = {"My Profile"}/>
             </Link>
-           
-            
-            <DropdownItem img = {settingsSVG} text = {"Settings"}/>
-            <DropdownItem img = {envelopeSVG} text = {"Helps"}/>
+          
             <div onClick = {()=>{window.location.replace("/login")}}>
             <DropdownItem  img = {logoutSVG} text = {"Logout"} />
             </div>

@@ -48,7 +48,7 @@ a {
 }
 
 
-.dropdown-menu2::before{
+/* .dropdown-menu2::before{
   content: '';
   position: absolute;
   top: 615px;
@@ -58,7 +58,7 @@ a {
   background: #0049ff;
   transform: rotate(45deg);
    
-}
+} */
 
 .dropdown-menu2.active{
   opacity: 1;

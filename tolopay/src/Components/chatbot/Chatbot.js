@@ -260,7 +260,7 @@ const humanMessage = useRef();
 
 
     let purpose = [
-      "What's tolopay | what is tolopay",
+      "What's tolopay|what is tolopay",
     ]; //adding the age-question
     let words11 = new RegExp(purpose);
     if (words11.test(document.querySelector("#input").value)) {

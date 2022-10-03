@@ -20,6 +20,7 @@ import { Context } from "./context/Context";
 import { darkTheme, lightTheme } from "./Utils/theme";
 import Chatbot from "./Components/chatbot/Chatbot";
 import Message from "./Components/chatbot/Message";
+import Alert from "./Components/Navbar/Alert";
 export const ThemeContext = React.createContext(null);
 
 const App = () => {
@@ -78,6 +79,7 @@ const App = () => {
                     <Route path="message" element={<Message />} />
                     <Route path="generate" element={<QRgenerator />} />
                     <Route path="scan" element={<QRscanner />} />
+                    <Route path="alert"element={<Alert />} />
                     
 
             </Route>
