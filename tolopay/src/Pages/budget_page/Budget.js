@@ -1,15 +1,11 @@
 import { useContext, useRef } from "react";
 import { Context } from "../../context/Context";//
 import styled from 'styled-components'
-import FoodIcon from "@material-ui/icons/Restaurant";
-import GroceryIcon from "@material-ui/icons/ShoppingCart";
-import HealthIcon from "@material-ui/icons/AddBoxRounded";
-import TravelIcon from "@material-ui/icons/CardTravel";
 import { Link } from "react-router-dom";
 
 const MainContainer = styled.div`
 
-background-color: #f0f0f0;
+
 @media (max-width: 768px) {
   flex-direction: column;
   
@@ -44,7 +40,7 @@ position: relative;
 `
 const Button = styled.button`
 color:#404550;
-border-color: #41d3fe ;
+border-color: #3a87be;
 cursor: pointer;
 justify-content: center;
 box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
@@ -70,13 +66,7 @@ margin:0px 0px 0px 15px;
   }
   
 `
-const Icons = styled.div`
-color:#404550;
-z-index: 1;
-transition: 0.5s;
-margin-right: 10px;
-font-size: 20% !important;
-`
+
 
 
 const Content= styled.div`
@@ -98,7 +88,7 @@ padding-left:10%;
 const Content2= styled.div`
 padding: 20px;
 height: 170px;
-background-color: #41d3fe;
+background-color: #3a87be;
 border-radius: 0px 0px 15px 15px;
 text-align:center;
 @media (max-width: 768px) {
@@ -167,12 +157,6 @@ function Budget() {
   })
  }
  
-
- 
-   
-
- 
-
 </Container>
 
    </MainContainer>
