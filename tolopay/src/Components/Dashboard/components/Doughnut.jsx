@@ -86,8 +86,8 @@ export default class Doughnut extends PureComponent {
             data={data}
             cx="50%"
             cy="50%"
-            innerRadius={65}
-            outerRadius={90}
+            innerRadius={50}
+            outerRadius={80}
             fill="#8884d8"
             dataKey="value"
             onMouseEnter={this.onPieEnter}
@@ -107,18 +107,19 @@ export default class Doughnut extends PureComponent {
 const Section = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   grid-template-rows: 2fr;
   box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;
-  border-radius: 1rem;
-  height: 25rem;
-  width: 37rem;
+  border-radius: 0.5rem;
+  border: 1px solid #1f77b4;
+  height: 23rem;
+  width: 35rem;
 
   h4{
     letter-spacing: 2px;
     color: #003f5c;
-    padding-left: 14rem;
     padding-top: 0.5rem;
-    // font-weight: 600;
 
   }
 
@@ -128,8 +129,9 @@ const Section = styled.section`
     grid-template-rows: 3fr;
     box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
     height: 25rem;
-    width: 37rem;
+    width: 27.7rem;
     border-radius: 0rem;
+    white-space: wrap;
   
-
+}
 `;

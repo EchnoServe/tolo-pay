@@ -88,7 +88,8 @@ export default function BasicTable() {
 
 const Div = styled.div`
 box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
-border-radius: 1rem;
+border-radius: 0.5rem;
+border: 1px solid #1f77b4;
 
 .MuiTableRow-root > * {
   padding: 20px;
@@ -123,14 +124,10 @@ h4{
 
 
 @media screen and (max-width: 768px) {
-  border-radius: 0rem;
+  border: none;
   overflow: auto;
-  white-space: nowrap;
-  border-width: 30rem;
-  .Table{
-    display: grid;
-    border-width: 30rem;
-  }
+  white-space: wrap;
+  width: 28rem;  
 }
 
 `;

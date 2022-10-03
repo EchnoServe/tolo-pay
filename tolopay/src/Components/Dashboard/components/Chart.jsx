@@ -71,8 +71,8 @@ export default function App() {
         <h4>YOUR WEEKLY TRANSACTION</h4>
       </div>
     <BarChart className="bar-chart"
-      width={500}
-      height={300}
+      width={350}
+      height={415}
       data={data}
       margin={{
         top: 50,
@@ -98,22 +98,25 @@ export default function App() {
 const Section = styled.section`
 padding: 0rem;
 .inner-container{
-  padding: 50px 60px 60px 5px;
+  padding: 50px 60px 60px 0px;
   box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;
-  border-radius: 1rem; 
+  border-radius: 0.5rem; 
+  border: 1px solid #1f77b4;
 }
 
 
 .title{
   text-gap: 1px;
-  margin-left: 6.8rem;
+  margin-left: 4.5rem;
   color: #003f5c ;
   letter-spacing: 2px;
+  white-space: nowrap;
 }
 
 @media screen and (min-width: 280px) and (max-width: 720px) {
   .inner-container{
     border-radius: 0rem;
+    width: 24rem;
   }
 
 }
