@@ -36,7 +36,12 @@ const Dashboard = () => {
 
 const Section = styled.section`
 .container {
-  margin: 3rem 15rem;
+
+  background-color: #f0f0f0;
+  margin: 5rem 15rem;
+
+ 
+
   display: grid;
   height: 5vh;
   grid-template-rows: 0.2fr 0.5fr 0.5fr;

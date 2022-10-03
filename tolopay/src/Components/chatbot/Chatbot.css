@@ -44,10 +44,11 @@ a {
     width: 380px;
     color:  #000;
     border: 2px solid #0049ff;
+    z-index: 1000;
 }
 
 
-.dropdown-menu2::before{
+/* .dropdown-menu2::before{
   content: '';
   position: absolute;
   top: 615px;
@@ -56,7 +57,8 @@ a {
   width: 80px;
   background: #0049ff;
   transform: rotate(45deg);
-}
+   
+} */
 
 .dropdown-menu2.active{
   opacity: 1;
