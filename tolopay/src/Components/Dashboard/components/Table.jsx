@@ -92,14 +92,15 @@ border-radius: 1rem;
 
 .MuiTableRow-root > * {
   padding: 20px;
+  white-space: nowrap;
 }
 
 .MuiTableRow-root.MuiTableRow-head > * {
-  font-weight: bold !important;
+  // font-weight: bold !important;
   color: #003f5c !important;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   font-size: 1rem;
-
+  white-space: nowrap;
 }
 
 
@@ -122,6 +123,7 @@ h4{
 
 
 @media screen and (max-width: 768px) {
+  border-radius: 0rem;
   overflow: auto;
   white-space: nowrap;
   border-width: 30rem;

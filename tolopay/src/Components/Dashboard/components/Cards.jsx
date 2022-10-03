@@ -39,8 +39,8 @@ const Cards = () => {
                     <GiReceiveMoney />
                   </div>
                 <div className='content' >
-                    <h3 style={{color: '#1f77b4'}}>{value.money_in}</h3>
-                    <h4 style={{color:'#003f5c'}}>Money in</h4>
+                    <h3 style={{color: '#1f77b4', fontWeight:'500'}}>{value.money_in}</h3>
+                    <h4 style={{color:'gray', fontWeight:'50'}}>Money in</h4>
                   </div>
               </div>
             </div>
@@ -51,8 +51,8 @@ const Cards = () => {
                 <GiPayMoney />
               </div>
               <div className="content">
-                <h3 style={{color: '#1f77b4'}}>{value.money_out}</h3>
-                <h4 style={{color:'#003f5c'}}>Money out</h4>
+                <h3 style={{color: '#1f77b4', fontWeight:'500'}}>{value.money_out}</h3>
+                <h4 style={{color:'gray', fontWeight:'50'}}>Money out</h4>
               </div>
               </div>
             </div>
@@ -63,8 +63,8 @@ const Cards = () => {
                 <IoStatsChart />
               </div>
               <div className='content'>
-                <h3 style={{color: '#1f77b4'}}>{value.current_balance}</h3>
-                <h4 style={{color:'#003f5c'}}>Available</h4>
+                <h3 style={{color: '#1f77b4', fontWeight:'500'}}>{value.current_balance}</h3>
+                <h4 style={{color:'gray', fontWeight:'50'}}>Available</h4>
               </div>
               </div>
             </div>
@@ -75,8 +75,8 @@ const Cards = () => {
                 <GiTrophyCup />
               </div>
               <div className="content">
-                <h3 style={{color: '#1f77b4'}}>{value.points_earned}</h3>
-                <h4 style={{color:'#003f5c'}}>Points earned</h4>
+                <h3 style={{color: '#1f77b4', fontWeight:'500'}}>{value.points_earned}</h3>
+                <h4 style={{color:'gray', fontWeight:'50'}}>Points earned</h4>
               </div>
               </div>
             </div>
@@ -89,7 +89,7 @@ const Cards = () => {
 const Section = styled.section`
 .main__cards {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .card {
@@ -97,20 +97,22 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: space-around;
   height: 70px;
-  width: 190px;
+  width: 195px;
   padding: 50px;
   border-radius: 1rem;
   background: #ffffff;
+  // box-shadow: rgba(31, 119, 180, 0.5) 0px 8px 20px;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+
 }
 
 .card_inner {
   display: flex;
   flex-direction: row;
   gap: 3rem;
-  align-items: left;
-  justify-content: space-between;
+
 }
+
 
 .logo1 {
   padding-top: 1rem;
@@ -173,7 +175,8 @@ const Section = styled.section`
 
   .card{
     height: 8rem;
-    width: 160px;
+    width: 155px;
+    border: 1px solid #1f77b4;
   }
 
 `;

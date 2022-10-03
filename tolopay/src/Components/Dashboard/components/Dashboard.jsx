@@ -29,20 +29,18 @@ const Dashboard = () => {
 
 const Section = styled.section`
 .container {
-  margin: 5rem 15rem;
+  margin: 3rem 15rem;
   display: grid;
   height: 5vh;
   grid-template-rows: 0.2fr 0.5fr 0.5fr;
 }
 
-.row1{
-}
 
 .row2{
   display: grid;
   grid-template-columns: 37rem 37rem;
-  gap: 4.5rem;
-  margin-top: 2rem;;
+  gap: 3.5rem;
+  margin-top: 2rem;
 }
 
 
@@ -55,8 +53,7 @@ const Section = styled.section`
 
 @media only screen and (max-width: 978px) {
   .container {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin: 2rem 0 2rem 2rem;
     grid-template-columns: 1fr;
   }
 
@@ -67,6 +64,12 @@ const Section = styled.section`
     margin-left: 1rem;
     margin-right: 1rem;
   }
+
+  .row1{
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
   .row2 {
     margin-left: 0rem;
     margin-right: 0rem;

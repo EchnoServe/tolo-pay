@@ -112,7 +112,9 @@ padding: 0rem;
 }
 
 @media screen and (min-width: 280px) and (max-width: 720px) {
-  
+  .inner-container{
+    border-radius: 0rem;
+  }
 
 }
 `;

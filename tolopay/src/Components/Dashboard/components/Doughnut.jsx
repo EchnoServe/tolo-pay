@@ -77,6 +77,7 @@ export default class Doughnut extends PureComponent {
   render() {
     return (
       <Section>
+      <h4>YOUR BUDGETS</h4>
       <ResponsiveContainer >
          <PieChart>
           <Pie
@@ -104,14 +105,22 @@ export default class Doughnut extends PureComponent {
 }
 
 const Section = styled.section`
+  display: flex;
+  flex-direction: column;
   grid-template-rows: 2fr;
   box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;
   border-radius: 1rem;
-  height: 24rem;
+  height: 25rem;
   width: 37rem;
 
+  h4{
+    letter-spacing: 2px;
+    color: #003f5c;
+    padding-left: 14rem;
+    padding-top: 0.5rem;
+    // font-weight: 600;
 
-
+  }
 
 
 @media screen and (min-width: 280px) and (max-width: 720px) {
@@ -120,6 +129,7 @@ const Section = styled.section`
     box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
     height: 25rem;
     width: 37rem;
+    border-radius: 0rem;
   
 
 `;
