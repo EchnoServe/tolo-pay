@@ -7,18 +7,21 @@ import styled from 'styled-components'
 
 const Dashboard = () => {
   return (
-    <Section style={{
-      marginLeft: "20%",
-    }}>
-         
-             
-                <Analytics />
-                <BasicTable />
- 
-                
-           
-                    
-        
+    <Section>
+    <div className='grid'>
+      <div className="row1">
+          <Analytics />
+          <div className="row">
+           <Chart />
+          <Expense />
+          </div>
+          
+      </div>
+      <div className="row2">
+          <Table />
+          
+      </div>
+    </div>
     </Section>
   )
 }
