@@ -21,3 +21,7 @@ export const btnReset = css`
     text-align: inherit;
     padding: 0;
 `;
+export const Colors = {
+    primaryColor: `#1f77b4`,
+    accentColor: `#8cb8d6`
+}

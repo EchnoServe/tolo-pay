@@ -25,15 +25,16 @@ a {
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
+  
   /* background-color: #02ba4b; */
-  background-color: #41d3fe;
-  transition: all 0.9s ease-in-out 0s;
+  background-color: #1f77b4;
+  transition: all 1.5s ease-in-out 0s;
   
 }
 .menu-trigger img:hover{
   cursor: pointer;
     transform: rotate(360deg);
-    transition: all 0.5s ease-in-out 0s;
+    transition: all 1.5s ease-in-out 0s;
 }
 
 .dropdown-menu{

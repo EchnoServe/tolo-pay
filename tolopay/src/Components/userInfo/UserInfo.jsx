@@ -1,10 +1,14 @@
-import React from 'react'
-import { EditProfileButton, FullName, Key, KeyAndValue, ProfilePic, UserInfoContainer, UserInfoContents, UserInfoItems, Value } from './UserInfo.style'
+import React, {useContext} from 'react';
+import { Context } from "../../context/Context";
+// import { button1 } from "../../Utils/colors";
+import { EditProfileButton, FullName, Key, KeyAndValue, ProfilePic, 
+    UserInfoContainer, UserInfoContents, UserInfoItems, Value } from './UserInfo.style';
 
-const fontRoboto = "Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI'";
-const grayFontColor = '#3F3E3E';
 
+// displays profile pic and user information
 const UserInfo = (props) => {
+
+    const { user } = useContext(Context);
 
     const handleChange = () => {
         props.onChange(true)
@@ -13,27 +17,35 @@ const UserInfo = (props) => {
   return (
     <UserInfoContainer>
 
-        <ProfilePic />
+        <ProfilePic pic={user.data.user.profilePic ? user.data.user.profilePic : user.data.user.name[0]}/>
+
         <UserInfoItems>
             
             <UserInfoContents>
-                <FullName style={{fontFamily: fontRoboto, fontWeight: 'normal', color: grayFontColor}}>Molla Maru</FullName>
+                <FullName>{user.data.user.name}</FullName>
                 <div>
+                
                     <KeyAndValue email={false}>
-                        <Key style={{fontFamily: fontRoboto, fontWeight: 'lighter', color: grayFontColor}}>Account Id:</Key>
-                        <Value style={{fontFamily: fontRoboto, color: grayFontColor}}>maroon5</Value>
+                        <Key>Account Id:</Key>
+                        <Value>maroon5</Value>
                     </KeyAndValue>
+
                     <KeyAndValue email={true}>
-                        <Key style={{fontFamily: fontRoboto, fontWeight: 'lighter', color: grayFontColor}}>email:</Key>
-                        <Value style={{fontFamily: fontRoboto, color: grayFontColor}}>maru.molla@gmail.com</Value>
+                        <Key>email:</Key>
+                        <Value>{user.data.user.email}</Value>
                     </KeyAndValue>
                     
                 </div>
             </UserInfoContents>
+
             <div style={{display: 'flex', alignItems: 'flex-end', height: 180, 
             // border: '1px solid green', 
             padding: 5}}>
-                <EditProfileButton borderColor={"#3F3E3E80"} onClick={handleChange} ><p style={{fontFamily: fontRoboto, color: grayFontColor}}>Edit Profile</p></EditProfileButton>
+
+                <EditProfileButton borderColor={"#3F3E3E80"} onClick={handleChange} >
+                    <p>Edit Profile</p>
+                </EditProfileButton>
+
             </div>
            
         </UserInfoItems>
