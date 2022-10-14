@@ -1,4 +1,4 @@
-import "./App.css";
+
 import LoginPage from "./Pages/login_page/LoginPage";
 import Budget  from "./Pages/budget_page/Budget";
 

@@ -7,14 +7,13 @@ import TravelIcon from "@material-ui/icons/CardTravel";
 
 
 const MainContainer = styled.div`
-@media (max-width: 768px) {
-  flex-direction: column;
-  
-  }
 `
 const Container = styled.div`
-box-sizing: boredr-box;
-display:flex;
+box-sizing: border-box;
+display: grid;
+grid-template-columns: auto auto auto auto;
+grid-template-rows: 100px 300px;
+grid-gap: 10px;
 font-size: 17px;
 background-color:white;
 justify-content: center;
@@ -25,6 +24,7 @@ word-spacing: 1.8px;
 line-height: 22px;
 flex-wrap: wrap;
 padding: 40px 0;
+margin:3%;
 @media (max-width: 768px) {
   flex-direction: column;
   min-height: 100%;
@@ -80,7 +80,7 @@ font-size: 20% !important;
 const Content= styled.div`
 text-align:center;
 padding-left: 23%;
-height: 140px;
+height: 85px;
 border-radius:15px 15px  0px 0px ;
 display: flex;
 background-color:white;
@@ -95,7 +95,7 @@ padding-left:10%;
 
 const Content2= styled.div`
 padding: 20px;
-height: 170px;
+height: 85px;
 background-color: #41d3fe;
 border-radius: 0px 0px 15px 15px;
 text-align:center;
@@ -107,8 +107,10 @@ border-radius:0px 15px  15px 0px ;
 `
 const Card = styled.div`
 position: relative;
-width: 210px;
-height:310px;
+width: 180px;
+height:170px;
+text-align: center;
+padding: 20px 0;
 border-radius: 15px;
 margin-left: 3%;
 margin-right: 3%;
@@ -123,38 +125,21 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 @media (max-width: 768px) {
   display:flex;
   width:370px;
-  height:100px;
+  height:80px;
   margin-top:6%;
 }
 `
 
 
 // eslint-disable-next-line no-unused-vars
-const Box= styled.div`
-position:absolute;
-top:20px;
-left: 20px;
-right:20px;
-bottom:20px;
-background:yellow;
-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-display: block;
-justify-content: center;
-align-items: center;
-  &:hover ${H3} {
-    color:white;
-  }
-  &:hover ${Icons} {
-    color:white;
-  }
-`
+
 
 const H4= styled.h4`
 font-size:20px;
 color:white;
-margin:100px 0px 0px 0px;
+margin:20px 0px 0px 0px;
 @media (max-width: 768px) {
-  margin:21px 0px 0px 0px;
+  
 }
 `
 
