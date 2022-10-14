@@ -31,15 +31,17 @@ function Dashboard() {
       }, []);
 
   return (
-    <Section>
-        <div className='grid'>
-            <div className='row_one'>
+    <Section style={{
+      marginLeft: "20%",
+    }}>
+         
+             
                 <Analytics />
                 <BasicTable />
-                <Expenses />
+ 
                 
-            </div>
-            </div>           
+           
+                    
         
     </Section>
   )

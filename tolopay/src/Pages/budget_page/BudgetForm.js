@@ -32,25 +32,34 @@ const Budget_form = (props) => {
     trigger,
   } = useForm();
 
-  const onSubmit =  async(data) => {
-    console.log( user);
-    const res = await axios.put("http://localhost:8000/api/v1/users/addbudget", {
-      remark: data.remark,
-      amount: data.amount,
-     
-    }, {
-      headers: {
-        Authorization:
-          `Bearer ${token}`,
-      },
-    });
-    console.log("------------",res.data.data.user)
-    console.log("------()-()",user)
+  const onSubmit =  async({ remark,
+    amount
+   
+  }) => {
 
-    dispatch({ type: "UPDATE_SUCCESS", payload: res.data});
-    navigate('/planning');
-
-    reset();
+    try{
+      // console.log( data);
+      const res = await axios.put("http://localhost:8000/api/v1/users/addbudget", {
+        remark,
+        amount
+       
+      }, {
+        headers: {
+          Authorization:
+            `Bearer ${token}`,
+        },
+      });
+      console.log("------------",res.data.data.user)
+      console.log("------()-()",user)
+  
+      dispatch({ type: "UPDATE_SUCCESS", payload: res.data});
+      navigate('/planning');
+  
+      reset();
+    }catch(ex){
+      console.log(ex)
+    }
+    
   };
   return (
     <Section>

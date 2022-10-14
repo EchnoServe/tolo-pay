@@ -127,7 +127,7 @@ export default function BasicTable() {
                   <span>{row.currentAmount}</span>
                 </TableCell>
                 <TableCell align="left">
-                  <span>{row.createdAt.toLocaleString()} </span>
+                  <span>{row.createdAt} </span>
                 </TableCell>
                 <TableCell align="left">
                   <span className="left">{row.remark}</span>

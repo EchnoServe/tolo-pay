@@ -25,7 +25,8 @@ const amount = [
 
 const Analytics = () => {
   const { token ,user } = useContext(Context);
-  const [data,setData] = React.useState({money_in:null,money_out:null})
+  const [data,setData] = React.useState({money_in:null});
+  const [out,setOut] = React.useState({money_out:null})
 
   React.useEffect(() => {
     async function getTrasaction() {
@@ -38,10 +39,24 @@ const Analytics = () => {
           },
         }
       );
-      console.log("********", data);
-      // setData(pre=> {..pre,..});
+      console.log("********", data.moneyin[0].total);
+      setData({money_in:data.moneyin[0].total});
     }
     getTrasaction();
+    async function getTrasactionout() {
+      const { data } = await axios.get(
+        "http://localhost:8000/api/v1/users/moneyout",
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`,
+          },
+        }
+      );
+      console.log("******** oo", data);
+      setOut({money_out:data.moneyout[0].total});
+    }
+    getTrasactionout();
   }, []);
   console.log(user)
   return (
@@ -52,8 +67,8 @@ const Analytics = () => {
         <GiReceiveMoney />
       </div>
     <div className='content' >
-        <h5>Money in [Received]</h5>
-        <h3>value.money_in</h3>
+        <h5>Money in </h5>
+        <h3>{data.money_in}</h3>
       </div>
     </div>
 
@@ -62,8 +77,8 @@ const Analytics = () => {
         <GiPayMoney />
       </div>
       <div className="content">
-        <h5>Money out [Sent or Spent]</h5>
-      <h3>value.money_out</h3>
+        <h5>Money out</h5>
+      <h3>{out.money_out}</h3>
       </div>
     </div>
 
@@ -84,7 +99,7 @@ const Analytics = () => {
       </div>
     <div className="content">
         <h5>Points earned</h5>
-        <h3>value.points_earned</h3>
+        <h3>0</h3>
       </div>
     </div>
 
