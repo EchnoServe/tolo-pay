@@ -11,12 +11,11 @@ const MainContainer = styled.div`
 const Container = styled.div`
 box-sizing: border-box;
 display: grid;
-grid-template-columns: auto auto auto auto;
+grid-template-columns: auto auto auto auto auto auto;
 grid-template-rows: 100px 300px;
-grid-gap: 10px;
+grid-gap: 40px;
 font-size: 17px;
 background-color:white;
-justify-content: center;
 align-items: center;
 min-height: 100vh;
 width: 100%;
@@ -201,6 +200,71 @@ function Budget() {
         </Content2>
    
   </Card>
+
+  <Card>
+    
+    <Content>
+  <Icons><HealthIcon /></Icons>  
+      <H3>Health</H3>
+
+    </Content>
+    <Content2>
+    <H4>600 birr</H4>
+      </Content2>
+ 
+</Card>
+
+<Card>
+    
+    <Content>
+  <Icons><HealthIcon /></Icons>  
+      <H3>Health</H3>
+
+    </Content>
+    <Content2>
+    <H4>600 birr</H4>
+      </Content2>
+ 
+</Card>
+
+<Card>
+    
+    <Content>
+  <Icons><HealthIcon /></Icons>  
+      <H3>Health</H3>
+
+    </Content>
+    <Content2>
+    <H4>600 birr</H4>
+      </Content2>
+ 
+</Card>
+
+<Card>
+    
+    <Content>
+  <Icons><HealthIcon /></Icons>  
+      <H3>Health</H3>
+
+    </Content>
+    <Content2>
+    <H4>600 birr</H4>
+      </Content2>
+ 
+</Card>
+
+<Card>
+    
+    <Content>
+  <Icons><HealthIcon /></Icons>  
+      <H3>Health</H3>
+
+    </Content>
+    <Content2>
+    <H4>600 birr</H4>
+      </Content2>
+ 
+</Card>
 
 </Container>
 
