@@ -7,9 +7,19 @@ import pattern from '../assets/pattern.png'
 import logo from '../assets/logo.svg'
 
 
+function createData(name, card_expiration_date){
+  return{name, card_expiration_date};
+}
+
+const rData = [
+  createData('Abebe Kebede', '15/25' ),
+
+];
+
 const VirtualCard = () => {
   return (
     <Section>
+      {data.map((value) => (
         <div className="main-container">
             <div className="scene">
                 <div className="card">
@@ -23,26 +33,26 @@ const VirtualCard = () => {
                         </div>
                         <div className="card_number number">
                         <div className="number-group number-group-0">
-                            4011
+                            ***
                         </div>
                         <div className="number-group number-group-1">
-                            2022
+                            ***
                         </div>
                         <div className="number-group number-group-2">
-                            7239
+                            ***
                         </div>
                         <div className="number-group number-group-3">
-                            1586
+                            158
                         </div>
                         </div>
                         <div className="card_detailes">
                             <div className="card_holder">
                                 <span className='card_holder_title'>Card Holder</span>
-                                <span className='card_holder_name'>Abebe Kebede</span>
+                                <span className='card_holder_name'>{value.name}</span>
                             </div>
                             <div className="card_expiration">
                                 <span className='card_expiration_title'>Valid Till</span>
-                                <span className='card_expiration_date'>15/25</span>
+                                <span className='card_expiration_date'>{value.card_expiration_date}</span>
                             </div>
                         </div>
                     </div>
@@ -64,7 +74,7 @@ const VirtualCard = () => {
             </div>
         </div>
        
-       
+      ))}
 
     </Section>
   )
@@ -83,15 +93,15 @@ const Section = styled.section`
 
   .main-container{
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
   }
 
   .scene{
     width: 90%;
-    max-width: 35rem;
-    height: 20rem;
-    margin: 0 auto;
+    max-width: 25rem;
+    height: 19rem;
+    margin-left: 0 auto;
     perspective: 1000px;
   }
 
@@ -104,7 +114,6 @@ const Section = styled.section`
     margin: 0 auto;
     border-radius: 20px;
     box-shadow: -15px 20px 20px rgba(22, 4, 74, 0.15);
-    // background:  #083453;
   }
 
   .card:hover{
@@ -225,10 +234,6 @@ const Section = styled.section`
     padding-bottom: 5rem;
   }
    
-  .scene:hover .card{
-    transform: rotateY(-180deg);
-
-  }
 
   .map-img{
     width: 100%;

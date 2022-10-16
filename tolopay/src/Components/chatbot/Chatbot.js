@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
-// import logo from './logo.svg';
+
 import image from "./img/bot_image.jpg";
 import {messageIconSVG} from "../../Assets";
 import { userSVG } from "../../Assets";
@@ -260,7 +260,7 @@ const humanMessage = useRef();
 
 
     let purpose = [
-      "What's tolopay | what is tolopay",
+      "What's tolopay|what is tolopay",
     ]; //adding the age-question
     let words11 = new RegExp(purpose);
     if (words11.test(document.querySelector("#input").value)) {

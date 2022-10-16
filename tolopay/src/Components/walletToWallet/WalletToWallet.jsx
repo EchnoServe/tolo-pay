@@ -67,22 +67,7 @@ const WalletToWallet = () => {
 }
 
 const Section = styled.section`
-<<<<<<< HEAD
-  .walletToWallet {
-    overflow: hidden;
-    background-color: #f0f0f0;
-    display: flex;
-    min-height: 90vh;
-    justify-content: center;
-    align-items: center;
-    margin-top: 80px;
-    max-width: 100vw;
-    .moneyTransfer {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      padding: 10px;
-=======
+
 
 .container {
     position: relative;
@@ -154,7 +139,7 @@ const Section = styled.section`
     font-size: 1.1rem;
   }
 
->>>>>>> 970d6797ece7272ddc28663fc5982014f86adb13
+
 
   .input-fieldp{
     max-width: 360px;

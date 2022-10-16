@@ -36,8 +36,8 @@ a {
 }
 .menu-trigger img:hover{
   cursor: pointer;
-    transform: rotate(360deg);
-    transition: all 1.5s ease-in-out 0s;
+    transform: rotate(35deg);
+    transition: all .5s ease-in-out 0s;
 }
 
 .dropdown-menu{
