@@ -7,6 +7,10 @@ import TravelIcon from "@material-ui/icons/CardTravel";
 
 
 const MainContainer = styled.div`
+@media (max-width: 768px) {
+  flex-direction: column;
+  
+  }
 `
 const Container = styled.div`
 box-sizing: border-box;
