@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import {ContextProvider} from './context/Context';
+import Reset from "./Pages/ResetPasswordPages";
+// import App from "./App";
+// import {ContextProvider} from './context/Context';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <ContextProvider>
+    <Reset />
+    {/* <ContextProvider>
       <App />
-    </ContextProvider>
+    </ContextProvider> */}
   </React.StrictMode>
 );

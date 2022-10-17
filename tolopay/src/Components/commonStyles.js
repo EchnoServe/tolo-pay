@@ -1,5 +1,15 @@
 import styled from "styled-components";
-import {primary, button1} from "../Utils/colors";
+import {primary, button1 } from "../Utils/colors";
+
+
+export const Container = styled.div`
+    height: 400px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid #90909060;
+`;
 
 export const FormStyle = styled.input`
 border: 1px solid rgb(187, 187, 187);
@@ -20,6 +30,23 @@ padding: 1px 6px;
 outline: rgba(98, 131, 98, 0.911) solid 1px;
 border: none;
 }`;
+
+export const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+`;
+
+export const Button = styled.button`
+  width: 150px;
+  height: 42px;
+  border-radius: 3px;
+  border: none;
+  margin: 6px;
+  background-color: ${button1};
+  color: white;
+`;
 
 export const Loading = styled.div`
 

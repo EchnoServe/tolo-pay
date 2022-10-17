@@ -10,7 +10,6 @@
     "@material-ui/lab": "^4.0.0-alpha.61",
     "@mdi/js": "^7.0.96",
     "@mdi/react": "^1.6.1",
-    "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.7",
     "@mui/styled-engine-sc": "^5.10.3",
     "@mui/system": "^5.10.5",
