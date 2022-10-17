@@ -44,6 +44,7 @@ export const Button = styled.button`
   border-radius: 3px;
   border: none;
   margin: 6px;
+  margin-top: 10px;
   background-color: ${button1};
   color: white;
 `;

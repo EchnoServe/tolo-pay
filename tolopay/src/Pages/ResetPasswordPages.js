@@ -1,5 +1,6 @@
 import React from 'react';
 import ForgotPassword from '../Components/login_components/ForgotPassword';
+// import PasswordReset from '../Components/login_components/PasswordReset';
 
 export const ResetPasswordPages = () => {
   return (
