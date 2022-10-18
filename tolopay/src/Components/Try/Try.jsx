@@ -30,16 +30,17 @@ function Try() {
             <div className='containImg'>
             <div className='pic'>
                 <div className='img'> 
-               {/* <img 
+               <img 
                src={
                 file
                   ? URL.createObjectURL(file)
                   : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
                  }
                  alt=""
-               /> */}
+               />
             </div>
-                <div className="changeImg"><CameraAltIcon/></div>
+                <div className="changeImg"><label htmlFor="file"><CameraAltIcon/></label></div>
+                <input type="file" id="file" onChange={(e) => setFile(e.target.files[0])} style={{display: "none"}}/>
             </div>
             <Name>Sumeya Ibrahim</Name>
             <Phone>0910602110</Phone>
@@ -62,8 +63,8 @@ function Try() {
             </div>
 
             <div className='info NoBorder'>
-            <div><p>Balance</p></div>
-            <p>399</p>
+            <div><p>Account ID</p></div>
+            <p>001</p>
             </div>
             
 
@@ -77,8 +78,8 @@ function Try() {
                 <TabContext value={value}>
                     <Box sx={{borderBottom: 1, borderColor: "divider"}}>
 
-                    <TabList textColor="red" 
-                             TabIndicatorProps={{sx: {backgroundColor: 'rgb(70, 131, 60)'}}} 
+                    <TabList  
+                              
                              aria-label="Tabs example" onChange={handleChange}
                     >
 
@@ -103,9 +104,6 @@ function Try() {
 
 const Container = styled.div`
   width: 90%;
-  /* background: linear-gradient(to bottom right, white 0%, #e6e4ff 70%); */
-  /* border-bottom-right-radius: 2rem;
-  border-top-right-radius: 2rem; */
   margin: 1rem 4rem 1rem 4rem;
  
   @media screen and (min-width: 320px) and (max-width: 1080px) {
@@ -122,12 +120,12 @@ height: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
-/* background-color: black; */
+ 
 
 `;
 
 const SubContainer = styled.div`
-  /* margin: 0.5rem 0; */
+  
   height: 80%;
   width: 100%;
   display: flex;
@@ -185,10 +183,10 @@ const ColumnTwo1 = styled.div`
 const Profile = styled.div`
   height: 100%;
   width: 14rem;
-  background-color: rgba(70, 131, 60,0.2);
+  background-color: rgba(58, 135, 190, 0.2);
   color: #000;
   transition: 0.4s ease-in-out;
-  border: 2px solid  rgba(70, 131, 60,0.5);
+  border: 1px solid   rgba(58, 135, 190, 0.3);
   border-radius: 10px;
 
   p{
@@ -217,18 +215,24 @@ const Profile = styled.div`
             padding-top: 15px;
             margin-top: 5px;
             margin: 0;
-            border-bottom: 2px solid rgba(70, 131, 60,0.5);
+            border-bottom: 1px solid  rgba(58, 135, 190, 0.3);
     }
 
     .img{
         width: 100px;
         height: 100px;
         border-radius: 50%;
-        background-color: red;
+        /* background-color:  rgb(58, 135, 190); */
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        img{
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+        }
 
          
     }
@@ -238,6 +242,8 @@ const Profile = styled.div`
         justify-content: center;
         align-items: center;
         margin-top: 20px;
+        padding-top: 5px;
+        padding-left: 1px;
         width: 35px;
         height: 35px;
         border-radius: 50%;
@@ -245,7 +251,7 @@ const Profile = styled.div`
         position: absolute;
         margin-top: -35px;
         margin-left: 70px;
-        color: rgb(70, 131, 60);
+        color:  rgb(58, 135, 190);
     }
 
     .info{
@@ -255,8 +261,8 @@ const Profile = styled.div`
         gap: 20px;
         padding: 15px;
         margin: 0;
-        /* background-color: red; */
-        border-bottom: 2px solid rgba(70, 131, 60,0.5);  
+        
+        border-bottom: 1px solid rgba(58, 135, 190, 0.3);  
         
     }
 
@@ -277,19 +283,18 @@ const Phone  = styled.h1`
   font-size: 13px;
   text-decoration: none;
   font-weight: 600;
-  color:   rgba(0, 0, 0, 0.4);
+  color:rgba(0, 0, 0, 0.4);
 `
 ;
 
 
 const Setting = styled.div`
   height: 100%;
-  background-color:rgba(70, 131, 60,0.2);
-  /* margin-bottom: 10px; */
+  background-color: rgba(58, 135, 190, 0.2);
   padding: 10px;
   transition: 0.4s ease-in-out;
   color: #000;
-  border: 2px solid rgba(70, 131, 60,0.5);  
+  border: 1px solid rgba(58, 135, 190, 0.3);  
   border-radius: 10px;
 
   
@@ -304,7 +309,6 @@ const Title = styled.h1`
 padding: 1rem;
 font-size: 15px;
 font-weight: 300;
-
 `;
 
 

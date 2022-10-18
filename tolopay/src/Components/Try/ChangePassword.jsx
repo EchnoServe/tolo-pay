@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export default function ChangePassword() {
   return (
     <div>
-     <Title>Personal Details</Title>
+     <Title>Details</Title>
      <Form>
      <Input>
      <InputWrap>
@@ -66,7 +66,7 @@ input:focus::placeholder{
 }
 
 input:focus{
-  border: solid rgb(70, 131, 60) ;
+  border: solid rgb(58, 135, 190) ;
   transition: border 0.3s ease;
 }
 
@@ -105,7 +105,8 @@ const Title = styled.h1`
   font-size: 15px;
   text-decoration: none;
   font-weight: 600;
-  color:  rgb(70, 131, 60);
+  color:rgba(58, 135, 190,0.8);
+  padding-left: 15px;
 `;
 
 const Label = styled.label`
@@ -121,7 +122,7 @@ const BtnWrapper = styled.div`
  display: flex;
  justify-content: flex-start; 
  align-items: center;
- margin-left: 5px;
+ margin-left: 8px;
  `;
 
 const Button = styled.button`
@@ -129,7 +130,7 @@ margin-top: 16px;
 border-radius: 4px;
 border: none;
 width: 150px;
-background:rgb(70, 131, 60);
+background: rgb(58, 135, 190);
 white-space: nowrap;
 padding: 8px 12px;
 margin-left: 0;

@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export default function Edit() {
   return (
     <div>
-     <Title>Personal Details</Title>
+     <Title>Personal details</Title>
      <Form>
      <Input>
      <InputWrap>
@@ -92,7 +92,7 @@ input:focus::placeholder{
 }
 
 input:focus{
-  border: solid rgb(70, 131, 60) ;
+  border: solid rgb(58, 135, 190) ;
   transition: border 0.3s ease;
 }
 
@@ -127,13 +127,14 @@ padding: 5px;
 
 `;
 
-
+ 
 
 const Title = styled.h1`
   font-size: 15px;
   text-decoration: none;
   font-weight: 600;
-  color:  rgb(70, 131, 60);
+  color:rgba(58, 135, 190,0.8);
+  padding-left: 5px;
 `;
 
 const Label = styled.label`
@@ -141,8 +142,6 @@ const Label = styled.label`
   font-size: 14px;
   text-decoration: none;
   font-weight: 550;
-
-
 
 `;
 
@@ -159,7 +158,7 @@ margin-top: 16px;
 border-radius: 4px;
 border: none;
 width: 150px;
-background:rgb(70, 131, 60);
+background: rgb(58, 135, 190);
 white-space: nowrap;
 padding: 8px 12px;
 margin-left: 0;

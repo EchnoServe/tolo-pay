@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Layout from './Components/admin_dashboard/Layout';
 import Try from './Components/Try/Try';
 import Budget from './Pages/budget_page/Budget'
+import Transfer from './Pages/transfer/Transfer'
  
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
         
         <Route path="/profile" exact element = {<Try/>}/>
         <Route path="/budget" exact element = {<Budget/>}/>
+        <Route path="/transfer" exact element = {<Transfer/>}/>
+
+
 
       </Routes>
       </Layout>

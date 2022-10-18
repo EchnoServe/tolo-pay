@@ -27,7 +27,7 @@ const StyledNav = styled.nav`
   &::before {
     content: "";
     /* side bar top color */
-    background-color: rgba(70, 131, 60,0.2);
+    background-color: rgba(58, 135, 190, 0.2);
     /* background-color: #3f7696e1; */
 
     position: absolute;

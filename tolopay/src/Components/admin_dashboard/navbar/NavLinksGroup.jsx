@@ -16,7 +16,7 @@ const LinksGroup = styled.div`
   overflow: hidden;
   overflow-y: auto;
   /* inner nav bar background color */
-  background-color: rgba(70, 131, 60,0.1);
+  background-color:  rgba(58, 135, 190, 0.1);
   transition: flex-grow 0.3s cubic-bezier(0.4, 0, 1, 1);
   ::-webkit-scrollbar {
     width: 4px;
