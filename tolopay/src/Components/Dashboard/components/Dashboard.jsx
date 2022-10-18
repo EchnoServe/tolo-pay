@@ -10,17 +10,24 @@ const Dashboard = () => {
   return (
     <Section>
       <div className="container">
-        <div className="row1">
-          <Cards />
-        </div>
-        <div className="row2">
-          <VirtualCard />
-          <Doughnut />
-
-        </div>
+        <div className="grid">
+          <div className="col1">
+          <div className="row1">
+            <Cards />
+          </div>
+          <div className="row2">
+            <VirtualCard />
+            <Doughnut />
+          </div>
+          </div>
+          <div className="col2">
+            <Chart />
+          </div>
+          </div>
+        
         <div className="row3">
           <Table />
-          <Chart />
+          {/* <Chart /> */}
         </div>
       </div>
     </Section>
@@ -40,20 +47,29 @@ const Section = styled.section`
   grid-template-rows: 0.2fr 0.5fr 0.5fr;
 }
 
+.grid{
+  display: grid;
+  grid-template-columns: 63rem 25rem;
+  gap: 2rem;
+}
 
 .row2{
   display: grid;
-  grid-template-columns: 37rem 37rem;
+  grid-template-columns: 25rem 35rem;
   gap: 3.5rem;
   margin-top: 2rem;
+}
+
+.col2{
+  // margin-left: 2rem;
 }
 
 
 .row3{
   display: grid;
-  grid-template-columns: 42rem 35rem;
+  grid-template-columns: ;
   gap: 1.5rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 @media only screen and (max-width: 978px) {
@@ -68,6 +84,11 @@ const Section = styled.section`
   .container{
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .grid{
+    display: grid;
+    grid-template-columns: 35rem;
   }
 
   .row1{

@@ -5,6 +5,7 @@ import {GiTrophyCup} from 'react-icons/gi';
 import {GiReceiveMoney} from 'react-icons/gi'
 import { GiPayMoney } from 'react-icons/gi';
 
+
 function data(money_in, money_out, current_balance, points_earned) {
   return { money_in, money_out, current_balance, points_earned };
 }
@@ -12,19 +13,6 @@ function data(money_in, money_out, current_balance, points_earned) {
 const amount = [
   data("700,000 Birr", '60,000 Birr', "700,000 Birr", "16pts"),
 ]
-
-function createData(name, value){
-  return{name, value};
-}
-
-const rData = [
-  createData('Food', 400 ),
-   createData('Transfers', 300 ),
-  createData('Entertainment', 300 ),
-  createData('House hold', 200 ),
-   createData('tution fee', 600 ),
-
-];
 
 
 
@@ -40,7 +28,7 @@ const Cards = () => {
                   </div>
                 <div className='content' >
                     <h3 style={{color: '#1f77b4', fontWeight:'500'}}>{value.money_in}</h3>
-                    <h4 style={{color:'gray', fontWeight:'50'}}>Money in</h4>
+                    <h4 style={{color:'gray', fontWeight:'50', textAlign:'center'}}>Money in</h4>
                   </div>
               </div>
             </div>
@@ -52,7 +40,7 @@ const Cards = () => {
               </div>
               <div className="content">
                 <h3 style={{color: '#1f77b4', fontWeight:'500'}}>{value.money_out}</h3>
-                <h4 style={{color:'gray', fontWeight:'50'}}>Money out</h4>
+                <h4 style={{color:'gray', fontWeight:'50', textAlign:'center'}}>Money out</h4>
               </div>
               </div>
             </div>
@@ -64,7 +52,7 @@ const Cards = () => {
               </div>
               <div className='content'>
                 <h3 style={{color: '#1f77b4', fontWeight:'500'}}>{value.current_balance}</h3>
-                <h4 style={{color:'gray', fontWeight:'50'}}>Available</h4>
+                <h4 style={{color:'gray', fontWeight:'50', textAlign:'center'}}>Available</h4>
               </div>
               </div>
             </div>
@@ -75,8 +63,8 @@ const Cards = () => {
                 <GiTrophyCup />
               </div>
               <div className="content">
-                <h3 style={{color: '#1f77b4', fontWeight:'500'}}>{value.points_earned}</h3>
-                <h4 style={{color:'gray', fontWeight:'50'}}>Points earned</h4>
+                <h3 className='' style={{color: '#1f77b4', fontWeight:'500', textAlign:'center'}}>{value.points_earned}</h3>
+                <h4 style={{color:'gray', fontWeight:'50', textAlign:'center'}}>Points earned</h4>
               </div>
               </div>
             </div>
@@ -93,23 +81,26 @@ const Section = styled.section`
 }
 
 .card {
+  border: 1px solid #1f77b4;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 70px;
-  width: 195px;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  width: 200px;
   padding: 50px;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   background: #ffffff;
-  // box-shadow: rgba(31, 119, 180, 0.5) 0px 8px 20px;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
 
 }
 
 .card_inner {
   display: flex;
-  flex-direction: row;
-  gap: 3rem;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 
 }
 
@@ -158,25 +149,36 @@ const Section = styled.section`
 
 @media only screen and (max-width: 855px) {
   .main__cards {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
   }
 
 .card_inner{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 
   .card{
-    height: 8rem;
-    width: 155px;
+    height: 3rem;
+    width: 300px;
     border: 1px solid #1f77b4;
+    border-radius: 0.5rem;
+
+  }
+
+  .inner-card1{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .inner-card2{
+    display: flex;
+    flex-direction: row-reverse;
   }
 
 `;
