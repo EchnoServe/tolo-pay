@@ -10,6 +10,7 @@ const MainContainer = styled.div`
 @media (max-width: 768px) {
   flex-direction: column;
   
+  
   }
 `
 const Container = styled.div`
@@ -21,16 +22,24 @@ grid-gap: 40px;
 font-size: 17px;
 background-color:white;
 align-items: center;
+justify-content:center;
 min-height: 100vh;
 width: 100%;
 word-spacing: 1.8px;
 line-height: 22px;
 flex-wrap: wrap;
-padding: 40px 0;
-margin:3%;
+padding: 100px 0px;
 @media (max-width: 768px) {
+  display:flex;
   flex-direction: column;
   min-height: 100%;
+  margin-top:6%;
+  margin-left:0px;
+  margin-bottom:0px;
+  grid-gap:10px;
+  padding-top:0px;
+  align-items:center;
+  justify-content:center;
 }
 `
 const AddButton= styled.div`
@@ -40,7 +49,8 @@ position: relative;
     margin-left:70%;
     @media (max-width: 768px) {
     margin-left:23%;
-    justify-content:center;
+    align-items:center;
+  justify-content:center;
     }
 `
 const Button = styled.button`
@@ -89,10 +99,11 @@ display: flex;
 background-color:white;
 padding-top: 10%;
 @media (max-width: 768px) {
-  width:185px;
-  height:100px;
+  width:170px;
+  height:80px;
 border-radius:15px 0px  0px 15px ;
 padding-left:10%;
+
 }
 `
 
@@ -103,8 +114,9 @@ background-color: #41d3fe;
 border-radius: 0px 0px 15px 15px;
 text-align:center;
 @media (max-width: 768px) {
-  width:185px;
-  height:100px;
+  width:170px;
+  height:80px;
+  padding-top:15px;
 border-radius:0px 15px  15px 0px ;
 }
 `
@@ -127,9 +139,10 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 @media (max-width: 768px) {
   display:flex;
-  width:370px;
+  width:340px; 
+  padding:0px;
   height:80px;
-  margin-top:6%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 `
 
