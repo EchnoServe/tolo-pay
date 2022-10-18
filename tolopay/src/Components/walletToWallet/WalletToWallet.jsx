@@ -1,50 +1,69 @@
-import { useState } from "react"
-import styled from 'styled-components'
 
+import styled from 'styled-components'
+import { useForm } from "react-hook-form";
+import React, { useState } from "react";
+import "./styles.css";
 
 const WalletToWallet = () => {
 
-    const [passwordShown, setPasswordShown] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    trigger,
+  } = useForm();
 
-
-    const [values, setValues] = useState({
-        customerWalletNumber:"",
-        amount:"",
-        remark:"",
-        password:""
-    });
-
-const handleCustomerWalletNumber = (event) =>{
-    setValues({...values, customerWalletNumber: event.target.value})
-}
-
-const handleAmount = (event) =>{
-    setValues({...values, amount: event.target.value})
-}
-
-const handlePassword = (event) =>{
-    setValues({...values, password: event.target.value})
-}
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  }; 
 
   return (
-    <Section>
+    <Con>
+    <Container>
+      <SubContainer>
+        <SectionOne>
+
+          <ColumnTwo1>
+          <Setting >
+
+          <Section>
     <div className="walletToWallet">
-        <form className="moneyTransfer">
+        <form className="moneyTransfer" onSubmit={handleSubmit(onSubmit)}>
             <h3 >wallet to wallet</h3>
             <input
-                onChange={handleCustomerWalletNumber}
-                value={values.customerWalletNumber} 
-                className="form-field" 
-                placeholder="Customer wallet number" 
-                name="customerWalletNumber" />
-            <input 
-                onChange={handleAmount}
-                value={values.amount}
-                className="form-field" 
-                placeholder="Amount" 
-                name="amount" />
+                placeholder="Customer Phone Nmber"  
+                className={`form-control ${errors.phone && "invalid"}`}
+                 {...register("phone", { required: "Phone  number is Required",
+                 pattern: {
+                   value: /^\s*(?:\+?(\d[09]))[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{2})(?: *x(\d+))?\s*$/,
+                   message: "Invalid phone number",
+                 },
+                })}
+                onKeyUp={() => {
+                 trigger("phone");
+               }}/>
+                     {errors.phone && (
+                <small className="text-danger">{errors.phone.message}</small>
+              )}
+            <input
+                placeholder="Amount"
+                className={`form-control ${errors.amount && "invalid"}`}
+                {...register("amount", { required: "Amount is Required",
+                pattern: {
+                  value: /^([1-9][0-9]*)$/,
+                  message: "Invalid Amount",
+                },
+               })}
+               onKeyUp={() => {
+                trigger("amount");
+              }}/>
+                    {errors.amount && (
+               <small className="text-danger">{errors.amount.message}</small>
+             )}
             
-            <select className="option" id="remark">
+            <select className="option" id="remark" required>
                  <option value="" selected hidden>Remark</option>
                  <option value="option 1">option1</option>
                  <option value="option 2">option2</option>
@@ -53,27 +72,119 @@ const handlePassword = (event) =>{
             </select> 
                
             <input 
-                onChange={handlePassword}
-                value={values.password}
-                className="form-field" 
-                placeholder="Password"
-                // type="password" 
-                type={passwordShown ? "text" : "password"}
-                name="password" 
-                required/>
+               placeholder="Password"
+               type='password'
+                 className={`form-control ${errors.message && "invalid"}`}
+                 {...register("message", { required: "Password is Required",
+                })}
+                onKeyUp={() => {
+                 trigger("message");
+               }}
+               />
+               {errors.message && (
+                 <small className="text-danger">{errors.message.message}</small>
+               )}
             <button
                 className="btn"
                 type="submit">Transfer</button>
         </form>
     </div>
     </Section>
+                </Setting> 
+             
+          </ColumnTwo1>
+        </SectionOne> 
+      </SubContainer>
+    </Container>
+    </Con>
+   
   )
 }
+const Container = styled.div`
+  width: 90%;
+  /* background: linear-gradient(to bottom right, white 0%, #e6e4ff 70%); */
+  /* border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem; */
+  margin: 1rem 4rem 1rem 4rem;
+ 
+  @media screen and (min-width: 320px) and (max-width: 1080px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1rem 0 0 0;
+  }
+`;
 
+const Con = styled.div`
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+/* background-color: black; */
+
+`;
+
+const SubContainer = styled.div`
+  /* margin: 0.5rem 0; */
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  @media screen and (min-width: 320px) and (max-width: 1080px) {
+    height: 100%;
+  }
+`;
+const SectionOne = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 40%;
+  gap: 2rem;
+  width: 100%;
+  @media screen and (min-width: 320px) and (max-width: 1080px) {
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+  }
+`;
+
+
+const ColumnTwo1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 115%;
+  width: 100%;
+  @media screen and (min-width: 320px) and (max-width: 1080px) {
+    height: max-content;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+
+const Setting = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+  height: 100%;
+  background-color: rgba(58, 135, 190,0.1);
+  /* margin-bottom: 10px; */
+  padding: 10px;
+  transition: 0.4s ease-in-out;
+  color: #000;
+
+  
+  @media screen and (min-width: 320px) and (max-width: 1080px) {
+    height: max-content;
+    width: 80%;
+    margin-top: 1rem;
+  }
+`;
 const Section = styled.section`
 .walletToWallet{
     display: flex;
-    min-height: 100vh;
+    min-height: 80vh;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
@@ -86,7 +197,7 @@ const Section = styled.section`
   
       h3{
           text-align: center;
-          text-decoration: 2.5px underline #46833c;
+          text-decoration: 2.5px underline rgb(58, 135, 190);
           text-underline-offset: 8px;
           
       }
@@ -106,7 +217,7 @@ const Section = styled.section`
       margin: 10px 0 10px 0;
       padding: 15px;
       font-size: 16px;
-      border: 2px solid #9dc297;
+      border: 2px solid rgb(58, 135, 190);
     }
   
     .option:hover{
@@ -114,7 +225,7 @@ const Section = styled.section`
       margin: 10px 0 10px 0;
       padding: 15px;
       font-size: 16px;
-      border: 2px solid #46833c;
+      border: 2px solid rgb(58, 135, 190);
     }
     
     .form-field{
@@ -140,7 +251,7 @@ const Section = styled.section`
       border: none;
     }
     
-  
+    
     
     input {
       background: white;
@@ -161,21 +272,24 @@ const Section = styled.section`
       right: 16%;
     }
     i:hover {
-      color: #00fcb6;
+      color: rgb(58, 135, 190);
       cursor: pointer;
     }
     
     button {
-      background: #46833c;
+      background: rgb(58, 135, 190);
       color: white;
       cursor: pointer;
-      background-image: linear-gradient(to bottom right, #46833c, #9fcb98);
+      background-image: linear-gradient(to bottom right, rgb(58, 135, 190), rgb(137, 175, 202));
     }
     
     button:hover{
-      background-image: linear-gradient(to bottom right, #285f1f, #7ab671);
+      background-image: linear-gradient(to bottom right, rgb(58, 135, 190), #71a6b6);
     }
    
+    input{
+      border-color:rgb(58, 135, 190);
+    }
     
     button:disabled {
       cursor: default;
@@ -187,3 +301,4 @@ const Section = styled.section`
 `;
 
 export default WalletToWallet
+
