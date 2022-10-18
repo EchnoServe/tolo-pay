@@ -74,9 +74,9 @@ margin-top: 100px;
 
 const Section = styled.div`
   margin-top: 100px;
-  margin-bottom: 5vw;
-  margin-right: 5vw;
-  margin-left: 5vw;
+  /* margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px; */
 
 
   background:  linear-gradient(44.44deg, #D1DEEC 94.18%, #408EF4 7.79%, #D1DEEC 94.18%); 

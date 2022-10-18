@@ -124,7 +124,7 @@ margin-bottom: 0.5rem;
 font-size: 14px;
 
 &:hover{
-  color: #000000e1;
+  color: #000000e2;
   transition: 0.3s ease-out;
 }
 `;

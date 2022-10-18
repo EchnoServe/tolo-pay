@@ -10,7 +10,7 @@ export default function Features() {
       <div className='d'></div>
       <Fade top>
       <TextWrap>
-      <HeadingSmall>key features</HeadingSmall>
+      <HeadingSmall></HeadingSmall>
       <Heading>Most Probably Included Best Features Ever</Heading> 
       </TextWrap>
       </Fade>  
@@ -294,7 +294,7 @@ align-items: center;
  gap: 10px;
 @media screen and (max-width: 768px) {
   padding: 0;
-  width: 420px;
+  width: 380px;
 }
 
  `;
@@ -318,7 +318,7 @@ align-items: center;
  text-align: center;
  color: #262a37;
  line-height: 1.4;
-
+ 
  @media screen and (max-width: 768px) {
   font-size: 26px;
  }

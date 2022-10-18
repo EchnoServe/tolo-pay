@@ -18,7 +18,7 @@ export default function Hero() {
           <Column1>
 <Fade left>
           <TextWrapper> 
-            <Heading>The new way of money transfer <Span> ToloPay </Span> </Heading>
+            <Heading>The new way of money transfer ToloPay</Heading>
             <P>pay anything anywhere easly.</P>
             <BtnWrapper>
             <Button to = '/signup'>Create Account</Button>
@@ -145,7 +145,7 @@ export default function Hero() {
 
 const HeroContainer = styled.div`
  
- margin: 80px;
+ margin: 79px;
 @media screen and (max-width: 768px){
   padding: 0;
   margin: 90px;
@@ -226,7 +226,9 @@ padding-bottom: 60px;
 
 const Heading = styled.h1`
 margin-bottom: 0;
-font-size: 48px;
+/* font-size: 48px; */
+font-size: 45px;
+
 line-height: 1.1;
 font-weight: 600;
 color: #262a37;
@@ -264,7 +266,7 @@ cursor: pointer;
  
 
 const ImgWrap = styled.div` 
-margin-top: 0;
+margin-top: 20px;
 max-width: 555px;
 height: 555px;
  
