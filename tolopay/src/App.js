@@ -12,13 +12,12 @@ import BottomNavbar from "./Components/BottomNav/BottomNavbar";
 import WalletToWallet from "./Components/walletToWallet/WalletToWallet";
 import Budget_form from "./Pages/budget_page/BudgetForm";
 import Budget from "./Pages/budget_page/Budget";
-import QR from "./Pages/qr/Qr";
+
 import QrPage from "./Pages/qr/QrPage";
 import RecieveModal from "./Pages/qr/RecieveModal";
 import Send from "./Pages/qr/Send";
 import UserProfile from "./Pages/UserProfile";
-import QRgenerator from "./Pages/qr/QRgenerator";
-import QRscanner from "./Pages/qr/QRscanner";
+
 import { Context } from "./context/Context";
 import { darkTheme, lightTheme } from "./Utils/theme";
 import Chatbot from "./Components/chatbot/Chatbot";
@@ -76,15 +75,14 @@ const App = () => {
                     <Route path="transfer" element={ <WalletToWallet /> } />
                     <Route path="budgetform" element={ <Budget_form /> } />
                     <Route path="planning" element={ <Budget /> } />
-                    <Route path="qr" element={ <QR /> } />
+                    
                     <Route path="qrpage" element={ <QrPage /> } />
                     <Route path="recieve" element={ <RecieveModal /> } />
                     <Route path="send" element={ <Send />} />
                     <Route path="profile" element={ <UserProfile /> } />
                     <Route path="chatbot" element={ <Chatbot /> } />
                     <Route path="message" element={<Message />} />
-                    <Route path="generate" element={<QRgenerator />} />
-                    <Route path="scan" element={<QRscanner />} />
+                    
                     
                     
 
