@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.qr-container{
+
+background-color: #f0f0f0;	
+	
+}
+
+.button-container{
+	margin-top: 350px;
+	margin-left: 300px;
+	margin-right: 300px;
+	
+
+}
+.button-wrapper{
+	margin: 250px;
+	
+}
+.button-wrapper button{
+    margin: 40px;
+	border: none;
+	border-radius: 10px;
+	font-size: 1.4em;
+	font-family: poppins;
+	padding: 25px;
+	color: #fff;
+	background-color: #5388D8;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.button-wrapper button:hover{
+	background-color: #084DB4;
+	cursor: pointer;
+}
+
+{/*Modal*/}
+
+.btn-modals {
+    padding: 10px 20px;
+    
+    margin: 100px auto 0;
+    font-size: 18px;
+}
+
+.modals, .overlays{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    
+}
+
+.overlays {
+    background: rgba(49,49,49,0.8);
+}
+.modal-contents {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    width: 800px;
+    
+}
+
+.close-modals {
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    padding: 5px 7px;
+    color: red;
+    font-family: "Ubuntu";
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+
+{/*Reader or scanner*/}
+.reader-container1{
+	
+
+ background-color: #f0f0f0;
+  
+ width: 400px;
+ margin-left: 20%;
+  
+  
+
+}
+.reader-container1 span{
+	color: #0B5CB4;
+	font-size: 22px;
+	font-family: "Ubuntu";
+	font-weight: 600;
+	letter-spacing: 2.4px;
+}
+
+.proceed{
+	background-color: #12340fa;
+}
