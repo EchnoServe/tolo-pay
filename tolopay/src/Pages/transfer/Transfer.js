@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import logo from '../../Assets/pana.png'
+import WalletToWallet from "../../Components/walletToWallet/WalletToWallet";
  
 
 function Transfer() {
-   
+   const [isWallet, setIsWallet] = useState(false);
    const [value, setValue] = useState("1")
    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue)
@@ -32,7 +33,8 @@ function Transfer() {
             <div className='containImg'>
            
             <BtnWrapper>
-             <Button>Wallet Transfer</Button>
+             <Button  onClick={()=>setIsWallet(!isWallet)}>Wallet Transfer</Button>
+            
                 </BtnWrapper>
             </div>
 
@@ -48,9 +50,11 @@ function Transfer() {
           </ColumnOne1>
 
           <ColumnTwo1>
-             <Setting>
-             <img src={logo} alt="Logo" />
-             </Setting>
+          {isWallet ? <WalletToWallet/> :<Setting >
+
+<img src={logo} alt="Logo" />
+</Setting> }
+             
           </ColumnTwo1>
         </SectionOne> 
       </SubContainer>
