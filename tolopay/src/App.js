@@ -1,10 +1,11 @@
 
 import LoginPage from "./Pages/login_page/LoginPage";
 import Budget  from "./Pages/budget_page/Budget";
+import Transfer from "./Pages/transfer/Transfer";
 
 function App() {
   return (<div>
-<Budget/>
+<Transfer/>
   </div>
     //   style={{
     //     display: "flex",
