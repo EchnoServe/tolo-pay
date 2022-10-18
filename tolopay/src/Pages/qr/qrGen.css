@@ -1,0 +1,7 @@
+.qrgen-container{
+  align-items: center;
+  justify-content: center;
+}
+.qrgen-container h1{
+  font-size: 50px;
+}

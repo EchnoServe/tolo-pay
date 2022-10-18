@@ -35,15 +35,19 @@ const Dashboard = () => {
 }
 
 const Section = styled.section`
-.container {
 
-  background-color: #f0f0f0;
-  margin: 5rem 15rem;
+.container {
+  background-color: #fff;
+  // margin: 5rem 5rem 0 10rem;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  margin-top: 5rem;
 
  
 
   display: grid;
-  height: 5vh;
+ 
   grid-template-rows: 0.2fr 0.5fr 0.5fr;
 }
 
@@ -67,7 +71,7 @@ const Section = styled.section`
 
 .row3{
   display: grid;
-  grid-template-columns: ;
+  grid-template-columns: 90rem;
   gap: 1.5rem;
   margin-top: 2rem;
 }

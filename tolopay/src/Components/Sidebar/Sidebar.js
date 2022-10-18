@@ -40,7 +40,7 @@ const Sidebar = () => {
     const [sidebarOpen] = useState(false);
     const { pathname } = useLocation();
 
-    
+        
 
     return (
         <SSidebar isOpen={sidebarOpen}>
@@ -104,7 +104,7 @@ const linksArray = [
     {
         label: "Qrcode",
         icon: <MdQrCodeScanner />,
-        to: "/qr",
+        to: "/qrpage",
         
     },
 ];

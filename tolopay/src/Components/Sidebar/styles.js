@@ -19,6 +19,7 @@ export const SSidebar = styled.div`
     overflow: hidden;
     
     position: fixed;
+    border-right: 1px solid #f0f0f0;
     
     
     

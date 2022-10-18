@@ -26,7 +26,7 @@ function QRscanner() {
                 <QrReader
                     
                     
-                    onResult={(result, error) => {
+          onResult={(result, error) => {
           if (!!result) {
             setData(result?.text);
           }
