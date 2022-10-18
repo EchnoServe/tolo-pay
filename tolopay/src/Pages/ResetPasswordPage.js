@@ -1,14 +1,14 @@
 import React from 'react';
-import ForgotPassword from '../Components/login_components/ForgotPassword';
-// import PasswordReset from '../Components/login_components/PasswordReset';
+import PasswordReset from '../Components/login_components/PasswordReset';
 
 export const ResetPasswordPages = () => {
   return (
     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
-        <h1>
-            Reset Your Password!
-        </h1>
-        <ForgotPassword />
+        <h2>
+            Change your Password!
+        </h2>
+        <h4>Enter a new password.</h4>
+        <PasswordReset />
     </div>
   )
   

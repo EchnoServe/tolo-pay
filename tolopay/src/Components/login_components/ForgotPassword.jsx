@@ -2,21 +2,30 @@ import React from 'react';
 import {useForm } from 'react-hook-form';
 import { FormStyle, Container, Button, Form } from '../commonStyles';
 
-import api from '../../api/api';
+// import api from '../../api/api';
 
 
 export const ForgotPassword = () => {
     const { handleSubmit, register, formState: { errors } } = useForm();
     const onSubmit = async values => {
-        try {
-            const response = await api.post('/users/forgotpassword', {
-                email: values.email 
-            });
-    
-            console.log(response.message);
-        } catch (error) {
+
+        console.log(values.email);
+        
+        fetch('http://localhost:8000/api/v1/users/forgotpassword', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                  },
+                body: JSON.stringify({
+                    email: values.email
+                })
+            }).then(response => response.json())
+            .then(result => console.log(result))
+            .catch((error) => {
             console.log(error.message);
-        }
+        });
         
     }
 
