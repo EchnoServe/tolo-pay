@@ -5,6 +5,7 @@ import {TabContext, TabList, TabPanel} from '@mui/lab'
 import {Tab,Box }from '@mui/material'
 import Edit from "./Edit";
 import ChangePassword from "./ChangePassword";
+import Budget from "../../Pages/budget_page/Budget";
  
 
 function Try() {

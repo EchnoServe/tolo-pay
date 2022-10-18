@@ -4,3 +4,20 @@
   box-sizing: border-box;
 
 }
+body {
+  overflow-x: hidden;
+}
+.flex-c-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-c-r {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.p-12-10 {
+  padding: 12px 10px;
+}

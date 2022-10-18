@@ -1,0 +1,32 @@
+.qr_container {
+  height: inherit;
+  justify-content: space-around;
+}
+
+.qr_form {
+  gap: 0.5rem;
+}
+.qr_form input {
+  border: 1px solid #46833c;
+  width: 21rem;
+}
+
+.qr_form select {
+  background-color: transparent;
+  border: 1px solid #46833c;
+  width: 21rem;
+}
+#generate_qr_btn {
+  border: none;
+  background: linear-gradient(to right bottom, #46833c, #92b98c);
+  font-weight: bold;
+  font-size: 1rem;
+  width: 21rem;
+  color: #fff;
+}
+.qr_code_img {
+  width: 7rem;
+  height: 7rem;
+  background-size: cover;
+  background-image: url("./../../Assets/bi_qr-code.png");
+}
