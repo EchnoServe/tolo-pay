@@ -7,12 +7,12 @@ import pattern from '../assets/pattern.png'
 import logo from '../assets/logo.svg'
 
 
-function createData(name, card_expiration_date){
-  return{name, card_expiration_date};
+function createData(name, card_expiration_date, last_three_digits){
+  return{name, card_expiration_date, last_three_digits};
 }
 
-const rData = [
-  createData('Abebe Kebede', '15/25' ),
+const data = [
+  createData('Abebe Kebede', '15/25', '455' ),
 
 ];
 
@@ -42,7 +42,7 @@ const VirtualCard = () => {
                             ***
                         </div>
                         <div className="number-group number-group-3">
-                            158
+                            {data.last_three_digits}
                         </div>
                         </div>
                         <div className="card_detailes">
