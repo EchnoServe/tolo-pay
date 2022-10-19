@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import logo from '../../Assets/pana.png'
 import WalletToWallet from "../../Components/walletToWallet/WalletToWallet";
- import PayBills from "../../Components/paybills/PayBills";
+ 
 
-function Transfer() {
-   const [isPay, setIsPay] = useState(false);
-   const [isWallet, setIsWallet] = useState(false);
+function PayBills() {
+ 
    const [value, setValue] = useState("1")
    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue)
@@ -21,47 +20,44 @@ function Transfer() {
     <Container>
       <SubContainer>
         <SectionOne>
-          <ColumnOne1>
-            <Profile> 
-
-            <div className='containImg'>
-           
-            <BtnWrapper>
-             <Button  onClick={()=>setIsPay(!isPay)}>Pay Bills</Button>
-                </BtnWrapper>
-            </div>
-            
-            <div className='containImg'>
-           
-            <BtnWrapper>
-             <Button  onClick={()=>setIsWallet(!isWallet)}>Wallet Transfer</Button>
-            
-                </BtnWrapper>
-            </div>
-
-            <div className='containImg'>
-           
-            <BtnWrapper>
-             <Button>Bank Transfer</Button>
-                </BtnWrapper>
-            </div>
-
-            <div className='containImg'>
-           
-           <BtnWrapper>
-            <Button>Bill Split</Button>
-               </BtnWrapper>
-           </div>
-            </Profile>
-          
-          </ColumnOne1>
+         
 
           <ColumnTwo1>
-          {isWallet ? <WalletToWallet/>  :<Setting >
+          <Setting >
 
-            <img src={logo} alt="Logo" />
-                </Setting> }
-                
+          <div className='containImg'>
+           
+           <BtnWrapper>
+            <Button>Water Supply</Button>
+               </BtnWrapper>
+           </div>
+           
+         
+
+           <div className='containImg'>
+          
+           <BtnWrapper>
+            <Button>Electricity</Button>
+               </BtnWrapper>
+           </div>
+           
+          <div className='containImg'>
+           
+           <BtnWrapper>
+            <Button>Education</Button>
+               </BtnWrapper>
+           </div>
+           
+         
+
+           <div className='containImg'>
+          
+           <BtnWrapper>
+            <Button>Health</Button>
+               </BtnWrapper>
+           </div>
+                </Setting> 
+             
           </ColumnTwo1>
         </SectionOne> 
       </SubContainer>
@@ -118,18 +114,7 @@ const SectionOne = styled.div`
     height: max-content;
   }
 `;
-const ColumnOne1 = styled.div`
-  display: flex;
-  gap: 3rem;
-  margin: 0;
-  @media screen and (min-width: 320px) and (max-width: 1080px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-  }
-`;
+
 
 const ColumnTwo1 = styled.div`
   display: flex;
@@ -143,50 +128,11 @@ const ColumnTwo1 = styled.div`
   }
 `;
 
-const Profile = styled.div`
-display:flex;
-flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  height: 100%;
-  width: 30rem;
-  background-color: rgba(58, 135, 190,0.1);
-  color: #000;
-  transition: 0.4s ease-in-out;
-
-  p{
-          font-size: 14px;
-          text-decoration: none;
-          font-weight: 400;
-        
-        }
- 
- 
-
-
- 
-
-  @media screen and (min-width: 320px) and (max-width: 1080px) {
-    width: 80%;
-  }
-    .containImg{  
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 10px;
-            padding-bottom: 25px;
-            padding-top: 15px;
-            margin-top: 5px;
-            margin: 0;
-    }
-
-`;
-
 
 const Setting = styled.div`
-display: flex;
+display: grid;
+grid-template-columns:auto auto;
+grid-template-rows:150px 100px;
 justify-content: center;
 align-items: center;
   height: 100%;
@@ -213,13 +159,13 @@ const BtnWrapper = styled.div`
  `;
 
 const Button = styled.button`
-margin-top: 5px;
+margin-top: 16px;
 border-radius: 4px;
 border: none;
-width: 200px;
+width: 250px;
 background:rgb(58, 135, 190);
 white-space: nowrap;
-padding: 20px 22px;
+padding: 28px 22px;
 margin-left: 0;
 font-size: 15px;
 font-weight: 600;
@@ -237,4 +183,4 @@ text-align: center;
 
 
 
-export default Transfer;
+export default PayBills;
