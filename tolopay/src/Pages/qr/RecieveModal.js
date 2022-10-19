@@ -32,7 +32,7 @@ const [qr, setQr] = useState('1000');
                     qr ?
                     <QRcode 
                         id="myqr"
-                        value={user?.data.user.name} 
+                        value={user?.data.user.phoneNumber.toString()} 
                         size={450}
                         includeMargin={true}
                     /> :
