@@ -1,14 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Container, FormStyle, Form, Button } from '../commonStyles';
 
 import api from '../../api/api';
 
-const PasswordReset = () => {
+const PasswordReset = props => {
 
     const { handleSubmit, register, watch ,formState: { errors } } = useForm();
-    const onSubmit = async values => {
-        // const response = await api.post('/users/forgotpassword', );
+    const onSubmit = values => {
+        api.post('/users/change-password',
+            {
+                id: props.id,
+                token: props.token,
+                password: values.password,
+                confirmPassword: values.confirmPassword
+            }
+        ).then(response => {
+            console.log(response);
+            <Link to='/login' />
+        }).catch(error => console.log(error));
+        // console.log(values);
     }
 
   return (

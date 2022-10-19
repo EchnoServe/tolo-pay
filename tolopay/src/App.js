@@ -4,6 +4,8 @@ import { ThemeProvider } from "styled-components";
 
 import Home from "./Pages/home_page/Home";
 import Signup from "./Pages/createAccount/CreateAccount";
+import EmailReset from "./Pages/EmailReset";
+import ResetPasswordPage from "./Pages/ResetPasswordPage";
 import Login from "./Pages/login_page/LoginPage";
 import LoginSuccess from "./Components/login_components/LoginSuccess";
 import Layout from "./Components/Layout/Layout";
@@ -61,12 +63,14 @@ const App = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/login/success" element={<LoginSuccess />} />
+            <Route path="/password-reset" element={<EmailReset />} />
+            <Route path="/reset-password/:id/:token" element={<ResetPasswordPage />} />
             <Route path="/" 
-                element = { user ? 
+                element = { 
+                    user ? 
                     <Layout>
                         <Chatbot />
                         <BottomNavbar />
-                        
                     </Layout> : 
                     <Home />} >
                     
@@ -82,9 +86,6 @@ const App = () => {
                     <Route path="profile" element={ <UserProfile /> } />
                     <Route path="chatbot" element={ <Chatbot /> } />
                     <Route path="message" element={<Message />} />
-                    
-                    
-                    
 
             </Route>
           </Routes>
