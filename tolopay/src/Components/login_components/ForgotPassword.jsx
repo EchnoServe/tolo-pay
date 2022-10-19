@@ -2,35 +2,30 @@ import React from 'react';
 import {useForm } from 'react-hook-form';
 import { FormStyle, Container, Button, Form } from '../commonStyles';
 
-// import api from '../../api/api';
+import api from '../../api/api';
 
 
-export const ForgotPassword = () => {
+export const ForgotPassword = props => {
     const { handleSubmit, register, formState: { errors } } = useForm();
+    
     const onSubmit = async values => {
 
         console.log(values.email);
-        
-        fetch('http://localhost:8000/api/v1/users/forgotpassword', {
-                method: 'POST',
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                    // 'Content-Type': 'application/x-www-form-urlencoded',
-                  },
-                body: JSON.stringify({
-                    email: values.email
-                })
-            }).then(response => response.json())
-            .then(result => console.log(result))
-            .catch((error) => {
-            console.log(error.message);
-        });
+
+
+        api.post('/users/forgot-password', {
+            email: values.email
+        }).then(response => {
+            if (response.data.message === 'success') {
+                props.sentStatus(true);
+            } 
+            console.log(response.data);
+        }).catch(error => console.log(error));
         
     }
 
   return (
-    <Container>
+        <Container>
         <Form onSubmit={handleSubmit(onSubmit)}>
             <label>
                 Your Account Email:
@@ -48,8 +43,7 @@ export const ForgotPassword = () => {
             <small style={{color: 'red'}}>{ errors.email && errors.email.message }</small>
             <Button>Submit</Button>
         </Form>
-    </Container>
-
+        </Container>
   )
 }
 
