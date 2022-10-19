@@ -116,16 +116,7 @@ const WalletToWallet = () => {
           })}
           </select>
 
-          <input
-            onChange={handlePassword}
-            value={values.password}
-            className="form-field"
-            placeholder="Password"
-            // type="password"
-            type={passwordShown ? "text" : "password"}
-            name="password"
-            required
-          />
+          
           <button className="btn"  onClick={handleClickToOpen}>
             Transfer
           </button>

@@ -1,12 +1,114 @@
 
-import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+ import axios from "axios";
+import React, { useState ,useContext} from "react";
+// import React, { useState } from "react";
 import "./qrPage.css";
 import { TextareaAutosize} from '@material-ui/core'
 
 
 import { QrReader } from 'react-qr-reader';
+import { Context } from "./../../context/Context";
+
 function QrPage() {
+
+
+
+
+
+
+
+const [open, setOpen] = React.useState(false);
+  const navigate=useNavigate();
+  const { token ,user ,dispatch} = useContext(Context);
+
+  
+
+  const handleClickToOpen = (event) => {
+    event.preventDefault();
+
+    setOpen(true);
+  };
+  
+  const handleToClose = () => {
+    setOpen(false);
+  };
+  const [passwordShown, 
+    // setPasswordShown
+  ] = useState(false);
+
+  const [values, setValues] = useState({
+    phoneNumber: "",
+    amount: "",
+    remark: "",
+    password: "",
+  });
+
+  const handlePhoneNumber = (event) => {
+    setValues({ ...values, phoneNumber: event.target.value });
+  };
+
+  const handleAmount = (event) => {
+    setValues({ ...values, amount: event.target.value });
+  };
+
+  
+  const handleRemark= (event) => {
+    setValues({ ...values, remark: event.target.value });
+  };
+  async function makePostRequest(values) {
+    try {
+      const res = await axios.post(
+        "http://localhost:8000/api/v1/transaction/transfer",
+        values,
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`,
+          },
+        }
+      );
+      navigate("/")
+      // console.log("////>>>>",data)
+    dispatch({ type: "UPDATE_SUCCESS", payload: res.data});
+
+    } catch (err) {
+      console.log("[Login.js] makePostRequest", err);
+
+      ///some thing set to be true
+    }
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(values);
+    makePostRequest(values);
+  };
+
+
+
+
+
+
+
+
+
+
+const [modal2, setModal2] = useState(false);
+  const toggleModal2 = () => {
+    setModal2(!modal2);
+  };
+
+  if(modal2) {
+    document.body.classList.add('active-modal')
+  } else {
+    document.body.classList.remove('active-modal')
+  }
+
+
+
+    
+// const [btnDisabled, setBtnDisabled] = useState(true)
 const [modal, setModal] = useState(false);
 const [data, setData] = useState('No result');
   const toggleModal = () => {
@@ -64,11 +166,60 @@ const [data, setData] = useState('No result');
             </center>
 
             <TextareaAutosize
+              
                 style={{fontSize:18, width:400, height:100, marginTop:20}}
                 rowsMax={4}
                 defaultValue={data}
                 value={data} 
-            />
+            />  
+            <div>
+            <div className="proceed-btn">
+            <button onClick={toggleModal2} className="btn-modal2">
+                        Proceed 
+              </button>
+              </div>
+              {modal2 &&(
+                  <div className="modal2">
+                  <div onClick={toggleModal} className="overlay2"></div>
+                  <div className="modal-content2">
+                                  <div className="modal2-input">
+                                      <ul>
+                                      <li><textarea 
+                                      
+                                      value={data}
+                                      defaultValue={data}
+                                            
+                                           
+                                      >{data}</textarea></li>
+                                      <li><input onChange={handleAmount}
+                                            value={values.amount}
+                                            className="form-field"
+                                            placeholder="Amount"
+                                            name="amount"/></li>
+                                      <li>
+                                            <select className="option" id="remark" onChange={handleRemark}>
+                                                 
+                                                      { user?.data.user?.budget.map(option =>{
+                                                       return <option value={option.remark}>{option.remark}</option>
+                                                        
+                                                      })}
+                                              </select>
+
+                                      </li>
+                                      <li><button onClick={handleSubmit}>Send</button></li>
+                                      </ul>
+                                        
+                                        
+                                        
+                                  </div>
+                         <h1 className="close-modal2" onClick={toggleModal2}>
+                                X
+                        </h1>
+                  </div>
+                  </div>
+                 
+                )}
+              </div>
             
            
            

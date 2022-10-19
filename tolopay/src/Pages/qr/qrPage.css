@@ -54,7 +54,7 @@ background-color: #f0f0f0;
 }
 
 .overlays {
-    background: rgba(49,49,49,0.8);
+    background: rgba(49,49,49,0.1);
 }
 .modal-contents {
     position: absolute;
@@ -62,7 +62,7 @@ background-color: #f0f0f0;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
-    background: #f1f1f1;
+    background: #fff;
     padding: 14px 28px;
     border-radius: 3px;
     width: 800px;
@@ -87,7 +87,7 @@ background-color: #f0f0f0;
 .reader-container1{
 	
 
- background-color: #f0f0f0;
+ background-color: #fff;
   
  width: 400px;
  margin-left: 20%;
@@ -102,7 +102,100 @@ background-color: #f0f0f0;
 	font-weight: 600;
 	letter-spacing: 2.4px;
 }
+{/*Modal*/}
 
-.proceed{
-	background-color: #12340fa;
+.btn-modal2 {
+    padding: 10px 20px;
+    
+    margin: 100px auto 0;
+    font-size: 18px;
+}
+
+.modal2, .overlay2{
+    width: 100vw;
+    height: 100vh;
+    top: -50px;
+    left: -400px;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    
+}
+
+.overlay2 {
+    background: rgba(49,49,49,0.6);
+}
+.modal-content2 {
+
+    position: absolute;
+    top: 35%;
+    left: 43%;
+    transform: translate(-40%, -40%);
+    line-height: 1.4;
+    background: #fff;
+    padding: 14px 28px;
+    border-radius: 3px;
+    width: 600px;
+    
+}
+
+.close-modal2 {
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    padding: 5px 7px;
+    color: red;
+    font-family: "Ubuntu";
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btn-modal2{
+	width: 410px;
+	padding-left: -100px;
+}
+.proceed-btn{
+
+	margin-left: -40px;
+}
+.modal2-input{
+	display: block;
+}
+.modal2-input textarea{
+	padding-top: 20px;
+	font-size: 22px;
+	font-family: "Ubuntu";
+	font-weight: 400;
+margin-top: 20px;
+ width: 90%;
+  border: 3px solid #ddd11;
+  border-radius: 5px;
+  height: 50px;
+}
+.modal2-input input{
+	font-size: 22px;
+	font-family: "Ubuntu";
+	font-weight: 400;
+	margin-top: 20px;
+   width: 90%;
+  border: 1px solid #ddd11;
+  border-radius: 5px;
+  height: 65px;
+}
+.modal2-input button{
+	
+   width: 90%;
+  border: 2px solid #6977FE;
+  border-radius: 5px;
+  padding: 15px;
+  margin-left: 2px;
+}
+.modal2-input ul select{
+	margin-top: 20px;
+	width: 90.5%;
+	font-size: 22px;
+	font-family: "Ubuntu";
+	font-weight: 400;
+	margin-top: 20px;
+	height: 65px;
 }
