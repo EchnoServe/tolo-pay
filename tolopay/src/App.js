@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Layout from './Components/admin_dashboard/Layout';
-import Try from './Components/Try/Try';
+import Try from './Components/Try/Profile';
 import Budget from './Pages/budget_page/Budget'
 import Transfer from './Pages/transfer/Transfer'
  

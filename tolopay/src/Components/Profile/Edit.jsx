@@ -11,7 +11,7 @@ export default function Edit() {
      <Input>
      <InputWrap>
      <Label>First Name</Label>
-     <input placeholder='Sumeya' type='text'/>
+     <input className='inputMargin' placeholder='Sumeya' type='text'/>
      </InputWrap>
 
      <InputWrap>
@@ -25,7 +25,7 @@ export default function Edit() {
      <Input>
      <InputWrap>
      <Label>Phone Number</Label>
-     <input placeholder='0910602110' type='text'/>
+     <input className='inputMargin' placeholder='0910602110' type='text'/>
      </InputWrap>
 
      <InputWrap>
@@ -39,7 +39,7 @@ export default function Edit() {
      <Input>
      <InputWrap>
      <Label>Username</Label>
-     <input placeholder='@sumeya' type='text'/>
+     <input className='inputMargin' placeholder='@sumeya' type='text'/>
      </InputWrap>
 
      <InputWrap>
@@ -80,6 +80,10 @@ padding: 9px;
 border-radius: 3px;
 width: 130%;
 outline: none;
+}
+
+.inputMargin{
+  margin-bottom: 10px;
 }
 
 input:focus::placeholder{

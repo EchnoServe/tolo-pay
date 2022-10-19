@@ -8,7 +8,7 @@ import ChangePassword from "./ChangePassword";
 import Budget from "../../Pages/budget_page/Budget";
  
 
-function Try() {
+function Profile() {
    const [file, setFile] = useState("");
    const [value, setValue] = useState('1')
    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -25,7 +25,7 @@ function Try() {
       <SubContainer>
         <SectionOne>
           <ColumnOne1>
-            <Profile> 
+            <Profilee> 
 
             <div className='containImg'>
             <div className='pic'>
@@ -68,7 +68,7 @@ function Try() {
             </div>
             
 
-            </Profile>
+            </Profilee>
           
           </ColumnOne1>
 
@@ -110,7 +110,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 1rem 0 0 0;
+    margin: 1rem 0 1rem 0;
   }
 `;
 
@@ -180,7 +180,7 @@ const ColumnTwo1 = styled.div`
  
 
 
-const Profile = styled.div`
+const Profilee = styled.div`
   height: 100%;
   width: 14rem;
   background-color: rgba(58, 135, 190, 0.2);
@@ -311,11 +311,4 @@ font-size: 15px;
 font-weight: 300;
 `;
 
-
-
-
-
-
-
-
-export default Try;
+export default Profile;

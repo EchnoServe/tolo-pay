@@ -15,7 +15,7 @@ const StyleLink = styled(Link)`
   border-bottom: rgba(255, 255, 255, 0.1) 1px solid;
   &:hover {
     text-decoration: none;
-    color: #3ABEFF;
+    color: rgb(58, 135, 190);;
   }
   span {
       font-weight: 500;
