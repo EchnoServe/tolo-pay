@@ -27,8 +27,8 @@ const Cards = () => {
                     <GiReceiveMoney />
                   </div>
                 <div className='content' >
-                    <h3 style={{color: '#1f77b4', fontWeight:'500'}}>{value.money_in}</h3>
-                    <h4 style={{color:'gray', fontWeight:'50', textAlign:'center'}}>Money in</h4>
+                    <h3>{value.money_in}</h3>
+                    <h4>Money in</h4>
                   </div>
               </div>
             </div>
@@ -39,8 +39,8 @@ const Cards = () => {
                 <GiPayMoney />
               </div>
               <div className="content">
-                <h3 style={{color: '#1f77b4', fontWeight:'500'}}>{value.money_out}</h3>
-                <h4 style={{color:'gray', fontWeight:'50', textAlign:'center'}}>Money out</h4>
+                <h3>{value.money_out}</h3>
+                <h4>Money out</h4>
               </div>
               </div>
             </div>
@@ -51,8 +51,8 @@ const Cards = () => {
                 <IoStatsChart />
               </div>
               <div className='content'>
-                <h3 style={{color: '#1f77b4', fontWeight:'500'}}>{value.current_balance}</h3>
-                <h4 style={{color:'gray', fontWeight:'50', textAlign:'center'}}>Available</h4>
+                <h3>{value.current_balance}</h3>
+                <h4>Available</h4>
               </div>
               </div>
             </div>
@@ -63,8 +63,8 @@ const Cards = () => {
                 <GiTrophyCup />
               </div>
               <div className="content">
-                <h3 className='' style={{color: '#1f77b4', fontWeight:'500', textAlign:'center'}}>{value.points_earned}</h3>
-                <h4 style={{color:'gray', fontWeight:'50', textAlign:'center'}}>Points earned</h4>
+                <h3>{value.points_earned}</h3>
+                <h4>Points earned</h4>
               </div>
               </div>
             </div>
@@ -77,7 +77,7 @@ const Cards = () => {
 const Section = styled.section`
 .main__cards {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .card {
@@ -86,9 +86,9 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90px;
-  width: 200px;
-  padding: 50px;
+  height: 70px;
+  width: 250px;
+  padding: 30px;
   border-radius: 0.5rem;
   background: #ffffff;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
@@ -97,12 +97,24 @@ const Section = styled.section`
 
 .card_inner {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: left;
   justify-content: center;
 
+  .content{
+    h3{
+
+    }
+
+    h4{
+      color: #787878;
+      font-weight: 50;
+    }
+  }
+
 }
+
 
 
 .logo1 {
@@ -132,7 +144,7 @@ const Section = styled.section`
     background-color: #ff6361;
     font-size: 1.5rem;
     padding: 1rem;
-    border-radius: 2rem;
+    border-radius: 2rem;  
   }
 }
 .logo4 {
@@ -149,37 +161,29 @@ const Section = styled.section`
 
 @media only screen and (max-width: 855px) {
   .main__cards {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 1rem;
   }
 
 .card_inner{
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: ;
   justify-content: center;
-  gap: 2rem;
+  gap: 0rem;
 }
 
 
   .card{
-    height: 3rem;
-    width: 300px;
+    height: 6rem;
+    width: 115px;
     border: 1px solid #1f77b4;
     border-radius: 0.5rem;
-
+    padding: 3rem;
   }
-
-  .inner-card1{
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
-  .inner-card2{
-    display: flex;
-    flex-direction: row-reverse;
-  }
+}
 
 `;
 

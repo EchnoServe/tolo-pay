@@ -3,14 +3,15 @@ import React, { PureComponent } from 'react';
 import { PieChart, Pie, Sector,Cell, ResponsiveContainer } from 'recharts';
 import styled from 'styled-components';
 
-const COLORS = ['#003f5c', '#58508d', '#bc5090', '#ff6361', '#ffa600', '#1f77b4'];
+const COLORS = ['#003f5c', '#58508d','#844d6c', '#bc5090','#ff6361', '#695356','#ba5139', '#ea6d30', '#db7b65','#ef8f52', '#ecbb65', '#fbc9be','#ffa600', '#1f77b4','#026573', '#255f63','#35523c'];
 const data = [
   { name: 'Food', value: 400},
   { name: 'Transfers', value: 300 },
   { name: 'Entertainment', value: 300},
   { name: 'House hold', value: 200},
-  { name: 'tution fee', value: 600},
-
+  { name: 'Sport', value: 600},
+  { name: 'Transport', value: 600},
+    
 ];
 
 const renderActiveShape = (props) => {
@@ -55,7 +56,7 @@ const renderActiveShape = (props) => {
       <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#333">
         {`[${(percent * 100).toFixed(2)}% `}
       </text>
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={35} textAnchor={textAnchor} fill="#333">
+      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={35} textAnchor={textAnchor} fill="#333" className='text'>
         {`of total expenses]`}
       </text>
     </g>
@@ -114,24 +115,26 @@ const Section = styled.section`
   border-radius: 0.5rem;
   border: 1px solid #1f77b4;
   height: 23rem;
-  width: 35rem;
+  width: 39.5rem;
 
   h4{
     letter-spacing: 2px;
     color: #003f5c;
     padding-top: 0.5rem;
-
   }
 
 
 @media screen and (min-width: 280px) and (max-width: 720px) {
-    margin-top: 2rem;
     grid-template-rows: 3fr;
-    box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px; 
     height: 25rem;
     width: 27.7rem;
     border-radius: 0rem;
-    white-space: wrap;
+  
+    .text{
+      display: flex;
+      position: relative;
+      white-space: pre-wrap;
+    }
   
 }
 `;

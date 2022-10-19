@@ -27,7 +27,6 @@ const Dashboard = () => {
         
         <div className="row3">
           <Table />
-          {/* <Chart /> */}
         </div>
       </div>
     </Section>
@@ -35,81 +34,63 @@ const Dashboard = () => {
 }
 
 const Section = styled.section`
+  margin-left: 0rem;
 
-.container {
-  background-color: #fff;
-  // margin: 5rem 5rem 0 10rem;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  margin-top: 5rem;
-
- 
-
-  display: grid;
- 
-  grid-template-rows: 0.2fr 0.5fr 0.5fr;
-}
 
 .grid{
-  display: grid;
-  grid-template-columns: 63rem 25rem;
-  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .row2{
   display: grid;
-  grid-template-columns: 25rem 35rem;
-  gap: 3.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
 .col2{
-  // margin-left: 2rem;
+  margin-right: 0rem;
 }
 
 
 .row3{
   display: grid;
-  grid-template-columns: 90rem;
-  gap: 1.5rem;
   margin-top: 2rem;
+  margin-right: 6rem;
 }
 
 @media only screen and (max-width: 978px) {
   .container {
-    margin: 2rem 0 2rem 2rem;
+    margin: 1rem;
     grid-template-columns: 1fr;
   }
 
 }
 
 @media only screen and (max-width: 855px) {
-  .container{
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
+  margin: 0rem;
+
 
   .grid{
     display: grid;
-    grid-template-columns: 35rem;
-  }
-
-  .row1{
-    margin-left: 2rem;
-    margin-right: 2rem;
+    grid-template-columns: 25rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
   }
 
   .row2 {
     margin-left: 0rem;
     margin-right: 0rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: 25rem;
     margin-top: 30px;
+    gap: 2rem;
   }
   .row3 {
     margin-left: 0rem;
     margin-right: 0rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: 25rem;
     margin-top: 30px;
   }
 }
