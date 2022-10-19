@@ -26,7 +26,7 @@ const LoginForm =  (props) => {
           try {
             props.onChange(true);
             handleLoading(true);
-      
+        console.log(data)
             const res = await api.post("/users/login", {
               email: data.email,
               password:data.password

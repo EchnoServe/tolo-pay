@@ -1,16 +1,12 @@
-// import { useState } from "react"
 import styled from 'styled-components';
 import Snackbar from "@material-ui/core/Snackbar";
 import Button from "@material-ui/core/Button";
 import { Alert } from "@material-ui/lab";
 import React,{useContext} from "react";
 import axios from 'axios';
-import { Link, useNavigate } from "react-router-dom";
-
+import {  useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-
 import { Context } from "./../../context/Context";//
-
 
 const Budget_form = (props) => {
   const { user ,token,dispatch} = useContext(Context);
@@ -44,8 +40,6 @@ const Budget_form = (props) => {
           `Bearer ${token}`,
       },
     });
-    console.log("------------",res.data.data.user)
-    console.log("------()-()",user)
 
     dispatch({ type: "UPDATE_SUCCESS", payload: res.data});
     navigate('/planning');
@@ -165,7 +159,7 @@ const Section = styled.section`
       padding: 15px;
       font-size: 16px;
       border-style: solid;
-      border-color: #41d3fe;
+      border-color: #3a87be;
     }
   
     .form-field:hover{
@@ -212,10 +206,9 @@ const Section = styled.section`
     }
     
     button {
-      background: #46833c;
       color: white;
       cursor: pointer;
-      background: linear-gradient(to right bottom, #41d3fe, #6977fe);
+      background: #3a87be;
     }
     
     button:hover{
