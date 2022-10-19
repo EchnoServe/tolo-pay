@@ -1,9 +1,6 @@
-import { CgMenuRight } from "react-icons/cg";
 import styled from "styled-components";
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
-// import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+ 
 
 const Button = styled.button`
     background-color: transparent;

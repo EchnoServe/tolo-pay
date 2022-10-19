@@ -84,6 +84,7 @@ function NavLinksGroup(props) {
           to={l.to}
           iconClassName={l.icon}
           label={l.label}
+          
         />
       ))}
     </LinksGroup>

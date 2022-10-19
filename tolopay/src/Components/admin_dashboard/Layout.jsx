@@ -34,7 +34,7 @@ const GridMain = styled.main`
  
 `;
 
-function Layout({ children, ...rest }) {
+function Layout({ title, file, children, ...rest }) {
  
   const [showNav, setShowNav] = useState(0);
   const toggle = () => setShowNav(Number(!showNav));
@@ -43,10 +43,10 @@ function Layout({ children, ...rest }) {
     
         <>
           <GridNav>
-            <Navbar visible={showNav} close={toggle} />
+            <Navbar title={title} visible={showNav} close={toggle} />
           </GridNav>
           <GridHeader>
-            <Header toggle={toggle} />
+            <Header title = {title} file={file} toggle={toggle} />
           </GridHeader>
         </>
     

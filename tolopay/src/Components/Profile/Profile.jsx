@@ -5,11 +5,10 @@ import {TabContext, TabList, TabPanel} from '@mui/lab'
 import {Tab,Box }from '@mui/material'
 import Edit from "./Edit";
 import ChangePassword from "./ChangePassword";
-import Budget from "../../Pages/budget_page/Budget";
+ 
  
 
-function Profile() {
-   const [file, setFile] = useState("");
+function Profile({file,handle}) {
    const [value, setValue] = useState('1')
    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue)
@@ -40,7 +39,7 @@ function Profile() {
                />
             </div>
                 <div className="changeImg"><label htmlFor="file"><CameraAltIcon/></label></div>
-                <input type="file" id="file" onChange={(e) => setFile(e.target.files[0])} style={{display: "none"}}/>
+                <input type="file" id="file" onChange={handle} style={{display: "none"}}/>
             </div>
             <Name>Sumeya Ibrahim</Name>
             <Phone>0910602110</Phone>

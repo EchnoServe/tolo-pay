@@ -59,7 +59,7 @@ function Navbar(props) {
       <Backdrop visible={props.visible} onClick={props.close} />
       <StyledNav compact={compact} {...props}>
         <Logo compact={compact} />
-        <NavLinksGroup compact={compact} />
+        <NavLinksGroup title={props.title} compact={compact} />
         <NavLink
           compact={compact}
           to="/profile"
