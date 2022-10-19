@@ -16,9 +16,7 @@ export const ForgotPassword = props => {
         api.post('/users/forgot-password', {
             email: values.email
         }).then(response => {
-            if (response.data.message === 'success') {
-                props.sentStatus(true);
-            } 
+            props.sentStatus(response.data.message);
             console.log(response.data);
         }).catch(error => console.log(error));
         
