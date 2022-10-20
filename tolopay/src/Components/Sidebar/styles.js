@@ -7,7 +7,7 @@ import { v,Colors } from "../../Utils/variables";
 //sidebar container style
 export const SSidebar = styled.div`
     margin-top: -7px;
-    margin-left: -7px;
+    
     z-index: 4000;
     
     width: 52px;
@@ -74,7 +74,7 @@ export const SLinkContainer = styled.div`
     background: ${({ theme, isActive }) => (!isActive ? `transparent` :Colors.accentColor)};
     color: ${({ theme, isActive }) => (!isActive ? `#000` : `#fff`)};
     border-radius: ${v.borderRadius};
-    margin-left: -21px;
+    margin-left: -30px;
     
 
     :hover {
