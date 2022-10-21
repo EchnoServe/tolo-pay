@@ -33,21 +33,18 @@ const [open, setOpen] = React.useState(false);
   const handleToClose = () => {
     setOpen(false);
   };
-  const [passwordShown, 
-    // setPasswordShown
-  ] = useState(false);
+ 
 
   const [values, setValues] = useState({
     phoneNumber: "",
     amount: "",
     remark: "",
-    password: "",
+    
   });
 
-  const handlePhoneNumber = (event) => {
-    setValues({ ...values, phoneNumber: event.target.value });
+ const handlePhoneNumber = (event) => {
+    setValues({ ...values, amount: event.target.value });
   };
-
   const handleAmount = (event) => {
     setValues({ ...values, amount: event.target.value });
   };
@@ -81,7 +78,7 @@ const [open, setOpen] = React.useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(values);
+    // console.log(data);
     makePostRequest(values);
   };
 
@@ -110,7 +107,7 @@ const [modal2, setModal2] = useState(false);
     
 // const [btnDisabled, setBtnDisabled] = useState(true)
 const [modal, setModal] = useState(false);
-const [data, setData] = useState('No result');
+const [decodedData, setdecodedData] = useState('No result');
   const toggleModal = () => {
     setModal(!modal);
   };
@@ -149,7 +146,10 @@ const [data, setData] = useState('No result');
                     
           onResult={(result, error) => {
           if (!!result) {
-            setData(result?.text);
+            setdecodedData(result?.text);
+
+      setValues({ ...values, phoneNumber: result?.text });
+
           }
 
           if (!!error) {
@@ -169,8 +169,8 @@ const [data, setData] = useState('No result');
               
                 style={{fontSize:18, width:400, height:100, marginTop:20}}
                 rowsMax={4}
-                defaultValue={data}
-                value={data} 
+                defaultValue={decodedData}
+                value={decodedData} 
             />  
             <div>
             <div className="proceed-btn">
@@ -186,11 +186,11 @@ const [data, setData] = useState('No result');
                                       <ul>
                                       <li><textarea 
                                       
-                                      value={data}
-                                      defaultValue={data}
+                                      value={decodedData}
+                                      defaultValue={decodedData}
                                             
                                            
-                                      >{data}</textarea></li>
+                                      ></textarea></li>
                                       <li><input onChange={handleAmount}
                                             value={values.amount}
                                             className="form-field"

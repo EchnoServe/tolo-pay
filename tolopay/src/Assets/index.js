@@ -5,7 +5,7 @@ import question from "./question.png";
 import settings from "./settings.png";
 import user from "./user.png";
 import envelope from "./envelope.png";
-import tologo from "./newlogo.svg";
+import tologo from "./user.png";
 import logof from "./logo-f.svg";
 import messageIcon from "./m2.png";
 
