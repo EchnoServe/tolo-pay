@@ -10,7 +10,7 @@ import Layout from "./Components/Layout/Layout";
 import Dashboard from "./Components/Dashboard/components/Dashboard";
 import BottomNavbar from "./Components/BottomNav/BottomNavbar";
 import WalletToWallet from "./Components/walletToWallet/WalletToWallet";
-import Budget_form from "./Pages/budget_page/BudgetForm";
+import BudgetForm from "./Pages/budget_page/BudgetForm";
 import Budget from "./Pages/budget_page/Budget";
 import QR from "./Pages/qr/Qr";
 import QrPage from "./Pages/qr/QrPage";
@@ -74,7 +74,7 @@ const App = () => {
                     <Route index element={ <Dashboard /> } />
                     <Route path="dashboard" element={ <Dashboard /> } />
                     <Route path="transfer" element={ <WalletToWallet /> } />
-                    <Route path="budgetform" element={ <Budget_form /> } />
+                    <Route path="budgetform" element={ <BudgetForm /> } />
                     <Route path="planning" element={ <Budget /> } />
                     <Route path="qr" element={ <QR /> } />
                     <Route path="qrpage" element={ <QrPage /> } />
