@@ -1,22 +1,59 @@
 import React from 'react'
 import styled from 'styled-components';
- 
+import { useForm } from "react-hook-form";
+
  
 
 export default function Edit() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    trigger,
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
   return (
     <div>
      <Title>Personal details</Title>
-     <Form>
+     <Form onSubmit={handleSubmit(onSubmit)}>
      <Input>
      <InputWrap>
      <Label>First Name</Label>
-     <input className='inputMargin' placeholder='Sumeya' type='text'/>
+     <input  placeholder='Sumeya' type='text' 
+      className={`form-control ${errors.email && "invalid"}`}
+                {...register("firstName", { required: "FirstName is Required" ,
+                pattern: {
+                value: /^[A-Za-z]/,
+                message: "Invalid input name must only contain letters",
+                }})}
+                onKeyUp={() => {
+                  trigger("firstName");
+                }}/>
+                  {errors.firstName && (
+                <small className="text-danger">{errors.firstName.message}</small>
+              )}
      </InputWrap>
 
      <InputWrap>
      <Label>Last Name</Label>
-     <input placeholder='Ibrahim' type='text'/>
+     <input placeholder='Ibrahim' type='text' 
+      className={`form-control ${errors.email && "invalid"}`}
+      {...register("lastName", { required: "LastName is Required" ,
+      pattern: {
+      value: /^[A-Za-z]/,
+      message: "Invalid input name must only contain letters",
+      }})}
+      onKeyUp={() => {
+        trigger("lastName");
+      }}/>
+       {errors.lastName && (
+                <small className="text-danger">{errors.lastName.message}</small>
+              )}
      </InputWrap>
      
      </Input> 
@@ -25,12 +62,37 @@ export default function Edit() {
      <Input>
      <InputWrap>
      <Label>Phone Number</Label>
-     <input className='inputMargin' placeholder='0910602110' type='text'/>
+     <input  placeholder='0910602110' type='number'
+       className={`form-control ${errors.phone && "invalid"}`}
+       {...register("phone", { required: "Phone  number is Required",
+       pattern: {
+         value: /^\s*(?:\+?(\d[09]))[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{2})(?: *x(\d+))?\s*$/,
+         message: "Invalid phone number",
+       },
+      })}
+      onKeyUp={() => {
+       trigger("phone");
+     }}/>
+     {errors.phone && (
+                <small className="text-danger">{errors.phone.message}</small>
+              )}
      </InputWrap>
 
      <InputWrap>
      <Label>Email</Label>
-     <input placeholder='sumei295@gmail.com' type='Email'/>
+     <input placeholder='sumei295@gmail.com' type='Email'
+      className={`form-control ${errors.email && "invalid"}`}
+      {...register("email", { required: "Email address is Required" ,
+      pattern: {
+      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+      message: "Invalid email address",
+      }})}
+      onKeyUp={() => {
+        trigger("email");
+      }}/>
+      {errors.email && (
+                <small className="text-danger">{errors.email.message}</small>
+              )}
      </InputWrap>
      
      </Input> 
@@ -39,12 +101,35 @@ export default function Edit() {
      <Input>
      <InputWrap>
      <Label>Username</Label>
-     <input className='inputMargin' placeholder='@sumeya' type='text'/>
+     <input  placeholder='@sumeya' type='text' 
+     className={`form-control ${errors.user && "invalid"}`}
+     {...register("user", { required: "User name is Required",
+    })}
+    onKeyUp={() => {
+      trigger("user");
+    }}
+     />
+      {errors.user && (
+                <small className="text-danger">{errors.user.message}</small>
+              )}
      </InputWrap>
 
      <InputWrap>
      <Label>City</Label>
-     <input placeholder='Addis Ababa ' type='text'/>
+     <input placeholder='Addis Ababa ' type='text'
+     className={`form-control ${errors.city && "invalid"}`}
+     {...register("city", { required: "City name is Required",
+     pattern: {
+      value: /^[A-Za-z]/,
+      message: "Invalid input name must only contain letters",
+      } })}
+    onKeyUp={() => {
+      trigger("city");
+    }}
+     />
+      {errors.city && (
+                <small className="text-danger">{errors.city.message}</small>
+              )}
      </InputWrap>
      
      </Input> 
@@ -81,8 +166,19 @@ border-radius: 3px;
 width: 130%;
 outline: none;
 }
+.invalid {
+    border:1px solid red !important;
+   }
+   input, textarea {
+    outline: none !important;
+    box-shadow: none !important; 
+    
+  }
 
-.inputMargin{
+.required{
+    color: red;
+}
+.form-control{
   margin-bottom: 10px;
 }
 
@@ -112,7 +208,7 @@ gap: 10px;
 
 const Input = styled.div`
 margin-top: 10px;
-display: flex; 
+display: flex;
 align-items: flex-start;
 gap: 100px;
 /* padding: 5px; */
