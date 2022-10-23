@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import logo from '../../Assets/pana.png'
- 
+import WalletToWallet from "../../Components/walletToWallet/WalletToWallet";
+//  import PayBills from "../../Components/paybills/PayBills";
 
 function Transfer() {
-   
-   
+   const [isPay, setIsPay] = useState(false);
+   const [isWallet, setIsWallet] = useState(false);
+   const [value, setValue] = useState("1")
+   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    setValue(newValue)
+   }
+
+
+
 
   return (
     
@@ -19,14 +27,15 @@ function Transfer() {
             <div className='containImg'>
            
             <BtnWrapper>
-             <Button>Pay Bills</Button>
+             <Button  onClick={()=>setIsPay(!isPay)}>Pay Bills</Button>
                 </BtnWrapper>
             </div>
             
             <div className='containImg'>
            
             <BtnWrapper>
-             <Button>Wallet Transfer</Button>
+             <Button  onClick={()=>setIsWallet(!isWallet)}>Wallet Transfer</Button>
+            
                 </BtnWrapper>
             </div>
 
@@ -37,14 +46,22 @@ function Transfer() {
                 </BtnWrapper>
             </div>
 
+            <div className='containImg'>
+           
+           <BtnWrapper>
+            <Button>Bill Split</Button>
+               </BtnWrapper>
+           </div>
             </Profile>
           
           </ColumnOne1>
 
           <ColumnTwo1>
-             <Setting>
-             <img src={logo} alt="Logo" />
-             </Setting>
+          {isWallet ? <WalletToWallet/>  :<Setting >
+
+            <img src={logo} alt="Logo" />
+                </Setting> }
+                
           </ColumnTwo1>
         </SectionOne> 
       </SubContainer>
@@ -132,7 +149,7 @@ flex-direction:column;
   justify-content:center;
   align-items:center;
   height: 100%;
-  width: 18rem;
+  width: 30rem;
   background-color: rgba(58, 135, 190,0.1);
   color: #000;
   transition: 0.4s ease-in-out;
@@ -179,10 +196,6 @@ align-items: center;
   transition: 0.4s ease-in-out;
   color: #000;
 
-  img{ 
-    height: 400px
-  }
-
   
   @media screen and (min-width: 320px) and (max-width: 1080px) {
     height: max-content;
@@ -200,7 +213,7 @@ const BtnWrapper = styled.div`
  `;
 
 const Button = styled.button`
-margin-top: 16px;
+margin-top: 5px;
 border-radius: 4px;
 border: none;
 width: 200px;
