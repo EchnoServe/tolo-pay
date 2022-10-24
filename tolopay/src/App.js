@@ -17,7 +17,6 @@ import RecieveModal from "./Pages/qr/RecieveModal";
 import Send from "./Pages/qr/Send";
 import UserProfile from "./Pages/UserProfile";
 
-import QRscanner from "./Pages/qr/QRscanner";
 import { Context } from "./context/Context";
 import { darkTheme, lightTheme } from "./Utils/theme";
 import Chatbot from "./Components/chatbot/Chatbot";
