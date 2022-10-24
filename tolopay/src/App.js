@@ -12,8 +12,7 @@ import BottomNavbar from "./Components/BottomNav/BottomNavbar";
 import WalletToWallet from "./Components/walletToWallet/WalletToWallet";
 import BudgetForm from "./Pages/budget_page/BudgetForm";
 import Budget from "./Pages/budget_page/Budget";
-import QR from "./Pages/qr/Qr";
-import QrPage from "./Pages/qr/QrPage";
+import QR from "./Pages/qr/QrPage";
 import RecieveModal from "./Pages/qr/RecieveModal";
 import Send from "./Pages/qr/Send";
 import UserProfile from "./Pages/UserProfile";
@@ -77,7 +76,6 @@ const App = () => {
                     <Route path="budgetform" element={ <BudgetForm /> } />
                     <Route path="planning" element={ <Budget /> } />
                     <Route path="qr" element={ <QR /> } />
-                    <Route path="qrpage" element={ <QrPage /> } />
                     <Route path="recieve" element={ <RecieveModal /> } />
                     <Route path="send" element={ <Send />} />
                     <Route path="profile" element={ <UserProfile /> } />
