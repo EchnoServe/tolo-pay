@@ -80,10 +80,6 @@ const App = () => {
                     <Route path="profile" element={ <UserProfile /> } />
                     <Route path="chatbot" element={ <Chatbot /> } />
                     <Route path="message" element={<Message />} />
-                    
-                    <Route path="scan" element={<QRscanner />} />
-                    
-                    
 
             </Route>
           </Routes>
