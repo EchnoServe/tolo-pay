@@ -10,7 +10,7 @@ export const Para = styled.p`
     font-family: ${font};
 `;
 export const Pwarning = styled.p`
-    font-size: small;
+    font-size: x-small;
     font-family: ${font};
     color: red;
 
@@ -127,7 +127,6 @@ export const Email = FormStyle;
 export const Password = FormStyle;
 export const Warning = styled.div`
     width: 300px;
-    height: 18px;
     padding-left: 9px;
 `;
 

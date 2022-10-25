@@ -7,18 +7,18 @@ padding: 2;
 display: flex;
 flex-direction: column;
 align-items: center;
-margin: 1px 6px;
+/* margin: 1px 6px; */
 color: rgb(39, 39, 39);
 
 border-radius: 3px;
 width: 300px;
 height: 42px;
-margin-top: 2px;
+/* margin-top: 2px; */
 padding: 1px 6px;
 
 &:focus {
 outline: rgba(98, 131, 98, 0.911) solid 1px;
-border: none;
+border: rgba(98, 131, 98, 0.911) solid .5px;
 }`;
 
 export const Loading = styled.div`
