@@ -2,6 +2,7 @@
 import { useState ,useContext} from "react";
 import styled from "styled-components";
 import React from "react";
+import { useForm } from "react-hook-form";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -22,6 +23,20 @@ const WalletToWallet = () => {
   const { token ,user ,dispatch} = useContext(Context);
 
   
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    trigger,
+  } = useForm();
+
+  const onSubmit = (data,values) => {
+    console.log(data);
+    event.preventDefault();
+    makePostRequest(data);
+    reset();
+  }; 
 
   const handleClickToOpen = (event) => {
     event.preventDefault();
@@ -34,24 +49,15 @@ const WalletToWallet = () => {
   };
 
   const [values, setValues] = useState({
-    phoneNumber: "",
-    amount: "",
     remark: "",
     password: "",
   });
 
-  const handlePhoneNumber = (event) => {
-    setValues({ ...values, phoneNumber: event.target.value });
-  };
-
-  const handleAmount = (event) => {
-    setValues({ ...values, amount: event.target.value });
-  };
 
   const handleRemark= (event) => {
     setValues({ ...values, remark: event.target.value });
   };
-  async function makePostRequest(values) {
+  async function makePostRequest(values,data) {
     try {
       const res = await axios.post(
         "http://localhost:8000/api/v1/transaction/transfer",
@@ -74,31 +80,41 @@ const WalletToWallet = () => {
     }
   }
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log(values);
-    makePostRequest(values);
-  };
-
   return (
     <Section>
       <div className="walletToWallet">
         <form className="moneyTransfer" >
           <h3>wallet to wallet</h3>
           <input
-            onChange={handlePhoneNumber}
-            value={values.phoneNumber}
-            className="form-field"
-            placeholder="phone number"
-            name="phoneNumber"
-          />
-          <input
-            onChange={handleAmount}
-            value={values.amount}
-            className="form-field"
-            placeholder="Amount"
-            name="amount"
-          />
+                placeholder="Customer Phone Nmber"  
+                className={`form-control ${errors.phone && "invalid"}`}
+                 {...register("phone", { required: "Phone  number is Required",
+                 pattern: {
+                   value: /^\s*(?:\+?(\d[09]))[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{2})(?: *x(\d+))?\s*$/,
+                   message: "Invalid phone number",
+                 },
+                })}
+                onKeyUp={() => {
+                 trigger("phone");
+               }}/>
+                     {errors.phone && (
+                <small className="text-danger">{errors.phone.message}</small>
+              )}
+         <input
+                placeholder="Amount"
+                className={`form-control ${errors.amount && "invalid"}`}
+                {...register("amount", { required: "Amount is Required",
+                pattern: {
+                  value: /^([1-9][0-9]*)$/,
+                  message: "Invalid Amount",
+                },
+               })}
+               onKeyUp={() => {
+                trigger("amount");
+              }}/>
+                    {errors.amount && (
+               <small className="text-danger">{errors.amount.message}</small>
+             )}
 
           <select className="option" id="remark" onChange={handleRemark}>
      
@@ -122,7 +138,7 @@ const WalletToWallet = () => {
 		</DialogContentText>
 		</DialogContent>
 		<DialogActions>
-    <TransferBtn onClick={handleSubmit}>Transfer</TransferBtn>
+    <TransferBtn onClick={handleSubmit(onSubmit)}>Transfer</TransferBtn>
 		<CancelBtn onClick={handleToClose}
 				color="primary" autoFocus>
 			close

@@ -64,8 +64,8 @@ const Budget_form = (props) => {
                   trigger("remarke");
                 }}
               ></input>
-                  {errors.firstName && (
-                <small className="text-danger">{errors.firstName.message}</small>
+                  {errors.remark && (
+                <small className="text-danger">{errors.remark.message}</small>
               )}
              <input
               type="number"
@@ -77,8 +77,8 @@ const Budget_form = (props) => {
                 trigger("amount");
               }}
             ></input>
-              {errors.phone && (
-                <small className="text-danger">{errors.phone.message}</small>
+              {errors.amount && (
+                <small className="text-danger">{errors.amount.message}</small>
               )}
             
             <Button
