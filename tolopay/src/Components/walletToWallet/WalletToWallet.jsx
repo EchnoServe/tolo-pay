@@ -33,7 +33,6 @@ const WalletToWallet = () => {
 
   const onSubmit = (data,values) => {
     console.log(data);
-    event.preventDefault();
     makePostRequest(data);
     reset();
   }; 
