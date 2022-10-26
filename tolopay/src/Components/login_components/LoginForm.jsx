@@ -37,6 +37,7 @@ const LoginForm =  (props) => {
          
           } catch (error) {
             console.log(error)
+            props.setError("Email and Password don't match");
             dispatch({ type: "FAILED" });
             handleLoading(false);
           }
