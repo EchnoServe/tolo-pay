@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import logo from '../../Assets/pana.png'
 import Bills from "./Bills";
 import ToBank from "./ToBank";
 import ToWallet from "./ToWallet";
@@ -8,7 +7,7 @@ import ToWallet from "./ToWallet";
 
 function Transfer() {
    
-const [active, setActive] = useState("picture");
+const [active, setActive] = useState("ToWallet");
    
 
   return (
@@ -18,26 +17,30 @@ const [active, setActive] = useState("picture");
       <SubContainer>
         <SectionOne>
           <ColumnOne1>
-            <Transfers> 
+            <Transfers active={active}> 
 
             <div className='containImg'>
-           
-            <BtnWrapper>
-             <Button onClick={() => setActive("PayBills")}>Pay Bills</Button>
+
+           <Title>Transfer Options</Title>
+
+           <BtnWrapper>
+             <Button className = "towallet" onClick={() => setActive("ToWallet")}>Wallet Transfer</Button>
             </BtnWrapper>
+
+            
             </div>
             
             <div className='containImg'>
-           
             <BtnWrapper>
-             <Button onClick={() => setActive("ToWallet")}>Wallet Transfer</Button>
+             <Button className = "paybills" onClick={() => setActive("PayBills")}>Pay Bills</Button>
             </BtnWrapper>
+            
             </div>
 
             <div className='containImg'>
            
             <BtnWrapper>
-             <Button onClick={() => setActive("ToBank")}>Bank Transfer</Button>
+             <Button className = "tobank" onClick={() => setActive("ToBank")}>Bank Transfer</Button>
             </BtnWrapper>
             </div>
 
@@ -47,13 +50,10 @@ const [active, setActive] = useState("picture");
 
           <ColumnTwo1>
              <Form>
-        {active === "picture" &&  <img src={logo} alt="Logo" />}
-        {active === "PayBills" &&   <Bills/>}
-        {active === "ToWallet" &&   <ToWallet/>}
-        {active === "ToBank" &&   <ToBank/>}
-        
-            
-             
+           
+             {active === "PayBills" &&   <Bills/>}
+             {active === "ToWallet" &&   <ToWallet/>}
+             {active === "ToBank" &&   <ToBank/>}  
              </Form>
           </ColumnTwo1>
         </SectionOne> 
@@ -142,55 +142,73 @@ const Transfers = styled.div`
   color: #000;
   transition: 0.4s ease-in-out;
   border-radius: 4px;
+  border: 1px solid rgba(58, 135, 190, 0.3);  
+  position: relative;
+  .paybills{
+    background: ${({active}) => (active === 'PayBills' ? 'rgba(255, 255, 255, 0.7)' : '')};
+    color: ${({active}) => (active === 'PayBills' ? 'rgb(58, 135, 190)' : '')};  
+    border: ${({active}) => (active === 'PayBills' ? '2px solid  rgba(58, 135, 190, 0.5)' : '')};      
+  }
+
+  .towallet{
+    background: ${({active}) => (active === 'ToWallet' ? 'rgba(255, 255, 255, 0.7)' : '')};
+    color: ${({active}) => (active === 'ToWallet' ? 'rgb(58, 135, 190)' : '')};  
+    border: ${({active}) => (active === 'ToWallet' ? '2px solid  rgba(58, 135, 190, 0.5)' : '')};     
+  }
+
+  .tobank{
+    background: ${({active}) => (active === 'ToBank' ? 'rgba(255, 255, 255, 0.7)' : '')};
+    color: ${({active}) => (active === 'ToBank' ? 'rgb(58, 135, 190)' : '')};  
+    border: ${({active}) => (active === 'ToBank' ? '2px solid  rgba(58, 135, 190, 0.5)' : '')};   
+  }
 
 
-  p{
+
+
+      p{
           font-size: 14px;
           text-decoration: none;
           font-weight: 400;
         
         }
  
-
-
   @media screen and (min-width: 320px) and (max-width: 1080px) {
     width: 80%;
   }
+
     .containImg{  
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 0;
-            
+            margin: 0;       
     }
-
 `;
 
 
 const Form = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  background-color: rgba(58, 135, 190,0.1);
+  background-color: rgba(58, 135, 190,0.2);
   padding: 10px;
   transition: 0.4s ease-in-out;
   color: #000;
   border-radius: 4px;
+  border: 1px solid rgba(58, 135, 190, 0.3);  
 
   img{ 
     height: 400px;
   }
-
-  
+ 
   @media screen and (min-width: 320px) and (max-width: 1080px) {
     height: max-content;
     width: 80%;
     margin-top: 1rem;
   }
 `;
-
 
 const BtnWrapper = styled.div`
  display: flex;
@@ -217,10 +235,16 @@ text-align: center;
 border: 2px solid  rgba(58, 135, 190, 0.1); 
 
 
+
 &:hover{
- 
   background:rgba(58, 135, 190, 0.7);
   color: #fff;
+}
+
+&:active{
+  border: 2px solid  rgba(58, 135, 190, 0.5); 
+  background:rgba(255, 255, 255, 0.7);
+  color: rgb(58, 135, 190);
 }
 
 &:focus{
@@ -232,7 +256,15 @@ border: 2px solid  rgba(58, 135, 190, 0.1);
 
 `;
 
-
+const Title = styled.h4`
+position: absolute;
+font-size: 18px;
+text-decoration: none;
+font-weight: 600;
+color:rgb(41, 75, 90);
+top: 0px;
+margin-top: 20px;
+`;
 
 
 

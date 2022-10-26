@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import CameraAltIcon from '@mui/icons-material/CameraAlt';
- 
- 
- 
+import {Link as RLink} from 'react-router-dom'
  
 
 function Budget() {
@@ -14,7 +11,7 @@ function Budget() {
     <Container>
    
       <SubContainer>
-      <AddBudget><BtnWrapper> <Button>Add Budget</Button></BtnWrapper></AddBudget>
+      <AddBudget><BtnWrapper><Button to= "/addBudget">Add Budget</Button></BtnWrapper></AddBudget>
         <SectionOne>
        <ColumnOne1></ColumnOne1>
         
@@ -273,6 +270,9 @@ align-items: center;
 justify-content: center;
 color: rgba(0,0,0,0.8);
 background-color:white;
+border: 2px solid  rgba(58, 135, 190, 0.1); 
+
+
  
 @media (max-width: 768px) {
 width:170px;
@@ -354,7 +354,7 @@ const BtnWrapper = styled.div`
  
  `;
 
-const Button = styled.button`
+const Button = styled(RLink)`
 border-radius: 4px;
 border: none;
 width: 130px;
@@ -370,6 +370,13 @@ cursor: pointer;
 overflow: hidden;
 text-decoration: none;
 text-align: center;
+
+
+&:hover{
+  background: rgba(58, 135, 190, 0.7);
+}
+
+
 `;
 export default Budget;
 

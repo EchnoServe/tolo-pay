@@ -1,33 +1,87 @@
 import React from 'react'
 import styled from 'styled-components';
+import { useForm } from "react-hook-form";
+
  
  
 
 export default function ChangePassword() {
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    trigger,
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
+
   return (
     <div>
      <Title>Details</Title>
-     <Form>
+     <Form onSubmit={handleSubmit(onSubmit)}>
      <Input>
      <InputWrap>
      <Label>Enter old password</Label>
-     <input placeholder=' ' type='password'/>
+     <input placeholder=' ' type='password' 
+     className={`form-control ${errors.oldpassword && "invalid"}`}
+     {...register("oldpassword", { required: "Old password is Required",
+    })}
+    onKeyUp={() => {
+     trigger("oldpassword");
+   }}
+   />
+   {errors.oldpassword && (
+     <small className="text-danger">{errors.oldpassword.message}</small>
+   )}
      </InputWrap>
 
      <InputWrap>
      <Label>Enter new password</Label>
-     <input placeholder=' ' type='password'/>
+     <input placeholder=' ' type='password'
+     className={`form-control ${errors.message && "invalid"}`}
+     {...register("message", { required: "Password is Required",
+     minLength: {
+       value: 8,
+       message: "Minimum Required length is 8",
+     },
+     maxLength: {
+       value: 16,
+       message: "Maximum allowed length is 16 ",
+     }
+    })}
+    onKeyUp={() => {
+     trigger("message");
+   }}
+   />
+   {errors.message && (
+     <small className="text-danger">{errors.message.message}</small>
+   )}
      </InputWrap>
 
      <InputWrap>
      <Label>Confirm new password </Label>
-     <input placeholder=' ' type='password'/>
+     <input placeholder=' ' type='password'
+     className={`form-control ${errors.newpassword && "invalid"}`}
+     {...register("newpassword", { required: "Please confirm password",
+    })}
+    onKeyUp={() => {
+     trigger("newpassword");
+   }}
+   />
+   {errors.newpassword && (
+     <small className="text-danger">{errors.newpassword.message}</small>
+   )}
      </InputWrap>
      </Input> 
 
 
      <BtnWrapper>
-      <Button>Change</Button>
+      <Button type='submit'>Change</Button>
      </BtnWrapper>
 
      </Form>
@@ -70,19 +124,32 @@ input:focus{
   transition: border 0.3s ease;
 }
 
+.invalid {
+    border:1px solid red !important;
+   }
+   input, textarea {
+    outline: none !important;
+    box-shadow: none !important; 
+    
+  }
+
+  .text-danger{
+  color: red;
+}
+
 `;
 
 const  InputWrap = styled.div`
 display: flex;
 flex-direction: column;
-padding: 3px;
+padding: 0 3px 3px 3px;
 `;
 
 const Input = styled.div`
-margin-top: 10px;
+margin-top: 5px;
 display: block; 
 align-items: flex-start;
-padding: 5px;
+padding: 0px;
 
 
 @media screen and (min-width: 320px) and (max-width: 1080px){
@@ -115,6 +182,8 @@ const Label = styled.label`
   text-decoration: none;
   font-weight: 550;
   padding: 9px;
+  color:rgba(41, 75, 90,0.9);
+  
 
 `;
 
@@ -142,6 +211,11 @@ cursor: pointer;
 overflow: hidden;
 text-decoration: none;
 text-align: center;
+
+&:hover{
+  background: rgba(58, 135, 190, 0.7);
+}
+
 `;
 
 
