@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { Context } from "../../context/Context";//
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
@@ -39,8 +39,7 @@ position: relative;
     }
 `
 const Button = styled.button`
-color:#404550;
-border-color: #3a87be;
+color:#3b5998;
 cursor: pointer;
 justify-content: center;
 box-shadow: 0px 10px 20px rgba(0,0,0,0.1);

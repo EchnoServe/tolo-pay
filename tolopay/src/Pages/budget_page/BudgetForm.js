@@ -208,7 +208,7 @@ const Section = styled.section`
     button {
       color: white;
       cursor: pointer;
-      background: #3a87be;
+      background: #3b5998;
     }
     
     button:hover{
