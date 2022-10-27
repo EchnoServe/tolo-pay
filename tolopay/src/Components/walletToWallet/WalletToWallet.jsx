@@ -2,7 +2,7 @@ import { useState } from 'react';
 import React from 'react'
 import styled from 'styled-components'
 import {VscEyeClosed, VscEye} from 'react-icons/vsc';
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
 import {Form, Input, Select} from 'antd';
 
 const WalletToWallet = () => {

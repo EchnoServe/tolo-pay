@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import PasswordReset from '../Components/login_components/PasswordReset';
-import { CloseButton, Popup, PopupInner } from '../../Components/commonStyles';
+import { CloseButton, Popup, PopupInner } from '../Components/commonStyles';
 
 export const ResetPasswordPages = () => {
 
