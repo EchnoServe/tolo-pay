@@ -1,16 +1,10 @@
 // import { primary } from "../../Utils/colors";
 import "./createAccount.css";
 import { useForm } from "react-hook-form";
-import React, { 
-  // useState
- } from "react";
-import { useContext, 
-  // useRef
- } from "react";
+import React, {} from "react";
+import { useContext} from "react";
 import { Context } from "../../context/Context";//
-import { 
-  // Link, 
-  useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import api from '../../api/api'
 import Navbar from "../../Components/landingPage_component/Navbar";
  

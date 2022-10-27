@@ -27,7 +27,7 @@ const LoginForm =  (props) => {
           try {
             props.onChange(true);
             handleLoading(true);
-      
+        console.log(data)
             const res = await api.post("/users/login", {
               email: data.email,
               password:data.password
@@ -38,6 +38,7 @@ const LoginForm =  (props) => {
          
           } catch (error) {
             console.log(error)
+            props.setError("Email and Password don't match");
             dispatch({ type: "FAILED" });
             handleLoading(false);
           }

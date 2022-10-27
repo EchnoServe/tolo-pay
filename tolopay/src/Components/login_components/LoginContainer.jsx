@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif"
 
 // Login Box
-const LoginContainer = () => {
+const LoginContainer = props => {
 
     const navigate = useNavigate();
     const { dispatch } = useContext(Context);
@@ -35,7 +35,9 @@ const LoginContainer = () => {
         })
         .catch(err => {
             console.log(`errors: ${err}`);
+            props.onChange("Couldn't connect to third party app");
             dispatch({ type: "FAILED" });
+
         })
     }
 
@@ -96,7 +98,7 @@ const LoginContainer = () => {
         </Divider>
         
         {/* login form with a submit button */}
-        <LoginForm onChange={handleLoading}/>
+        <LoginForm onChange={handleLoading} setError={props.onChange} />
         
         <div>
             <Para >Don't have Account yet? <a href="/signup">Create Account Now</a></Para>

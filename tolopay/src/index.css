@@ -1,0 +1,9 @@
+body,
+html {
+  font-family: 'Inter' ,Roboto, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), url(./fonts/Inter-VariableFont_slnt,wght.ttf) format('truetype');
+}

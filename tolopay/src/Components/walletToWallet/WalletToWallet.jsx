@@ -4,12 +4,10 @@ import styled from "styled-components";
 import React from "react";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContentText from "@material-ui/core/DialogContentText";
-// import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-// import Button from "@material-ui/core/Button";
 import { 
-  // Link, 
+   
   useNavigate } from "react-router-dom";
 
 
@@ -34,9 +32,6 @@ const WalletToWallet = () => {
   const handleToClose = () => {
     setOpen(false);
   };
-  const [passwordShown, 
-    // setPasswordShown
-  ] = useState(false);
 
   const [values, setValues] = useState({
     phoneNumber: "",
@@ -53,9 +48,6 @@ const WalletToWallet = () => {
     setValues({ ...values, amount: event.target.value });
   };
 
-  const handlePassword = (event) => {
-    setValues({ ...values, password: event.target.value });
-  };
   const handleRemark= (event) => {
     setValues({ ...values, remark: event.target.value });
   };
@@ -116,16 +108,7 @@ const WalletToWallet = () => {
           })}
           </select>
 
-          <input
-            onChange={handlePassword}
-            value={values.password}
-            className="form-field"
-            placeholder="Password"
-            // type="password"
-            type={passwordShown ? "text" : "password"}
-            name="password"
-            required
-          />
+          
           <button className="btn"  onClick={handleClickToOpen}>
             Transfer
           </button>
@@ -159,7 +142,7 @@ width: 120px;
 height: 40px;
 margin: 10px;
 border: none;
-background-color: #41d3fe;
+background-color: rgba(58, 135, 190, 0.7);
 color: white;
 border-radius: 0px;
 font-size: 18px;
@@ -191,7 +174,7 @@ const Section = styled.section`
 
       h3 {
         text-align: center;
-        text-decoration: 2.5px underline #46833c;
+        text-decoration: 2.5px underline rgba(58, 135, 190, 0.7);
         text-underline-offset: 8px;
       }
 
@@ -209,7 +192,7 @@ const Section = styled.section`
       margin: 10px 0 10px 0;
       padding: 15px;
       font-size: 16px;
-      border: 2px solid #41d3fe;
+      border: 2px solid rgba(58, 135, 190, 0.7);
     }
 
     .option:hover {
@@ -217,7 +200,7 @@ const Section = styled.section`
       margin: 10px 0 10px 0;
       padding: 15px;
       font-size: 16px;
-      border: 2px solid #6977fe;
+      border: 2px solid rgba(58, 135, 190, 0.7);
     }
 
     .form-field {
@@ -225,7 +208,7 @@ const Section = styled.section`
       padding: 15px;
       font-size: 16px;
       border-style: solid;
-      border-color: #41d3fe;
+      border-color: rgba(58, 135, 190, 0.7);
     }
 
     .form-field:hover {
@@ -262,19 +245,19 @@ const Section = styled.section`
       right: 16%;
     }
     i:hover {
-      color: #00fcb6;
+      color: rgba(58, 135, 190, 0.7);
       cursor: pointer;
     }
 
     button {
-      background: #46833c;
+      background: rgba(58, 135, 190, 0.7);
       color: white;
       cursor: pointer;
-      background: linear-gradient(to right bottom, #41d3fe, #6977fe);
+      background: rgba(58, 135, 190, 0.7);
     }
 
     button:hover {
-      background: #6977fe;
+      background: rgba(58, 135, 190, 0.7);
     }
 
     button:disabled {

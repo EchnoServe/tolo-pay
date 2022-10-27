@@ -17,18 +17,18 @@ padding: 2;
 display: flex;
 flex-direction: column;
 align-items: center;
-margin: 1px 6px;
+/* margin: 1px 6px; */
 color: rgb(39, 39, 39);
 
 border-radius: 3px;
 width: 300px;
 height: 42px;
-margin-top: 2px;
+/* margin-top: 2px; */
 padding: 1px 6px;
 
 &:focus {
 outline: rgba(98, 131, 98, 0.911) solid 1px;
-border: none;
+border: rgba(98, 131, 98, 0.911) solid .5px;
 }`;
 
 export const Form = styled.form`
@@ -100,4 +100,39 @@ export const Loading = styled.div`
     width:0%;
   }
 }
+`;
+
+export const Popup = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0, 0.2);
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+`;
+
+export const PopupInner = styled.div`
+  position: relative;
+  padding: 24px;
+  width: 100%;
+  height: 150px;
+  border-radius: 9px;
+  max-width: 400px;
+  background-color: white;
+`;
+
+export const CloseButton = styled.div`
+  width: 90px;
+  border: 1px solid #90909060;
+  padding: 3px;
+  cursor: pointer;
+
+  ${PopupInner} {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
 `;
