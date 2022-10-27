@@ -18,7 +18,10 @@ export const ForgotPassword = props => {
         }).then(response => {
             props.sentStatus(response.data.message);
             console.log(response.data);
-        }).catch(error => console.log(error));
+        }).catch(error => {
+            console.log(error)
+            props.sentStatus('error')
+        });
         
     }
 

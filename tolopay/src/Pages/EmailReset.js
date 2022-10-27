@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CloseButton, Popup, PopupInner } from '../Components/commonStyles';
 import ForgotPassword from '../Components/login_components/ForgotPassword';
 
 export const ResetPasswordPages = () => {
@@ -16,6 +17,19 @@ export const ResetPasswordPages = () => {
     {
       sent === '' ?
       <>
+      {
+        sent === 'error' ?
+        <Popup onChange={sentStatus}>
+          <PopupInner>
+            <h2>
+              Couldn't find your account
+            </h2>
+            <p>Please recheck your inputs and try again!</p>
+            <CloseButton onClick={() => sentStatus('')} >Close</CloseButton>
+          </PopupInner>
+          
+        </Popup> : ''
+      }
         {form}
       </>
       : (

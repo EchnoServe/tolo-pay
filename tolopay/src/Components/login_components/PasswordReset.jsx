@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Container, FormStyle, Form, Button } from '../commonStyles';
 
 import api from '../../api/api';
 
 const PasswordReset = props => {
+    const navigate = useNavigate();
 
     const { handleSubmit, register, watch ,formState: { errors } } = useForm();
     const onSubmit = values => {
@@ -18,8 +19,11 @@ const PasswordReset = props => {
             }
         ).then(response => {
             console.log(response);
-            <Link to='/login' />
-        }).catch(error => console.log(error));
+            navigate('/login');
+        }).catch(error => {
+            console.log(error)
+            props.onChange('error')
+        });
         // console.log(values);
     }
 
