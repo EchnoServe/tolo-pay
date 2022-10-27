@@ -12,7 +12,7 @@ function createData(name, card_expiration_date, last_three_digits){
 }
 
 const data = [
-  createData('Abebe Kebede', '15/25', '455' ),
+  createData('Abebe Kebede', '15/25', 543 ),
 
 ];
 
@@ -42,7 +42,7 @@ const VirtualCard = () => {
                             ***
                         </div>
                         <div className="number-group number-group-3">
-                            {data.last_three_digits}
+                            {value.last_three_digits}
                         </div>
                         </div>
                         <div className="card_detailes">
@@ -98,17 +98,16 @@ const Section = styled.section`
   }
 
   .scene{
-    width: 90%;
-    max-width: 25rem;
+    width: 100%;
+    max-width: 35.9rem;
     height: 19rem;
     margin-left: 0 auto;
-    perspective: 1000px;
   }
 
   .card{
     width: 100%;
     height: 100%;
-    position: relative;
+    // position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
     margin: 0 auto;
@@ -251,8 +250,13 @@ const Section = styled.section`
     }
     .card{
         margin-left: 0rem;
-        width: 32rem;
+        width: 24rem;
+        height: 15rem;
     }  
+
+    .card_number{
+      margin-top: 2rem;
+    }
 
     
 
