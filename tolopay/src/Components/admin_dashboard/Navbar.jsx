@@ -17,6 +17,7 @@ const StyledNav = styled.nav`
   height: 100vh;
   position: sticky;
   top: 0;
+  
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -37,6 +38,7 @@ const StyledNav = styled.nav`
   }
   @media (max-width: 920px) {
     position: fixed;
+
     width: 256px;
     transform: translate3d(
       ${(p) =>

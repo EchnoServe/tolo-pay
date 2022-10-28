@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import logo from '../../Assets/pana.png'
-import ToWallet from "./ToWallet";
-import ToBank from "./ToBank";
-import Bills from "./Bills";
+import logo from '../../Assets/qr2.jpg'
+import Send from "./Send";
+import Recieve from "./Recieve";
 
-function Transfer() {
+
+function Qrcode() {
    
   const [ active, setActive] = useState("picture"); 
 
@@ -21,22 +21,20 @@ function Transfer() {
             <div className='containImg'>
            
             <BtnWrapper>
-             <Button onClick={()=> setActive("Bills")}>Pay Bills</Button>
+             <Button onClick={()=> setActive("Send")}>Send Money</Button>
                 </BtnWrapper>
             </div>
             
             <div className='containImg'>
            
             <BtnWrapper>
-             <Button onClick={()=> setActive("ToWallet")}>Wallet Transfer</Button>
+             <Button onClick={()=> setActive("Recieve")}>Recieve Payment</Button>
                 </BtnWrapper>
             </div>
 
             <div className='containImg'>
            
-            <BtnWrapper>
-             <Button onClick={()=> setActive("ToBank")}>Bank Transfer</Button>
-                </BtnWrapper>
+            
             </div>
 
             </Profile>
@@ -47,9 +45,10 @@ function Transfer() {
              <Setting>
 
             {active === "picture" && <img src={logo} alt="Logo" />}
-            {active === "Bills" && <Bills/>}
-            {active === "ToWallet" && <ToWallet/>}
-            {active === "ToBank" &&  <ToBank/>}
+            {active === "Send" && <Send/>}
+            {active === "Recieve" && <Recieve/>}
+            
+            
              </Setting>
           </ColumnTwo1>
         </SectionOne> 
@@ -214,7 +213,7 @@ background:rgb(58, 135, 190);
 white-space: nowrap;
 padding: 20px 22px;
 margin-left: 0;
-font-size: 17px;
+font-size: 15px;
 font-weight: 600;
 color: #fff;
 outline: none;
@@ -230,4 +229,4 @@ text-align: center;
 
 
 
-export default Transfer;
+export default Qrcode;

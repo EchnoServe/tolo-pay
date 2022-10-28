@@ -4,6 +4,8 @@ import Layout from './Components/admin_dashboard/Layout';
 import Profile from './Components/Profile/Profile';
 import Budget from './Pages/budget_page/Budget'
 import Transfer from './Pages/transfer/Transfer'
+import QrCode from "./Pages/qr/QrCode";
+
 import { useState } from 'react';
  
 
@@ -37,6 +39,9 @@ function App() {
         <Route path="/profile" exact element = {<Profile file={file} handle={handle}/>}/>
         <Route path="/budget" exact element = {<Budget/>}/>
         <Route path="/transfer" exact element = {<Transfer/>}/>
+        <Route path="/qr" exact element = {<QrCode/>}/>
+        
+
 
 
 
