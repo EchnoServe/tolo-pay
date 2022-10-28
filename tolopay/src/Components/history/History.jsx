@@ -28,7 +28,7 @@ export default function DataTable() {
       columns={userColumns}
       pageSize={7}
       rowsPerPageOptions={[7]}
-      checkboxSelection
+      
     />
     </Container>
     }
@@ -41,7 +41,7 @@ export default function DataTable() {
      columns={userColumnsReceived}
      pageSize={7}
      rowsPerPageOptions={[7]}
-     checkboxSelection
+     
    />
    </Container>
    
