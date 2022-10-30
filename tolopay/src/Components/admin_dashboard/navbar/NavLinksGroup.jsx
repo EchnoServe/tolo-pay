@@ -6,6 +6,7 @@ import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import DonutSmallIcon from '@mui/icons-material/DonutSmall';
 import QrCodeScannerIcon from '@mui/icons-material/QrCodeScanner';
 import SafetyDividerIcon from '@mui/icons-material/SafetyDivider';
+import HistoryIcon from '@mui/icons-material/History';
 
 const LinksGroup = styled.div`
   display: flex;
@@ -71,6 +72,11 @@ const links = [
     to: "/split",
     icon: <SafetyDividerIcon className="i" />,
     label: "Split Bill",
+  },
+  {
+    to: "/history",
+    icon: <HistoryIcon className="i" />,
+    label: "History",
   },
 ];
 

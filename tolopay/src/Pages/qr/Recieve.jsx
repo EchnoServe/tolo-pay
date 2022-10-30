@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 import QRcode from 'qrcode.react';
 import React, {useState, useContext} from 'react'
@@ -49,40 +48,29 @@ const Div = styled.div`
 height: 400px;
 width: 800px;
 display: flex;
-
 justify-content: center;
 align-items: center;
-
 @media (max-width: 1250px){
   height: 600px;
    }
    
-
-
 `;
 const GeneratedQr = styled.div`
-
-
 display: flex;
 width: 100%;
 @media (max-width: 1250px){
   
    display: block;
    }
-
 `;
 
 
 const UserInfo = styled.div`
-
 width: 70%;
 text-align: center;
 height: 150px;
-
 background-color: #fff;
 color: #1d1e22;
-
-
 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 border-radius: 10px;
 margin-top: 90px;
@@ -95,7 +83,6 @@ margin-bottom: 140px;
   
    width: 25%;
    }
-
    @media (max-width: 1250px){
   
    display: flex;
@@ -118,13 +105,9 @@ margin-bottom: 140px;
    @media (max-width: 580px){
    margin-left: 10px;
    }
-
-
-
 `;
 
 const QrCodeValues = styled.div`
-
 @media (max-width: 1250px){
   
    margin-top: -120px;
@@ -143,7 +126,6 @@ margin-left: 30px;
    @media (max-width: 580px){
    margin-left: 30px;
    }
-
 @media (max-width: 580px){
    margin-left: 10px;
    }
@@ -151,7 +133,6 @@ margin-left: 30px;
 
 
 const Name = styled.div`
-
 margin-top: 40px;
 letter-spacing: 2.4px;
 font-weight: 500;
@@ -164,8 +145,6 @@ color: #B10DC9;
  @media (max-width: 1082px){
    margin-top: 30px;
    }
-
-
 `;
 
 
@@ -182,5 +161,4 @@ color: #B10DC9;
    @media (max-width: 1082px){
    margin-top: 30px;
    }
-
 `;

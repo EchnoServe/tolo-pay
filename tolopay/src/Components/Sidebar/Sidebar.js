@@ -105,7 +105,7 @@ const linksArray = [
     {
         label: "Qrcode",
         icon: <MdQrCodeScanner />,
-        to: "/qr",
+        to: "/qrcode",
         
     },
 ];

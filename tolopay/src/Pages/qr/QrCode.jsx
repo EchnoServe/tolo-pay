@@ -80,7 +80,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 /* background-color: black; */
-
 `;
 
 const SubContainer = styled.div`
@@ -141,7 +140,6 @@ flex-direction:column;
   background-color: rgba(58, 135, 190,0.1);
   color: #000;
   transition: 0.4s ease-in-out;
-
   p{
           font-size: 14px;
           text-decoration: none;
@@ -150,15 +148,11 @@ flex-direction:column;
         }
  
  
-
-
  
-
   @media screen and (min-width: 320px) and (max-width: 1080px) {
     width: 80%;
   }
     .containImg{  
-
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -169,7 +163,6 @@ flex-direction:column;
             margin-top: 5px;
             margin: 0;
     }
-
 `;
 
 
@@ -183,11 +176,9 @@ align-items: center;
   padding: 10px;
   transition: 0.4s ease-in-out;
   color: #000;
-
   img{ 
     height: 400px
   }
-
   
   @media screen and (min-width: 320px) and (max-width: 1080px) {
     height: max-content;
