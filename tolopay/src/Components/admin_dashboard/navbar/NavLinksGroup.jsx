@@ -69,11 +69,6 @@ const links = [
     label: "QR Payment",
   },
   {
-    to: "/split",
-    icon: <SafetyDividerIcon className="i" />,
-    label: "Split Bill",
-  },
-  {
     to: "/history",
     icon: <HistoryIcon className="i" />,
     label: "History",

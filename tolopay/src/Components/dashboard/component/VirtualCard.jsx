@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState,useContext } from "react";
 import styled from 'styled-components'
 import chip  from '../assets/chip.png'
 import visa from '../assets/visa.png'
 import map from '../assets/map.png'
 import pattern from '../assets/pattern.png'
 import logo from '../assets/logo.svg'
-
+import { Context } from "./.././../../context/Context";
 
 function createData(name, card_expiration_date, last_three_digits){
   return{name, card_expiration_date, last_three_digits};
@@ -17,6 +17,7 @@ const data = [
 ];
 
 const VirtualCard = () => {
+  const { user } = useContext(Context);
   return (
     <Section>
       {data.map((value) => (
@@ -48,7 +49,7 @@ const VirtualCard = () => {
                         <div className="card_detailes">
                             <div className="card_holder">
                                 <span className='card_holder_title'>Card Holder</span>
-                                <span className='card_holder_name'>{value.name}</span>
+                                <span className='card_holder_name'>{user?.data.user.name}</span>
                             </div>
                             <div className="card_expiration">
                                 <span className='card_expiration_title'>Valid Till</span>
