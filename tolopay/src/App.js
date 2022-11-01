@@ -5,6 +5,7 @@ import Profile from './Components/Profile/Profile';
 import Budget from './Pages/budget_page/Budget'
 import Transfer from './Pages/transfer/Transfer'
 import Dashboard from './Components/dashboard/component/Dashboard';
+import QrCode from "./Pages/qr/QrCode";
 import './App.css'
 import Budgetform from './Pages/budget_page/BudgetForm';
 import History from './Components/history/History';
@@ -57,6 +58,7 @@ function App() {
         <Route path="dashboard"  element = {<Dashboard/>}/>
         <Route path="addBudget"  element = {<Budgetform/>}/>
         <Route path="history"  element = {<History/>}/>
+        <Route path="/qr" element = {<QrCode/>}/>
 
 
 
