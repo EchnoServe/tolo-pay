@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import {Link as RLink} from 'react-router-dom'
- 
+import { useContext } from "react";
+import { Context } from "../../context/Context";//
 
 function Budget() {
-  
+  const { user } = useContext(Context);
   return (
     
     <Con>
@@ -18,16 +19,22 @@ function Budget() {
        
         <ColumnTwo1>
         <Container2>
-
-          <Card>
-         <Content>
-          <H3>Food</H3>
+        {
+   user?.data.user?.budget.map(remark=>{
+       return   <Card>
+         <Content style={{backgroundColor:!remark.budgeted && "red"}}>
+          <H3>{remark.remark}</H3>
           </Content>
          
            <Content2>
-           <h4>200 birr</h4>
+           <h4>{remark.amount}</h4>
           </Content2>
           </Card>
+ })
+}
+
+
+
 
           <Card>
          <Content>

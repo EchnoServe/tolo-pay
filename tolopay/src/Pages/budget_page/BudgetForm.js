@@ -3,23 +3,25 @@ import styled from 'styled-components'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {Link as RLink} from "react-router-dom"
 import { useForm } from "react-hook-form";
+import { Context } from "./../../context/Context";//
+import { Alert } from "@material-ui/lab";
+import React,{useContext} from "react";
+import axios from 'axios';
+import {  useNavigate } from "react-router-dom";
+import Snackbar from "@material-ui/core/Snackbar";
 
-
-const Budget_form = () => {
-
-    const [values, setValues] = useState({
-        budgetName:"",
-        amount:""
-    });
-
-const handleBudgetName = (event) =>{
-    setValues({...values, budgetName: event.target.value})
-}
-
-const handleAmount = (event) =>{
-    setValues({...values, amount: event.target.value})
-}
-
+const Budget_form = (props) => {
+    const { user ,token,dispatch} = useContext(Context);
+    const [open, setOpen] = React.useState(false);
+    const navigate=useNavigate();
+  
+    const handleToClose = (event, reason) => {
+      if ("clickaway" === reason) return;
+      setOpen(false);
+    };
+    const handleClickEvent = () => {
+      setOpen(true);
+    };
 const {
   register,
   handleSubmit,
@@ -28,11 +30,24 @@ const {
   trigger,
 } = useForm();
 
-const onSubmit = (data) => {
-  console.log(data);
+const onSubmit =  async(data) => {
+  console.log( user);
+  const res = await axios.put("http://localhost:8000/api/v1/users/addbudget", {
+    remark: data.remark,
+    amount: data.amount,
+   
+  }, {
+    headers: {
+      Authorization:
+        `Bearer ${token}`,
+    },
+  });
+
+  dispatch({ type: "UPDATE_SUCCESS", payload: res.data});
+  navigate('/budget');
+
   reset();
 };
-
   return (
    <Con>
     <Container>
@@ -44,52 +59,40 @@ const onSubmit = (data) => {
         <Form onSubmit={handleSubmit(onSubmit)}>
             <Title >Add Budget</Title>
 
-            <input  placeholder='Budget Name' type='text' 
-               className={`form-control ${errors.firstName && "invalid"}`}
-                {...register("firstName", { required: "Budget name is Required" ,
+            <input
+                placeholder="Budget Name"
+                type="name"
+                className={`form-control ${errors.remark && "invalid"}`}
+                {...register("remark", { required: "Budget name is Required" ,
                 pattern: {
                 value: /^[A-Za-z]/,
                 message: "Budget name must only start letters",
                 }})}
                 onKeyUp={() => {
-                  trigger("firstName");
-                }}/>
-                  {errors.firstName && (
-                <small className="text-danger">{errors.firstName.message}</small>
+                  trigger("remark");
+                }}
+              ></input>
+                  {errors.remark && (
+                <small className="text-danger">{errors.remark.message}</small>
               )}
-
-
-            {/* <input
-                onChange={handleBudgetName}
-                className="form-field" 
-                placeholder="Budget Name" 
-                name="budgetName" /> */}
-
-                <input
-                placeholder="Amount"
-                className={`form-control ${errors.amount && "invalid"}`}
+             <input
+              type="number"
+              placeholder="Amount"
+              className={`form-control ${errors.amount && "invalid"}`}
                 {...register("amount", { required: "Amount is Required",
-                pattern: {
-                  value: /^([1-9][0-9]*)$/,
-                  message: "Invalid Amount",
-                },
                })}
                onKeyUp={() => {
                 trigger("amount");
-              }}/>
-                    {errors.amount && (
-               <small className="text-danger">{errors.amount.message}</small>
-             )}
-
-            {/* <input 
-                onChange={handleAmount}
-                className="form-field" 
-                placeholder="Amount" 
-                name="amount" /> */}
+              }}
+            ></input>
+              {errors.amount && (
+                <small className="text-danger">{errors.amount.message}</small>
+              )}
             
-            <Button  >Add Budget</Button>
+            <Button type="submit" >Add Budget</Button>
               
         </Form>
+    
         </ColumnTwo1>
         </SectionOne>
       </SubContainer> 
@@ -193,6 +196,9 @@ border-radius: 4px;
 }
 
 .required{
+  color: red;
+}
+.text-danger{
   color: red;
 }
 
