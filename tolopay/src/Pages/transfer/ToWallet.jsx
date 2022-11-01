@@ -1,8 +1,18 @@
 
 import styled from 'styled-components'
 import { useForm } from "react-hook-form";
-import React, { useState } from "react";
+import { useState ,useContext} from "react";
+import api from '../../api/api'
 // import "./styles.css";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContentText from "@material-ui/core/DialogContentText";
+// import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import { 
+  // Link, 
+  useNavigate } from "react-router-dom";
+  import { Context } from "./../../context/Context";//
 
 const WalletToWallet = () => {
 
@@ -14,10 +24,38 @@ const WalletToWallet = () => {
     trigger,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
-  }; 
+  const navigate=useNavigate();
+  const { dispatch, 
+    //isFetching, 
+    error } = useContext(Context);
+
+  const onSubmit =  async(data) => {
+  // e.preventDefault()
+    dispatch({ type: "LOGIN_START" });
+
+    try {
+      
+      const res = await api.post("/users/signup", {
+        name:data.firstName,
+        username:data.lastName,
+        email: data.email,
+        phoneNumber: data.phone,
+        password:data.password,
+        passwordConfirm:data.passwordConfirm,
+       
+      });
+      console.log(res.data);
+      dispatch({ type: "SUCCESS", payload: res.data });
+      navigate('/dashboard');
+      reset();
+    } catch (error) {
+      console.log(error)
+     dispatch({ type: "FAILED" });
+    }
+    
+    
+
+  };
 
   return (
     
@@ -27,7 +65,7 @@ const WalletToWallet = () => {
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
             <Title >wallet to wallet</Title>
             <input
-                placeholder="Customer Phone Nmber"  
+                placeholder="Customer Wallet Number"  
                 className={`form-control ${errors.phone && "invalid"}`}
                  {...register("phone", { required: "Phone  number is Required",
                  pattern: {
