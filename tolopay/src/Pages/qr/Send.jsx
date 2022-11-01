@@ -2,9 +2,11 @@ import styled from "styled-components";
 import { QrReader } from 'react-qr-reader';
 import React, { useState ,useContext} from "react";
 import {Link} from 'react-router-dom'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 // import { Button } from "./ModalStyle";
 import { ReactDOM } from "react";
 import QrCode from "./QrCode";
+import {Link as RLink} from "react-router-dom"
 export default function Send(){
 const [active, setActive] = useState(false);
  
@@ -103,7 +105,7 @@ const [decodedData, setdecodedData] = useState('No result');
               
               <ModalClose >
                
-                  X
+                  <Button2 to = "/send" ><ArrowBackIcon/></Button2>
               </ModalClose>
             </ModalHeader>
             <ModalBody>
@@ -383,4 +385,28 @@ text-align: center;
 }
 `;
 const Modal = styled.div`
+`;
+const Button2 = styled(RLink)`
+width: 50px;
+height: 50px;
+border-radius: 50%;
+border: none;
+background: rgb(58, 135, 190);
+white-space: nowrap;
+padding-top: 12px;
+font-size: 15px;
+font-weight: 600;
+color: #fff;
+outline: none;
+cursor: pointer;
+overflow: hidden;
+text-decoration: none;
+text-align: center;
+align-items: center;
+justify-content: center;
+
+&:hover{
+  background: rgba(58, 135, 190, 0.7);
+}
+
 `;
