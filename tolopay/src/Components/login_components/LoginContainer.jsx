@@ -15,6 +15,7 @@ const font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-s
 // Login Box
 const LoginContainer = props => {
 
+
     const navigate = useNavigate();
     const { dispatch } = useContext(Context);
 
@@ -37,6 +38,7 @@ const LoginContainer = props => {
             console.log(`errors: ${err}`);
             props.onChange("Couldn't connect to third party app");
             dispatch({ type: "FAILED" });
+
 
         })
     }
@@ -98,7 +100,9 @@ const LoginContainer = props => {
         </Divider>
         
         {/* login form with a submit button */}
+
         <LoginForm onChange={handleLoading} setError={props.onChange} />
+
         
         <div>
             <Para >Don't have Account yet? <a href="/signup">Create Account Now</a></Para>

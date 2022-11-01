@@ -67,7 +67,7 @@ const VirtualCard = () => {
                            By using this virtual card the holder agrees to all the terms under which it was issued. </p>
                         <div className="bimg">
                             <img src={logo} width='170px' />
-                            <img src={visa} width='70px !important' paddingLeft='5rem'/>
+                            <img src={visa} width='70px !important' paddingLeft='10rem'/>
                         </div>
                     </div>
                 </div>
@@ -81,29 +81,23 @@ const VirtualCard = () => {
 }
 
 const Section = styled.section`
-
-
   a{
     text-decoration: none;
   }
-
   ul{
     list-style: none;
   }
-
   .main-container{
     display: flex;
-    // justify-content: center;
     align-items: center;
+ 
   }
-
   .scene{
-    width: 100%;
+    width: 430px;
     max-width: 35.9rem;
-    height: 19rem;
+    height: 17rem;
     margin-left: 0 auto;
   }
-
   .card{
     width: 100%;
     height: 100%;
@@ -111,14 +105,13 @@ const Section = styled.section`
     transition: transform 1s;
     transform-style: preserve-3d;
     margin: 0 auto;
-    border-radius: 20px;
+    border-radius: 1rem;
     box-shadow: -15px 20px 20px rgba(22, 4, 74, 0.15);
+ 
   }
-
   .card:hover{
     cursor: pointer;
   }
-
   .card_front,
   .card_back{
     width: 100%;
@@ -132,25 +125,22 @@ const Section = styled.section`
     border-radius: 15px;
     overflow: hidden;
   }
-
   .card_front{
     padding: 2rem 2rem;
   }
-
   .img{
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
 
+  }
   .card_number{
     display: flex;
     justify-content: space-between;
     // margin-right: 4rem;
-    margin-top: 6rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
   }
-
   .number-group,
   .card_holder_name,
   .card_expiration_date{
@@ -160,18 +150,15 @@ const Section = styled.section`
     color: #fafafa;
     letter-spacing: 1px;
   }
-
   .card_detailes{
     display: flex;
     justify-content: space-between;
   }
-
   .card_holder,
   .card_expiration{
     display: flex;
     flex-direction: column;
   }
-
   .card_holder_title,
   .card_expiration_title{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -186,18 +173,14 @@ const Section = styled.section`
     text-transform: uppercase;
     font-size: 1.5rem;
   }
-
   .card_back{
     padding-top: 4rem;
     transform: rotateY(180deg);
   }
-
-
   .card_stripe{
     height: 4rem;
     background: #e1e1e1;
   }
-
   .card_signature{
     display: flex;
     justify-content: flex-end;
@@ -205,35 +188,31 @@ const Section = styled.section`
     height: 4.5rem;
     background: #fafafa;
     margin: 2rem 6rem 0 2rem;
-    padding-right: 1rem;
+    /* padding-right: 1rem; */
   }
-
   .card_signature div{
     flex: 1;
   }
-
   .card_signature img{
-    margin-right: 0.8rem;
+    /* margin-right: 0.8rem; */
     width: 90%;
     display: block;
     line-height: 0;
   }
-
   
   .card_info{
     font-size: 0.75rem;
-    padding: 1rem 2rem;
+    /* padding: 1rem 2rem; */
     color: #fafafa;
   }
   
   .bimg{
     display: flex;
     gap: 14rem;
-    padding-left: 2rem;
+    /* padding-left: 2rem; */
     padding-bottom: 5rem;
   }
    
-
   .map-img{
     width: 100%;
     position: absolute;
@@ -241,9 +220,6 @@ const Section = styled.section`
     left: 0;
     opacity: 0.3;
   }
-
-
-  @media only screen and (max-width: 855px) {
     .scene{
         padding-left: 0rem;
         padding-right: 0rem;
@@ -253,15 +229,11 @@ const Section = styled.section`
         width: 24rem;
         height: 15rem;
     }  
-
     .card_number{
       margin-top: 2rem;
     }
-
     
-
-}
-
+  
 `;
 
 export default VirtualCard

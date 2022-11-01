@@ -8,6 +8,7 @@ import { button2 } from "../../Utils/colors";
 import api from '../../api/api';
 
 import { Email, LoginButton, LoginFormButton, Password, Pwarning, Warning, Para
+
   // LoginOptions, Para
 } from './LoginContainer.style';
 
@@ -28,6 +29,7 @@ const LoginForm =  (props) => {
             props.onChange(true);
             handleLoading(true);
         console.log(data)
+
             const res = await api.post("/users/login", {
               email: data.email,
               password:data.password
@@ -97,6 +99,7 @@ const LoginForm =  (props) => {
               <Para>Forgot Password?</Para>
             </a>
           </div>
+
         <LoginButton type='submit' disabled={isSubmitting}><span>Login to Your Account</span></LoginButton>
 
         </form>

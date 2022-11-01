@@ -39,7 +39,7 @@ export default function BasicTable() {
           component={Paper}
           // style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
         >
-          <Table sx={{ minWidth: 12 }} aria-label="simple table">
+          <Table sx={{ maxWidth: 8 }} aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell align="left"></TableCell>
@@ -91,6 +91,7 @@ box-shadow: rgba(31, 119, 180, 0.4) 0px 8px 24px;
 border-radius: 0.5rem;
 border: 1px solid #1f77b4;
 
+width: 930px;
 .MuiTableRow-root > * {
   white-space: nowrap;
 }
@@ -101,32 +102,24 @@ border: 1px solid #1f77b4;
   letter-spacing: 1px;
   font-size: 1rem;
   white-space: nowrap;
+  padding: 10px;
 }
-
-
 .Table:last-child {
   border-bottom: 0.2rem solid #1f77b4;
 }
-
 .remark{
-  padding: 12px;
+  padding: 8px;
   border-radius: 9px;
 }
-
 h4{
   letter-spacing: 2px;
   color: #003f5c;
-  padding-left: 3.2rem;
-  padding-top: 1rem;
-
+  text-align: center;
 }
-
-
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   border-radius: 0rem;
   overflow: auto;
   white-space: wrap;
   width: 28rem;  
-}
-
+} */
 `;

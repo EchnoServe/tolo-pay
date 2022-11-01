@@ -1,9 +1,11 @@
+
 import React, { useState } from 'react';
 import LoginContainer from '../../Components/login_components/LoginContainer';
 import { LoginPageComponent, Logo} from './LoginPage.style';
 import logo from '../../Assets/tolopayLogo.png';
 import { CloseButton, Popup, PopupInner } from '../../Components/commonStyles';
 const LoginPage = () => {
+
 
   const [error, errorState] = useState('');
   
@@ -36,3 +38,4 @@ const LoginPage = () => {
 }
 
 export default LoginPage
+

@@ -1,79 +1,72 @@
 import React, { useState ,useContext} from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
-
-import Home from "./Pages/home_page/Home";
-import Signup from "./Pages/createAccount/CreateAccount";
-import EmailReset from "./Pages/EmailReset";
-import ResetPasswordPage from "./Pages/ResetPasswordPage";
+import { BrowserRouter as Router, Outlet, Route, Routes} from 'react-router-dom'
+import Layout from './Components/admin_dashboard/Layout';
+import Profile from './Components/Profile/Profile';
+import Budget from './Pages/budget_page/Budget'
+import Transfer from './Pages/transfer/Transfer'
+import Dashboard from './Components/dashboard/component/Dashboard';
+import QrCode from "./Pages/qr/QrCode";
+import './App.css'
+import Budgetform from './Pages/budget_page/BudgetForm';
+import History from './Components/history/History';
+import { Context } from "./context/Context";
 import Login from "./Pages/login_page/LoginPage";
 import LoginSuccess from "./Components/login_components/LoginSuccess";
-import Layout from "./Components/Layout/Layout";
-import Dashboard from "./Components/Dashboard/components/Dashboard";
+import Signup from "./Pages/createAccount/CreateAccount";
 import BottomNavbar from "./Components/BottomNav/BottomNavbar";
-import WalletToWallet from "./Components/walletToWallet/WalletToWallet";
-import BudgetForm from "./Pages/budget_page/BudgetForm";
-import Budget from "./Pages/budget_page/Budget";
-import QR from "./Pages/qr/QrPage";
-import RecieveModal from "./Pages/qr/RecieveModal";
-import Send from "./Pages/qr/Send";
-import UserProfile from "./Pages/UserProfile";
 
-import { Context } from "./context/Context";
-import { darkTheme, lightTheme } from "./Utils/theme";
-import Chatbot from "./Components/chatbot/Chatbot";
-import Message from "./Components/chatbot/Message";
-
-export const ThemeContext = React.createContext(null);
-
-const App = () => {
-
+function App() {
   const { user } = useContext(Context);
+  const [file, setFile] = useState("");
+  const handle = (e) => {setFile(e.target.files[0]) }
+  
+  const [title, setTitle] = useState([
+    {name: 'Dashbord', id: '1'},
+    {name: 'Transfer', id: '2'},
+    {name: 'Budget and Planning', id: '3'},
+    {name: 'QR Payment', id: '3'},
+    {name: 'Split Bill', id: '4'},
+    {name: 'Profile', id: '5'}
+  ]);
 
-
-
-  const [theme, setTheme] = useState("light");
-  const themeStyle = theme === "light" ? lightTheme : darkTheme;
+  const handletitleChange = () => {
+    
+    
+  }
+  
+  
 
   return (
-      <ThemeContext.Provider value={{ setTheme, theme }}>
-          <ThemeProvider theme={themeStyle}>
-          
-            <Router>
-              <Routes>
+    <Router>
+       
     
-                <Route path="/signup" element={<Signup />} />
+      <Routes>
+      <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/login/success" element={<LoginSuccess />} />
-                <Route path="/password-reset" element={<EmailReset />} />
-                <Route path="/reset-password/:id/:token" element={<ResetPasswordPage />} />
                 <Route path="/" 
                     element = { 
-                        user ? 
-                        <Layout>
-                            <Chatbot />
-                            <BottomNavbar />
-                        </Layout> : 
-                        <Home />} >
-                        
-                        <Route index element={ <Dashboard /> } />
-                        <Route path="dashboard" element={ <Dashboard /> } />
-                        <Route path="transfer" element={ <WalletToWallet /> } />
-                        <Route path="budgetform" element={ <BudgetForm /> } />
-                        <Route path="planning" element={ <Budget /> } />
-                        <Route path="qr" element={ <QR /> } />
-                        <Route path="recieve" element={ <RecieveModal /> } />
-                        <Route path="send" element={ <Send />} />
-                        <Route path="profile" element={ <UserProfile /> } />
-                        <Route path="chatbot" element={ <Chatbot /> } />
-                        <Route path="message" element={<Message />} />
+                        user ?   <Layout title={title} file={file}>
+<Outlet/>
+                        </Layout>
+                         : 
+                        <Login />} >
+           <Route index element={ <Dashboard /> } />                
+        <Route path="profile"  element = {<Profile file={file} handle={handle}/>}/>
+        <Route path="budget"  element = {<Budget/>}/>
+        <Route path="transfer"  element = {<Transfer/>}/>
+        <Route path="dashboard"  element = {<Dashboard/>}/>
+        <Route path="addBudget"  element = {<Budgetform/>}/>
+        <Route path="history"  element = {<History/>}/>
+        <Route path="/qr" element = {<QrCode/>}/>
 
-            </Route>
-          </Routes>
-        </Router>
-      </ThemeProvider>
-    </ThemeContext.Provider>
+
+
+        </Route>
+      </Routes>
+      
+     </Router>
   );
-};
+}
 
 export default App;

@@ -1,12 +1,20 @@
 // import { primary } from "../../Utils/colors";
 import "./createAccount.css";
 import { useForm } from "react-hook-form";
-import React, {} from "react";
-import { useContext} from "react";
+
+import React, { 
+  // useState
+ } from "react";
+import { useContext, 
+  // useRef
+ } from "react";
 import { Context } from "../../context/Context";//
-import {  useNavigate } from "react-router-dom";
+import { 
+  // Link, 
+  useNavigate } from "react-router-dom";
 import api from '../../api/api'
-import Navbar from "../../Components/landingPage_component/Navbar";
+// import Navbar from "../../Components/landingPage_component/Navbar";
+inSidebar
  
 
 const CreateAccount = () => {
@@ -20,11 +28,12 @@ const CreateAccount = () => {
 
   const navigate=useNavigate();
   const { dispatch, 
-    // isFetching, 
+
+    //isFetching, 
     error } = useContext(Context);
 
   const onSubmit =  async(data) => {
-    // e.preventDefault()
+  // e.preventDefault()
     dispatch({ type: "LOGIN_START" });
 
     try {
@@ -38,12 +47,16 @@ const CreateAccount = () => {
         passwordConfirm:data.passwordConfirm,
        
       });
+
+      console.log(res.data);
+
       dispatch({ type: "SUCCESS", payload: res.data });
       navigate('/dashboard');
       reset();
     } catch (error) {
       console.log(error)
-      dispatch({ type: "FAILED" });
+
+     dispatch({ type: "FAILED" });
     }
     
     
@@ -51,7 +64,9 @@ const CreateAccount = () => {
   };
   return (
     <>
-      <Navbar/>
+
+      {/* <Navbar/> */}
+
       <div className="mcontainer">
       <div className="flex-c-r container">
         <div className="flex-c-c form">
