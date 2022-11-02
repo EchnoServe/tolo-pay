@@ -57,11 +57,11 @@ function Profile({file,handle}) {
             <p>0</p>            
             </div>
 
-            <div className='info'>
+            {/* <div className='info'>
             <div><p>Transfers</p></div>
             <p>89</p>
 
-            </div>
+            </div> */}
 
             <div className='info NoBorder'>
             <div><p>Account ID</p></div>

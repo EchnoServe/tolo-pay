@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
 import { useForm } from "react-hook-form";
+import { Context } from "../../context/Context";
 
  
  
 
 export default function Edit() {
+  const { user } = useContext(Context);
 
   const {
     register,
@@ -27,8 +29,8 @@ export default function Edit() {
      <Form onSubmit={handleSubmit(onSubmit)}>
      <Input>
      <InputWrap>
-     <Label>First Name</Label>
-     <input  placeholder='Sumeya' type='text' 
+     <Label>Full Name</Label>
+     <input  placeholder={user.data.user.name} type='text' 
       className={`form-control ${errors.email && "invalid"}`}
                 {...register("firstName", { required: "FirstName is Required" ,
                 pattern: {
@@ -43,7 +45,7 @@ export default function Edit() {
               )}
      </InputWrap>
 
-     <InputWrap>
+     {/* <InputWrap>
      <Label>Last Name</Label>
      <input placeholder='Ibrahim' type='text' 
       className={`form-control ${errors.email && "invalid"}`}
@@ -58,13 +60,13 @@ export default function Edit() {
        {errors.lastName && (
                 <small className="text-danger">{errors.lastName.message}</small>
               )}
-     </InputWrap>
+     </InputWrap> */}
      </Input> 
 
      <Input>
      <InputWrap>
      <Label>Phone Number</Label>
-     <input  placeholder='0910602110' type='number'
+     <input  placeholder={user.data.user.phoneNumber ? user.data.user.phoneNumber : ''} type='number'
        className={`form-control ${errors.phone && "invalid"}`}
        {...register("phone", { required: "Phone  number is Required",
        pattern: {
@@ -82,7 +84,7 @@ export default function Edit() {
 
      <InputWrap>
      <Label>Email</Label>
-     <input placeholder='sumei295@gmail.com' type='Email'
+     <input placeholder={user.data.user.email} type='Email'
       className={`form-control ${errors.email && "invalid"}`}
       {...register("email", { required: "Email address is Required" ,
       pattern: {
@@ -98,7 +100,7 @@ export default function Edit() {
      </InputWrap>
      </Input> 
 
-     <Input>
+     {/* <Input>
      <InputWrap>
      <Label>Username</Label>
      <input  placeholder='@sumeya' type='text' 
@@ -132,7 +134,7 @@ export default function Edit() {
               )}
      </InputWrap>
      
-     </Input> 
+     </Input>  */}
      <BtnWrapper>
      <Button type='submit'>Update</Button>
      </BtnWrapper>
