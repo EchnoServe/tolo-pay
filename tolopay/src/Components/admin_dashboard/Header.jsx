@@ -2,11 +2,11 @@ import styled from "styled-components";
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import LanguageIcon from '@mui/icons-material/Language';
-import BedtimeIcon from '@mui/icons-material/Bedtime';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import { faBlog } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import React, {useContext} from 'react';
 
+
+import { Context } from "./../../context/Context";
 const Grid = styled.div`
   display: grid;
   grid-template-columns: min-content 1fr min-content;
@@ -62,6 +62,7 @@ const Grid = styled.div`
 
 function Header({  title, file, toggle }) {
 
+  const { user } = useContext(Context);
  
   return (
     <Grid>
@@ -91,11 +92,11 @@ function Header({  title, file, toggle }) {
         <img className="img" src={
                 file
                   ? URL.createObjectURL(file)
-                  : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                  : user?.data.user.profileimage
                  }
                  alt="" />
         <div className="status">
-        <h5>@sumeya</h5>
+        <h5>{user?.data.user.name}</h5>
         <h6>online</h6>
         </div>
       </div>
