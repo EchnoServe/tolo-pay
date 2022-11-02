@@ -8,13 +8,13 @@ import React, {
 import { useContext, 
   // useRef
  } from "react";
-import { Context } from "../../context/Context";//
+import { Context } from "../../context/Context";
 import { 
   // Link, 
   useNavigate } from "react-router-dom";
 import api from '../../api/api'
 // import Navbar from "../../Components/landingPage_component/Navbar";
-inSidebar
+// inSidebar
  
 
 const CreateAccount = () => {

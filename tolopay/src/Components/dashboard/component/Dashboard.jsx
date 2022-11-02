@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Card from './Card';
 import VirtualCard from './VirtualCard';
 import Charts from './Charts'
-import Table from './Table'
+// import Table from './Table'
 import Doughnut from './Doughnut'
 import Transactions from './Transactions';
 
@@ -171,34 +171,6 @@ const ColumnTwo2 = styled.div`
     flex-direction: column;
   }
 `;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

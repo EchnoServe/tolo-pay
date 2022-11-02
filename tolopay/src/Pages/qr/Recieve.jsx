@@ -7,7 +7,9 @@ import { Context } from "./../../context/Context";
 
 export default function Recieve(){
 	const { user } = useContext(Context);
-	const [qr, setQr] = useState('1000');
+	const [qr, 
+      // setQr
+   ] = useState('1000');
 	return(
        
        <Div>

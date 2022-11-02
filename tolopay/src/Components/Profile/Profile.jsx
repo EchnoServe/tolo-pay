@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import {TabContext, TabList, TabPanel} from '@mui/lab'
 import {Tab,Box }from '@mui/material'
 import Edit from "./Edit";
 import ChangePassword from "./ChangePassword";
+import { Context } from "../../context/Context";
  
  
 
 function Profile({file,handle}) {
+  const { user } = useContext(Context);
    const [value, setValue] = useState('1')
-   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+   const handleChange = (event, newValue) => {
     setValue(newValue)
    }
 
@@ -41,18 +43,18 @@ function Profile({file,handle}) {
                 <div className="changeImg"><label htmlFor="file"><CameraAltIcon/></label></div>
                 <input type="file" id="file" onChange={handle} style={{display: "none"}}/>
             </div>
-            <Name>Sumeya Ibrahim</Name>
-            <Phone>0910602110</Phone>
+            <Name>{user.data.user.name}</Name>
+            <Phone>{user.data.user.phoneNumber ? user.data.user.phoneNumber : ''}</Phone>
             </div>
 
             <div className='info'>
             <div><p>Current balance</p></div>
-            <p>300</p>
+            <p>{user.data.user.balance}</p>
             </div>
 
             <div className='info'>
             <div><p>Points earned</p></div>
-            <p>7</p>            
+            <p>0</p>            
             </div>
 
             <div className='info'>
@@ -63,7 +65,7 @@ function Profile({file,handle}) {
 
             <div className='info NoBorder'>
             <div><p>Account ID</p></div>
-            <p>001</p>
+            <p>{user.data.user.account_number}</p>
             </div>
             
 

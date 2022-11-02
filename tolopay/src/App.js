@@ -4,7 +4,7 @@ import Layout from './Components/admin_dashboard/Layout';
 import Profile from './Components/Profile/Profile';
 import Budget from './Pages/budget_page/Budget'
 import Transfer from './Pages/transfer/Transfer'
-import Dashboard from './Components/dashboard/component/Dashboard';
+import Dashboard from './Components/Dashboard/component/Dashboard'
 import QrCode from "./Pages/qr/QrCode";
 import './App.css'
 import Budgetform from './Pages/budget_page/BudgetForm';
@@ -13,14 +13,16 @@ import { Context } from "./context/Context";
 import Login from "./Pages/login_page/LoginPage";
 import LoginSuccess from "./Components/login_components/LoginSuccess";
 import Signup from "./Pages/createAccount/CreateAccount";
-import BottomNavbar from "./Components/BottomNav/BottomNavbar";
+// import BottomNavbar from "./Components/BottomNav/BottomNavbar";
 
 function App() {
   const { user } = useContext(Context);
   const [file, setFile] = useState("");
   const handle = (e) => {setFile(e.target.files[0]) }
   
-  const [title, setTitle] = useState([
+  const [title, 
+    // setTitle
+  ] = useState([
     {name: 'Dashbord', id: '1'},
     {name: 'Transfer', id: '2'},
     {name: 'Budget and Planning', id: '3'},
@@ -29,40 +31,37 @@ function App() {
     {name: 'Profile', id: '5'}
   ]);
 
-  const handletitleChange = () => {
+  // const handletitleChange = () => {
     
     
-  }
+  // }
   
   
 
   return (
     <Router>
-       
-    
       <Routes>
-      <Route path="/signup" element={<Signup />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/login/success" element={<LoginSuccess />} />
-                <Route path="/" 
-                    element = { 
-                        user ?   <Layout title={title} file={file}>
-<Outlet/>
-                        </Layout>
-                         : 
-                        <Login />} >
-           <Route index element={ <Dashboard /> } />                
-        <Route path="profile"  element = {<Profile file={file} handle={handle}/>}/>
-        <Route path="budget"  element = {<Budget/>}/>
-        <Route path="transfer"  element = {<Transfer/>}/>
-        <Route path="dashboard"  element = {<Dashboard/>}/>
-        <Route path="addBudget"  element = {<Budgetform/>}/>
-        <Route path="history"  element = {<History/>}/>
-        <Route path="/qr" element = {<QrCode/>}/>
+        <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/login/success" element={<LoginSuccess />} />
+            <Route path="/"
+                element = { 
+                    user ?   
+                    <Layout title={title} file={file}>
+                      <Outlet/>
+                    </Layout> : 
+                    <Login />} >
 
+                      <Route index element={ <Dashboard /> } />                
+                      <Route path="profile"  element = {<Profile file={file} handle={handle}/>}/>
+                      <Route path="budget"  element = {<Budget/>}/>
+                      <Route path="transfer"  element = {<Transfer/>}/>
+                      <Route path="dashboard"  element = {<Dashboard/>}/>
+                      <Route path="addBudget"  element = {<Budgetform/>}/>
+                      <Route path="history"  element = {<History/>}/>
+                      <Route path="qr" element = {<QrCode/>}/>
 
-
-        </Route>
+            </Route>
       </Routes>
       
      </Router>

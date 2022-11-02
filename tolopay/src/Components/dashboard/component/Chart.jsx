@@ -7,7 +7,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  // ResponsiveContainer
 } from "recharts";
 import styled from "styled-components";
 

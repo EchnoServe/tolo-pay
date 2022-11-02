@@ -220,6 +220,9 @@ const Section = styled.section`
     left: 0;
     opacity: 0.3;
   }
+
+  /* @media only screen and (max-width: 855px) {
+>>>>>>> mainSidebar:tolopay/src/Components/dashboard/component/VirtualCard.jsx
     .scene{
         padding-left: 0rem;
         padding-right: 0rem;
@@ -229,11 +232,13 @@ const Section = styled.section`
         width: 24rem;
         height: 15rem;
     }  
+
     .card_number{
       margin-top: 2rem;
     }
     
-  
+} */
+
 `;
 
 export default VirtualCard
