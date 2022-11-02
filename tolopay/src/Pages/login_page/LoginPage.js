@@ -1,19 +1,41 @@
-import React, { Component } from 'react';
+
+import React, { useState } from 'react';
 import LoginContainer from '../../Components/login_components/LoginContainer';
 import { LoginPageComponent, Logo} from './LoginPage.style';
 import logo from '../../Assets/tolopayLogo.png';
-import Navbar from '../../Components/landingPage_component/Navbar';
-export default class LoginPage extends Component {
-  render() {
+import { CloseButton, Popup, PopupInner } from '../../Components/commonStyles';
+const LoginPage = () => {
+
+
+  const [error, errorState] = useState('');
+  
     return (
       <>
-      <Navbar/>
+      <Logo>
+        <img src={logo} alt='tolopay logo' style={{width: 150, height: 70}} />
+      </Logo>
+      {
+        error !== '' ?
+        <Popup onChange={errorState}>
+          <PopupInner>
+            <h2>
+              {error}
+            </h2>
+            <p>Please recheck your inputs and try again!</p>
+            <CloseButton onClick={() => errorState('')} >Close</CloseButton>
+          </PopupInner>
+          
+        </Popup> : ''
+      }
+        
         <LoginPageComponent>
           
-          <LoginContainer />
+          <LoginContainer onChange={errorState} />
           
         </LoginPageComponent>
         </>
-    )
-  }
+    ) 
 }
+
+export default LoginPage
+

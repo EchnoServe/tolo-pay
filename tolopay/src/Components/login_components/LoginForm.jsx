@@ -4,9 +4,11 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 
 import { Context } from "../../context/Context";
+import { button2 } from "../../Utils/colors";
 import api from '../../api/api';
 
-import { Email, LoginButton, LoginFormButton, Password, Pwarning, Warning, 
+import { Email, LoginButton, LoginFormButton, Password, Pwarning, Warning, Para
+
   // LoginOptions, Para
 } from './LoginContainer.style';
 
@@ -27,6 +29,7 @@ const LoginForm =  (props) => {
             props.onChange(true);
             handleLoading(true);
         console.log(data)
+
             const res = await api.post("/users/login", {
               email: data.email,
               password:data.password
@@ -37,6 +40,7 @@ const LoginForm =  (props) => {
          
           } catch (error) {
             console.log(error)
+            props.setError("Email and Password don't match");
             dispatch({ type: "FAILED" });
             handleLoading(false);
           }
@@ -90,11 +94,12 @@ const LoginForm =  (props) => {
           <Warning style={{marginBottom: 9}}>{errors.password && touched.password ?
             <Pwarning style={{color: 'red'}}>{errors.password}</Pwarning>  : ''}
           </Warning>
-          {/* <div>
-            <a href='#' style={{color: primary}}>
+          <div>
+            <a href='/password-reset' style={{color: button2}}>
               <Para>Forgot Password?</Para>
             </a>
-          </div> */}
+          </div>
+
         <LoginButton type='submit' disabled={isSubmitting}><span>Login to Your Account</span></LoginButton>
 
         </form>
