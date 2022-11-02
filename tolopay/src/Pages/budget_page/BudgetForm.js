@@ -1,25 +1,24 @@
-
-// import { useState } from "react"
+import { useState } from "react"
 import styled from 'styled-components'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {Link as RLink} from "react-router-dom"
 import { useForm } from "react-hook-form";
 import { Context } from "./../../context/Context";//
-// import { Alert } from "@material-ui/lab";
+import { Alert } from "@material-ui/lab";
 import React,{useContext} from "react";
 import axios from 'axios';
 import {  useNavigate } from "react-router-dom";
-// import Snackbar from "@material-ui/core/Snackbar";
+import Snackbar from "@material-ui/core/Snackbar";
 
 const Budget_form = (props) => {
     const { user ,token,dispatch} = useContext(Context);
     const [open, setOpen] = React.useState(false);
     const navigate=useNavigate();
   
-    // const handleToClose = (event, reason) => {
-    //   if ("clickaway" === reason) return;
-    //   setOpen(false);
-    // };
+    const handleToClose = (event, reason) => {
+      if ("clickaway" === reason) return;
+      setOpen(false);
+    };
     const handleClickEvent = () => {
       setOpen(true);
     };

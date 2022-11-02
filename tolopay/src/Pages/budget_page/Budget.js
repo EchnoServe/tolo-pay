@@ -1,4 +1,3 @@
-
 import React from "react";
 import styled from "styled-components";
 import {Link as RLink} from 'react-router-dom'
@@ -33,110 +32,6 @@ function Budget() {
           </Card>
  })
 }
-
-
-
-
-          <Card>
-         <Content>
-          <H3>Food</H3>
-          </Content>
-         
-           <Content2>
-           <h4>200 birr</h4>
-          </Content2>
-          </Card>
-
-          <Card>
-         <Content>
-          <H3>Food</H3>
-          </Content>
-         
-           <Content2>
-           <h4>200 birr</h4>
-          </Content2>
-          </Card>
-
-          <Card>
-         <Content>
-          <H3>Food</H3>
-          </Content>
-         
-           <Content2>
-           <h4>200 birr</h4>
-          </Content2>
-          </Card>
-
-          <Card>
-         <Content>
-          <H3>Food</H3>
-          </Content>
-         
-           <Content2>
-           <h4>200 birr</h4>
-          </Content2>
-          </Card>
-
-          <Card>
-         <Content>
-          <H3>Food</H3>
-          </Content>
-         
-           <Content2>
-           <h4>200 birr</h4>
-          </Content2>
-          </Card>
-
-          <Card>
-         <Content>
-          <H3>Food</H3>
-          </Content>
-         
-           <Content2>
-           <h4>200 birr</h4>
-          </Content2>
-          </Card>
-
-          <Card>
-         <Content>
-          <H3>Food</H3>
-          </Content>
-         
-           <Content2>
-           <h4>200 birr</h4>
-          </Content2>
-          </Card>
-
-          <Card>
-         <Content>
-          <H3>Food</H3>
-          </Content>
-         
-           <Content2>
-           <h4>200 birr</h4>
-          </Content2>
-          </Card>
-
-          <Card>
-         <Content>
-          <H3>Food</H3>
-          </Content>
-         
-           <Content2>
-           <h4>200 birr</h4>
-          </Content2>
-          </Card>
-
-          <Card>
-         <Content>
-          <H3>Food</H3>
-          </Content>
-         
-           <Content2>
-           <h4>200 birr</h4>
-          </Content2>
-          </Card>
-
               </Container2>
           </ColumnTwo1>
         </SectionOne> 
@@ -211,12 +106,10 @@ const SectionOne = styled.div`
     background: rgba(255, 255, 255, 0.5);
   }
   
-
   @media screen and (min-width: 320px) and (max-width: 1080px) {
     flex-direction: column;
     align-items: center;
     height: max-content;
-
 
   }
 `;
@@ -272,10 +165,8 @@ line-height: 22px;
 
 const Content= styled.div`
 text-align:center;
-
  
 height: 85px;
-
 border-radius:15px 15px  0px 0px ;
 display: flex;
 align-items: center;
@@ -296,7 +187,6 @@ padding-left:10%;
 
 const Content2= styled.div`
 padding: 20px;
-
 height: 85px;
 background-color: rgba(58, 135, 190, 0.7);
 border-radius: 0px 0px 15px 15px;
