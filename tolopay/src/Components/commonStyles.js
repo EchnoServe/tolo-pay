@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {primary, button1 } from "../Utils/colors";
+import {primary, button1, button3 } from "../Utils/colors";
 
 
 export const Container = styled.div`
@@ -47,6 +47,11 @@ export const Button = styled.button`
   margin-top: 10px;
   background-color: ${button1};
   color: white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${button3};
+  }
 `;
 
 export const Loading = styled.div`

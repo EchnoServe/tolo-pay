@@ -12,6 +12,8 @@ import History from './Components/history/History';
 import { Context } from "./context/Context";
 import Login from "./Pages/login_page/LoginPage";
 import LoginSuccess from "./Components/login_components/LoginSuccess";
+import EmailReset from "./Pages/EmailReset";
+import ResetPasswordPage from "./Pages/ResetPasswordPage";
 import Signup from "./Pages/createAccount/CreateAccount";
 // import BottomNavbar from "./Components/BottomNav/BottomNavbar";
 
@@ -44,6 +46,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/login/success" element={<LoginSuccess />} />
+            <Route path="/password-reset" element={<EmailReset />} />
+            <Route path="/reset-password/:id/:token" element={<ResetPasswordPage />} />
             <Route path="/"
                 element = { 
                     user ?   

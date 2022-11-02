@@ -8,15 +8,24 @@ export const ResetPasswordPages = () => {
         <h2>
           Reset Your ToloPay Password!
         </h2>
-        <h4>Enter your email and submit! we will send a reset link to your email.</h4>
+        <h4 style={{marginBottom: 15}}>Enter your email and submit! we will send a reset link to your email.</h4>
         <ForgotPassword sentStatus={sentStatus} />
   </>
 
   return (
-    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+    <div style={{display: 'flex', justifyContent: 'center', height: '100vh', alignItems: 'center', flexDirection: 'column'}}>
     {
       sent === '' ?
+      
+        form
+      
+      : (
+      sent === 'success' ?
       <>
+        <h1>We have sent a link to your email.</h1>
+        <h3>if you don't see the email then check your spam folder!</h3>
+      </>
+      : <>
       {
         sent === 'error' ?
         <Popup onChange={sentStatus}>
@@ -30,16 +39,6 @@ export const ResetPasswordPages = () => {
           
         </Popup> : ''
       }
-        {form}
-      </>
-      : (
-      sent === 'success' ?
-      <>
-        <h1>We have sent a link to your email.</h1>
-        <h3>if you don't see the email then check your spam folder!</h3>
-      </>
-      : <>
-        <small style={{color: 'red'}}>An error ocurred. try again!</small>
         {form}
       </> )
     }  

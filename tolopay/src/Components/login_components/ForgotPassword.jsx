@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {useForm } from 'react-hook-form';
-import { FormStyle, Container, Button, Form } from '../commonStyles';
-
+import { FormStyle, Container, Button, Form, Loading } from '../commonStyles';
 import api from '../../api/api';
 
 
 export const ForgotPassword = props => {
     const { handleSubmit, register, formState: { errors } } = useForm();
+    const [loading, setLoading] = useState(false);
     
     const onSubmit = async values => {
+        setLoading(true);
 
         console.log(values.email);
 
@@ -18,16 +19,25 @@ export const ForgotPassword = props => {
         }).then(response => {
             props.sentStatus(response.data.message);
             console.log(response.data);
+            setLoading(false);
         }).catch(error => {
             console.log(error)
+            setLoading(false);
             props.sentStatus('error')
         });
         
     }
 
   return (
-        <Container>
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Container style={{flexDirection: 'column', justifyContent: 'flex-start'}}>
+        {
+        loading ? 
+        <Loading >
+            <div className='loaderBar'></div>
+        </Loading>
+        : ''
+    }
+        <Form onSubmit={handleSubmit(onSubmit)} style={{marginTop: 120}}>
             <label>
                 Your Account Email:
                 <FormStyle name='email' type='email' 

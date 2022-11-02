@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { Container, FormStyle, Form, Button } from '../commonStyles';
-
+import { Container, FormStyle, Form, Button, Loading } from '../commonStyles';
+ 
 import api from '../../api/api';
 
 const PasswordReset = props => {
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
     const { handleSubmit, register, watch ,formState: { errors } } = useForm();
     const onSubmit = values => {
+        setLoading(true);
         api.post('/users/change-password',
             {
                 id: props.id,
@@ -19,17 +21,26 @@ const PasswordReset = props => {
             }
         ).then(response => {
             console.log(response);
+            setLoading(false);
             navigate('/login');
         }).catch(error => {
             console.log(error)
+            setLoading(false);
             props.onChange('error')
         });
         // console.log(values);
     }
 
   return (
-    <Container>
-        <Form onSubmit={handleSubmit(onSubmit)}>
+    <Container style={{flexDirection: 'column', justifyContent: 'flex-start'}}>
+    {
+        loading ? 
+        <Loading >
+            <div className='loaderBar'></div>
+        </Loading>
+        : ''
+    }
+        <Form onSubmit={handleSubmit(onSubmit)} style={{marginTop: 60}}>
             <label>
                 New Password:
                 <FormStyle name='password' type='password' 
