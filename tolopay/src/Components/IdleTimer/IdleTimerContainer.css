@@ -1,0 +1,54 @@
+
+.idleModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  padding-top: 60px;
+}
+.modal{
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  color: red;
+  height: 60%;
+}
+.modal h2{
+	padding-top: 30px;
+	font-size: 40px;
+	color: #34568b;
+	font-weight: bold;
+}
+.modal p{
+	margin-left: -20px;
+	font-size: 1.3em;
+	color: #red;
+	font-weight: bold;
+	padding: 30px;
+}
+.modal button{
+	width: 250px;
+    margin: 9px 3px;
+    background-color: #3a87be;
+    border-radius: 6px;
+    border: none;
+    height: 42px;
+    color: white;
+    font-size: medium;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Open Sans',sans-serif;
+    cursor: pointer;
+}
+.logoutbtn{
+	color: #fff;
+}

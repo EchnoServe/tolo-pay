@@ -14,7 +14,7 @@ import Login from "./Pages/login_page/LoginPage";
 import LoginSuccess from "./Components/login_components/LoginSuccess";
 import Signup from "./Pages/createAccount/CreateAccount";
 import BottomNavbar from "./Components/BottomNav/BottomNavbar";
-
+import IdleTimerContainer from "./Components/IdleTimer/IdleTimerContainer";
 function App() {
   const { user } = useContext(Context);
   const [file, setFile] = useState("");
@@ -37,6 +37,7 @@ function App() {
   
 
   return (
+    
     <Router>
        
     
@@ -48,6 +49,7 @@ function App() {
                     element = { 
                         user ?   <Layout title={title} file={file}>
 <Outlet/>
+                        <IdleTimerContainer></IdleTimerContainer>
                         </Layout>
                          : 
                         <Login />} >
@@ -66,6 +68,7 @@ function App() {
       </Routes>
       
      </Router>
+     
   );
 }
 

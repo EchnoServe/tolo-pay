@@ -11,7 +11,7 @@ function data(money_in, money_out, current_balance, points_earned) {
 }
 
 const amount = [
-  data("700,000 Birr", '60,000 Birr', "700,000 Birr", "16pts"),
+  data("700,000d Birr", '60,000 Birr', "700,000 Birr", "16pts"),
 ]
 
 
