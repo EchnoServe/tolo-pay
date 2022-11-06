@@ -15,6 +15,8 @@ import LoginSuccess from "./Components/login_components/LoginSuccess";
 import Signup from "./Pages/createAccount/CreateAccount";
 import BottomNavbar from "./Components/BottomNav/BottomNavbar";
 import IdleTimerContainer from "./Components/IdleTimer/IdleTimerContainer";
+import EmailReset from "./Pages/EmailReset";
+import ResetPasswordPages from "./Pages/ResetPasswordPages";
 function App() {
   const { user } = useContext(Context);
   const [file, setFile] = useState("");
@@ -45,6 +47,8 @@ function App() {
       <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/login/success" element={<LoginSuccess />} />
+                <Route path="/password-reset" element={<EmailReset />} />
+                <Route path="/reset-password/:id/:token" element={<ResetPasswordPages />} />
                 <Route path="/" 
                     element = { 
                         user ?   <Layout title={title} file={file}>
