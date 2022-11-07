@@ -282,36 +282,3 @@ text-align: center;
 
 `;
 export default Budget;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 

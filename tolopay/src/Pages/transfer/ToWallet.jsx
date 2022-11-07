@@ -1,11 +1,32 @@
 
 import styled from 'styled-components'
 import { useForm } from "react-hook-form";
-import React, { useState } from "react";
-// import "./styles.css";
-
+import { Context } from "../../context/Context";
+import axios from "axios";
+import { useState ,useContext} from "react";
+import React from "react";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import {useNavigate } from "react-router-dom";
 const WalletToWallet = () => {
+  const [open, setOpen] = React.useState(false);
+  const navigate=useNavigate();
+  const { token ,user ,dispatch} = useContext(Context);
 
+  const handleClickToOpen = (event) => {
+    event.preventDefault();
+    setOpen(true);
+  };
+  
+  const handleToClose = () => {
+    setOpen(false);
+  };
+
+
+
+  
   const {
     register,
     handleSubmit,
@@ -14,10 +35,37 @@ const WalletToWallet = () => {
     trigger,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
-  }; 
+  async function makePostRequest(data) {
+    try {
+      const res =  axios.post(
+        "http://localhost:8000/api/v1/transaction/transfer",{
+        phoneNumber: data.phoneNumber,
+        amount: data.amount,
+        remark: data.remark,
+        password:data.password,
+      },
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`,
+          },
+        }
+      );
+    
+    dispatch({ type: "UPDATE_SUCCESS", payload: res.data});
+    navigate("/dashboard")
+    console.log("////>>>>",data)
+    } catch (err) {
+      console.log("[Login.js] makePostRequest", err);
+
+      ///some thing set to be true
+    }
+  }
+  const onSubmit = async (data) => {
+    // data.preventDefault();
+    console.log("-------------------------", data);
+    makePostRequest(data);
+  };
 
   return (
     
@@ -27,19 +75,19 @@ const WalletToWallet = () => {
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
             <Title >wallet to wallet</Title>
             <input
-                placeholder="Customer Phone Nmber"  
-                className={`form-control ${errors.phone && "invalid"}`}
-                 {...register("phone", { required: "Phone  number is Required",
+                placeholder="Customer Wallet Nmber"  
+                className={`form-control ${errors.phoneNumber && "invalid"}`}
+                 {...register("phoneNumber", { required: "phoneNumber is Required",
                  pattern: {
                    value: /^\s*(?:\+?(\d[09]))[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{2})(?: *x(\d+))?\s*$/,
-                   message: "Invalid phone number",
+                   message: "Invalid phoneNumber",
                  },
                 })}
                 onKeyUp={() => {
-                 trigger("phone");
+                 trigger("phoneNumber");
                }}/>
-                     {errors.phone && (
-                <small className="text-danger">{errors.phone.message}</small>
+                     {errors.phoneNumber && (
+                <small className="text-danger">{errors.phoneNumber.message}</small>
               )}
             <input
                 placeholder="Amount"
@@ -57,36 +105,73 @@ const WalletToWallet = () => {
                <small className="text-danger">{errors.amount.message}</small>
              )}
             
-            <select className="option" id="remark" required>
-                 <option value="" selected hidden>Remark</option>
-                 <option value="option 1">option1</option>
-                 <option value="option 2">option2</option>
-                 <option value="option 3">option3</option>
-
-            </select> 
-               
+            <select className="option" id="remark"  {...register("remark", { required: "remark is Required",})}>
+     
+          { user?.data.user?.budget.map(option =>{
+           return <option value={`${option.remark}`}>{option.remark}</option>
+            
+          })}
+          </select>
             <input 
                placeholder="Password"
                type='password'
-                 className={`  ${errors.message && "invalid"}`}
-                 {...register("message", { required: "Password is Required",
+                 className={`  ${errors.password && "invalid"}`}
+                 {...register("password", { required: "Password is Required",
                 })}
                 onKeyUp={() => {
-                 trigger("message");
+                 trigger("password");
                }}
                />
-               {errors.message && (
-                 <small className="text-danger">{errors.message.message}</small>
+               {errors.password && (
+                 <small className="text-danger">{errors.password.message}</small>
                )}
-            <button
-                className="btn"
-                type="submit">Transfer</button>
+           <button className="btn"  type="submit">
+            Transfer
+          </button>
         </form>
-   
+        <div stlye={{}}>
+	<Dialog open={open} onClose={handleToClose}>
+		<DialogContent>
+		<DialogContentText>
+		Are you sure you want to transfer this money?
+		</DialogContentText>
+		</DialogContent>
+		<DialogActions>
+    <TransferBtn onClick={handleSubmit(onSubmit)}>Transfer</TransferBtn>
+		<CancelBtn onClick={handleToClose}
+				color="primary" autoFocus>
+			close
+		</CancelBtn>
+
+
+         
+		</DialogActions>
+	</Dialog>
+	</div>
     </Section>        
   )
 }
- 
+const TransferBtn = styled.button`
+width: 120px;
+height: 40px;
+margin: 10px;
+border: none;
+background-color: #41d3fe;
+color: white;
+border-radius: 0px;
+font-size: 18px;
+cursor: pointer;
+`
+
+const CancelBtn= styled.button`
+width: 120px;
+height: 40px;
+background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 18px;
+cursor: pointer;
+`
 const Section = styled.section`
 .form{
 height: 400px;
