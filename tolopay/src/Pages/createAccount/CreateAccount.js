@@ -40,7 +40,6 @@ const CreateAccount = () => {
       
       const res = await api.post("/users/signup", {
         name:data.firstName,
-        username:data.lastName,
         email: data.email,
         phoneNumber: data.phone,
         password:data.password,
@@ -81,11 +80,11 @@ const CreateAccount = () => {
               <span className="btn_img btn_img--google"></span>
               Sign up with Google
             </div>
-            <div className="flex-c-r p-12-10 btn">
+            {/* <div className="flex-c-r p-12-10 btn">
               {" "}
               <span className="btn_img btn_img--facebook"></span>Sign up with
               FaceBook
-            </div>
+            </div> */}
           </div>
 
           <div className="flex-c-r or_line ">
@@ -125,7 +124,7 @@ const CreateAccount = () => {
                 <small className="text-danger">{errors.firstName.message}</small>
               )}
               
-              <input
+              {/* <input
               placeholder="Username"
                 type="name"
                 className={`form-control ${errors.lastName && "invalid"}`}
@@ -140,7 +139,7 @@ const CreateAccount = () => {
               ></input>
               {errors.lastName && (
                 <small className="text-danger">{errors.lastName.message}</small>
-              )}
+              )} */}
           
           <input
               type="email"

@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
 import { useForm } from "react-hook-form";
-
+import { Context } from "../../context/Context";
+import api from "../../api/api"
  
  
 
 export default function ChangePassword() {
+  const { user } = useContext(Context);
 
   const {
     register,
@@ -17,6 +19,17 @@ export default function ChangePassword() {
 
   const onSubmit = (data) => {
     console.log(data);
+  
+    api.post('/users/user-change-password', {
+      id: user.data.user._id,
+      oldPassword: data.oldpassword,
+      password: data.newpassword,
+      confirmPassword: data.message,
+    }).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
     reset();
   };
 

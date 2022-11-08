@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components';
 import { useForm } from "react-hook-form";
 import { Context } from "../../context/Context";
+import api from "../../api/api"
 
  
  
@@ -19,6 +20,17 @@ export default function Edit() {
 
   const onSubmit = (data) => {
     console.log(data);
+    console.log(user.data.user.id)
+    api.post('/users/change-info', {
+      id: user.data.user.id,
+      name: data.firstName,
+      phoneNumber: data.phone,
+      email: data.email
+    }).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
     reset();
   };
  
