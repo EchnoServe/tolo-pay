@@ -8,7 +8,7 @@ import api from "../../api/api"
  
 
 export default function Edit() {
-  const { user } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
 
   const {
     register,
@@ -28,6 +28,7 @@ export default function Edit() {
       email: data.email
     }).then(res => {
       console.log(res)
+      dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     }).catch(err => {
       console.log(err)
     })
@@ -42,7 +43,8 @@ export default function Edit() {
      <Input>
      <InputWrap>
      <Label>Full Name</Label>
-     <input  placeholder={user.data.user.name} type='text' 
+     <input  defaultValue={user.data.user.name} placeholder="Name LastName" type='text'
+     read 
       className={`form-control ${errors.email && "invalid"}`}
                 {...register("firstName", { required: "FirstName is Required" ,
                 pattern: {
@@ -78,7 +80,7 @@ export default function Edit() {
      <Input>
      <InputWrap>
      <Label>Phone Number</Label>
-     <input  placeholder={user.data.user.phoneNumber ? user.data.user.phoneNumber : ''} type='number'
+     <input  defaultValue={user.data.user.phoneNumber ? user.data.user.phoneNumber : ''} placeholder="0900000000" type='number'
        className={`form-control ${errors.phone && "invalid"}`}
        {...register("phone", { required: "Phone  number is Required",
        pattern: {
@@ -96,7 +98,7 @@ export default function Edit() {
 
      <InputWrap>
      <Label>Email</Label>
-     <input placeholder={user.data.user.email} type='Email'
+     <input defaultValue={user.data.user.email} placeholder="example@email.com" type='Email'
       className={`form-control ${errors.email && "invalid"}`}
       {...register("email", { required: "Email address is Required" ,
       pattern: {

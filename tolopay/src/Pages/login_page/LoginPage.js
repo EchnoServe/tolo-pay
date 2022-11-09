@@ -18,11 +18,15 @@ const LoginPage = () => {
         error !== '' ?
         <Popup onChange={errorState}>
           <PopupInner>
-            <h2>
+          <>
+          <h2>
               {error}
             </h2>
-            <p>Please recheck your inputs and try again!</p>
+            <p>Please check your connectivity or inputs!</p>
+          </>   
+            <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end'}}>
             <CloseButton onClick={() => errorState('')} >Close</CloseButton>
+            </div>
           </PopupInner>
           
         </Popup> : ''

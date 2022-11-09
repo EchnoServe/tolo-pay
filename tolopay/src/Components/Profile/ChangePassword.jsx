@@ -1,13 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components';
 import { useForm } from "react-hook-form";
 import { Context } from "../../context/Context";
 import api from "../../api/api"
+import { CloseButton, Popup, PopupInner } from '../commonStyles';
  
  
 
 export default function ChangePassword() {
   const { user } = useContext(Context);
+  const [status, sentStatus ] = useState('');
+
 
   const {
     register,
@@ -27,6 +30,8 @@ export default function ChangePassword() {
       confirmPassword: data.message,
     }).then(res => {
       console.log(res)
+      sentStatus(res.data.status)
+
     }).catch(err => {
       console.log(err)
     })
@@ -35,6 +40,20 @@ export default function ChangePassword() {
 
   return (
     <div>
+    {status !== '' ?
+    <Popup onChange={sentStatus}>
+          <PopupInner>
+            <h2>
+             {status}
+            </h2>
+            <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end'}}>
+            <CloseButton onClick={() => sentStatus('')} >Close</CloseButton>
+            </div>
+            
+          </PopupInner>
+          
+        </Popup>
+    : ''}
      <Title>Details</Title>
      <Form onSubmit={handleSubmit(onSubmit)}>
      <Input>

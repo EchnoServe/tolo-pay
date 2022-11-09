@@ -15,11 +15,15 @@ export const ResetPasswordPages = () => {
         error === 'error' ?
         <Popup onChange={errorState}>
           <PopupInner>
-            <h2>
+          <>
+          <h2>
               {error}
             </h2>
             <p>Please recheck your inputs and try again!</p>
+          </>
+            <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end'}}>
             <CloseButton onClick={() => errorState('')} >Close</CloseButton>
+            </div>
           </PopupInner>
           
         </Popup> : ''

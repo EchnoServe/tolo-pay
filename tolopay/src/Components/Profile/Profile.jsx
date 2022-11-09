@@ -16,9 +16,6 @@ function Profile({file,handle}) {
     setValue(newValue)
    }
 
-
-
-
   return (
     
     <Con>
@@ -306,10 +303,10 @@ const Setting = styled.div`
   }
 `;
 
-const Title = styled.h1`
-padding: 1rem;
-font-size: 15px;
-font-weight: 300;
-`;
+// const Title = styled.h1`
+// padding: 1rem;
+// font-size: 15px;
+// font-weight: 300;
+// `;
 
 export default Profile;

@@ -127,14 +127,23 @@ export const PopupInner = styled.div`
   border-radius: 9px;
   max-width: 400px;
   background-color: white;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
 `;
 
 export const CloseButton = styled.div`
-  width: 90px;
-  border: 1px solid #90909060;
+  width: 81px;
+  color: white;
+  border-radius: 6px;
+  background-color: ${button1};
   padding: 3px;
+  text-align: center;
   cursor: pointer;
 
+  &:hover {
+    background-color: ${button3};
+  }
   ${PopupInner} {
     position: absolute;
     top: 16px;

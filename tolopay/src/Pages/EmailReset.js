@@ -30,11 +30,16 @@ export const ResetPasswordPages = () => {
         sent === 'error' ?
         <Popup onChange={sentStatus}>
           <PopupInner>
-            <h2>
+          <>
+          <h2>
               Couldn't find your account
             </h2>
             <p>Please recheck your inputs and try again!</p>
+          </>
+            
+            <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end'}}>
             <CloseButton onClick={() => sentStatus('')} >Close</CloseButton>
+            </div>
           </PopupInner>
           
         </Popup> : ''
