@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import NavLink from "./NavLinks";
-import { CgMenuRight } from "react-icons/cg";
+// import { CgMenuRight } from "react-icons/cg";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import DonutSmallIcon from '@mui/icons-material/DonutSmall';
 import QrCodeScannerIcon from '@mui/icons-material/QrCodeScanner';
-import SafetyDividerIcon from '@mui/icons-material/SafetyDivider';
+// import SafetyDividerIcon from '@mui/icons-material/SafetyDivider';
 import HistoryIcon from '@mui/icons-material/History';
 
 const LinksGroup = styled.div`

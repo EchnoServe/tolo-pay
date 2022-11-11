@@ -66,13 +66,13 @@ const Title = styled.h1`
  
 `;
 
-const BtnWrapper = styled.div`
- display: flex;
- justify-content: flex-start; 
- align-items: center;
- width: 70%;
+// const BtnWrapper = styled.div`
+//  display: flex;
+//  justify-content: flex-start; 
+//  align-items: center;
+//  width: 70%;
  
- `;
+//  `;
 
 const Button = styled.button`
 border-radius: 4px;

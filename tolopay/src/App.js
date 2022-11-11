@@ -4,7 +4,7 @@ import Layout from './Components/admin_dashboard/Layout';
 import Profile from './Components/Profile/Profile';
 import Budget from './Pages/budget_page/Budget'
 import Transfer from './Pages/transfer/Transfer'
-import Dashboard from './Components/Dashboard/component/Dashboard'
+import Dashboard from './Components/dashboard/component/Dashboard'
 import QrCode from "./Pages/qr/QrCode";
 import './App.css'
 import Budgetform from './Pages/budget_page/BudgetForm';
