@@ -3,7 +3,9 @@ import styled from 'styled-components'
 import { useForm } from "react-hook-form";
 import { Context } from "../../context/Context";
 import axios from "axios";
-import { useState ,useContext} from "react";
+import { 
+  // useState ,
+  useContext} from "react";
 import React from "react";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContentText from "@material-ui/core/DialogContentText";
@@ -15,10 +17,10 @@ const WalletToWallet = () => {
   const navigate=useNavigate();
   const { token ,user ,dispatch} = useContext(Context);
 
-  const handleClickToOpen = (event) => {
-    event.preventDefault();
-    setOpen(true);
-  };
+  // const handleClickToOpen = (event) => {
+  //   event.preventDefault();
+  //   setOpen(true);
+  // };
   
   const handleToClose = () => {
     setOpen(false);
@@ -31,7 +33,7 @@ const WalletToWallet = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
+    // reset,
     trigger,
   } = useForm();
 
