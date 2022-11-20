@@ -4,24 +4,17 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {Link as RLink} from "react-router-dom"
 import { useForm } from "react-hook-form";
 import { Context } from "./../../context/Context";//
-// import { Alert } from "@material-ui/lab";
 import React,{useContext} from "react";
 import axios from 'axios';
 import {  useNavigate } from "react-router-dom";
-// import Snackbar from "@material-ui/core/Snackbar";
+ 
 
 const Budget_form = (props) => {
     const { user ,token,dispatch} = useContext(Context);
-    // const [ open, setOpen] = React.useState(false);
+     
     const navigate=useNavigate();
   
-    // const handleToClose = (event, reason) => {
-    //   if ("clickaway" === reason) return;
-    //   setOpen(false);
-    // };
-    // const handleClickEvent = () => {
-    //   setOpen(true);
-    // };
+ 
 const {
   register,
   handleSubmit,
@@ -31,12 +24,8 @@ const {
 } = useForm();
 
 const onSubmit =  async(data) => {
-  console.log( user);
-  const res = await axios.put("http://localhost:8000/api/v1/users/addbudget", {
-    remark: data.remark,
-    amount: data.amount,
-   
-  }, {
+  console.log(data,"<><><>");
+  const res = await axios.put("http://localhost:8000/api/v1/users/addbudget", data, {
     headers: {
       Authorization:
         `Bearer ${token}`,
@@ -57,7 +46,7 @@ const onSubmit =  async(data) => {
         
           <ColumnTwo1>
         <Form onSubmit={handleSubmit(onSubmit)}>
-            <Title >Add Budget</Title>
+            <Title >Add Budget </Title>
 
             <input
                 placeholder="Budget Name"

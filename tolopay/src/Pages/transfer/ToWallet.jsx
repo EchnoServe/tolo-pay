@@ -108,11 +108,11 @@ const WalletToWallet = () => {
              )}
             
             <select className="option" id="remark"  {...register("remark", { required: "remark is Required",})}>
-     
           { user?.data.user?.budget.map(option =>{
-           return <option value={`${option.remark}`}>{option.remark}</option>
-            
-          })}
+        return <option value={`${option.remark}`}>{option.remark}</option>
+          
+         })}
+       
           </select>
             <input 
                placeholder="Password"
