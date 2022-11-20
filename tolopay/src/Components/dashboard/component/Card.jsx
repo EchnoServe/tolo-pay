@@ -1,4 +1,4 @@
- import React,{useContext} from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { IoStatsChart } from "react-icons/io5";
 import { GiTrophyCup } from "react-icons/gi";
@@ -13,7 +13,6 @@ function data(money_in, money_out, current_balance, points_earned) {
 
 const amount = [data("700,000d Birr", "60,000 Birr", "700,000 Birr", "16pts")];
 
- 
 const Card = () => {
   const { token, user } = useContext(Context);
   const [money_in, setMoneyin] = React.useState(0);
@@ -29,8 +28,8 @@ const Card = () => {
           },
         }
       );
-              
-      setMoneyin( data.data.moneyin[0].total );
+
+      setMoneyin(data.data.moneyin[0].total);
     }
     getMoneyin();
     async function getMoneyout() {
@@ -42,12 +41,12 @@ const Card = () => {
           },
         }
       );
-              
-      setMoneyout(data.data.moneyout[0].total );
+
+      setMoneyout(data.data.moneyout[0].total);
     }
     getMoneyout();
   }, [token]);
-  console.log(money_in)
+  console.log(money_in);
   return (
     <Section>
       {amount.map((value) => (
