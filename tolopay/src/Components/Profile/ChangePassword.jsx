@@ -4,11 +4,13 @@ import { useForm } from "react-hook-form";
 import { Context } from "../../context/Context";
 import api from "../../api/api"
 import { CloseButton, Popup, PopupInner } from '../commonStyles';
+import axios from 'axios';
  
  
 
 export default function ChangePassword() {
-  const { user } = useContext(Context);
+   
+   const { user, dispatch ,token} = useContext(Context);
   const [status, sentStatus ] = useState('');
 
 
@@ -20,23 +22,27 @@ export default function ChangePassword() {
     trigger,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
   
-    api.post('/users/user-change-password', {
+  const onSubmit = async (data) => {
+        console.log("<>",data);
+    console.log("<>",user.data.user.id)
+      const res = await axios.post("http://localhost:8000/api/v1/users/user-change-password", {
       id: user.data.user._id,
       oldPassword: data.oldpassword,
       password: data.newpassword,
       confirmPassword: data.message,
-    }).then(res => {
-      console.log(res)
-      sentStatus(res.data.status)
-
-    }).catch(err => {
-      console.log(err)
-    })
+    }, 
+    {
+    headers: {
+      Authorization:
+        `Bearer ${token}`,
+    },
+  });
+    
+      dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     reset();
   };
+ 
 
   return (
     <div>
