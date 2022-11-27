@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { useForm } from "react-hook-form";
 import { Context } from "../../context/Context";
 import api from "../../api/api"
-
+import axios from 'axios';
  
  
 
 export default function Edit() {
-  const { user, dispatch } = useContext(Context);
+  const { user, dispatch ,token} = useContext(Context);
 
   const {
     register,
@@ -18,20 +18,24 @@ export default function Edit() {
     trigger,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    console.log(user.data.user.id)
-    api.post('/users/change-info', {
+  const onSubmit = async (data) => {
+        console.log("<>",data);
+    console.log("<>",user.data.user.id)
+      const res = await axios.post("http://localhost:8000/api/v1/users/change-info",
+      {
       id: user.data.user.id,
       name: data.firstName,
       phoneNumber: data.phone,
       email: data.email
-    }).then(res => {
-      console.log(res)
+    }, 
+    {
+    headers: {
+      Authorization:
+        `Bearer ${token}`,
+    },
+  });
+    
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
-    }).catch(err => {
-      console.log(err)
-    })
     reset();
   };
  
