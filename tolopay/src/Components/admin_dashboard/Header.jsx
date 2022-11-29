@@ -19,8 +19,8 @@ const Grid = styled.div`
   }
 
   .img{
-    height: 38px;
-    width: 38px;
+    height: 40px;
+    width: 55px;
     border-radius: 50%;
     /* background-color: red; */
     margin-left: 8px;
@@ -89,12 +89,17 @@ function Header({  title, file, toggle }) {
         <DarkModeIcon className="icon"/>
         <LanguageIcon className="icon"/>
         <NotificationsIcon className="icon"/> 
-        <img className="img" src={
-                file
-                  ? URL.createObjectURL(file)
-                  : user?.data.user.profileimage
+        <img className="img" 
+               src={
+                 user.data.user.profileimage
+                  ?`http://localhost:8000/${user.data.user.profileimage}`
+                  : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
                  }
-                 alt="" />
+                 
+                
+                 alt=""
+               />
+                 
         <div className="status">
         <h5>{user?.data.user.name}</h5>
         <h6>online</h6>

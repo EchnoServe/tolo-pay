@@ -80,7 +80,7 @@ function Profile({file,handle}) {
                
             </div>
                 <div className="changeImg" ><label htmlFor="file"><CameraAltIcon/></label></div>
-                <button onClick={handleFile}>UPLOAD</button>
+                <Button onClick={handleFile}>UPLOAD</Button>
                 
                 <input type="file" id="file" onChange={handleImageChange} style={{display: "none"}}/>
             </div> 
@@ -156,7 +156,30 @@ const Container = styled.div`
     margin: 1rem 0 1rem 0;
   }
 `;
+const Button = styled.button`
+margin-top: 16px;
+border-radius: 4px;
+border: none;
+width: 100px;
+height:30px;
+background: rgb(58, 135, 190);
+white-space: nowrap;
+padding: 8px 12px;
+margin-left: 0;
+font-size: 12px;
+font-weight: 400;
+color: #fff;
+outline: none;
+cursor: pointer;
+overflow: hidden;
+text-decoration: none;
+text-align: center;
 
+&:hover{
+  background: rgba(58, 135, 190, 0.7);
+}
+
+`
 const Con = styled.div`
 width: 100%;
 height: 100%;

@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import styled from 'styled-components';
 import { useForm } from "react-hook-form";
 import { Context } from "../../context/Context";
-import api from "../../api/api"
 import axios from 'axios';
  
  
