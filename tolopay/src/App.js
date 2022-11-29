@@ -45,6 +45,7 @@ function App() {
       <Routes>
         <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+            <Route path="logout"  element={<Login/>}  />  
             <Route path="/login/success" element={<LoginSuccess />} />
             <Route path="/password-reset" element={<EmailReset />} />
             <Route path="/reset-password/:id/:token" element={<ResetPasswordPage />} />
@@ -56,7 +57,7 @@ function App() {
                     </Layout> : 
                     <Login />} >
 
-                      <Route index element={ <Dashboard /> } />                
+                      <Route index element={ <Dashboard /> } />            
                       <Route path="profile"  element = {<Profile file={file} handle={handle}/>}/>
                       <Route path="budget"  element = {<Budget/>}/>
                       <Route path="transfer"  element = {<Transfer/>}/>
