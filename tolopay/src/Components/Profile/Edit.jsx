@@ -82,7 +82,8 @@ export default function Edit() {
                 <small className="text-danger">{errors.phone.message}</small>
               )}
      </InputWrap>
-
+</Input>
+<Input>
      <InputWrap>
      <Label>Email</Label>
      <input defaultValue={user.data.user.email} placeholder="example@email.com" type='Email'
